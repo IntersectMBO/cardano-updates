@@ -1,5 +1,6 @@
 The networking team took an active part in the project iteration (PI) planning
-session, see cardano-node backlog for detailed outcomes.
+session, see cardano-node [backlog](https://github.com/orgs/input-output-hk/projects/39) for detailed
+outcomes.
 
 
 * We started working on a detailed design / implementation plan for gossip.  
