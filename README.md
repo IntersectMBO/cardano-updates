@@ -6,5 +6,5 @@ This repository will host updates from the
 ## Add an update
 
 To add an update create a file under `posts` directory which name is:
-`yyyy-mm-dd-TEAM.markdown`.  Then run `cabal run cardano-updates:site --
-build`.  Commit the changes and push.
+`yyyy-mm-dd-TEAM.markdown`. Commmit and push.  The site will be build and
+deplyed by an [github-action](https://github.com/input-output-hk/cardano-updates/actions).
