@@ -1,0 +1,32 @@
+The networking team took an active part in the project iteration (PI) planning
+session, see cardano-node backlog for detailed outcomes.
+
+
+* We started working on a detailed design / implementation plan for gossip.  
+
+* We merged [input-output-hk/ouroboros-network#3859](https://github.com/input-output-hk/ouroboros-network/pull/3859) which
+  sets the ouroboros-network repository for the single relay release.
+
+* We identified a bug in the network simulator, which is fixed in the
+  [input-output-hk/ouroboros-network#3852](https://github.com/input-output-hk/ouroboros-network/pull/3852).
+  The above PR was reviewed.
+
+* We set the tracing configuration for nodes which we deploy and fixed and
+  identified some deployment hiccups.  We identified some bugs in the RT view
+  which were registered by the maintainers.
+  [input-output-hk/ouroboros-network-ops#4](https://github.com/input-output-hk/ouroboros-network-ops/pull/4)
+
+* We fixed typos in network-mux library:
+  [input-output-hk/ouroboros-network#3921](https://github.com/input-output-hk/ouroboros-network/pull/3921)
+
+* For easy of debugging we renamed a trace point:
+  [input-output-hk/ouroboros-network#3922](https://github.com/input-output-hk/ouroboros-network/pull/3922) 
+
+* Duncan iterated on his simulation / visualisation.  He also was able to
+  identify and fix a bug in the simulator.  The simulation contains 50 nodes.
+  Dashed lines indicate and established connection, while solid lines indicate
+  a TCP connection with fully open TCP window.
+
+  <video width=512 controls>
+    <source src="/images/p2p-relay3.mp4" type="video/mp4">
+  </video>
