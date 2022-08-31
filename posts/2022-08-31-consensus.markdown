@@ -125,6 +125,9 @@
 ## Genesis
 
  - Draft of the specification of the Genesis implementation and the ChainSync Jumping optimization. In particular, this includes a proof sketch that the latter preserves liveness and safety in all cases ([Issue 3964][issue-3964]).
+      - My main realization during this sprint was that I had been focusing so far on the case where the selected chain is an extension of the intersection of our peers' ChainSync candidates.
+      - This is the main case, ie an "absorbing" state, but it's not the only case (the latest PDF I sent out refers to it less directly but---incorrectly---as an invariant).
+      - The new proof sketch begins by case splitting on that predicate, and that made the sketch quite a bit easier to follow.
  - Continued work on the "happy path" ChainSync Jumping prototype ([Issue 3960][issue-3960]).
 
 ## Other
