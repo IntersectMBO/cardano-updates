@@ -6,7 +6,7 @@
   cover all the relevant cases.
 - We implemented and benchmarked the "anti-diff" prototype to speed up the UTxO
   HD functionality. Preliminary results show a `5x` speedup when we do not
-  perform rollbacks, and a `1.66x` speedup when rollbacks are applied during the
+  perform rollbacks, and a `1.5x` speedup when rollbacks are applied during the
   benchmarks. The `5x` speed up is particularly interesting since during replay
   (which is what will happen when Daedalus users start using UTxO HD) rollbacks
   do not take place. We are investigating additional performance improvements.
@@ -62,7 +62,7 @@
   parameter `k`), the new benchmarks should be closer to the realistic setting.
   Consequently, the benchmarks show a close to `5x` improvement of the anti-diff
   approach over the "legacy" approach when we do not apply rollbacks. The
-  benchmarks show a close to `1.66x` improvement when we do apply rollbacks.
+  benchmarks show a close to `1.5x` improvement when we do apply rollbacks.
   Note that these improvement factors are subject to noise and randomness. In
   particular: large rollbacks can have a large influence in performance.
 
