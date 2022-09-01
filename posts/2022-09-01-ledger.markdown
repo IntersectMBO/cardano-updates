@@ -1,0 +1,42 @@
+# Ledger Update
+
+Since finishing up support for the Vasil Hardfork, the ledger team has been
+focused on two main things: a new ledger era and technical debt.
+
+## New minimal ledger era
+
+We have implemented a new ledger era named `conway` which is nearly identical
+to the `babbage` era. This has been the first time that we have been able to see
+what a minimal ledger era looks like. We have finished this task, modulo any
+integration issues that might come up. The only thing that the `conway` era
+does differently from the `babbage` era is provide support for rotating
+the master keys using the hardfork combinator's state translation.
+We may end up adding features to the `conway` era, but it is a nice exercise
+seeing what it looks like to get a minimal ledger era supported in all the
+downstream components.
+
+## Addressing technical debt
+
+We have been addressing technical debt, mostly in an effort to make the
+repository a more friendly code base to work in.
+
+- We have begun work on a ledger API, called `cardano-ledger-api`.
+- We have done a big re-design of the major type classes used in the ledger.
+  With hindsight on our side, we now have something much more organized and
+  easier to use.
+- We have done a lot of re-naming. The names across eras are now much more
+  uniform, avoid certain confusions that plagued us, and are clearer in where
+  they are from.
+- We have reduced a lot of code duplication that could lead to bugs if you
+  do not have the whole code base in your head.
+- We have added a handful of performance improvements.
+- We added type safety in a number of locations. In particular, the type of
+  values that can be minted in a transaction no longer allow for Lovelace
+  in the type, and some functions which used to handle both timelock scripts
+  and plutus script now correctly enoforce at the type level that only one of
+  them can be used.
+- We made our generators so that they now produce a much richer set of
+  valid serializations. There is room within CBOR to serialize the same
+  data structure in multiple ways, and it is helpful to have the generators
+  use a wide variety.
+- We have begun re-organizing our test suites.
