@@ -142,9 +142,13 @@
  - We continued working on the "happy path" `ChainSync` Jumping prototype ([Issue
    3960][issue-3960]).
 
-## Other
+## Technical debt
 
- - Preliminary work to (re)enable nightly CI tests: PR adding new options to control the number of QuickCheck property tests to run ([PR #3947][pull-3947]).
+ - We started working on the issues required to re-enable nightly CI runs..
+   Nightly CI runs have far more lax time constraints, which gives the option to
+   run significantly more property tests than in our regular CI. To this end, we
+   merged a PR to easily adapt the number of tests globally ([PR
+   #3947][pull-3947]).
 
 [issue-3954]: https://github.com/input-output-hk/ouroboros-network/issues/3954
 [branch-3954]: https://github.com/input-output-hk/ouroboros-network/tree/jdral/3954-backingstore-property-tests
