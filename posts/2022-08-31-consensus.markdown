@@ -1,6 +1,6 @@
 # Executive summary 
 
-- Most of the heavy lifting required to integrate the Conway era has been done. 
+- We did most of the heavy lifting required to integrate the Conway era.
 - We have property tests for the UTxO HD backing store API implementations. A
   possible bug was identified. Work is ongoing to make sure the property-tests
   cover all the relevant cases.
@@ -11,15 +11,19 @@
   (which is what will happen when Daedalus users start using UTxO HD) rollbacks
   do not take place. We are investigating additional performance improvements.
   The "anti-diff" prototype and benchmarks are still pending code review.
+- We elaborated a draft specification for the Genesis implementation and
+  `ChainSync` jumping optimization.
 
 # Workstreams 
 
 ## Conway
 
  - Integration PR of the minimal Conway era ([Issue #3963][issue-3962], [PR
-   #3971][pull-3971]).
+   #3971][pull-3971]). 
  - Discussions with Ledger revealed possible sources of confusion about which
-   data should be changed in the Conway era ([Issue #3976][issue-3976]).
+   data should be changed in the Conway era. As a result, a new technical debt
+   issue was raised, which does not block the integration of the Conway era
+   ([Issue #3976][issue-3976]).
 
 ## UTxO HD 
 
@@ -124,11 +128,19 @@
 
 ## Genesis
 
- - Draft of the specification of the Genesis implementation and the ChainSync Jumping optimization. In particular, this includes a proof sketch that the latter preserves liveness and safety in all cases ([Issue 3964][issue-3964]).
-      - My main realization during this sprint was that I had been focusing so far on the case where the selected chain is an extension of the intersection of our peers' ChainSync candidates.
-      - This is the main case, ie an "absorbing" state, but it's not the only case (the latest PDF I sent out refers to it less directly but---incorrectly---as an invariant).
-      - The new proof sketch begins by case splitting on that predicate, and that made the sketch quite a bit easier to follow.
- - Continued work on the "happy path" ChainSync Jumping prototype ([Issue 3960][issue-3960]).
+ - We elaborated a draft of the specification of the Genesis implementation and
+   the ChainSync Jumping optimization. In particular, this includes a proof
+   sketch that the latter preserves liveness and safety in all cases ([Issue
+   3964][issue-3964]).
+      - @nfrisby's main realization during this sprint was that he had been
+        focusing so far on the case where the selected chain is an extension of
+        the intersection of our peers' ChainSync candidates.
+      - This is the main case, ie an "absorbing" state, but it's not the only
+        case.
+      - The new proof sketch begins by case splitting on that predicate, and
+        that made the sketch quite a bit easier to follow.
+ - We continued working on the "happy path" `ChainSync` Jumping prototype ([Issue
+   3960][issue-3960]).
 
 ## Other
 
