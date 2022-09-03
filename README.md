@@ -2,6 +2,8 @@
 
 This repository will host updates from the
 [cardano](https://github.com/input-output-hk/cardano-node) development teams.
+The generated website containing the updates can be found
+[here](https://input-output-hk.github.io/cardano-updates/).
 
 ## Add an update
 
