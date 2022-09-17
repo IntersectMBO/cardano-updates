@@ -1,0 +1,42 @@
+# Ledger Update
+
+We have been focused nearly entirely on addressing technical debt.
+
+* We introduced more consistent naming across eras, this time for the auxiliary data.
+  See [3032](https://github.com/input-output-hk/cardano-ledger/pull/3032).
+* We made clear how the `consumed` functions differs between eras (which was a previous source of
+  confusion), and added some related support to the fledgling ledger API.
+  See [3016](https://github.com/input-output-hk/cardano-ledger/pull/3016).
+* We added clarity and organizational consistency to the main ledger era type synonyms.
+  See [3017](https://github.com/input-output-hk/cardano-ledger/pull/3017).
+* We removed code duplication related to the input data hashes.
+  See [3018](https://github.com/input-output-hk/cardano-ledger/pull/3018).
+* We split up a large module into smaller components. The large module was actually causing our
+  CI to time out.
+  See [3020](https://github.com/input-output-hk/cardano-ledger/pull/3020).
+* We cleaned up stale information in our cabal files, and upgraded cabal 3.8.
+  See [3023](https://github.com/input-output-hk/cardano-ledger/pull/3023),
+  [3031](https://github.com/input-output-hk/cardano-ledger/pull/3031),
+  and [3028](https://github.com/input-output-hk/cardano-ledger/pull/3028).
+* We made consistent, standalone `TxOut` (transaction output) modules for every era.
+  See [3024](https://github.com/input-output-hk/cardano-ledger/pull/3024).
+* We brought consistency to a maddening inconsistent use of type variables indicating the specific
+  choice of cryptographic primitives. In particular, all uses of `crypto` have been renamed to `c`.
+  See [3027](https://github.com/input-output-hk/cardano-ledger/pull/3027).
+* We did a clean up of the types in the Alonzo era. In particular, we switched to more parametric
+  types that will compose better in the future and which simplifies the constraints.
+  See [3029](https://github.com/input-output-hk/cardano-ledger/pull/3029).
+* We consolidated some existing fragmented logic regarding how we gather the scripts needed for a
+  given transaction. This is a much needed cleanup to prevent future mistakes.
+  See [3019](https://github.com/input-output-hk/cardano-ledger/pull/3019).
+* We fixed a problem with our generators that was causing a fair number of our property tests to
+  fail in CI.
+  See [3039](https://github.com/input-output-hk/cardano-ledger/pull/3039).
+* We have started the work to update Plutus. This will bring support for SECP in the next major
+  protocol version, and also address a
+  [problem](https://github.com/input-output-hk/cardano-ledger/issues/2902)
+  that we current have evolving the cost models.
+  See [3030](https://github.com/input-output-hk/cardano-ledger/pull/3030).
+* We addressed a small issue that came up when integrating the conway era downstream, namely
+  the lack of some serialization instances.
+  See [3022](https://github.com/input-output-hk/cardano-ledger/pull/3022).
