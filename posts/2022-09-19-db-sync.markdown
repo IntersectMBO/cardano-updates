@@ -1,0 +1,27 @@
+# DBSync Update
+
+## New Tag
+We created a new db-sync tag 13.0.5 which addresses shortcomings of the last release 13.0.4. It is currently under testing.
+The Changelog is here https://github.com/input-output-hk/cardano-db-sync/blob/8ad98d48e0068f3768d48e18fdcbe254037cba3b/cardano-db-sync/CHANGELOG.md#1305 and in more details:
+* We fixed fees for tx with phase 2 failure that didn't include a total collateral field. [1248](https://github.com/input-output-hk/cardano-db-sync/pull/1248)
+* We fixed an issue that could cause db-sync to crash if a specific rollback occured. [1247](https://github.com/input-output-hk/cardano-db-sync/pull/1247)
+* DBSync will now avoid reserialising data, especially Datums, which not only slows down db-sync but could result in the wrong CBOR encoding being inserted. [1217](https://github.com/input-output-hk/cardano-db-sync/pull/1217)
+* All the fixes above come with unit tests which validates the fix.
+* Added support for preprod and preview from docker. DBSync no longer needs to include the configs for different networks, these are directly fetched from the cardano world. [1254](https://github.com/input-output-hk/cardano-db-sync/pull/1254)
+* We added better support from docker for the new disable options and the overall documentation. [1260](https://github.com/input-output-hk/cardano-db-sync/pull/1260)
+
+All the above were also backported to the master branch
+
+## Open source
+
+We made the db-sync board public https://github.com/orgs/input-output-hk/projects/52/views/1, so everyone can have access on the issues we prioritise.
+We also added new tasks to the board, some of them could be approachable to newcomers or people who want to contribute.
+
+## Progress on tech debt and new features
+* [1223](https://github.com/input-output-hk/cardano-db-sync/pull/1223) was merged, which removes the foreign keys from the db schema. This opens the road 
+to a number of optimizations.
+* An additional fix on top of the previous work was added [1250](https://github.com/input-output-hk/cardano-db-sync/pull/1250)
+* An initial version where DBSync does not rollback on restart is done here [1266](https://github.com/input-output-hk/cardano-db-sync/pull/1266).
+This allows db-sync to restart much faster, without the need to delete data and reinsert them. In the future it can also facilitate migrations in 
+cases where the ledger snapshots have a breaking change, without the need to resync everything from genesis.
+
