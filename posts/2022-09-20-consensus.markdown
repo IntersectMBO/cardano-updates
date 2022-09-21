@@ -27,6 +27,17 @@
     - The results we get after this change look almost identical to the ones
       from the baseline.
 
+  - [The anti-diff prototype (PR
+    #3997)](https://github.com/input-output-hk/ouroboros-network/pull/3997) has
+    been reviewed and is close to being merged.
+
+    - A follow-up issue ([issue
+      #4010](https://github.com/input-output-hk/ouroboros-network/issues/4010))
+      to integrate the anti-diff prototype in the various `consensus` packages
+      was created. A first version of the integration exists, and all tests
+      pass. A next step is to get some indication of the "real" performance gain
+      by profiling `db-analyser` (or `cardano-node`).
+
 ## Genesis
 
  - Final draft of the Genesis implementation specification, now up for review.
