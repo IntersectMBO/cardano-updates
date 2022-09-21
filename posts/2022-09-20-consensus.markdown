@@ -1,5 +1,24 @@
 # Executive summary
 
+- We proposed a fix for the performance degradation observed when running
+  distributed multi-node benchmarks in the UTxO HD feature branch. We have to
+  validate this fix by running said benchmarks. This requires rebasing the
+  feature branch on top of `cardano-node@master` which is ongoing.
+- We did several rounds of code review on the alternative implementation of
+  diff-sequences required by the UTxO HD feature based on the idea of
+  anti-diffs. This alternative implementation is close to being merged, and the
+  next step is to integrate this to the UTxO HD branch, so that we can run
+  ad-hoc replaying and syncing from scratch benchmarks and compare these with
+  the baseline. The micro-benchmarks we elaborated for the alternative
+  implementation show speedups of up to 4x, so we are optimistic about the
+  performance of replaying and syncing from scratch benchmarks, however it is
+  important to notice that *due to the nature of UTxO HD* we will still be
+  slower than the baseline.
+- The final draft of the Genesis implementation specification is ready for
+  review.
+- We implemented a prototype for the happy path of Genesis' ChainSync Jumping
+  (CSJ). The prototype is slower than the baseline, however it is not the latest
+  version of the prototype and the jump interval is very small.
 
 # Workstreams
 
