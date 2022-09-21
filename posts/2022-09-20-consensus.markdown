@@ -7,6 +7,26 @@
 
 ## UTxO HD
 
+ - Spent quite some time investigating the root cause of the degradation in
+   performance observed in the benchmarks. We run the `make forge-stress`
+   benchmarks locally in order to debug this behavior.
+
+    - Transaction batching doesn't make a notable difference in the outcome
+      (considering we are using the in-memory backend).
+
+    - The mempool batching implementation required asynchronous transaction
+      validation which is a violation of the `LocalTxSubmission` protocol
+      contract and therefore if we continued on that route, the impact would
+      have been quite big.
+
+    - The STM logic we implemented by using a `TMVar` for the mempool internal
+      state was buggy and under certain circumstances it seemed to lock.
+      Reverting the mempool internal state to be stored in a `TVar` seems to
+      solve this problem.
+
+    - The results we get after this change look almost identical to the ones
+      from the baseline.
+
 ## Genesis
 
  - Final draft of the Genesis implementation specification, now up for review.
