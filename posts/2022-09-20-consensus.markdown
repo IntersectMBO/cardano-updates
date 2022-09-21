@@ -11,3 +11,5 @@
 
 ## Technical debt
 
+- Fix flakiness in ChainDB QSM tests
+
