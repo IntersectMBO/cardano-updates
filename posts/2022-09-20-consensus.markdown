@@ -1,9 +1,10 @@
 # Executive summary
 
 - We proposed a fix for the performance degradation observed when running
-  distributed multi-node benchmarks in the UTxO HD feature branch. We have to
-  validate this fix by running said benchmarks. This requires rebasing the
-  feature branch on top of `cardano-node@master` which is ongoing.
+  distributed multi-node benchmarks in the UTxO HD feature branch. While this
+  fixed the problems observed when running local benchmarks, it broke the
+  `ThreadNet` tests due to concurrency issues. Therefore, we think it is wise to
+  start redesigning the UTxO HD mempool integration.
 - We did several rounds of code review on the alternative implementation of
   diff-sequences required by the UTxO HD feature based on the idea of
   anti-diffs. This alternative implementation is close to being merged, and the
