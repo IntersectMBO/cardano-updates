@@ -22,6 +22,15 @@
   version of the prototype and the jump interval is very small.
 - Work on integrating Conway has [stopped][nicks-comment-conway] since
   priorities have changed.
+- We started work on benchmarking epoch-boundaries and epoch overhead
+  [pr-4014][pr-4014]. To this end, we made use of a modified version of our
+  `db-analyser` tool. We ran the new benchmarking setup using the Cardano
+  mainnet chain, and we can see that block tick and application take
+  substantially longer at epoch boundaries, although there are a couple of slots
+  during an epoch in which these computations take more than normal. We notified
+  the ledger team about these findings. We will use this modified version of
+  `db-analyser` to investigate the epoch overhead.
+
 
 # Workstreams
 
@@ -102,3 +111,4 @@
 
 [issue-3987]: https://github.com/input-output-hk/ouroboros-network/issues/3987
 [nicks-comment-conway]: https://github.com/input-output-hk/ouroboros-network/pull/3971#issuecomment-1252524031
+[pr-4014]: https://github.com/input-output-hk/ouroboros-network/pull/4014
