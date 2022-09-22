@@ -19,10 +19,10 @@
 - We implemented a prototype for the happy path of Genesis' ChainSync Jumping
   (CSJ). The prototype is slower than the baseline, however it is not the latest
   version of the prototype and the jump interval is very small.
+- Work on integrating Conway has [stopped][nicks-comment-conway] since
+  priorities have changed.
 
 # Workstreams
-
-## Conway
 
 ## UTxO HD
 
@@ -100,3 +100,4 @@
 - Fix flakiness in ChainDB QSM tests
 
 [issue-3987]: https://github.com/input-output-hk/ouroboros-network/issues/3987
+[nicks-comment-conway]: https://github.com/input-output-hk/ouroboros-network/pull/3971#issuecomment-1252524031
