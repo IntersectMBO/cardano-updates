@@ -107,7 +107,7 @@
 
 ## Technical debt
 
-- Fix flakiness in ChainDB QSM tests
+- Fix flakiness in ChainDB QSM tests ([PR 3990](https://github.com/input-output-hk/ouroboros-network/pull/3990)).
 
 [issue-3987]: https://github.com/input-output-hk/ouroboros-network/issues/3987
 [nicks-comment-conway]: https://github.com/input-output-hk/ouroboros-network/pull/3971#issuecomment-1252524031
