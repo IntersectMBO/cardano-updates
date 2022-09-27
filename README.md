@@ -5,6 +5,11 @@ This repository will host updates from the
 The generated website containing the updates can be found
 [here](https://input-output-hk.github.io/cardano-updates/).
 
+## Setup
+
+You need to install [git-lfs extension](https://git-lfs.github.com/). If you
+want to add a large file to the repository please consider using `git-lfs`.
+
 ## Add an update
 
 To add an update create a file under `posts` directory which name is:
