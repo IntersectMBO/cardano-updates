@@ -16,6 +16,14 @@
   When deploying we found an issue in the
   [`RTView`](https://github.com/input-output-hk/cardano-node/issues/3752).
 
+## Ouroboros Consensus
+
+* Recently we found out that the consensus does not log exceptions thrown during
+  intiialisation.  This was fixed in
+  [PR input-output-hk/ouroboros-network#4015](https://github.com/input-output-hk/ouroboros-network/pull/4015)
+  As part of this pull request we also changed that all exceptions rethrown by
+  the connection handler thread are wrapped in `ExceptionInHandler`.
+
 ### Some older items, which were not announced
 
 * We identified and fixed an issue related to socket activation (socket options
