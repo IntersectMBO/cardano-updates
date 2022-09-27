@@ -1,0 +1,78 @@
+# Network Update
+
+## Ouroboros Network
+
+* We finished high and low level _peer sharing_ design. See
+  [Peer Sharing Implementation Plan](https://github.com/input-output-hk/ouroboros-network/wiki/Peer-Sharing-Implementation-Plan)
+* We started working on low-level design of _eclipse evasion_ (work in
+  progress).
+* We decided to use **peer sharing** instead of overloaded and ambiguous _gossip_ term.
+  [PR input-output-hk/ouroboros-network#3980](https://github.com/input-output-hk/ouroboros-network/pull/3980)
+* We fixed technical dept
+  [issue input-output-hk/cardano-node#3905](https://github.com/input-output-hk/ouroboros-network/issues/3905) in
+  the simulation testing of diffusion
+  [PR input-output-hk/cardano-node#4004](https://github.com/input-output-hk/ouroboros-network/pull/4004)
+* We deployed all our nodes using our new nix based deployment architecture.
+  When deploying we found an issue in the
+  [`RTView`](https://github.com/input-output-hk/cardano-node/issues/3752).
+
+### Some older items, which were not announced
+
+* We identified and fixed an issue related to socket activation (socket options
+  where not set for sockets passed through socket activation).
+  [PR input-output-hk/cardano-node#3979](https://github.com/input-output-hk/ouroboros-network/pull/3979)
+  This fix will be released in the next `cardano-node` release.
+
+## Cardano Node
+
+* We extended the NixOs service module so that one can modify `socketPath`,
+  `runtimeDir`, `databasePath`, `traceSocketPathAccept`,
+  `traceSocketPathConnect` and `stateDir` options.
+   [PR input-output-hk/cardano-node#4196](https://github.com/input-output-hk/cardano-node/pull/4196)
+
+## IO-Sim
+
+We resolved a number of issues before release of `io-sim` on hackage:
+* [issue input-output-hk/ouroboros-network#2797](https://github.com/input-output-hk/ouroboros-network/issues/2797)
+* [issue input-output-hk/ouroboros-network#2650](https://github.com/input-output-hk/ouroboros-network/issues/2650)
+* [issue input-output-hk/ouroboros-network#3436](https://github.com/input-output-hk/ouroboros-network/issues/3436)
+* [issue input-output-hk/ouroboros-network#2588](https://github.com/input-output-hk/ouroboros-network/issues/2588)
+* [issue input-output-hk/ouroboros-network#2587](https://github.com/input-output-hk/ouroboros-network/issues/2587)
+* [issue input-output-hk/ouroboros-network#2586](https://github.com/input-output-hk/ouroboros-network/issues/2586)
+
+See [PR #24](https://github.com/input-output-hk/io-sim/pull/24)
+
+We also improved experience for contributors of `io-sim` and `typed-protocols` by adding issue templates:
+* [PR input-output-hk/io-sim#25](https://github.com/input-output-hk/io-sim/pull/25)
+
+## Typed Protocols
+
+* We pushed a branch which identifies a GHC quirk:
+  [coot/typed-protocols-rewrite-StateToken-problem](https://github.com/input-output-hk/typed-protocols/tree/coot/typed-protocols-rewrite-StateToken-problem). 
+  That's too be resolved in order to push forward review of the redesign in
+  [PR input-output-hk/typed-protocols#3](https://github.com/input-output-hk/typed-protocols/pull/3).
+* As for `io-sim`, we wrote issue templates:
+  [PR input-output-hk/typed-protocols#11](https://github.com/input-output-hk/typed-protocols/pull/11)
+
+## Input Endorsers Simulation
+
+New features include:
+
+* Histograms of block arrival frequency, for both network (inbound) and CPU
+  (block validation). This is interesting to check that we're not overloading
+  the CPU block validation capacity, or network link capacity. Or alternatively
+  to observe the behaviour in an overload situation if we set the block
+  generation rate high enough.
+
+* Pie chart of utilisation of TCP links. This shows how small a fraction of
+  links are being used at any one time, and shows that once the system "warms
+  up" and is operating stably, most block delivery is ballistic.
+
+* Showing off the new screen layout combinators, that let us put multiple
+  charts, titles etc on screen at once and scale them to whatever screen or
+  video resolution we like without having to tweak numbers (this example is
+  scaled to fit 1080HD video resolution).
+
+<video width=512 controls>
+  <source src="/images/p2p-relay-5.mp4" type="video/mp4">
+</video>
