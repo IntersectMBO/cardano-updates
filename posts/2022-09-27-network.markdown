@@ -41,6 +41,7 @@
 ## IO-Sim
 
 We resolved a number of issues before release of `io-sim` on hackage:
+
 * [issue input-output-hk/ouroboros-network#2797](https://github.com/input-output-hk/ouroboros-network/issues/2797)
 * [issue input-output-hk/ouroboros-network#2650](https://github.com/input-output-hk/ouroboros-network/issues/2650)
 * [issue input-output-hk/ouroboros-network#3436](https://github.com/input-output-hk/ouroboros-network/issues/3436)
@@ -48,7 +49,7 @@ We resolved a number of issues before release of `io-sim` on hackage:
 * [issue input-output-hk/ouroboros-network#2587](https://github.com/input-output-hk/ouroboros-network/issues/2587)
 * [issue input-output-hk/ouroboros-network#2586](https://github.com/input-output-hk/ouroboros-network/issues/2586)
 
-See [PR #24](https://github.com/input-output-hk/io-sim/pull/24)
+See [PR #24](https://github.com/input-output-hk/io-sim/pull/24).
 
 We also improved experience for contributors of `io-sim` and `typed-protocols` by adding issue templates:
 * [PR input-output-hk/io-sim#25](https://github.com/input-output-hk/io-sim/pull/25)
