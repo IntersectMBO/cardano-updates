@@ -1,0 +1,64 @@
+# Ledger Update
+
+We have continued focusing nearly entirely on addressing technical debt.
+A lot of design work has begun for the next ledger era,
+but we do not yet have anything concrete to share.
+
+## Technical debt issues completed
+
+* [[issue-1676]][[pull-2992]] We have finally removed the ledger dependency on the
+  `cardano-prelude` package. It was barely used in the ledger repository, and it added a dependency
+  that we did not want to maintain. It was a bit difficult to remove, and we had
+  to coordinate removing it from cardano-base.
+  A lot ended up going into [pull-2992][pull-2992], due to the coordination effort, and we ended
+  up updating Plutus as well.
+  This means that we've now also made a lot of progress on the problematic cost model serialization
+  issues described in [issue-2902].
+  In particular, after we resolve [issue-3014], we will not have to wait an epoch before
+  releasing a cost model for a new version of Plutus, as we had to do for the Vasil HF. 
+* [[issue-3046]][[pull-3055]] We moved a module that is now only used in Byron to a Byron package.
+* [[issue-3047]][[pull-3054]] We improved the interface to the `Value` (multi-asset) type.
+* [[pull-3044]] We debugged and fixed a tricky compilation issue. Certain kinds of field updates
+  were adding approximately 20 minutes to our compile time!
+* [[issue-2932]][[pull-3036]] As a part of our ongoing re-organization of the codebase, we
+  have added a `Cardano.Ledger.[Era].Core` module to each ledger era that has a TxBody class.
+  Most classes defined in the era should go in this new module.
+  We also re-export the `Cardno.Ledger.Core` module and the previous `Cardano.Ledger.[Era].Core`
+  modules from each era.
+  
+## Technical debt in progress
+
+* [[issue-3034]][[issue-3035]][[node-issue-4421]] We are continuing to write benchmarks to understand exactly where
+  all the time is being spent on executing the `TICKF` transition.
+  The consolidation of the per-stake-credential stake distribution to the per-stake-pool
+  distribution does seem to account for a large amount of time (near a second as written, which we
+  have down to about half a second with some optimizations),
+  but this does not account for everything.
+  Applying the reward update may also be a big contributing factor.
+* [[pull-3033]][[pull-3038]][[pull-3041]] A separate team is working on upgrading all the
+  cardano-node repositories to work with ghc 9.2.4. We have been helping out with this effort.
+* The nix scripts used to build our new
+  [formal ledger model](https://github.com/input-output-hk/formal-ledger-specifications)
+  do not work consistently for everyone, and we have been working on fixing these issues.
+* [[issue-3014]] We are still working on adding a versioning scheme to all of the ledger
+  serializers.
+
+[issue-1676]: https://github.com/input-output-hk/cardano-ledger/issues/1676
+[issue-2902]: https://github.com/input-output-hk/cardano-ledger/issues/2902
+[issue-2932]: https://github.com/input-output-hk/cardano-ledger/issues/2932
+[issue-3014]: https://github.com/input-output-hk/cardano-ledger/issues/3014
+[issue-3034]: https://github.com/input-output-hk/cardano-ledger/issues/3034
+[issue-3035]: https://github.com/input-output-hk/cardano-ledger/issues/3035
+[issue-3046]: https://github.com/input-output-hk/cardano-ledger/issues/3046
+[issue-3047]: https://github.com/input-output-hk/cardano-ledger/issues/3047
+
+[node-issue-4421]: https://github.com/input-output-hk/cardano-node/issues/4421
+
+[pull-2992]: https://github.com/input-output-hk/cardano-ledger/pull/2992
+[pull-3033]: https://github.com/input-output-hk/cardano-ledger/pull/3033
+[pull-3038]: https://github.com/input-output-hk/cardano-ledger/pull/3038
+[pull-3036]: https://github.com/input-output-hk/cardano-ledger/pull/3036
+[pull-3041]: https://github.com/input-output-hk/cardano-ledger/pull/3041
+[pull-3044]: https://github.com/input-output-hk/cardano-ledger/pull/3044
+[pull-3054]: https://github.com/input-output-hk/cardano-ledger/pull/3054
+[pull-3055]: https://github.com/input-output-hk/cardano-ledger/pull/3055
