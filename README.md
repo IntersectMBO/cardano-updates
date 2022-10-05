@@ -26,3 +26,16 @@ cabal run site -- watch
 ```
 
 The site can then be previewed in a browser at http://127.0.0.1:8000.
+
+## Workflow
+
+Each team is welcome to use whatever workflow that they prefer.
+The options include:
+
+* Pushing directly to the `main` branch.
+* Using pull requests as a way to involve the whole team before publishing.
+* Using pull requests to incrementally add to the report each day,
+  and then merging at the end of a two week period.
+
+Regardless of the workflow chosen, it is important that we strive to keep the git history clean.
+This means never force pushing on main, and usually having one commit per new post.
