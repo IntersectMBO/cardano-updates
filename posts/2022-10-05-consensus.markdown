@@ -1,7 +1,8 @@
 # Executive summary
 
 - With the latest implementation of ChainSync jumping we are closer to the
-  baseline performance.
+  baseline performance. In particular, the prototype seems to benefit from the
+  extra concurrency provided by additional capabilities.
 - We rewrote the implementation of the mempool in the UTxO HD prototype. This
   rewrite was required due to performance problems we observed when running the
   [workbench](https://github.com/input-output-hk/cardano-node/blob/master/Makefile#L51).
@@ -25,3 +26,19 @@
 
 ## Genesis
 
+Benchmarking setup: 50MBit/s, 50ms latency
+
+ - Red: baseline
+ - Green: Current CSJ prototype, 10 peers, jumps every 3000/f slots.
+
+As ChainSync Jumping involves many concurrent network operations at every jump,
+we tried to run the node with 6 instead of the default 2 capabilties.
+
+ - Orange: baseline with 6 capabilities
+ - Blue: CSJ prototype with 6 capabilities
+
+![](/images/happy-path-csj-prototype-bench-1.svg)
+
+Further work includes whether we can tune the prototype to better handle few
+capabilities, or to adapt the default number of capabilities (potentially just
+while syncing).
