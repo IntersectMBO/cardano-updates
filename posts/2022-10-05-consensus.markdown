@@ -37,6 +37,10 @@ we tried to run the node with 6 instead of the default 2 capabilties.
  - Orange: baseline with 6 capabilities
  - Blue: CSJ prototype with 6 capabilities
 
+This diagram shows the respective syncing progress, starting at Genesis and
+continuing a good part into Shelley (with the dashed line indicating the
+Byron-to-Shelley transition).
+
 ![](/images/happy-path-csj-prototype-bench-1.svg)
 
 Further work includes whether we can tune the prototype to better handle few
