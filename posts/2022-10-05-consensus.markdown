@@ -1,4 +1,4 @@
-# Weekly development report
+# High level summary
 
 This week, the consensus team worked on improving the performance of the
 ChainSync jumping logic, which is needed for Genesis. We also rewrote the
