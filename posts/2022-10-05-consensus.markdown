@@ -1,3 +1,13 @@
+# Weekly development report
+
+This week, the consensus team worked on improving the performance of the
+ChainSync jumping logic, which is needed for Genesis. We also rewrote the
+implementation of the mempool in the UTxO HD prototype which solved the issues
+that prevented us from running system level benchmarks. Also on the UTxO HD
+front, we have an improved implementation of the sequence-of-differences (a
+crucial piece of UTxO HD), and we also elaborated a test sign-off list for the
+UTxO HD feature.
+
 # Executive summary
 
 - With the latest implementation of ChainSync jumping we are closer to the
