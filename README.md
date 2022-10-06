@@ -16,6 +16,12 @@ To add an update create a file under `posts` directory which name is:
 `yyyy-mm-dd-TEAM.markdown`. Commit and push.  The site will be built and
 deployed by a [github-action](https://github.com/input-output-hk/cardano-updates/actions).
 
+The format of the posts is up to each team,
+except that everyone should start each post with a `# High level summary` section.
+This section will be used by technical writers to share information with the general public.
+The better suited this section is for the technical writers,
+the less chance there is for misinformation. It should ideally be one short paragraph.
+
 ## Serve the website locally
 
 If you wish to preview changes before publishing them, you can serve the site
