@@ -1,0 +1,61 @@
+# DBSync Update
+
+
+### Fast restarts
+ We fixed a long overdue issue in db-sync which caused long delays on restarts
+ [1266](https://github.com/input-output-hk/cardano-db-sync/pull/1266). This has been
+ one of db-sync main objectives for this period. Restarts are now very fast,
+ because db-sync deletes almost nothing from the db, it just replays the ledger rules until it
+ reaches the tip of the db. The fix also improves reconnection speed, in cases where the node
+ restarts or the connection is temporarily lost. It also speeds up even more in cases where due to a
+ deployment mess up a very old snapshot or no snapshot at all is used.
+
+### Property based testing
+We added stateful property based testing, using `quickcheck-state-machine`
+ [1269](https://github.com/input-output-hk/cardano-db-sync/pull/1269). These tests use empty or
+ almost empty blocks to test the new behaviour of restarts and rollbacks.
+
+ These tests generate arbitrarily a list of symbolic commands from these:
+
+```
+RollForward Int
+RollBack BlockNo
+StopDBSync
+StartDBSync
+RestartNode
+AssertBlockNo BlockNo
+```
+
+The commands are translated into real commands. For example `RollForward Int` will forge a new block
+that fits on the current chain. These real commands are executed against db-sync using the mock
+chain-sync server. The symbolic commands are executed against a vesy simplistic Model of db-sync
+which looks like this:
+
+``` haskell
+  Model
+    { serverTip :: BlockNo
+    , dbSyncTip :: BlockNo
+    , dbSynsIsOn :: Bool
+    , dbSynsHasSynced :: Bool
+    }
+```
+
+Finally a number of postconditions are checked, related to the eventual block number of db-sync.
+
+### Tech Debt
+
+We handled a number of tech debt in
+ [1275](https://github.com/input-output-hk/cardano-db-sync/pull/1275)
+ This improves the code format of db-sync, deletes many queries that were never used and groups the
+ others. This tech debt resolution not only improves the experience of working in db-sync, but can
+ facilitate some of our other objectives, as it makes it very explicit which queries are used
+ during syncing and which indexes are necessary.
+
+### Smash
+
+We worked on fixing an issue related to fetching pool metadata
+ [1276](https://github.com/input-output-hk/cardano-db-sync/pull/1276).
+ The issue which is described in
+ [1270](https://github.com/input-output-hk/cardano-db-sync/issues/1270)
+
+
