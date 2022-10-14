@@ -1,0 +1,66 @@
+# High level summary
+
+The ledger team is still primarily focused on addressing
+[technical](https://github.com/input-output-hk/cardano-ledger/issues?q=is%3Aissue+is%3Aopen+label%3A%22%3Acredit_card%3A+technical-debt%22)
+[debt](https://github.com/input-output-hk/cardano-ledger/projects/3).
+We now have the infrastructure for versioning our serialization schemes,
+which we continue to put into action.
+We have made first steps towards getting proper support for the
+[formal ledger repository](https://github.com/input-output-hk/formal-ledger-specifications)
+(in particular, we've added nix builds and
+continuous integration support).
+We are wrapping up an investigation of the performance of a critical
+function used by the consensus layer for leader checks.
+Finally, we are improving the packaging and versioning of our code.
+
+# Lower level summary
+
+## Completed Technical Debt
+
+- Because the Shelley ledger era was a complete re-write of the Byron ledger era, a lot of
+  our code lives in the `cardano-ledger-shelley` package, though with hindsight we can say that
+  much of it should live in `cardano-ledger-core`.
+  We continue to move things to `cardano-ledger-core`, and have much more to come. [[pull-3059]]
+- We now have the infrastructure to support **versioned** serialization schemes.
+  The inability to do this has caused us caused us a lot difficulties,
+  such as [[issue-3003]], [[issue-2965]] and [[issue-2444]].
+  We are still in the process of switching to the versioned serialization scheme
+  (such as [[pull-3078]]),
+  but the infrastructure was completed in [[pull-3063]].
+- We now have proper nix and CI support for the formal ledger project. [[pull-19]]
+- A separate team is helping bring support for
+  [CHaP](https://github.com/input-output-hk/cardano-haskell-packages)
+  to all the cardano-node repositories.
+  We have been helping out with this effort.
+* A separate team continues working on upgrading all the
+  cardano-node repositories to work with ghc 9.2.4.
+  We have been helping out with this effort.
+
+## In-progress Technical Debt
+
+We also have several fairly large pull-requests in review
+that we are working on.
+
+- In an on-going attempt to build out a more user-friendly API,
+  we continue to remove `HasField` instances in place of using micro-lenses.
+  The protocol parameters, in particular, are being worked on. [[pull-3045]]
+- We are also rename record fields to be consistent across the repository. [[pull-3062]]
+- We are now cleaning up all the work we did to understand the performance
+  of the TICKF transition. We have some improvements to the computatation
+  as well. [[pull-3068]]
+- We are adding more documentation, in particular to our Twiddler library. [[pull-3073]]
+- The formal ledger is adding support for finite set theory. [[pull-20]]
+
+[issue-2444]: https://github.com/input-output-hk/cardano-ledger/issues/2444
+[issue-2965]: https://github.com/input-output-hk/cardano-ledger/issues/2965
+[issue-3003]: https://github.com/input-output-hk/cardano-ledger/issues/3003
+
+[pull-3059]: https://github.com/input-output-hk/cardano-ledger/pull/3059
+[pull-3045]: https://github.com/input-output-hk/cardano-ledger/pull/3045
+[pull-3062]: https://github.com/input-output-hk/cardano-ledger/pull/3062
+[pull-3063]: https://github.com/input-output-hk/cardano-ledger/pull/3063
+[pull-3068]: https://github.com/input-output-hk/cardano-ledger/pull/3068
+[pull-3073]: https://github.com/input-output-hk/cardano-ledger/pull/3073
+[pull-3078]: https://github.com/input-output-hk/cardano-ledger/pull/3078
+[pull-19]: https://github.com/input-output-hk/formal-ledger-specifications/pull/19
+[pull-20]: https://github.com/input-output-hk/formal-ledger-specifications/pull/20
