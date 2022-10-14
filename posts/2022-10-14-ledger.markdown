@@ -22,7 +22,7 @@ Finally, we are improving the packaging and versioning of our code.
   much of it should live in `cardano-ledger-core`.
   We continue to move things to `cardano-ledger-core`, and have much more to come. [[pull-3059]]
 - We now have the infrastructure to support **versioned** serialization schemes.
-  The inability to do this has caused us caused us a lot difficulties,
+  The inability to do this has caused us a lot difficulties,
   such as [[issue-3003]], [[issue-2965]] and [[issue-2444]].
   We are still in the process of switching to the versioned serialization scheme
   (such as [[pull-3078]]),
@@ -44,11 +44,11 @@ that we are working on.
 - In an on-going attempt to build out a more user-friendly API,
   we continue to remove `HasField` instances in place of using micro-lenses.
   The protocol parameters, in particular, are being worked on. [[pull-3045]]
-- We are also rename record fields to be consistent across the repository. [[pull-3062]]
+- We are also renaming record fields to be consistent across the repository. [[pull-3062]]
 - We are now cleaning up all the work we did to understand the performance
   of the TICKF transition. We have some improvements to the computatation
   as well. [[pull-3068]]
-- We are adding more documentation, in particular to our Twiddler library. [[pull-3073]]
+- We are adding more documentation, in particular to our `Twiddler` functionality. [[pull-3073]]
 - The formal ledger is adding support for finite set theory. [[pull-20]]
 
 [issue-2444]: https://github.com/input-output-hk/cardano-ledger/issues/2444
