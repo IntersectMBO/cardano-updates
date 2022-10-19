@@ -12,6 +12,7 @@ backing store.
   - We merged the mempool rewrite.
   - We started working on state-machine tests for the backing store. This
     uncovered a bug in the Haskell bindings for LMDB.
+- Further benchmarking of the Genesis ChainSync Jumping prototype
 
 # Workstreams 
 
@@ -43,3 +44,27 @@ backing store.
   uses. The property tests uncovered errors in the Haskell bindings for LMDB
   range reads. [Work is
   ongoing](https://github.com/input-output-hk/lmdb-simple/pull/1) to fix this.
+
+## Benchmarking the CSJ prototype
+
+Prompted by previous benchmarks showing significant improvements in sync time by
+using more capabilities, we implemented a way to spread out the ChainSync
+updates over a larger period instead of firing them all at the same time. This
+didn't result in a noticable speedup.
+
+We also benchmarked the prototype with CSJ disabled (such that just the dynamo
+peer is running ChainSync, but e.g. BlockFetch still sees all peers) to rule
+out/confirm overhead by non-ChainSync (mainly BlockFetch) related components.
+This results in era-specific behavior (speed is like the prototype in Byron, but
+like the baseline in Shelley). This deserves a closer look in the future.
+
+This diagram shows the respective syncing progress, starting at Genesis and
+continuing a good part into Shelley (with the dashed line indicating the
+Byron-to-Shelley transition).
+
+ - Red: baseline
+ - Green: CSJ prototype, 10 peers, jumps every 3000/f slots, jumps in clumps.
+ - Blue: like Green, jumps are spread out.
+ - Orange: variant with no jumping, to measure unrelated overhead.
+
+![](/images/happy-path-csj-prototype-bench-2.svg)
