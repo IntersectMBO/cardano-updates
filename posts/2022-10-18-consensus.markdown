@@ -1,12 +1,45 @@
-# High level summary
+# High-level summary
 
-During the past two weeks, ...
+During the past two weeks, the consensus team worked on adding property test for
+different aspects of the UTxO HD prototype: era transitions, mempool, and
+backing store.
 
-# Executive summary
+# High-level status report
 
-# Additional information
+- Finish the UTxO HD prototype: on track.
+  - We started implementing Cadano eras transition property tests.
+  - We started implementing state-machine property tests for the mempool.
+  - We merged the mempool rewrite.
+  - We started working on state-machine tests for the backing store. This
+    uncovered a bug in the Haskell bindings for LMDB.
 
-## UTxO HD anti-diff ad-hoc benchmarks
+# Workstreams 
 
-TODO: add the benchmarks here
+## Finish the UTxO HD prototype
 
+- We started implementing [Cardano era transition property
+  tests](https://github.com/input-output-hk/ouroboros-network/issues/4043),
+  which are needed for making sure that the ledger tables get updated in the
+  right way when we move from one era to the next. There are at the moment two
+  important transitions.
+  - Byron to Shelley: where all the UTxO is transferred from in-memory Byron
+    state (which has no tables) to the ledger tables of the Shelley state.
+  - Shelley to Allegra: where the AVVM addresses must be deleted.
+
+  We have tests for the Byron to Shelley transitions. We are working on adding
+  the remaining ones.
+- We started implementing [state-machine property tests for the
+  mempool](https://github.com/input-output-hk/ouroboros-network/issues/4044).
+  The mempool is currently tested via pure property tests, and use a ledger
+  state without tables. With the introduction of UTxO HD, testing the concurrent
+  behavior of the mempool became of crucial importance (eg now we have to
+  acquire locks to flush the backing store). In addition, we need to test a
+  ledger state with tables. These needs led to the creation of a new set of
+  property tests. In particular we aim to run parallel state-machine tests that
+  exercise the mempool in a way similar to how the node would make use of it.
+- We merged the [mempool
+  rewrite](https://github.com/input-output-hk/ouroboros-network/pull/4049).
+- We started working on state-machine tests for the backing store that UTxO HD
+  uses. The property tests uncovered errors in the Haskell bindings for LMDB
+  range reads. [Work is
+  ongoing](https://github.com/input-output-hk/lmdb-simple/pull/1) to fix this.
