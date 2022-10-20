@@ -1,4 +1,5 @@
-# Node-Api-Cli Update 2022-10-04 - 2022-10-18
+# Node-Api-Cli Update
+# 2022-10-04 - 2022-10-18
 
 ## Executive Summary
 The majority of the team's time was spent between getting `1.34.4` ready, addressing various feature requests/issues/bugs that have arisen and refactoring components in the api and cli. The current refactoring is aimed at the long term goal of empowering users to be able to easily build applications similar to `cardano-cli`.
@@ -6,6 +7,7 @@ The majority of the team's time was spent between getting `1.34.4` ready, addres
 ## Completed
 
 - [GHC 9.2.4 preparations](https://github.com/input-output-hk/cardano-node/pull/4504)
+
 ### cardano-cli
 
 - [Serenity] - [Separate IO from txBuild and txBuildRaw functions](https://github.com/input-output-hk/cardano-node/pull/4491)
@@ -30,12 +32,15 @@ The majority of the team's time was spent between getting `1.34.4` ready, addres
 - [Infer protocol params in transaction build](https://github.com/input-output-hk/cardano-node/pull/4431)
 - [Allow assembling transactions with no witnesses](https://github.com/input-output-hk/cardano-node/pull/4408)
 - [Add tx-mempool command to CLI](https://github.com/input-output-hk/cardano-node/pull/4276)
+
 ## cardano-api
+
 - [Return Lovelace for calculateMinimumUTxO](https://github.com/input-output-hk/cardano-node/pull/4482)
 - [Make TxBodyContent an instance of Monoid](https://github.com/input-output-hk/cardano-node/pull/4458)
 - [Auto-balance multiasset transactions](https://github.com/input-output-hk/cardano-node/pull/4450)
 
 ## cardano-node
+
 - [Stop running CI when the only changes are to docs](https://github.com/input-output-hk/cardano-node/pull/4263)
 - [Rename TestEnableDevelopmentHardForkEras](https://github.com/input-output-hk/cardano-node/pull/4341)
 
