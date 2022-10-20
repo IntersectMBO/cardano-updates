@@ -1,5 +1,8 @@
 # Node-Api-Cli Update 2022-10-04 - 2022-10-18
 
+## Executive Summary
+The majority of the team's time was spent between getting `1.34.4` ready, addressing various feature requests/issues/bugs that have arisen and refactoring components in the api and cli. The current refactoring is aimed at the long term goal of empowering users to be able to easily build applications similar to `cardano-cli`.
+
 ## Completed
 
 - [GHC 9.2.4 preparations](https://github.com/input-output-hk/cardano-node/pull/4504)
@@ -13,7 +16,7 @@
 
 ### cardano-node
 
-https://github.com/input-output-hk/cardano-node/pull/4526
+- [Fix MacOS GHA CI](https://github.com/input-output-hk/cardano-node/pull/4526)
 
 ## In Progress
 
