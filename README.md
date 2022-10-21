@@ -22,6 +22,8 @@ This section will be used by technical writers to share information with the gen
 The better suited this section is for the technical writers,
 the less chance there is for misinformation. It should ideally be one short paragraph.
 
+Avoid using links which are not publicly accessible.
+
 ## Serve the website locally
 
 If you wish to preview changes before publishing them, you can serve the site
