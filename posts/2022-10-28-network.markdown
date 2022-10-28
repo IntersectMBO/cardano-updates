@@ -22,6 +22,10 @@ working toward integration these changes against the release branch of
 `cardano-node`.  Early next week we ought to be able to have an early version
 of `cardano-node` with _non experimental P2P support_!
 
+For more detailed release plan please see [P2P - Single
+Relay](https://github.com/input-output-hk/ouroboros-network/issues/3888)
+issue.
+
 ## Consensus
 
 We identified and fixed missing error reporting in consensus
@@ -59,6 +63,12 @@ a few missing instances of the `STM` monad.
 
 We made sure the CI runs for PRs which comes from forks (which is important to
 accept contributions from 3rd parties).
+
+## Mithril Cardano Integration
+
+We held initial discussions with Arnaud Bailly about possible path to integrate
+mithril to `cardano-node` and take advantage of the `ouroboros-network`
+diffusion layer.
 
 # Additional information
 
