@@ -1,0 +1,95 @@
+# High-level summary
+
+## P2P Network Stack
+
+During the past two weeks the team focused on p2p single relay release and peer
+sharing.  We found and fixed an important bug recently introduced in one of the
+components of p2p networking stack (fortunately never released).  Together with
+a fix, we designed a unit test diffusion simulation as well as quickcheck
+property test (both could reproduce it). We also changed the code in a way that
+if such a bug is reintroduced in the future, it will be obvious to diagnose.
+
+Initial benchmarking run of the P2P code was executed.  The results where
+unlike what we see on the mainnet.  We found a possible misconfiguration of the
+cluster (caused by 0 TTL on domain names), which could be the direct cause of
+it.  We wrote a PR which rules out such misconfiguration.  We are awaiting on
+the next benchmarking results.
+
+We also started working on P2P single relay release.  The PR
+[ouroboros-network#4120](https://github.com/input-output-hk/ouroboros-network/pull/4120)
+includes _108_ patches cherry-picked from the `master` branch.  We started
+working toward integration these changes against the release branch of
+`cardano-node`.  Early next week we ought to be able to have an early version
+of `cardano-node` with _non experimental P2P support_!
+
+## Consensus
+
+We identified and fixed missing error reporting in consensus
+initialisation phase.
+
+## Cardano Node
+
+We also made changes in `cardano-node` in order to give better experience for
+node operators.  This includes updating severities of some of the traces as
+well as implementing new format of the p2p topology file.
+
+## Peer Sharing
+
+We continued working on implementation of peer sharing.  We have an early
+implementation which will be reviewed and analysed in next weeks.  We started
+working on `cardano-node` integration.  We need
+[PR #4392](https://github.com/input-output-hk/cardano-node/pull/4392) to be merged
+before such integration will be able to land in `cardano-node`, although this
+is _not blocking_ us currently.
+
+## Eclipse Evasion
+
+We held a session which included Alexander Russel, Sandro Coretti-Drayton and
+Nick Frisby from the consensus team.  We discussed high lever design of the
+eclipse evasion scheme, which is important for the design and implementation of
+`ouroboros-genesis`.  We got a positive feedback from the researchers.
+
+## IO-Sim
+
+In this period we made little progress towards releasing `IO-Sim` on Hackage.
+A single [PR](https://github.com/input-output-hk/io-sim/pull/32) which added
+a few missing instances of the `STM` monad.
+
+## Open Source
+
+We made sure the CI runs for PRs which comes from forks (which is important to
+accept contributions from 3rd parties).
+
+# Additional information
+
+## P2P Single Relay Release
+
+The bug was caused by a blocking action which caused locked hot peers of the
+outbound governor, even if the bearer errored.  The fixed and tests where implemented in:
+
+* [ouroboros-network#4067](https://github.com/input-output-hk/ouroboros-network/pull/4067)
+* [ouroboros-network#4086](https://github.com/input-output-hk/ouroboros-network/pull/4086)
+
+The DNS TTL issue was solved in:
+
+* [ouroboros-network#4106](https://github.com/input-output-hk/ouroboros-network/pull/4106)
+
+## Consensus
+
+The early error reporting of consensus was addressed in
+
+* [ouroboros-network#4015](https://github.com/input-output-hk/ouroboros-network/pull/4015)
+
+## Cardano Node
+
+The new topology format is in review:
+
+* [cardano-node#4563](https://github.com/input-output-hk/cardano-node/pull/4563)
+
+Tracing improvements:
+
+* [cardano-node#4561](https://github.com/input-output-hk/cardano-node/pull/4561)
+
+## Peer Sharing
+
+* [ouroboros-network#4019](https://github.com/input-output-hk/ouroboros-network/pull/4019)
