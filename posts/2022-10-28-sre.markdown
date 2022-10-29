@@ -1,0 +1,107 @@
+# High level summary
+
+The SRE team is heavily working on the Equinix Metal migration, replacing Hydra
+with Cicero, and a new version of Spongix.
+
+# Lower level summary
+
+## OpenZiti
+
+- Work is ongoing on our OpenZiti integration into Bitte in [[bitte-zt]].
+- CI-World deployment of Darwin CI Ziti service in [[ci-world-commit-d40f4d]].
+- Multiple issues filed, and a lot of discussion with the OpenZiti developers,
+  we're making pretty rapid progress thanks to them.
+- Work on getting Equinix baremetal machines integrated into AWS World Bitte
+  clusters utilizing a Ziti ZTNA network overlay to bridge the networking of
+  the two environments and get IAM extension to Equinix machine for Nomad
+  client onboarding.
+- A Nix Flake for most of our OpenZiti dependencies including the Console,
+  Controller, Edge Tunnel, and Router is now at [[openziti-bins]].
+- The Flake also includes a WiP NixOS modules for these components.
+- Tested Ziti Desktop Edge official app for Darwin x86_64 w/ GUI -- works with
+  no issues seen so far
+- Moved the console to traefik routing service (`zac.$DOMAIN`) and
+  controller/edge router stay at `zt.$DOMAIN`, but have registered consul
+  services
+
+## Cicero & Tullia Integrations
+
+- Added webhook for [[haskell.nix]].
+- Finished Cicero CI action for [[cardano-addresses-pull-205]].
+- Fixed cardano-prelude cicero action in [[cardano-prelude-pull-176]].
+- Fixed the `abcird-stdlib/publish` action [[abcirdc-pull-104]]
+- fix error on vm-bigdisk flake configs [[cicero-pull-66]].
+- Helped with Cicero actions and answered questions for [[plutus]]
+  [[cardano-prelude]], and [[abcirdc]].
+- Merged [[cardano-base-pull-323]] for Tullia on cardano-base.
+- Merged Cicero action in [[cardano-ogmios-pull-5]].
+- Opened [[cardano-explorer-app-pull-427]] to add Tullia and Cicero.
+- Opened [[cardano-ledger-pull-3097]] to add Cicero CI action.
+- Opened [[cardano-node-pull-4489]] to add Tullia and Cicero, including
+  OS-agnostic jobs.
+- Opened [[ouroboros-network-pull-4108]] to add Cicero action.
+- Reviewed [[plutus-pull-4918]] and helped test it.
+- Update Tullia in [[abcirdc-pull-97]] to build if a tag is given.
+
+## Cicero & Tullia Features
+
+- Improvements to Tullia task aggregation to make [[cardano-addresses]] build
+  correctly.
+- Better tullia CUE lib default for tags [[tullia-commit-4df3c5d]].
+- Put `cache.nixos.org` back in `cache.iog.io`'s upstreams. This is now
+  considered a public cache again, and without it some Cicero evaluations had
+  to build huge packages.
+- Started working on a flake-parts module for Tullia.
+- Started working on cutting down Tullia task build time by putting facts in
+  JSON files.
+- Fixed running into kernel arg limit by reading tullia's DAG from a file
+- Merged [[tullia-pull-9]] that fixes several issues related to error reporting.
+  and escaping.
+- Added Mac builders in Cicero on CI-World.
+- Started work on Tullia invocation caching.
+
+## Spongix
+
+- A lot of progress on an SQlite backed version of Spongix, it already supports
+  the full HTTP binary cache protocol but still lacks comprehensive testing and
+  some tuning, as well as recursive lookups.
+- First steps in the implementation of the `nix-daemon` `ssh-ng` protocol so
+  Spongix can be used via SSH and we can get rid of basic auth.
+
+## Bugs
+
+- Discovered Cicero bug where Nomad reschedules cause the Github commit status
+  to get stuck in `pending`
+- Discovered Cicero race condition bug around concurrent transactions for
+  codependent actions.
+- Fixed tullia task order bug in [[cardano-addresses]]
+- Diagnose Cicero action not triggered in [[abcirdc]]
+- Fixed meta/description of the Tullia package in [[tullia-pull-7]]
+- Add Vault token loop alerts in [[bitte-cells-pull-40]]
+- Ongoing investigation on recurring Patroni and nomad-follower issues related
+  to token rotation.
+
+[abcirdc]: https://github.com/input-output-hk/abcirdc
+[abcirdc-pull-104]: https://github.com/input-output-hk/abcirdc/pull/104
+[abcirdc-pull-97]: https://github.com/input-output-hk/abcirdc/pull/97
+[bitte-cells-pull-40]: https://github.com/input-output-hk/bitte-cells/pull/40
+[bitte-zt]: https://github.com/input-output-hk/bitte/compare/zt
+[cardano-addresses]: https://github.com/input-output-hk/cardano-addresses
+[cardano-addresses-pull-205]: https://github.com/input-output-hk/cardano-addresses/pull/205
+[cardano-base-pull-323]: https://github.com/input-output-hk/cardano-base/pull/323
+[cardano-explorer-app-pull-427]: https://github.com/input-output-hk/cardano-explorer-app/pull/427
+[cardano-ledger-pull-3097]: https://github.com/input-output-hk/cardano-ledger/pull/3097
+[cardano-node-pull-4489]: https://github.com/input-output-hk/cardano-node/pull/4489
+[cardano-ogmios-pull-5]: https://github.com/input-output-hk/cardano-ogmios/pull/5
+[cardano-prelude]: https://github.com/input-output-hk/cardano-prelude
+[cardano-prelude-pull-176]: https://github.com/input-output-hk/cardano-prelude/pull/176#issuecomment-1280947946
+[cicero-pull-66]: https://github.com/input-output-hk/cicero/pull/66
+[ci-world-commit-d40f4d]: https://github.com/input-output-hk/ci-world/commit/d40f4d19187a2128b6f0d63bde7e3f9a33071994
+[haskell.nix]: https://github.com/input-output-hk/haskell.nix
+[openziti-bins]: https://github.com/johnalotoski/openziti-bins
+[ouroboros-network-pull-4108]: https://github.com/input-output-hk/ouroboros-network/pull/4108
+[plutus]: https://github.com/input-output-hk/plutus
+[plutus-pull-4918]: https://github.com/input-output-hk/plutus/pull/4918
+[tullia-commit-4df3c5d]: https://github.com/input-output-hk/tullia/commit/4df3c5d956f1b062b950643da12768ae71acf245
+[tullia-pull-7]: https://github.com/input-output-hk/tullia/pull/7
+[tullia-pull-9]: https://github.com/input-output-hk/tullia/pull/9
