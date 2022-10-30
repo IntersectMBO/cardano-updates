@@ -1,0 +1,23 @@
+dnadales:
+  name: Damian Nadales
+  title: Consensus Team Lead
+  url: https://github.com/dnadales
+  image_url: https://github.com/dnadales.png
+
+ch1bo:
+  name: Sebastian Nagel
+  title: Hydra Team Lead
+  url: https://github.com/ch1bo
+  image_url: https://github.com/ch1bo.png
+
+coot:
+  name: Marcin Szamotulski
+  title: Network Team Lead
+  url: https://github.com/coot
+  image_url: https://github.com/coot.png
+
+JaredCorduan:
+  name: Jared Corduan
+  title: Ledger Team Lead
+  url: https://github.com/JaredCorduan
+  image_url: https://github.com/JaredCorduan.png

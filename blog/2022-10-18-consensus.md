@@ -1,3 +1,12 @@
+---
+title: Consensus Team Update
+slug: 2022-10-18-consensus
+authors: dnadales
+tags: [consensus]
+hide_table_of_contents: false
+---
+
+
 # High-level summary
 
 During the past two weeks, the consensus team worked on adding property test for

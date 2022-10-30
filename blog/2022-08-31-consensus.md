@@ -1,3 +1,15 @@
+---
+title: Consensus Team Update
+slug: 2022-08-31-consensus
+authors:
+  - name: Damian Nadales
+    title: Consensus Team Lead
+    url: https://github.com/dnadales
+    image_url: https://github.com/dnadales.png
+tags: [consensus]
+hide_table_of_contents: false
+---
+
 # Executive summary
 
 - We did most of the heavy lifting required to integrate the Conway era.

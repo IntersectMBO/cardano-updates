@@ -1,3 +1,10 @@
+---
+title: Node API & CLI Team Update
+slug: 2022-10-04-node-cli-api
+tags: [cli-api]
+hide_table_of_contents: false
+---
+
 # Node-Api-Cli Update
 # 2022-10-04 - 2022-10-18
 
@@ -43,4 +50,3 @@ The majority of the team's time was spent between getting `1.34.4` ready, addres
 
 - [Stop running CI when the only changes are to docs](https://github.com/input-output-hk/cardano-node/pull/4263)
 - [Rename TestEnableDevelopmentHardForkEras](https://github.com/input-output-hk/cardano-node/pull/4341)
-
