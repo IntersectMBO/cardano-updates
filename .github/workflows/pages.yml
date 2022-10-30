@@ -1,92 +1,39 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+# from https://docusaurus.io/docs/deployment#deploying-to-github-pages
+name: Deploy to GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+    branches:
+      - main
 
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    strategy:
-      fail-fast: false
-      matrix:
-        ghc: ["8.10.7"]
-
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: "Setup haskell"
-        uses: haskell/actions/setup@v1
-        id: setup-haskell
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
         with:
-          ghc-version: ${{ matrix.ghc }}
-          cabal-version: 3.6.2.0
+          node-version: 18
+          cache: yarn
 
-      - name: Set cache version
-        run: echo "CACHE_VERSION=20220719" >> $GITHUB_ENV
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Build website
+        run: yarn build
 
-      - name: Update Hackage index
-        run: cabal update
-
-      - name: Record dependencies
-        id: record-deps
-        run: |
-          cabal build all --dry-run
-          cat dist-newstyle/cache/plan.json | jq -r '."install-plan"[].id' | sort | uniq > dependencies.txt
-          echo "::set-output name=weeknum::$(/bin/date -u "+%W")"
-
-      - uses: actions/cache@v2
-        name: "Cache `cabal store`"
-        with:
-          path: ${{ steps.setup-haskell.outputs.cabal-store }}
-          key: cache-dependencies-${{ env.CACHE_VERSION }}-${{ runner.os }}-${{ matrix.ghc }}-${{ hashFiles('dependencies.txt') }}
-          restore-keys: cache-dependencies-${{ env.CACHE_VERSION }}-${{ runner.os }}-${{ matrix.ghc }}
-
-      - uses: actions/cache@v2
-        name: "Cache `dist-newstyle`"
-        with:
-          path: |
-            dist-newstyle
-            !dist-newstyle/**/.git
-          key: cache-dist-${{ env.CACHE_VERSION }}-${{ runner.os }}-${{ matrix.ghc }}-${{ steps.record-deps.outputs.weeknum }}
-          restore-keys: cache-dist-${{ env.CACHE_VERSION }}-${{ runner.os }}-${{ matrix.ghc }}
-
-      - name: Build projects [build]
-        run: cabal build all
-
-      - name: Builld site
-        run: cabal run cardano-updates:site -- build
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v1
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: '_site'
-
+      # Popular action to deploy to GitHub Pages:
+      # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Build output to publish to the `gh-pages` branch:
+          publish_dir: ./build
+          # The following lines assign commit authorship to the official
+          # GH-Actions bot for deploys to `gh-pages` branch:
+          # https://github.com/actions/checkout/issues/13#issuecomment-724415212
+          # The GH actions bot is used by default if you didn't specify the two fields.
+          # You can swap them out with your own user credentials.
+          user_name: 'Arnaud Bailly'
+          user_email: arnaud.bailly@iohk.io
