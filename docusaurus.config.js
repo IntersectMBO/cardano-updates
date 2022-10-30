@@ -9,7 +9,7 @@ const config = {
   title: 'Cardano Development Updates',
   tagline: 'Regular updates from Cardano Development Teams',
   url: 'https://input-output-hk.github.io/',
-  baseUrl: '/',
+  baseUrl: '/cardano-updates',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -24,7 +24,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: {
-          routeBasePath: '/',
+          routeBasePath: '/cardano-updates',
           showReadingTime: true,
           editUrl:
             'https://github.com/input-output-hk/cardano-updates/tree/main/blog/',
