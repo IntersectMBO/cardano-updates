@@ -1,0 +1,50 @@
+---
+title: Network Team Update
+slug: 2022-08-12-network
+authors:
+  - name: Marcin Szamutolski
+    title: Network Team Lead
+    url: https://github.com/coot
+    image_url: https://github.com/coot.png
+tags: [network]
+hide_table_of_contents: false
+---
+
+```mdx-code-block
+import  ReactPlayer from 'react-player'
+```
+
+
+The networking team took an active part in the project iteration (PI) planning
+session, see cardano-node [backlog](https://github.com/orgs/input-output-hk/projects/39) for detailed
+outcomes.
+
+
+* We started working on a detailed design / implementation plan for gossip.
+
+* We merged [input-output-hk/ouroboros-network#3859](https://github.com/input-output-hk/ouroboros-network/pull/3859) which
+  sets the ouroboros-network repository for the single relay release.
+
+* We identified a bug in the network simulator, which is fixed in the
+  [input-output-hk/ouroboros-network#3852](https://github.com/input-output-hk/ouroboros-network/pull/3852).
+  The above PR was reviewed.
+
+* We set the tracing configuration for nodes which we deploy and fixed and
+  identified some deployment hiccups.  We identified some bugs in the RT view
+  which were registered by the maintainers.
+  [input-output-hk/ouroboros-network-ops#4](https://github.com/input-output-hk/ouroboros-network-ops/pull/4)
+
+* We fixed typos in network-mux library:
+  [input-output-hk/ouroboros-network#3921](https://github.com/input-output-hk/ouroboros-network/pull/3921)
+
+* For easy of debugging we renamed a trace point:
+  [input-output-hk/ouroboros-network#3922](https://github.com/input-output-hk/ouroboros-network/pull/3922)
+
+* Duncan iterated on his simulation / visualisation.  He also was able to
+  identify and fix a bug in the simulator.  The simulation contains 50 nodes.
+  Dashed lines indicate and established connection, while solid lines indicate
+  a TCP connection with fully open TCP window.
+
+```mdx-code-block
+<ReactPlayer playing controls url='/p2p-relay3.mp4' />
+```

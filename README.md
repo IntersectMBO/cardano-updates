@@ -1,49 +1,41 @@
 # Cardano Development Updates
 
-This repository will host updates from the
-[cardano](https://github.com/input-output-hk/cardano-node) development teams.
-The generated website containing the updates can be found
-[here](https://input-output-hk.github.io/cardano-updates/).
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-## Setup
+### Installation
 
-You need to install [git-lfs extension](https://git-lfs.github.com/). If you
-want to add a large file to the repository please consider using `git-lfs`.
-
-## Add an update
-
-To add an update create a file under `posts` directory which name is:
-`yyyy-mm-dd-TEAM.markdown`. Commit and push.  The site will be built and
-deployed by a [github-action](https://github.com/input-output-hk/cardano-updates/actions).
-
-The format of the posts is up to each team,
-except that everyone should start each post with a `# High level summary` section.
-This section will be used by technical writers to share information with the general public.
-The better suited this section is for the technical writers,
-the less chance there is for misinformation. It should ideally be one short paragraph.
-
-Avoid using links which are not publicly accessible.
-
-## Serve the website locally
-
-If you wish to preview changes before publishing them, you can serve the site
-locally with:
-
-```bash
-cabal run site -- watch
+```
+$ yarn
 ```
 
-The site can then be previewed in a browser at http://127.0.0.1:8000.
+### Local Development
 
-## Workflow
+```
+$ yarn start
+```
 
-Each team is welcome to use whatever workflow that they prefer.
-The options include:
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-* Pushing directly to the `main` branch.
-* Using pull requests as a way to involve the whole team before publishing.
-* Using pull requests to incrementally add to the report each day,
-  and then merging at the end of a two week period.
+### Build
 
-Regardless of the workflow chosen, it is important that we strive to keep the git history clean.
-This means never force pushing on main, and usually having one commit per new post.
+```
+$ yarn build
+```
+
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

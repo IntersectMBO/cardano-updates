@@ -1,3 +1,11 @@
+---
+title: Consensus Team Update
+slug: 2022-09-20-consensus
+authors: dnadales
+tags: [consensus]
+hide_table_of_contents: false
+---
+
 # Executive summary
 
 - We proposed a fix for the performance degradation observed when running
