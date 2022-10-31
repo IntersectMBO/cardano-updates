@@ -14,10 +14,10 @@ The format of the posts is up to each team, but it should include a header secti
 
 ```
 ---
-title: DB Sync Team Update
+title: Networking Team Update
 slug: 2022-10-04-db-sync
 authors: coot
-tags: [db-sync]
+tags: [network]
 hide_table_of_contents: false
 ---
 ```
