@@ -34,6 +34,10 @@ is for misinformation. It should ideally be one short paragraph.
 
 Avoid using links which are not publicly accessible.
 
+### Authors
+
+As per the [docusaurus blog](https://docusaurus.io/docs/blog#blog-post-authors) documentation, authors for a given blog post are provided as a YAML structure defining various properties. This can become cumbersome over time so there's a builtin mechanism to have an author's properties been defined once and then reused everywhere. Check the [blog/authors.yml](./blog/authors.yml) for examples.
+
 ## Workflow
 
 Each team is welcome to use whatever workflow that they prefer.  The options
