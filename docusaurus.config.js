@@ -27,7 +27,7 @@ const config = {
           routeBasePath: '/',
           showReadingTime: true,
           editUrl:
-            'https://github.com/input-output-hk/cardano-updates/tree/main/blog/',
+            'https://github.com/input-output-hk/cardano-updates/tree/main/',
           blogTitle: 'Cardano Development Updates',
           blogDescription: 'Regular updates from Cardano Development Teams',
           postsPerPage: 5,
