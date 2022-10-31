@@ -27,7 +27,7 @@ hide_table_of_contents: false
 ---
 ```
 
-Each post should aslso start with a `# High level summary` section that will be
+Each post should also start with a `# High level summary` section that will be
 used by technical writers to share information with the general public.  The
 better suited this section is for the technical writers, the less chance there
 is for misinformation. It should ideally be one short paragraph.
@@ -48,7 +48,7 @@ Regardless of the workflow chosen, it is important that we strive to keep the
 git history clean.  This means never force pushing on main, and usually having
 one commit per new post.
 
-## Install
+## Local Development
 
 ### Installation
 
@@ -76,6 +76,11 @@ served using any static contents hosting service.
 
 ### Deployment
 
+This is normally handled automatically through the [CI
+Workflow](.github/workflows/pages.yml) by pushing changes to `gh-pages` branch
+but should one need to deploy those pages manually, for example for testing
+purpose, follow these instructions:
+
 Using SSH:
 
 ```
@@ -87,6 +92,3 @@ Not using SSH:
 ```
 $ GIT_USER=<Your GitHub username> yarn deploy
 ```
-
-If you are using GitHub pages for hosting, this command is a convenient way to
-build the website and push to the `gh-pages` branch.
