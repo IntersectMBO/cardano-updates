@@ -1,3 +1,11 @@
+---
+title: Consensus Team Update
+slug: 2022-10-05-consensus
+authors: dnadales
+tags: [consensus]
+hide_table_of_contents: false
+---
+
 # High level summary
 
 This week, the consensus team worked on improving the performance of the
