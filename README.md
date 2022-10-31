@@ -57,6 +57,13 @@ one commit per new post.
 
 ## Local Development
 
+One needs to install `yarn` and `nodejs`.  A basic `shell.nix` is provided so
+it's straightforward to enter `nix-shell` and use the provided `yarn`
+executable.
+
+:warning: The `yarn` package from Debian has nothing to do with the yarn we use
+here!
+
 ### Installation
 
 ```
