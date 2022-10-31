@@ -6,7 +6,7 @@ tags: [consensus]
 hide_table_of_contents: false
 ---
 
-# High level summary
+## High level summary
 
 This week, the consensus team worked on improving the performance of the
 ChainSync jumping logic, which is needed for Genesis. We also rewrote the
@@ -16,7 +16,7 @@ front, we have an improved implementation of the sequence-of-differences (a
 crucial piece of UTxO HD), and we also elaborated a test sign-off list for the
 UTxO HD feature.
 
-# Executive summary
+## Executive summary
 
 - With the latest implementation of ChainSync jumping we are closer to the
   baseline performance. In particular, the prototype seems to benefit from the
@@ -40,9 +40,9 @@ UTxO HD feature.
   tests](https://github.com/input-output-hk/ouroboros-network/issues/4045)
   needed for consensus to consider the UTxO HD prototype as fully tested.
 
-# Additional information
+## Additional information
 
-## Genesis
+### Genesis
 
 Benchmarking setup: 50MBit/s, 50ms latency
 

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 ---
 
 
-# High-level summary
+## High-level summary
 
 During the past two weeks, the consensus team worked on adding property test for
 different aspects of the UTxO HD prototype: era transitions, mempool, and
@@ -16,7 +16,7 @@ prototype. On the Genesis front, we benchmarked a different version of the
 ChainSync jumping prototype to try to improve its performance, but this did not
 result in any noticeable speedup.
 
-# High-level status report
+## High-level status report
 
 - Finish the UTxO HD prototype: on track.
   - We focused on increasing test coverage for the UTxO-HD prototype:
@@ -33,15 +33,15 @@ result in any noticeable speedup.
   - We investigated the overhead introduced by non-ChainSync components, but no
     conclusions could be drawn from the benchmarks we ran.
 
-# Workstreams
+## Workstreams
 
-## Finish the UTxO HD prototype
+### Finish the UTxO HD prototype
 
 During the past two weeks, we focused on increasing test coverage for the
 UTxO-HD prototype. We also merged the [mempool
 rewrite](https://github.com/input-output-hk/ouroboros-network/pull/4049).
 
-### Era transition property tests
+#### Era transition property tests
 
 We started implementing [Cardano era transition property
 tests](https://github.com/input-output-hk/ouroboros-network/issues/4043),
@@ -55,7 +55,7 @@ important transitions.
 We have tests for the Byron to Shelley transitions. We are working on adding
 the remaining ones.
 
-### Mempool state-machine tests
+#### Mempool state-machine tests
 
 We started implementing [state-machine property tests for the
 mempool](https://github.com/input-output-hk/ouroboros-network/issues/4044).
@@ -67,7 +67,7 @@ ledger state with tables. These needs led to the creation of a new set of
 property tests. In particular we aim to run parallel state-machine tests that
 exercise the mempool in a way similar to how the node would make use of it.
 
-### Backing store property tests
+#### Backing store property tests
 
 We started working on [state-machine tests for the backing
 store](https://github.com/input-output-hk/ouroboros-network/pull/4081) that UTxO
@@ -76,7 +76,7 @@ of the LMDB backing store. To facilitate fixing this bug, we made
 [changes](https://github.com/input-output-hk/lmdb-simple/pull/1) to the Haskell
 LMDB bindings.
 
-## Benchmarking the CSJ prototype
+### Benchmarking the CSJ prototype
 
 Prompted by previous benchmarks showing significant improvements in sync time by
 using more capabilities, we implemented a way to spread out the ChainSync

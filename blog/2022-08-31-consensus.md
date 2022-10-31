@@ -6,7 +6,7 @@ tags: [consensus]
 hide_table_of_contents: false
 ---
 
-# Executive summary
+## Executive summary
 
 - We did most of the heavy lifting required to integrate the Conway era.
 - We have property tests for the UTxO HD backing store API implementations. A
@@ -21,9 +21,9 @@ hide_table_of_contents: false
 - We elaborated a draft specification for the Genesis implementation and
   `ChainSync` jumping optimization.
 
-# Workstreams
+## Workstreams
 
-## Conway
+### Conway
 
  - Integration PR of the minimal Conway era ([Issue #3963][issue-3962], [PR
    #3971][pull-3971]).
@@ -32,7 +32,7 @@ hide_table_of_contents: false
    issue was raised, which does not block the integration of the Conway era
    ([Issue #3976][issue-3976]).
 
-## UTxO HD
+### UTxO HD
 
 - [Issue #3954][issue-3954], [branch][branch-3954]: The functionality of a
   backing store, which is the interface to the on-disk part of ledger state in
@@ -219,7 +219,7 @@ hide_table_of_contents: false
   * Improvement factor: `0.25`
   * Speedup : `1 / 0.25 ~= 4`
 
-## Genesis
+### Genesis
 
  - We elaborated a draft of the specification of the Genesis implementation and
    the ChainSync Jumping optimization. In particular, this includes a proof
@@ -235,7 +235,7 @@ hide_table_of_contents: false
  - We continued working on the "happy path" `ChainSync` Jumping prototype ([Issue
    3960][issue-3960]).
 
-## Technical debt
+### Technical debt
 
  - We started working on the issues required to re-enable nightly CI runs..
    Nightly CI runs have far more lax time constraints, which gives the option to
