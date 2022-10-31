@@ -21,3 +21,27 @@ JaredCorduan:
   title: Ledger Team Lead
   url: https://github.com/JaredCorduan
   image_url: https://github.com/JaredCorduan.png
+
+kderme:
+  name: Kostas Dermentzis
+  title: Cardano DB-Sync Software Engineer
+  url: https://github.com/kderme
+  image_url: https://github.com/kderme.png
+
+Jimbo4350:
+  name: Jordan Millar
+  title: Node Team Lead
+  url: url: https://github.com/Jimbo4350
+  image_url: url: https://github.com/Jimbo4350.png
+
+iquerejeta:
+  name: Iñigo Querejeta Azurmendi
+  title: Cardano Lead Cryptography Engineer
+  url: https://github.com/iquerejeta
+  image_url: https://github.com/iquerejeta.png
+
+manveru:
+  name: Michael Fellinger
+  title: SRE Team Lead
+  url: https://github.com/manveru
+  image_url: https://github.com/manveru.png
