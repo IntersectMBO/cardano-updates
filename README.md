@@ -27,10 +27,13 @@ hide_table_of_contents: false
 ---
 ```
 
-Each post should also start with a `# High level summary` section that will be
+Each post should also start with a `## High level summary` section that will be
 used by technical writers to share information with the general public.  The
 better suited this section is for the technical writers, the less chance there
 is for misinformation. It should ideally be one short paragraph.
+
+Note that docusourus accepts headers of level `>= 2`, otherwise the initial
+header is lost.
 
 Avoid using links which are not publicly accessible.
 
