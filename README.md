@@ -10,7 +10,7 @@ static website generator.
 
 ## Usage
 
-To add an update create a file under `posts` directory which name is:
+To add an update create a file under `blog` directory which name is:
 `yyyy-mm-dd-TEAM.md`. Commit and push.  The site will be built and deployed by a
 [github-action](https://github.com/input-output-hk/cardano-updates/actions).
 
