@@ -1,7 +1,7 @@
 ---
 title: System Test Team Update
 slug: 2022-11-02-system-test
-authors: Dorin Solomon
+authors: dorin100
 tags: [system-test]
 hide_table_of_contents: false
 ---
