@@ -111,5 +111,5 @@ that the CS fragment tip is not progressing for significant periods
 We [clarified](https://github.com/input-output-hk/ouroboros-network/pull/4098) a
 common source of confusion around VRF tie-breaking and cross-era chain
 selection. This PR involved correcting potentially misleading names of
-VRF-related functions, and providing context for rhy a particular VRF value is
+VRF-related functions, and providing context for a particular VRF value is
 used for tie-breaking.
