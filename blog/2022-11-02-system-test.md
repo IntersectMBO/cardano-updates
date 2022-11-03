@@ -6,10 +6,9 @@ tags: [system-test]
 hide_table_of_contents: false
 ---
 
-## System Test Update
+## High level summary
 
 We have been focused on:
-
 * Fully opening our test results (on top of the existing tests & tools):  
   See [cardano-node-tests webpage](https://input-output-hk.github.io/cardano-node-tests/).
 * Started to test and automate the new functionalities added in the `1.35.4-rc1` node tag  
