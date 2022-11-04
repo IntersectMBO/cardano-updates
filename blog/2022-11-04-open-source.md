@@ -39,7 +39,7 @@ a new look & feel!  It's using [docusaurus.io][docusaurus].
 
 
 Christian Taylor carried recently a detailed analysis of our open-source
-repositories.  He collected many interesting metrics.  It allows us to see
+repositories.  He collected many interesting metrics, which allows us to see
 where we need to improve as an open-source project to make the Cardano project
 and many smaller related libraries which we maintain be more open and available
 for open-source contributors.
