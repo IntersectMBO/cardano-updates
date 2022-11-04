@@ -28,12 +28,21 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" postCtx
             >>= relativizeUrls
 
+    match "quarterly/*" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/post.html"    postCtx
+            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= relativizeUrls
+
     create ["archive.html"] $ do
         route idRoute
         compile $ do
+            quarterlyPosts <- recentFirst =<< loadAll "quarterly/*"
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
+                    listField "quarterly" postCtx (return quarterlyPosts) `mappend`
                     constField "title" "Archives"            `mappend`
                     defaultContext
 
@@ -47,8 +56,10 @@ main = hakyll $ do
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
+            quarterlyPosts <- recentFirst =<< loadAll "quarterly/*"
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
+                    listField "quarterly" postCtx (return quarterlyPosts) `mappend`
                     defaultContext
 
             getResourceBody

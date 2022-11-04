@@ -1,0 +1,65 @@
+dnadales:
+  name: Damian Nadales
+  title: Consensus Team Lead
+  url: https://github.com/dnadales
+  image_url: https://github.com/dnadales.png
+
+ch1bo:
+  name: Sebastian Nagel
+  title: Hydra Team Lead
+  url: https://github.com/ch1bo
+  image_url: https://github.com/ch1bo.png
+
+coot:
+  name: Marcin Szamotulski
+  title: Network Team Lead
+  url: https://github.com/coot
+  image_url: https://github.com/coot.png
+
+JaredCorduan:
+  name: Jared Corduan
+  title: Ledger Team Lead
+  url: https://github.com/JaredCorduan
+  image_url: https://github.com/JaredCorduan.png
+
+kderme:
+  name: Kostas Dermentzis
+  title: Cardano DB-Sync Software Engineer
+  url: https://github.com/kderme
+  image_url: https://github.com/kderme.png
+
+Jimbo4350:
+  name: Jordan Millar
+  title: Node Team Lead
+  url: https://github.com/Jimbo4350
+  image_url: https://github.com/Jimbo4350.png
+
+iquerejeta:
+  name: Iñigo Querejeta Azurmendi
+  title: Cardano Lead Cryptography Engineer
+  url: https://github.com/iquerejeta
+  image_url: https://github.com/iquerejeta.png
+
+manveru:
+  name: Michael Fellinger
+  title: SRE Team Lead
+  url: https://github.com/manveru
+  image_url: https://github.com/manveru.png
+
+deepfire:
+  name: Serge Kosyrev
+  title: Performance and Tracing Team Lead
+  url: https://github.com/deepfire
+  image_url: https://github.com/deepfire.png
+
+dorin100:
+  name: Dorin Solomon
+  title: System Test Team Lead
+  url: https://github.com/dorin100
+  image_url: https://github.com/dorin100.png
+
+disassembler:
+  name: Samuel Leathers
+  title: Service Reliability Manager
+  url: https://github.com/disassembler
+  image_url: https://github.com/disassembler.png
