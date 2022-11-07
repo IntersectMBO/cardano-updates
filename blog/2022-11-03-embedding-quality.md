@@ -1,5 +1,5 @@
 ---
-title: System Test Team Update
+title: Embedding Quality Workstream
 slug: 2022-11-03-embedding-quality
 authors: dorin100
 tags: [embedding-quality]
