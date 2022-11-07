@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const editUrl = 'https://github.com/input-output-hk/cardano-updates/tree/main/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -18,16 +19,29 @@ const config = {
   organizationName: 'input-output-hk', // Usually your GitHub org/user name.
   projectName: 'cardano-updates', // Usually your repo name.
 
+  plugins: [
+    [
+      'content-blog',
+      /** @type {import('@docusaurus/plugin-content-blog').Options} */
+      {
+        id: 'quarterly',
+        routeBasePath: 'quarterly',
+        path: 'quarterly',
+        authorsMapPath: 'authors.yml',
+        editUrl
+      },
+    ],
+  ],
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: {
+          id: 'updates',
           routeBasePath: '/',
           showReadingTime: true,
-          editUrl:
-            'https://github.com/input-output-hk/cardano-updates/tree/main/',
+          editUrl,
           blogTitle: 'Cardano Development Updates',
           blogDescription: 'Regular updates from Cardano Development Teams',
           postsPerPage: 5,
@@ -53,11 +67,12 @@ const config = {
       navbar: {
         title: 'Cardano Updates',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Cardano Logo',
           src: 'img/logo.svg',
         },
         items: [
           { to: '/', label: 'Home', position: 'right' },
+          { to: '/quarterly', label: 'Quarterly', position: 'right' },
           {
             type: 'dropdown',
             to: 'tags',
@@ -71,6 +86,7 @@ const config = {
               { to: 'tags/hydra', label: 'Hydra' },
               { to: 'tags/db-sync', label: 'DB Sync' },
               { to: 'tags/cli-api', label: 'Node CLI & API' },
+              { to: 'quarterly/tags/cli-api-quarterly', label: 'Node CLI & API Quarterly' },
               { to: 'tags/crypto', label: 'Crypto' },
             ],
           },
@@ -96,25 +112,22 @@ const config = {
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Blog',
-            items: [
-              {
-                label: 'Home',
-                to: '/',
-              },
-              {
-                label: 'Archive',
-                to: 'archive',
-              },
-              {
-                label: 'Tags',
-                to: 'tags',
-              },
-            ],
+        links: [{
+          title: 'Blog',
+          items: [{
+            label: 'Home',
+            to: '/',
           },
-        ],
+          {
+            label: 'Archive',
+            to: 'archive',
+          },
+          {
+            label: 'Tags',
+            to: 'tags',
+          },
+          ],
+        },],
         copyright: `Copyright © ${new Date().getFullYear()} Input Output Global, Inc. Built with Docusaurus.`,
       },
       prism: {
