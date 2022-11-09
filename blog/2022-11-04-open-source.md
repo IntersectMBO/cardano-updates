@@ -30,7 +30,9 @@ work streams:
 
 We identifies a number of libraries across all the teams which contribute to
 _Cardano_ which we would like publish to publish, see the following
-[link][publish-on-hackage].  The networking team is slowly progressing towards
+[link][publish-on-hackage].  Arnauld Bailly recently published
+[`quickcheck-dynamic`](https://hackage.haskell.org/package/quickcheck-dynamic)
+library on Hackage.  The networking team is slowly progressing towards
 publishing [io-sim][io-sim] and related packages, checkout the progress
 [here](https://github.com/orgs/input-output-hk/projects/19/views/24).
 
