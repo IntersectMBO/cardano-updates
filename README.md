@@ -1,4 +1,4 @@
-# Cardano Development Updates
+# [Cardano Development Updates][cardano-updates]
 
 This repository will host updates from the
 [cardano](https://github.com/input-output-hk/cardano-node) development teams.
@@ -106,3 +106,5 @@ Not using SSH:
 ```
 $ GIT_USER=<Your GitHub username> yarn deploy
 ```
+
+[cardano-updates]: https://input-output-hk.github.io/cardano-updates
