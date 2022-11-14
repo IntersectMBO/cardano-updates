@@ -1,0 +1,122 @@
+#!/usr/bin/env python3
+
+import argparse
+from datetime import datetime
+import os
+import pathlib
+import yaml
+
+
+STUB = '''---
+title: {team_cap} Team Update
+slug: {timestamp}-{team}
+authors: {github_handle}
+tags: [ledger]
+hide_table_of_contents: false
+---
+
+{header}
+
+{links}
+'''
+
+
+def get_root_dir():
+    return pathlib.Path(__file__).absolute().parent.parent
+
+
+def make_filename(team, timestamp, quarterly):
+    directory_name = 'quarterly' if quarterly else 'blog'
+    filename = '{}-{}.md'.format(timestamp, team)
+    return os.path.join(get_root_dir(), directory_name, filename)
+
+
+def get_authors():
+    filename = os.path.join(get_root_dir(), 'blog', 'authors.yml')
+    with open(filename, "r") as f:
+        try:
+            return yaml.safe_load(f).keys()
+        except yaml.YAMLError as exc:
+            print(exc)
+
+
+def get_header(quarterly):
+    if quarterly:
+        return '## {} Quarterly Update'.format(team.capitalize())
+    else:
+        return '## High level summary'
+
+
+IOHK_GITHUB_LINK = 'https://github.com/input-output-hk'
+ISSUE_LINK = '[issue-{num}]: ' + IOHK_GITHUB_LINK + '/{repo}/issues/{num}'
+PR_LINK = '[pull-{num}]: ' + IOHK_GITHUB_LINK + '/{repo}/pull/{num}'
+
+
+def make_links(args):
+
+    def make_links_generic(template, numbers):
+        return [template.format(num=n, repo=args.repo) for n in numbers]
+
+    if args.issue or args.pull:
+        if args.repo:
+            ilinks = make_links_generic(ISSUE_LINK, args.issue)
+            plinks = make_links_generic(PR_LINK, args.pull)
+            return '\n'.join(ilinks + plinks)
+        else:
+            parser.error("--issue and --pull require --repo")
+    return ''
+
+
+def write_stub(github_handle, filename, team, timestamp, quarterly, links):
+    args = {'github_handle': github_handle,
+            'team': team,
+            'team_cap': team.capitalize(),
+            'timestamp': timestamp,
+            'github_handle': github_handle,
+            'header': get_header(quarterly),
+            'links': links
+            }
+    with open(filename, 'w') as f:
+        f.write(STUB.format(**args))
+
+
+EXAMPLES = '''
+Simple example:
+$ ./newpost -t ledger -g JaredCorduan
+
+Quarterly example with one issue link and two pull request links:
+$ ./newpost -q -t ledger -g JaredCorduan -r cardano-ledger -i 42 -p 98 -p 99
+'''
+
+parser = argparse.ArgumentParser(
+    description='Create a stub for a new post.',
+    formatter_class=argparse.RawDescriptionHelpFormatter,
+    epilog=EXAMPLES)
+parser.add_argument(
+    '-t', '--team', required=True,
+    help='team name')
+parser.add_argument(
+    '-g', '--github_handle', required=True, choices=get_authors(),
+    metavar='GITHUB_USER',  # suppress large output
+    help='author\'s github handle from authors.yml')
+parser.add_argument(
+    '-q', '--quarterly', action='store_true',
+    help='create a quarterly stub instead of a normal post')
+parser.add_argument(
+    '-r', '--repo',
+    help='repository name, used for links (assumed to be in the IOHK group)')
+parser.add_argument(
+    '-i', '--issue', action='append', default=[],
+    help='issue number, used with --repo to create links')
+parser.add_argument(
+    '-p', '--pull', action='append', default=[],
+    help='pull request number, used with --repo to create links')
+args = parser.parse_args()
+
+team = args.team.lower()
+timestamp = datetime.now().strftime('%Y-%m-%d')
+quarterly = bool(args.quarterly)
+filename = make_filename(team, timestamp, quarterly)
+write_stub(
+    args.github_handle, filename, team, timestamp, quarterly, make_links(args))
+print('Created', filename)

@@ -41,6 +41,11 @@ Avoid using links which are not publicly accessible.
 
 As per the [docusaurus blog](https://docusaurus.io/docs/blog#blog-post-authors) documentation, authors for a given blog post are provided as a YAML structure defining various properties. This can become cumbersome over time so there's a builtin mechanism to have an author's properties been defined once and then reused everywhere. Check the [blog/authors.yml](./blog/authors.yml) for examples.
 
+### New post script
+
+There is a script named `newpost` in the root directory that will create a stub for a new post.
+See `./scripts/newpost --help` for details.
+
 ## Workflow
 
 Each team is welcome to use whatever workflow that they prefer.  The options
