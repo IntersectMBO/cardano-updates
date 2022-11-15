@@ -37,8 +37,8 @@ result in any noticeable speedup.
 
 ### Finish the UTxO HD prototype
 
-During the past two weeks, we focused on increasing test coverage for the
-UTxO-HD prototype. We also merged the [mempool
+We focused on increasing test coverage for the UTxO HD prototype. We also merged
+the [mempool
 rewrite](https://github.com/input-output-hk/ouroboros-network/pull/4049).
 
 #### Era transition property tests
