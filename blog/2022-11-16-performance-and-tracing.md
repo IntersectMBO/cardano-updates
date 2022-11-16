@@ -1,7 +1,7 @@
 ---
 title: Performance & tracing update
 slug: 2022-11-16-performance-and-tracing
-authors: deepfire, mgmeier
+authors: deepfire
 tags: [performance-tracing]
 hide_table_of_contents: false
 ---
