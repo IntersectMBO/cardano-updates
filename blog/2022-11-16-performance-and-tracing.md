@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 ## High level summary
 
-1. P2P performance investigation is ongoing, in collaboration with the networking team.
+1. P2P performance investigation is ongoing, in support of the networking team.
 2. SECP benchmarking enablement is underway: we already have the script and are working on Plutus V2 generation support.
 3. Unexpected setback in the new tracing system:  full scale benchmarks have shown a performance regression: local chain syncing benchmarks were an improvement over legacy tracing.
 4. On the open sourcing front we added an integrated data dictionary, which is necessary for explaining ourselves to the world.  SRE collaboration on production deployment of performance data publishing has started.
@@ -21,7 +21,7 @@ We are supporting the networking team on P2P performance investigation.  Generat
 
 ## Tracing
 
-We ran an initial round of full-scale benchmarks for the new tracing system -- which uncovered a regression to legacy tracing, which is contrary to the local chain syncing benchmarks, that showed improvement instead.  We added tracing to cardano-tracer, fixing some minor bugs on the way.  Network and disk IO metrics are now collected once again and is integrated into analysis.
+We ran an initial round of full-scale benchmarks for the new tracing system -- which uncovered a regression relative to legacy tracing, which is contrary to the local chain syncing benchmarks, that showed improvement instead.  We added tracing to cardano-tracer, fixing some minor bugs on the way.  Network and disk IO metrics are now collected once again and are integrated into analysis.
 
 ## Infrastructure
 
