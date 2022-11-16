@@ -1,6 +1,6 @@
 ---
 title: Consensus Team Update
-slug: 2022-10-16-consensus
+slug: 2022-11-16-consensus
 authors: dnadales
 tags: [consensus]
 hide_table_of_contents: false
