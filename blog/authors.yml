@@ -63,3 +63,9 @@ disassembler:
   title: Service Reliability Manager
   url: https://github.com/disassembler
   image_url: https://github.com/disassembler.png
+
+mgmeier:
+  name: Michael Karg
+  title: Performance and Tracing Engineer
+  url: https://github.com/mgmeier
+  image_url: https://github.com/mgmeier.png
