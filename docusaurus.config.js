@@ -32,6 +32,15 @@ const config = {
       },
     ],
   ],
+
+  scripts: [
+    {
+      src: 'https://plausible.io/js/script.js',
+      defer: true,
+      'data-domain': 'input-output-hk.github.io/cardano-updates'
+    }
+  ],
+
   presets: [
     [
       'classic',
