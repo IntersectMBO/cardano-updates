@@ -8,14 +8,26 @@ hide_table_of_contents: false
 
 ## High level summary
 
-## High-level status report
+During the past two weeks, the consensus team merged improvements to the monadic
+cursor API that was needed to implement LMDB range reads, which is in turn
+required for the implementation of the UTxO HD feature. We added tables to
+several tests in for the UTxO HD feature, which increases our confidence in the
+correctness of the prototype. The mempool property tests are close to being
+completed. Also, we finished the LSM tree tuning algorithm.
+
+On the Genesis front we started simplifying the BlockFetch logic with
+CSJ-specific workloads in mind. 
+
+We are also documenting the Block Diffusion Pipelining feature, and added a
+high-level overview of consensus to the top level documentation of
+`ouroboros-network`.
 
 ## Workstreams
 
 ### UTxO HD prototype
 
 We merged the implementation of a monadic cursor API ([#1][pull-1])) which was
-needed to solve a bug with LMDB reads. After this PR was merged, we focused on
+needed to solve a bug with LMDB range-reads. After this PR was merged, we focused on
 bridging the gap between the `lmdb-simple` interface and consensus by facilitating
 using `lmdb-simple`'s cursor API without `Serialise` constraints ([#3][pull-3]).
 
