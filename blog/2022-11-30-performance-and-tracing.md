@@ -10,9 +10,9 @@ hide_table_of_contents: false
 
 1. Benchmarks for the 1.36 first pre-release bump of the internal components have been delivered, and data shows the component bump is clear for release.
 2. SECP benchmarking enablement is underway:  the necessary generator features have been implemented, and are now being integrated into the workbench.
-2. The new tracing system:  in response to the performance regression we previously discovered we are working on pre-planned implementation improvements, and doing more benchmarks.
-3. Infrastructure:  the Nomad-based workbench backend has been made closer to a cloud deployment scenario.  Cleanup in preparation for Cicero CI/CD integration started.
-4. Open sourcing:  ongoing SRE collaboration on production deployment of performance data publishing.
+3. The new tracing system:  in response to the performance regression we previously discovered we are working on pre-planned implementation improvements, and doing more benchmarks.
+4. Infrastructure:  the Nomad-based workbench backend has been made closer to a cloud deployment scenario.  Cleanup in preparation for Cicero CI/CD integration started.
+5. Open sourcing:  ongoing SRE collaboration on production deployment of performance data publishing.
 
 ## Performance
 
