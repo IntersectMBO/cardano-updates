@@ -11,7 +11,7 @@ STUB = '''---
 title: {team_cap} Team Update
 slug: {timestamp}-{team}
 authors: {github_handle}
-tags: [ledger]
+tags: [{team}]
 hide_table_of_contents: false
 ---
 
