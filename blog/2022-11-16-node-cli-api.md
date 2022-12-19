@@ -1,3 +1,11 @@
+---
+title: Node API & CLI Team Update
+slug: 2022-11-16-node-cli-api
+authors: Jimbo4350
+tags: [cli-api]
+hide_table_of_contents: false
+---
+
 # Node-Api-Cli Update
 # 2022-11-16 - 2022-11-29
 
