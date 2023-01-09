@@ -41,6 +41,8 @@ PRs merged in this sprint focused on clean up and resolving existing issues. The
 - [Handle pipes in cardano-cli](https://github.com/input-output-hk/cardano-node/pull/4625)
 - [Fully remove the cli intermediate TxBody format](https://github.com/input-output-hk/cardano-node/pull/4713)
 - [Render consistent plutus script failure output](https://github.com/input-output-hk/cardano-node/pull/4659)
+- [Read network ID from environment](https://github.com/input-output-hk/cardano-node/pull/4666)
+- [CLI option to append additional signatures to a transactions](https://github.com/input-output-hk/cardano-node/pull/4647)
 
 ### cardano-api
 - [Make TxBodyContent an instance of Monoid](https://github.com/input-output-hk/cardano-node/pull/4458)
@@ -51,3 +53,5 @@ PRs merged in this sprint focused on clean up and resolving existing issues. The
 - [Stop running CI when the only changes are to docs](https://github.com/input-output-hk/cardano-node/pull/4263)
 - [Rename TestEnableDevelopmentHardForkEras](https://github.com/input-output-hk/cardano-node/pull/4341)
 
+### cardano-testnet
+- [Cleanup exports of cardano-testnet](https://github.com/input-output-hk/cardano-node/pull/4636)
