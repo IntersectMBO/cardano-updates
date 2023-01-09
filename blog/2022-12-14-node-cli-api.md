@@ -17,7 +17,23 @@ PRs merged in this sprint focused on clean up and resolving existing issues. The
 
 ### docs
 
+- [Move style guide to wiki](https://github.com/input-output-hk/cardano-node/pull/4703)
+
+### CI & project maintenance
+
+- [Cache secp256k1](https://github.com/input-output-hk/cardano-node/pull/4734)
+- [Use cabal-cache](https://github.com/input-output-hk/cardano-node/pull/4717)
+- [build(deps): bump certifi from 2020.4.5.2 to 2022.12.7 in /doc/.sphinx](https://github.com/input-output-hk/cardano-node/pull/4699)
+- [Update cabal.project](https://github.com/input-output-hk/cardano-node/pull/4724)
+
+### Developer experience
+
+- [Add aarch64-darwin to nix-shell](https://github.com/input-output-hk/cardano-node/pull/4125)
+
 ### cardano-cli
+- [Remove cardano-cli address build-script](https://github.com/input-output-hk/cardano-node/pull/4700)
+- [Improved error message for failed asset name decode](https://github.com/input-output-hk/cardano-node/pull/4626)
+- [Optimise query leadership schedule command](https://github.com/input-output-hk/cardano-node/pull/4250)
 - [Remove cardano-cli address build-script](https://github.com/input-output-hk/cardano-node/pull/4700)
 
 ### cardano-api
@@ -27,8 +43,12 @@ PRs merged in this sprint focused on clean up and resolving existing issues. The
 
 ### cardano-testnet
 - [Only run chairman test on latest era](https://github.com/input-output-hk/cardano-node/pull/4712)
+- [Add fix and test for `foldBlocks`](https://github.com/input-output-hk/cardano-node/pull/4679)
 
 ## In Progress
+
+## CI & project mainteance
+- [Copyright updates](https://github.com/input-output-hk/cardano-node/pull/4755)
 
 ### cardano-cli
 - [BUGFIX]- [Stop the cli from changing the bytes in user-supplied data](https://github.com/input-output-hk/cardano-node/pull/4537)
@@ -41,6 +61,7 @@ PRs merged in this sprint focused on clean up and resolving existing issues. The
 - [Handle pipes in cardano-cli](https://github.com/input-output-hk/cardano-node/pull/4625)
 - [Fully remove the cli intermediate TxBody format](https://github.com/input-output-hk/cardano-node/pull/4713)
 - [Render consistent plutus script failure output](https://github.com/input-output-hk/cardano-node/pull/4659)
+- [Cardano ping](https://github.com/input-output-hk/cardano-node/pull/4664)
 
 ### cardano-api
 - [Make TxBodyContent an instance of Monoid](https://github.com/input-output-hk/cardano-node/pull/4458)
@@ -50,4 +71,3 @@ PRs merged in this sprint focused on clean up and resolving existing issues. The
 ### cardano-node
 - [Stop running CI when the only changes are to docs](https://github.com/input-output-hk/cardano-node/pull/4263)
 - [Rename TestEnableDevelopmentHardForkEras](https://github.com/input-output-hk/cardano-node/pull/4341)
-
