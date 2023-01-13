@@ -57,6 +57,9 @@ integration tests and system-level benchmarks.
 
 #### Tech debt
 
+- Fix property-test failures concerning iterators ([#3999][issue-3999] and
+  [#4183][issue-4183]).
+
 #### Fostering collaboration
 
 ### Risks 
@@ -77,3 +80,6 @@ integration tests and system-level benchmarks.
   we need to clearly communicate that this is necessary to ensure that as the
   blockchain size grows, the node can operate within reasonable memory
   constraints.
+
+[issue-4183]: https://github.com/input-output-hk/ouroboros-network/issues/4183
+[issue-3999]: https://github.com/input-output-hk/ouroboros-network/issues/3999
