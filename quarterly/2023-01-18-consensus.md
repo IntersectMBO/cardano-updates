@@ -64,8 +64,8 @@ cases.
 
 #### Genesis
 
-- Continued benchmarking of the ChainSync jumping prototype.
-- Expanding and testing self-contained Genesis implementation, in particular
+- Continue benchmarking of the ChainSync jumping prototype.
+- Expand and test self-contained Genesis implementation, in particular
   using the existing chain generator from the previous Genesis simulator.
 
 #### Tech debt
