@@ -20,6 +20,15 @@ integration tests and system-level benchmarks.
 
 #### Genesis
 
+We identified and fixed a slowdown in cross-era forecasting that was inhibiting
+our efforts to benchmark the ChainSync Jumping prototype. This resulted in a 7%
+speedup in full sync times in the baseline.
+
+We also started prototyping a self-contained implementation of the Genesis
+dynamics (in particular of the parts intentionally not part of the ChainSync
+Jumping prototype) that furthered our understanding of subtleties and edge
+cases.
+
 #### Conway era
 
 #### Technical debt
@@ -54,6 +63,10 @@ integration tests and system-level benchmarks.
 - Run integration tests and system-level benchmarks.
 
 #### Genesis
+
+- Continued benchmarking of the ChainSync jumping prototype.
+- Expanding and testing self-contained Genesis implementation, in particular
+  using the existing chain generator from the previous Genesis simulator.
 
 #### Tech debt
 
