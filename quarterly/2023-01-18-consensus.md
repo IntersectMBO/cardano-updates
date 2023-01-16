@@ -68,6 +68,11 @@ cases.
 - Expand and test self-contained Genesis implementation, in particular
   using the existing chain generator from the previous Genesis simulator.
 
+#### Support
+
+- Help the Network team with diagnosing performance regression in block
+  production.
+
 #### Tech debt
 
 - Fix property-test failures concerning iterators ([#3999][issue-3999] and
