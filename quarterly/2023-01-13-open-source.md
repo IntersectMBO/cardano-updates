@@ -14,7 +14,7 @@ hide_table_of_contents: false
 In the last quarter the open-source initiative delivered a comprehensive report
 on the state of our repositories.  As part of this work stream we
 identified the key open-source repositories for the cardano project across all
-the projects.  From a list of more than 500 repositories (some of which are
+the projects  From a list of more than 500 repositories (some of which are
 forks) we identified key repositories which constitute the core of Cardano.
 20 of them were identified as to be transferred to the future MBO which will
 govern Cardano development.  Some where excluded (like [`io-sim`] and
@@ -28,7 +28,8 @@ them.  This includes adding or improving various documentation files, like
 `CONTRIBUTING` files, adding code of conduct, improving readme files, issue
 & pull request templates etc.  Christian also computed various interesting
 metrics which gives a very good insight into the development practices: e.g.
-average merge ratio, average number of reviews, comments and many more!
+average merge ratio, average number of reviews, comments and many more!  The
+presentation is available [here][open-source-presentation].
 
 We followed with work on the [Cardano Engineering Handbook][CEH].  We included
 a standard code of conduct which is now used by most important projects in the
@@ -77,3 +78,4 @@ The progress of the open-source project is tracked in [this project][open-source
 [`ouroboros-network`]: https://github.com/input-output-hk/ouroboros-network
 [`quickcheck-dynamic`]: https://hackage.haskell.org/package/quickcheck-dynamic
 [`typed-protocols`]: https://github.com/input-output-hk/typed-protocols
+[open-source-presentation]: https://docs.google.com/presentation/d/127IFEavlrZeeoFrVXFYWzSt0ugOkSL7isxjyM1vmMzQ
