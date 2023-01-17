@@ -38,6 +38,9 @@ cases.
 
 #### Conway era
 
+- PR went through its second review round. It is about to be merged, but it got
+  delayed due to people's availability during Christmas break.
+
 #### Technical debt
 
 - We improved the capabilities of our `io-sim` library, which is key for testing
