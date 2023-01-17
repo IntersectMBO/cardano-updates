@@ -29,6 +29,13 @@ dynamics (in particular of the parts intentionally not part of the ChainSync
 Jumping prototype) that furthered our understanding of subtleties and edge
 cases.
 
+#### Support
+
+- We worked on designing integration of new VRF and KES crypto into consensus.
+    - `Crypto` class was split into two parts: `Crypto` and `HeaderCrypto`.
+    - With the Ledger team's help, we refactored `cardano-ledger` to use a proxy
+      type for VRF.
+
 #### Conway era
 
 #### Technical debt
@@ -72,6 +79,8 @@ cases.
 
 - Help the Network team with diagnosing performance regression in block
   production.
+- Continue working on integrating new VRF and KES crypto into Conway.
+- [Stretch goal] Adapt KES usage to non-pure interface.
 
 #### Tech debt
 
