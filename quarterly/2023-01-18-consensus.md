@@ -82,8 +82,6 @@ cases.
 
 - Help the Network team with diagnosing performance regression in block
   production.
-- Continue working on integrating new VRF and KES crypto into Conway.
-- [Stretch goal] Adapt KES usage to non-pure interface.
 
 #### Tech debt
 
