@@ -74,9 +74,11 @@ cases.
 
 #### Genesis
 
-- Continue benchmarking of the ChainSync jumping prototype.
-- Expand and test self-contained Genesis implementation, in particular
-  using the existing chain generator from the previous Genesis simulator.
+- Finish benchmarking and tuning the fast-path ChainSync Jumping prototype
+- Expand and optimize the self-contained implementation of the Disconnect Rule
+  (including density comparisons and the LoE)
+- Develop documentation and smoke tests for these components.
+- Start modifying the ChainSync Client for the LoP and LoR.
 
 #### Support
 
