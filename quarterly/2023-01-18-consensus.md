@@ -92,6 +92,8 @@ cases.
 
 #### Fostering collaboration
 
+- Finish [mapping consensus][issue-4145].
+
 ### Risks 
 
 #### UTxO HD
@@ -113,3 +115,4 @@ cases.
 
 [issue-4183]: https://github.com/input-output-hk/ouroboros-network/issues/4183
 [issue-3999]: https://github.com/input-output-hk/ouroboros-network/issues/3999
+[issue-4145]: https://github.com/input-output-hk/ouroboros-network/issues/4145
