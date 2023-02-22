@@ -74,7 +74,7 @@ future.
 
 We released `ouroboros-consensus` 0.2.0.0 and `ouroboros-consensus-cardano`
 0.3.0.0 to CHaP. Remember that we decided to split the packages related to
-Consensus in two bundles, one with the core functionality, Cardano-agnostic
+Consensus into two bundles, one with the core functionality, Cardano-agnostic
 code, and another bundle with instantiations specific to Cardano.
 
 [new-bench-data]: https://github.com/input-output-hk/ouroboros-network/issues/4037#issuecomment-1434745031
