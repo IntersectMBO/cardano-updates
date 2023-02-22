@@ -8,6 +8,25 @@ hide_table_of_contents: false
 
 ## High level summary
 
+During the past two weeks we got the results from the system level benchmarks
+for UTxO HD. They showed a substantial performance regression, so we spent some
+time analyzing the results. We found out the frequency at which ledger snapshots
+were take was too high, so we requested the benchmarking team a new run with a
+more realistic snapshotting policy. We continued refactoring and improving the
+prototype, and we released UTxO HD related packages to CHaP.
+
+We met with IOG researchers and networking specialists to discuss the Genesis
+design, which was well received. We continued working on testing and
+benchmarking different Genesis prototypes.
+
+We are also working on solving a test failure related to iterators. This work
+derived in several improvements such as better documentation, a framework for
+writing unit (and regression) tests, and the possibility to debugging
+`QuickCheck` counter examples in the REPL.
+
+Finally, we released `ouroboros-consensus` 0.2.0.0 and
+`ouroboros-consensus-cardano` 0.3.0.0 to CHaP
+
 ## Workstreams 
 
 ### UTxO HD Prototype 
@@ -23,10 +42,8 @@ mainnet.
 At the same time, we continued refactoring and cleaning up the prototype. 
 
 Also, we prepared the `anti-diff` packages (`fingertree-rm`, `diff-containers`,
-`simple-semigroupoids`) for publication in CHaP. This involved setting up CI,
-documentation, and some refactoring. These packages are now published to
-[CHaP][chap]. Also we published `cardano-lmdb` and `cardano-lmdb-simple` to
-CHaP.
+`simple-semigroupoids`) and the `lmdb` related packages (`cardano-lmdb` and
+`cardano-lmdb-simple`) to [CHaP][chap].
 
 ### Genesis
 
@@ -55,8 +72,10 @@ future.
 
 ### Support
 
-We released `ouroboros-consensus` 0.2.0.0 and ouroboros-consensus-cardano
-0.3.0.0 into CHaP.
+We released `ouroboros-consensus` 0.2.0.0 and `ouroboros-consensus-cardano`
+0.3.0.0 to CHaP. Remember that we decided to split the packages related to
+Consensus in two bundles, one with the core functionality, Cardano-agnostic
+code, and another bundle with instantiations specific to Cardano.
 
 [new-bench-data]: https://github.com/input-output-hk/ouroboros-network/issues/4037#issuecomment-1434745031
 [increased-dequeue-timings]: https://github.com/input-output-hk/ouroboros-network/issues/4037#issuecomment-1439708022
