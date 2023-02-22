@@ -11,7 +11,7 @@ hide_table_of_contents: false
 During the past two weeks we got the results from the system level benchmarks
 for UTxO HD. They showed a substantial performance regression, so we spent some
 time analyzing the results. We found out the frequency at which ledger snapshots
-were take was too high, so we requested the benchmarking team a new run with a
+were taken was too high, so we requested the benchmarking team a new run with a
 more realistic snapshotting policy. We continued refactoring and improving the
 prototype, and we released UTxO-HD related packages to CHaP.
 
@@ -21,7 +21,7 @@ benchmarking different Genesis prototypes.
 
 We are also working on solving a test failure related to iterators. This work
 derived in several improvements such as better documentation, a framework for
-writing unit (and regression) tests, and the possibility to debugging
+writing unit (and regression) tests, and the possibility of debugging
 `QuickCheck` counter examples in the REPL.
 
 Finally, we released `ouroboros-consensus` 0.2.0.0 and
