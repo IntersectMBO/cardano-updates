@@ -13,7 +13,7 @@ for UTxO HD. They showed a substantial performance regression, so we spent some
 time analyzing the results. We found out the frequency at which ledger snapshots
 were take was too high, so we requested the benchmarking team a new run with a
 more realistic snapshotting policy. We continued refactoring and improving the
-prototype, and we released UTxO HD related packages to CHaP.
+prototype, and we released UTxO-HD related packages to CHaP.
 
 We met with IOG researchers and networking specialists to discuss the Genesis
 design, which was well received. We continued working on testing and
