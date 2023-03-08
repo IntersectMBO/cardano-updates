@@ -20,7 +20,7 @@ Genesis prototypes, but also for enriching the tests we already have.
 Regarding technical debt, next to some minor improvements, we created
 component-level micro-benchmarks for adding transactions to the mempool. The
 results of these benchmarks will be published in the `ouroboros-consensus` [web
-page][https://input-output-hk.github.io/ouroboros-consensus/].
+page][oc-web-page].
 
 We also finished moving the Consensus documentation to the `ouroboros-consensus`
 repository, released `ouroboros-consensus` `0.3.0.0`, and reduced the time
@@ -101,3 +101,4 @@ thereby reducing the time CI jobs take.
 [pull-8]: https://github.com/input-output-hk/ouroboros-consensus/pull/8
 [pull-4412]: https://github.com/input-output-hk/ouroboros-network/pull/4412
 [pull-4421]: https://github.com/input-output-hk/ouroboros-network/pull/4421
+[oc-web-page]: https://input-output-hk.github.io/ouroboros-consensus/
