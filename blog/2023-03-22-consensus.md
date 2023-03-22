@@ -11,7 +11,7 @@ hide_table_of_contents: false
 This week the consensus team continued working on the refactoring of the UTxO HD
 prototype, and design and testing of Genesis. We also extracted the `fs-sim`
 package, which provides a file-system abstraction layer that can be used for
-testing and simulation. This makes the Cardano code base smaller, while
+testing and simulation. This makes the Consensus code base smaller, while
 providing a package that the community can reuse and contribute to. We also
 fixed a failing property test related to iterators. We are also working on
 mempool and VRF improvements.
