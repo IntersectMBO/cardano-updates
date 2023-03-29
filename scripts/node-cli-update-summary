@@ -1,0 +1,61 @@
+#!/bin/bash
+
+if [ "$#" -ne 4 ]; then
+  echo "Usage: $0 repository author start_date end_date" >&2
+  echo "Example: $0 input-output-hk/cardano-node newhoggy 2023-02-22 '2023-02-22 +14 days'" >&2
+  exit 1
+fi
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  date_cmd=gdate
+else
+  date_cmd=date
+fi
+
+repository="$1"
+author="$2"
+start_date="$("$date_cmd" -u -d "$3" +"%Y-%m-%dT%H:%M:%SZ")"
+end_date="$("$date_cmd" -u -d "$4" +"%Y-%m-%dT%H:%M:%SZ")"
+
+gh pr list --repo "$repository" \
+  -L 1000 \
+  --state all \
+  --json number,title,author,createdAt,closedAt,mergedAt,baseRefName,url \
+  --author "$author" \
+  > results.json
+
+echo "# Update summary for $start_date to <$end_date"
+
+echo ""
+
+echo "# Work completed this sprint"
+echo ""
+
+cat results.json | jq -r "$(
+cat <<EOF
+  .[]
+  | select(
+      (.baseRefName = "master") and
+      (.createdAt < "$start_date") and
+      ((.closedAt >= "$start_date") and (.closedAt < "$end_date"))
+    )
+  | "- [\(.title)](\(.url)) by \(.author.name)"
+EOF
+)"
+
+echo ""
+
+echo "# Ongoing work"
+echo ""
+
+cat results.json | jq -r "$(
+cat <<EOF
+  .[]
+  | select(
+      (.baseRefName = "master") and
+      (.createdAt < "$end_date") and
+      ((.closedAt == null) or (.closedAt > "$end_date"))
+    )
+  | "- [\(.title)](\(.url)) by \(.author.name)"
+EOF
+)"
