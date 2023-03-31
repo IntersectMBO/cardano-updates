@@ -31,10 +31,22 @@ TODO: we might want to show a plot and-or table with latest ad-hoc benchmarks
 #### Genesis
 
 - We elaborated a roadmap of the remaining work for Genesis.
-- We audited the Genesis design with researchers. The design was well received. We
-  updated the Genesis design with the researcher's feedback.
-- We developed quick check property tests for validating the design. 
-- We continued benchmarking CSJ, we found RESULTS? 
+- We presented the design to the IOG Researchers and PNSol on February 20. The
+  design was well received. We updated the Genesis design with the researcher's
+  feedback.
+    - We plugged the new DoS vector identified during the aforementioned
+      presentation.
+- We developed a generator for adversarial leader schedules, which will be used
+  to test the Genesis design.
+    - The generator enables use of smaller Ouroboros parameters, which makes
+      extrema more likely and counterxamples easier interpret.
+- We stated Ouroboros properties as invariants, and updated the latest design
+  iteration.
+- We continued benchmarking the Chain Sync Jumping prototype. In particular:
+    - We debugged the prototype's performance regression, and unmasked the
+      actual cause by patching our initial theory (bad queuing behavior)
+    - We identified and validated the actual cause (a pathological case in
+      BlockFetch tiebreaker).
 
 #### Support
 
