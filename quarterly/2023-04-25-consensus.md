@@ -36,12 +36,11 @@ TODO: we might want to show a plot and-or table with latest ad-hoc benchmarks
   feedback.
     - We plugged the new DoS vector identified during the aforementioned
       presentation.
-- We developed a generator for adversarial leader schedules, which will be used
-  to test the Genesis design.
+- We developed a generator for adversarial leader schedules that satisfy key
+  Ouroboros properties, which will be used to test the Genesis design.
     - The generator enables use of smaller Ouroboros parameters, which makes
       extrema more likely and counterxamples easier interpret.
-- We stated Ouroboros properties as invariants, and updated the latest design
-  iteration.
+- We wrote up the latest design iteration.
 - We continued benchmarking the Chain Sync Jumping prototype. In particular:
     - We debugged the prototype's performance regression, and unmasked the
       actual cause by patching our initial theory (bad queuing behavior)
