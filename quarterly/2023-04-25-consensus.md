@@ -7,7 +7,7 @@ hide_table_of_contents: false
 ---
 
 ## Consensus Quarterly Update
-## 2023-01 - 2023-03 
+## 2023-01 - 2023-03
 
 ### Main achievements
 
@@ -25,7 +25,7 @@ hide_table_of_contents: false
 - We ran the first system level benchmarks. The performance regressions reported
   were due to an unrealistic snapshotting rate. We need to re-run them again
   after we design a more fine grained locking mechanism.
-  
+
 #### Genesis
 
 - We elaborated a roadmap of the remaining work for Genesis.
@@ -56,12 +56,12 @@ hide_table_of_contents: false
 
 #### Technical debt
 
-- We fixed a bug with followers, which was discovered by property tests. 
+- We fixed a bug with followers, which was discovered by property tests.
 - We developed a DSL for specifying and running ChainDB test cases.
 - We fixed failing tests with iterators.
 - We created micro-benchmarks for adding transactions to the mempool.
 
-#### Fostering collaboration 
+#### Fostering collaboration
 
 - We released a new technical documentation site for consensus.
 - We factored out several packages to external repositories. Some of this work
@@ -79,6 +79,22 @@ hide_table_of_contents: false
     - System-level tests not passing.
     - System-level benchmarks showing poor performance.
 
-#### Fostering collaboration 
+#### Support
+
+- Design Consensus side of hardfork-enactment in the Voltaire phase
+  ([#4180](https://github.com/input-output-hk/ouroboros-network/issues/4180)).
+- TODO Anything we need to plan for new crypto integration?
+
+#### Tech debt
+
+- Check absence of thunks during nightly CI tests
+  ([#3001](https://github.com/input-output-hk/ouroboros-network/issues/3001) and
+  [#4006](https://github.com/input-output-hk/ouroboros-network/issues/4006))
+- Keep backwards compatibility with previous ledger snapshot versions
+  [#4434](https://github.com/input-output-hk/ouroboros-network/issues/4434).
+- Estimate the number of file descriptors Consensus needs
+  [#20](https://github.com/input-output-hk/ouroboros-consensus/issues/20).
+
+#### Fostering collaboration
 
 - Onboard a new team member.
