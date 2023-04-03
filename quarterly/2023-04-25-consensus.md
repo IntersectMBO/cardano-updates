@@ -18,16 +18,14 @@ hide_table_of_contents: false
 - We spent a substantial amount of effort refactoring and cleaning the
   prototype.
 - We audited the UTxO HD prototype to make sure it can accommodate the migration
-  of additional data from memory to disk. The result of the audit was positive.
+  of other tables (eg stake-keys registration) from memory to disk. The result
+  of the audit was positive.
 - We ran ad-hoc benchmarks for reading keys and flushing values to disk. No
   unexpected costs found.
 - We ran the first system level benchmarks. The performance regressions reported
   were due to an unrealistic snapshotting rate. We need to re-run them again
-  AFTER ... CONDITION?
+  after we design a more fine grained locking mechanism.
   
-TODO: we might want to show a plot and-or table with latest ad-hoc benchmarks
-(https://github.com/input-output-hk/ouroboros-network/pull/4295)
-
 #### Genesis
 
 - We elaborated a roadmap of the remaining work for Genesis.
@@ -61,7 +59,7 @@ TODO: we might want to show a plot and-or table with latest ad-hoc benchmarks
 - We fixed a bug with followers, which was discovered by property tests. 
 - We developed a DSL for specifying and running ChainDB test cases.
 - We fixed failing tests with iterators.
-- We created miro-benchmarks for adding transactions to the mempool.
+- We created micro-benchmarks for adding transactions to the mempool.
 
 #### Fostering collaboration 
 
@@ -70,6 +68,16 @@ TODO: we might want to show a plot and-or table with latest ad-hoc benchmarks
   originated in the UTxO HD workstream.
 
 ### Next steps
+
+#### UTxO HD
+
+- We aim at producing a UTxO-HD enabled node that meets the performance
+  requirements of all the stakeholders, and that passes the system-level tests.
+  Successfully achieving this means we will have a version ready to be tested on
+  a production environment (testnet and mainnet).
+  - Risks:
+    - System-level tests not passing.
+    - System-level benchmarks showing poor performance.
 
 #### Fostering collaboration 
 
