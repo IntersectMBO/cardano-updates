@@ -22,5 +22,5 @@ calculations.
 On the support front we released Consensus 0.4, and we are working on improving
 our release process, to support the Cardano-wide efforts in this area. We also
 performed an analysis on the number of file descriptors that consensus use. This
-information can be used be the node operators to check if the number of file
+information can be used by the node operators to check if the number of file
 descriptors they want to support are enough.
