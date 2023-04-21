@@ -71,43 +71,13 @@ hide_table_of_contents: false
 
 #### UTxO HD
 
-- We aim at producing a UTxO-HD enabled node that meets the performance
-  requirements of all the stakeholders, and that passes the system-level tests.
-  Successfully achieving this means we will have a version ready to be tested on
-  a production environment (testnet and mainnet).
-  - Risks:
-    - System-level tests not passing.
-    - System-level benchmarks showing poor performance.
+- https://github.com/input-output-hk/ouroboros-consensus/issues/28
 
 #### Genesis
 
-- On the design front we need to continue eliciting feedback on the latest
-  Genesis design and respond to it.
-- On the prototype front, we plan to:
-    - Define a node-vs-environment test using the new chain generator, for
-      testing today's node. This test should only fail for long-range attacks.
-      (This can be merged independent of Genesis.)
-    - Refine the Genesis prototype to mitigate the attack identified during the
-      Feb 20 meeting with the Researchers (apply the Limit on Eagerness to the
-      intersection of only upstream "Big Ledger" peers instead of all upstream
-      peers).
-    - Loosely integrate the Genesis prototype into the existing node, just
-      enough to use it in the node-vs-environment test, which should then not
-      fail even for long-range attacks.
-    - Troubleshoot the surprises that will arise during that first integration testing.
-    - (Optionally) Enrich the node-vs-environment generator (eg randomized message
-      delays). (This can be merged independent of Genesis.)
-    - (Optionally) Prototype the only not-yet-prototyped component of the
-      Genesis design, the new Limit on Patience timeout in ChainSync. (Its
-      implementation is orthogonal to the rest of Genesis.)
-- On the ChainSync jumping front, we plan to:
-    - Patch or workaround the BlockFetch performance regression.
-    - Determine a testing plan.
-    - Draft a complete design document for CSJ, at least for the MVP of this optimization.
-    - Integrate the MVP into today's node. (This can be merged independent of Genesis.)
-    - (Optionally) start prototyping the full CSJ.
-    - (Optionally) start drafting a document extending the Genesis correctness
-      argument to also scope over its combination with CSJ.
+- https://github.com/input-output-hk/ouroboros-consensus/issues/33
+- https://github.com/input-output-hk/ouroboros-consensus/issues/32
+- https://github.com/input-output-hk/ouroboros-consensus/issues/31
 
 #### Support
 
