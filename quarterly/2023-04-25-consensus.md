@@ -84,6 +84,8 @@ hide_table_of_contents: false
 - Design Consensus side of hardfork-enactment in the Voltaire phase
   ([#4180](https://github.com/input-output-hk/ouroboros-network/issues/4180)).
 - TODO Anything we need to plan for new crypto integration?
+- Estimate the number of file descriptors Consensus needs
+  [#20](https://github.com/input-output-hk/ouroboros-consensus/issues/20).
 
 #### Tech debt
 
@@ -92,8 +94,6 @@ hide_table_of_contents: false
   [#4006](https://github.com/input-output-hk/ouroboros-network/issues/4006))
 - Keep backwards compatibility with previous ledger snapshot versions
   [#4434](https://github.com/input-output-hk/ouroboros-network/issues/4434).
-- Estimate the number of file descriptors Consensus needs
-  [#20](https://github.com/input-output-hk/ouroboros-consensus/issues/20).
 
 #### Fostering collaboration
 
