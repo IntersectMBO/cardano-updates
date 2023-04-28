@@ -83,17 +83,13 @@ hide_table_of_contents: false
 
 - Design Consensus side of hardfork-enactment in the Voltaire phase
   ([#4180](https://github.com/input-output-hk/ouroboros-network/issues/4180)).
-- TODO Anything we need to plan for new crypto integration?
 - Estimate the number of file descriptors Consensus needs
   [#20](https://github.com/input-output-hk/ouroboros-consensus/issues/20).
 
 #### Tech debt
 
-- Check absence of thunks during nightly CI tests
-  ([#3001](https://github.com/input-output-hk/ouroboros-network/issues/3001) and
-  [#4006](https://github.com/input-output-hk/ouroboros-network/issues/4006))
-- Keep backwards compatibility with previous ledger snapshot versions
-  [#4434](https://github.com/input-output-hk/ouroboros-network/issues/4434).
+- Identify Quantitative Timeliness Agreements (QTAs) metrics that we can define
+  for consensus. Pick one and implement benchmarks for it.
 
 #### Fostering collaboration
 
