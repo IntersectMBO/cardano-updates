@@ -45,8 +45,8 @@ cat <<EOF
     , "url": .url
     , "number": .number
     , "mergedAt": .mergedAt
-    , "files": .files | map(.path)
     , "include": "undecided"
+    , "files": .files | map(.path)
     }
   )
 EOF
