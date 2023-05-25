@@ -16,21 +16,25 @@ To use these scripts, follow the instructions below:
 
 1. Run the `download-prs.sh` script by executing the following command:
 
+```bash
 ./scripts/download-prs.sh input-output-hk/cardano-node
-
+```
 
 This script will download the PRs that were merged between two specified dates and . Please note that the end date is exclusive.
 
 2. Execute the `distribute-merged-prs.sh` script using the following command:
 
+```bash
 ./scripts/distribute-merged-prs.sh input-output-hk/cardano-node $dir 2022-06-25 2023-04-18
+```
 
 This script will distribute the downloaded PRs based on the files they have touched in the the directory $dir.
 
 3. Finally, run the `summarise-merged-prs.sh` script by executing the following command:
 
+```bash
 ./scripts/summarise-merged-prs.sh input-output-hk/cardano-node v8.0.0
-
+```
 
 This script will create summaries that can be directly pasted into change logs.
 
