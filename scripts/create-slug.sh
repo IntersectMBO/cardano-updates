@@ -1,9 +1,11 @@
 #!/bin/bash
 
-# Date in the format YYYY-MM-DD
-DATE=$1
 # Author's name
-AUTHOR=$2
+AUTHOR=$1
+# Date in the format YYYY-MM-DD
+DATE=$2
+# Date in the format YYYY-MM-DD
+END_DATE=$3
 
 # Check that both parameters are provided
 if [ -z "$DATE" ] || [ -z "$AUTHOR" ]; then
@@ -12,9 +14,6 @@ if [ -z "$DATE" ] || [ -z "$AUTHOR" ]; then
     echo "author: Author's name"
     exit 1
 fi
-
-# End date calculated as two weeks from the provided date
-END_DATE=$(date -I -d "$DATE + 14 days")
 
 # Filename in the format YYYY-MM-DD-node-cli-api.md
 FILENAME="blog/${DATE}-node-cli-api.md"
@@ -48,3 +47,9 @@ hide_table_of_contents: false
 
 ### cardano-testnet
 EOF
+
+source scripts/download-prs.sh input-output-hk/cardano-node
+
+source scripts/distribute-merged-prs.sh input-output-hk/cardano-node current $DATE $END_DATE
+
+source scripts/summarise-merged-prs.sh input-output-hk/cardano-node current
