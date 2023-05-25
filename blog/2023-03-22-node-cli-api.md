@@ -1,6 +1,6 @@
 ---
 title: Node API & CLI Team Update
-slug: 2023-03-08-node-cli-api
+slug: 2023-03-22-node-cli-api
 authors: Jimbo4350
 tags: [cli-api]
 hide_table_of_contents: false
