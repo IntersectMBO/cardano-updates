@@ -28,7 +28,7 @@ temp_json_file="$(mktemp).json"
 gh pr list --repo "$repository" \
   -L 1000 \
   --state all \
-  --json number,title,author,createdAt,closedAt,files,mergedAt,baseRefName,url \
+  --json number,title,author,createdAt,closedAt,files,mergedAt,baseRefName,url,body \
   > "$temp_json_file"
 
 cat "$temp_json_file" | yq -P > "$out_dir/download.yaml"
