@@ -16,6 +16,12 @@ coot:
   url: https://github.com/coot
   image_url: https://github.com/coot.png
 
+lehins:
+  name: Alexey Kuleshevich
+  title: Ledger Team Software Engineer
+  url: https://github.com/lehins
+  image_url: https://github.com/lehins.png
+
 JaredCorduan:
   name: Jared Corduan
   title: Ledger Team Lead
