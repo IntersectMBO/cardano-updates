@@ -19,3 +19,4 @@ On the UTxO-HD front, we are working on improving the ledger tables design and w
 ## Support
 
 - `fs-sim-0.1.0.2` and `fs-api-0.1.0.2` were released, which makes them now compatible with GHC up to `9.6`.
+- `ouroboros-consensus-0.7.0.0` was released for `cardano-node` `8.1`, including query serialization fixes for backwards compatibility.
