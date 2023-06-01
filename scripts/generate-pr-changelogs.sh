@@ -4,7 +4,8 @@ repository="$1"
 subdir="$2"
 commit_range="$3"
 
-work_dir="gen/$repository"
+root_dir="$HOME/.cardano-updates"
+work_dir="$root_dir/$repository"
 work_subdir="$work_dir/$subdir"
 download_file="$work_dir/download.yaml"
 
@@ -41,11 +42,14 @@ extract_changelog() {
 select_notable() {
   yq -o json \
     | jq -r '
-        if length == 0 then
-          true
-        else
-          .[] | select(.type == "feature" or .type == "bugfix" )
-        end
+          ["feature", "bugfix"] as $notable
+        | if length == 0 then
+            true
+          elif .[0] | [.type] | flatten | any([.] | inside($notable)) then
+            true
+          else
+            halt_error(1)
+          end
       ' \
     > /dev/null 2> /dev/null
 }
@@ -71,7 +75,9 @@ JQ
           | yq -o json \
           | jq -r "$(
               cat <<-JQ
-              .[] | "- \(.description | gsub("^[[:space:]]+|[[:space:]]+$"; "") | gsub("\n"; "\n  "))\n  (\(.type); \(.compatibility))"
+                  .[]
+                | ([.type] | flatten | join(", ")) as \$type_string
+                | "- \(.description | gsub("^[[:space:]]+|[[:space:]]+$"; "") | gsub("\n"; "\n  "))\n  (\(\$type_string); \(.compatibility))"
 JQ
           )"
     else
@@ -83,7 +89,7 @@ JQ
         .[] | select(.number == $pr_number) | "  [PR \(.number)](\(.url))"
 JQ
     )"
-fi
 
-  echo
+    echo
+  fi
 done
