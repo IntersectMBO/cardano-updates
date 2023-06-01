@@ -19,14 +19,20 @@ fi
 
 repository="$1"
 
-out_dir="gen/$repository"
+root_dir="$HOME/.cardano-updates"
+out_dir="$root_dir/$repository"
 
 mkdir -p "$out_dir"
 
 temp_json_file="$(mktemp).json"
 
+# Requires the default repository to be set in gh
+max_pr_number="$(gh pr list --state all --limit 1 --json number | jq '.[0].number // 1000')"
+
+echo "Downloading up to $max_pr_number PRs"
+
 gh pr list --repo "$repository" \
-  -L 1000 \
+  -L "$max_pr_number" \
   --state all \
   --json number,title,author,createdAt,closedAt,files,mergedAt,baseRefName,url,body \
   > "$temp_json_file"
