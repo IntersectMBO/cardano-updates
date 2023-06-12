@@ -24,13 +24,11 @@ end_date="$("$date_cmd" -u -d "$4" +"%Y-%m-%dT%H:%M:%SZ")"
 
 root_dir="$HOME/.cardano-updates"
 out_dir="$root_dir/$repository"
-work_subdir="$work_dir/$subdir"
-download_file="$work_dir/download.yaml"
-filtered_file="$work_subdir/filtered.yaml"
+work_subdir="$out_dir/$subdir"
+download_file="$out_dir/download.yaml"
+filtered_file="$out_dir/filtered.yaml"
 
-mkdir -p "$work_dir"
 mkdir -p "$work_subdir"
-mkdir -p "$work_subdir/detail"
 
 cat "$download_file" | yq -o json | jq -r "$(
 cat <<EOF
@@ -83,7 +81,7 @@ for dir in $(
       | map(select(. == "'$dir'"))
       | (length > 0)
       )
-    )' | yq -P > "$work_subdir/detail/$dir.yaml"
+    )' | yq -P > "$work_subdir/$dir.yaml"
 done
 
 cat "$filtered_file" | yq -o json | jq '
@@ -100,6 +98,6 @@ cat "$filtered_file" | yq -o json | jq '
       | (length > 0)
       )
     )
-    ' | yq -P > "$work_subdir/detail/top.yaml"
+    ' | yq -P > "$work_subdir/top.yaml"
 
-echo "Output generated in $work_subdir/detail"
+echo "Output generated in $work_subdir"

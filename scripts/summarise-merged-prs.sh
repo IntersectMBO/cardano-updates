@@ -18,12 +18,9 @@ subdir="$2"
 
 root_dir="$HOME/.cardano-updates"
 out_dir="$root_dir/$repository"
-work_subdir="$work_dir/$subdir"
-detail_dir="$work_subdir/detail"
-summary_dir="$work_subdir/summary"
+detail_dir="$out_dir"
+summary_dir="$out_dir/summary"
 
-mkdir -p "$work_dir"
-mkdir -p "$work_subdir"
 mkdir -p "$detail_dir"
 mkdir -p "$summary_dir"
 
