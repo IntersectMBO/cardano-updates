@@ -19,8 +19,7 @@ fi
 
 repository="$1"
 
-root_dir="$HOME/.cardano-updates"
-out_dir="$root_dir/$repository"
+out_dir="gen/$repository"
 
 mkdir -p "$out_dir"
 
