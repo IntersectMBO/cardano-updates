@@ -4,8 +4,7 @@ repository="$1"
 subdir="$2"
 commit_range="$3"
 
-root_dir="$HOME/.cardano-updates"
-work_dir="$root_dir/$repository"
+work_dir="gen/$repository"
 work_subdir="$work_dir/$subdir"
 download_file="$work_dir/download.yaml"
 

@@ -16,8 +16,7 @@ fi
 repository="$1"
 subdir="$2"
 
-root_dir="$HOME/.cardano-updates"
-out_dir="$root_dir/$repository"
+work_dir="gen/$repository"
 work_subdir="$work_dir/$subdir"
 detail_dir="$work_subdir/detail"
 summary_dir="$work_subdir/summary"
