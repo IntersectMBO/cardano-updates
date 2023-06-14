@@ -11,7 +11,7 @@ hide_table_of_contents: false
 The Consensus team had a very productive meeting with IOG Researchers. We now seem to be in alignment in regards to a strong argument that the `Byron` and `TPraos` eras do not need to be checkpointed. 
 There is one remaining question (which applies also to the `Praos` era): how to assess the threat that short forks pose against historical windows that underperformed? We are currently collaborating on that. We also drafted an argument that the updated "Limit on Patience" timeout sufficiently bounds how long the adversary can inflate a victim's overall sync time.
 
-On the UTxO-HD front, the prototype branch was rebased on top of the latest `cardano-node` `master` branch. As a result, the mempool fairness fix that was released recently is now integrated into UTxO-HD.
+On the UTxO-HD front, the prototype branch was rebased on top of the latest `ouroboros-consensus` `main` branch and integrated on top of `cardano-node 8.1.1-pre`. As a result, the mempool fairness fix that was released recently is now integrated into UTxO-HD.
 We managed to run a node again with UTxO-HD enabled. 
 We also identified a race condition in the UTxO-HD prototype and fixed it. In addition, we started performing UTxO-HD ad-hoc benchmarks for `cardano-node`, which uncovered a performance regression on the Network component when using `GHC-9.2/9.4`. This is being addressed.
 
