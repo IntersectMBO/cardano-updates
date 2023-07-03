@@ -34,29 +34,23 @@ hide_table_of_contents: false
 
 #### Genesis
 
-- How did we do against ..?:
-    - https://github.com/input-output-hk/ouroboros-consensus/issues/33
-    - https://github.com/input-output-hk/ouroboros-consensus/issues/32
-    - https://github.com/input-output-hk/ouroboros-consensus/issues/31
-
-- Genesis design document completed?
-   - Feedback genesis document (researchers + Networking team)
-   - Any other delta worth mentioning?
-       - Eg simplifications in correctness argument for historical genesis windows.
-   - Expected performance impact?
-   - No need for checkpointing `Byron` and `TPraos`.
-   - Any important remaining questions?
-   - Any improvements worth mentioning?
-       - Genesis selection rule.
-       - Candidate rules.
-       - Root peers usage.
-       - Caught-up detection?
-
-- Chain generators?
-
-- Chain sync jumping performance?
-
-- Genesis attack vector calculations?
+- The Genesis work for this PI focused on an high-priority issue from the IOG Researchers' feedback on the proposal.
+    - This particular question was not anticipated when the Q2 PI was planned.
+    - As a result, the chain generators work, the ChainSync Jumping performance work, and the Genesis node prototype work were deprioritized.
+    - That work has accordingly been rolled over into the Statement of Work for the first Genesis vendor work package.
+- The IOG Researchers' feedback on the design was very valuable. It had two primary effects.
+- Outcome 1: We re-introduced distinct behaviors when the node is "syncing" versus when it is "caught up".
+    - This eliminated a DoS vector introduced by the proposal, instead of having to argue that it was well-mitigated.
+    - The additional design complexity is relatively small.
+- Outcome 2: The issue that was unanticipated is whether the Cardano chain is consistently dense enough to rely on Genesis without any checkpointing.
+    - The determination so far is that---assuming the adversary never controls more than four of the seven genesis keys---the most vulnerable segment is in the pure Praos era.
+    - All the preceding windows are significantly more robust, including the entire Byron and Transitional Praos eras.
+    - Thus checkpointing is not necessary for the initial Genesis release, though it still may be a reasonable addition later.
+    - The primary invention was a model for bounding how much benefit the adversary's long-range attack could possibly gain from Praos's natural short forks.
+- Relevant questions that the IOG Researchers are still assessing.
+    - These do not block the Genesis implementation, but do affect the ultimate values of specific parameters.
+    - Question 1: what is the upper bound on the duration of an eclipse that a healthy Praos node will survive?
+    - Question 2: what is the upper bound on how much grinding can improve the adversary's leader schedule within some Genesis window?
 
 #### Support
 - We performed an analysis on number of file descriptors used by Consensus, this
@@ -92,3 +86,5 @@ it from the `ouroboros-network` repository. This will save development effort fo
 - We will [get UTxO-HD ready for handover](https://github.com/input-output-hk/ouroboros-consensus/issues/28).
 
 #### Genesis
+
+- We will regularly liaise with the vendor(s) satisfying the Genesis Statement(s) of Work.
