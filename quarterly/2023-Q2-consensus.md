@@ -1,12 +1,11 @@
 ---
-title: Consensus Quarterly Update
-slug: Q3-consensus
+title: Consensus Q2 2023 Update
+slug: 2023-Q2-consensus
 authors: dnadales
 tags: [consensus]
 hide_table_of_contents: false
 ---
 
-## Consensus Quarterly Update
 ## 2023-04 -- 2023-06
 
 ### Main achievements
