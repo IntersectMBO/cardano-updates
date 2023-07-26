@@ -16,7 +16,7 @@ The team working on Genesis decided on a Genesis-motivated change of the epoch s
 
 The Consensus team also investigated an issue on sanchonet (the Conway testnet) manifesting in long syncing pauses; identified a ledger bug which was promptly fixed by the Ledger team.
 
-### Genesis
+### Genesis liaising
 
 Improvements to the `ChainSync` client:
 
