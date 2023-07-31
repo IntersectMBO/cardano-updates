@@ -62,12 +62,18 @@ one commit per new post.
 
 ## Local Development
 
-One needs to install `yarn` and `nodejs`.  A basic `shell.nix` is provided so
-it's straightforward to enter `nix-shell` and use the provided `yarn`
-executable.
+One needs to install `yarn` and `nodejs`.
 
 :warning: The `yarn` package from Debian has nothing to do with the yarn we use
 here!
+
+If using Nix package manager, one can start up a development environment by running:
+
+```
+nix develop
+just setup
+just run
+```
 
 ### Installation
 
