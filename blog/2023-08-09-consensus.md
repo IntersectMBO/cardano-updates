@@ -30,5 +30,5 @@ This week the Consensus team worked on integrating the latest node release into 
 
 ## Support
 
-- [Frisby](https://github.com/) is the release engineer this cycle.
+- [Frisby](https://github.com/nfrisby) is the release engineer this cycle.
 - Successfully created work-in-progress `ouroboros-consensus` and `cardano-api` commits that integrate the 2023 Aug 7 tip of `cardano-ledger`. This will require a release of `ouroboros-consensus`, which hasn't happened yet.
