@@ -19,6 +19,15 @@ This week the Consensus team worked on integrating the latest node release into 
 - Fixed an infinite loop on the ledger state query for traversing queries that prevented the node from running `QueryUTxOByAddress` ([PR](https://github.com/input-output-hk/ouroboros-consensus/pull/273)).
 - Measured the speed of `QueryUTxOByAddress` under different `queryBatchSize` values. There is a significant performance degradation for these queries when using the UTxO-HD version. Using the mainnet UTxO set at slot 90 million, querying an address took 40 seconds using the in-memory backend and 90 seconds using the LMDB backend, whereas the baseline took 7 seconds. We need to investigate if we can improve this situation or whether an external service that runs alongside the node is a better solution.
 
+## Genesis
+
+- Frisby and Esgen continue to engage with the Researchers on grinding against the Genesis design.
+
 ## Fostering collaboration 
 
 - Drafted a document explaining versioning of local state queries [#273](https://github.com/input-output-hk/ouroboros-consensus/pull/273).
+
+## Release enginneer
+
+- Frisby is release engineer this cycle.
+- Successfully created work-in-progress `ouroboros-consensus` and `cardano-api` commits that integrate the 2023 Aug 7 tip of `cardano-ledger`. This will require a release of `ouroboros-consensus`, which hasn't happened yet.
