@@ -97,6 +97,7 @@ const config = {
               { to: 'tags/cli-api', label: 'Node CLI & API' },
               { to: 'quarterly/tags/cli-api-quarterly', label: 'Node CLI & API Quarterly' },
               { to: 'tags/crypto', label: 'Crypto' },
+              { to: 'tags/goedel', label: 'Goedel' },
             ],
           },
           { to: 'archive', label: 'Archive', position: 'right' },
