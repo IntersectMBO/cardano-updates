@@ -49,7 +49,13 @@ hide_table_of_contents: false
 EOF
 
 source scripts/download-prs.sh input-output-hk/cardano-node
+source scripts/download-prs.sh input-output-hk/cardano-cli
+source scripts/download-prs.sh input-output-hk/cardano-api
 
 source scripts/distribute-merged-prs.sh input-output-hk/cardano-node current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh input-output-hk/cardano-cli current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh input-output-hk/cardano-api current $DATE $END_DATE
 
 source scripts/summarise-merged-prs.sh input-output-hk/cardano-node current
+source scripts/summarise-merged-prs.sh input-output-hk/cardano-cli current
+source scripts/summarise-merged-prs.sh input-output-hk/cardano-api current
