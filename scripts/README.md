@@ -17,13 +17,11 @@ The following scripts are included in this repository:
 
 To use these scripts, follow the instructions below:
 
-1. Run the `download-prs.sh` script by executing the following command:
+1. Run the `download-prs.sh` script providing a "repository" and a "start-date" (YYYY-MM-DD) as arguments. The script will download all PRs created after the start date. For example:
 
 ```bash
-./scripts/download-prs.sh input-output-hk/cardano-node
+./scripts/download-prs.sh input-output-hk/cardano-node 2023-06-30
 ```
-
-This script will download the PRs that were merged between two specified dates and . Please note that the end date is exclusive.
 
 2. Execute the `distribute-merged-prs.sh` script using the following command:
 
@@ -48,7 +46,7 @@ Execute the create-slug.sh script with the following command:
 ```bash
 ./create-slug.sh <author> <date> <end_date>
 ```
-This script will create a markdown file named blog/<date>-node-cli-api.md, authored by "<author>", with sections for updates from "<date>" to "<end_date>". It automatically runs the PR summary scripts as defined above so you can cherry pick the PRs as necessary. 
+This script will create a markdown file named blog/<date>-node-cli-api.md, authored by "<author>", with sections for updates from "<date>" to "<end_date>". It automatically runs the PR summary scripts as defined above so you can cherry pick the PRs as necessary.
 
 
 ## Additional Information
@@ -57,4 +55,3 @@ This script will create a markdown file named blog/<date>-node-cli-api.md, autho
 - Manual intervention is required between the distribution and summarization stages. This step allows for detailed edits, such as removing irrelevant PRs, from the summary. The detail section of the summary includes a file list, making it easier to assess the relevance of each PR to the component.
 
 For an example of the output produced by each script, refer to the [example commit](https://github.com/input-output-hk/cardano-node/pull/5137/commits) on the official GitHub repository.
-

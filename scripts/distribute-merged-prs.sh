@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 (yq --version | grep https://github.com/mikefarah/yq/ > /dev/null) || {
   echo "Please install yq from https://github.com/mikefarah/yq/" > /dev/stderr
   exit 1
@@ -34,19 +36,17 @@ mkdir -p "$work_subdir/detail"
 cat "$download_file" | yq -o json | jq -r "$(
 cat <<EOF
   map
-  ( select
-    ( true
-      and (.baseRefName = "master")
-      and (.mergedAt >= "$start_date")
-      and (.mergedAt < "$end_date")
+  ( select(
+      (.baseRefName == "master" and .mergedAt >= "$start_date" and .mergedAt <= "$end_date") or
+      (.baseRefName == "main" and .mergedAt >= "$start_date" and .mergedAt <= "$end_date")
     )
-  | { "title": .title
-    , "author": .author.name
-    , "url": .url
-    , "number": .number
-    , "mergedAt": .mergedAt
-    , "include": "undecided"
-    , "files": .files | map(.path)
+    | { "title": .title
+      , "author": .author.name
+      , "url": .url
+      , "number": .number
+      , "mergedAt": .mergedAt
+      , "include": "undecided"
+      , "files": .files | map(.path)
     }
   )
 EOF
