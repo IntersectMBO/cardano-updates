@@ -20,7 +20,7 @@ To use these scripts, follow the instructions below:
 1. Run the `download-prs.sh` script providing a "repository" and a "start-date" (YYYY-MM-DD) as arguments. The script will download all PRs created after the start date. For example:
 
 ```bash
-./scripts/download-prs.sh input-output-hk/cardano-node 2023-06-31
+./scripts/download-prs.sh input-output-hk/cardano-node 2023-06-30
 ```
 
 2. Execute the `distribute-merged-prs.sh` script using the following command:

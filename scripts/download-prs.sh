@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -x
 set -euo pipefail
 
 (yq --version | grep https://github.com/mikefarah/yq/ > /dev/null) || {
