@@ -47,6 +47,6 @@ for path in "$detail_dir"/*.yaml; do
           '); do
     tmp_file="$(mktemp).json"
     cat "$detail_dir/$file" | yq -o json | jq '.[] | select(.number == '$pr')' > "$tmp_file"
-    cat "$tmp_file" | jq -r '"- [\(.title)](\(.url)) by \(.author)"' >> "$target"
+    cat "$tmp_file" | jq -r '"- [\(.title)](\(.url))"' >> "$target"
   done
 done
