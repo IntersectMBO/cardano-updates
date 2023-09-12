@@ -1,11 +1,14 @@
 #!/bin/bash
 
+set -x
+set -euo pipefail
+
 (yq --version | grep https://github.com/mikefarah/yq/ > /dev/null) || {
   echo "Please install yq from https://github.com/mikefarah/yq/" > /dev/stderr
   exit 1
 }
 
-if [ "$#" -ne 1 ]; then
+if [ "$#" -ne 2 ]; then
   echo "Usage: $0 repository" >&2
   echo "Example: $0 input-output-hk/cardano-node" >&2
   exit 1
@@ -18,6 +21,7 @@ else
 fi
 
 repository="$1"
+date="$2"
 
 out_dir="gen/$repository"
 
@@ -25,8 +29,8 @@ mkdir -p "$out_dir"
 
 temp_json_file="$(mktemp).json"
 
-# Requires the default repository to be set in gh
-max_pr_number="$(gh pr list --state all --limit 1 --json number | jq '.[0].number // 1000')"
+# Find a reasonable number for -L
+max_pr_number="$(gh pr list --repo "$repository" --state all --search "created:>=$date" -L 1000 --json number | jq length)"
 
 echo "Downloading up to $max_pr_number PRs"
 

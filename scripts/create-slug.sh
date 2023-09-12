@@ -1,5 +1,8 @@
 #!/bin/bash
 
+set -x
+set -euo pipefail
+
 # Author's name
 AUTHOR=$1
 # Date in the format YYYY-MM-DD
@@ -33,12 +36,6 @@ hide_table_of_contents: false
 
 ## High level summary
 
-### docs
-
-### CI & project maintenance
-
-### Developer experience
-
 ### cardano-cli
 
 ### cardano-api
@@ -46,11 +43,15 @@ hide_table_of_contents: false
 ### cardano-node
 
 ### cardano-testnet
+
+### docs
+
+### CI & project maintenance
 EOF
 
-source scripts/download-prs.sh input-output-hk/cardano-node
-source scripts/download-prs.sh input-output-hk/cardano-cli
-source scripts/download-prs.sh input-output-hk/cardano-api
+source scripts/download-prs.sh input-output-hk/cardano-node $DATE
+source scripts/download-prs.sh input-output-hk/cardano-cli $DATE
+source scripts/download-prs.sh input-output-hk/cardano-api $DATE
 
 source scripts/distribute-merged-prs.sh input-output-hk/cardano-node current $DATE $END_DATE
 source scripts/distribute-merged-prs.sh input-output-hk/cardano-cli current $DATE $END_DATE
