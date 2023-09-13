@@ -18,7 +18,7 @@ if [ -z "$DATE" ] || [ -z "$AUTHOR" ]; then
 fi
 
 # Filename in the format YYYY-MM-DD-node-cli-api.md
-FILENAME="blog/${DATE}-node-cli-api.md"
+FILENAME="blog/${END_DATE}-node-cli-api.md"
 
 # Generate the file with the specified content
 cat > $FILENAME << EOF
