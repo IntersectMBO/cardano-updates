@@ -24,7 +24,7 @@ FILENAME="blog/${END_DATE}-node-cli-api.md"
 cat > $FILENAME << EOF
 ---
 title: Node API & CLI Team Update
-slug: ${DATE}-node-cli-api
+slug: ${END_DATE}-node-cli-api
 authors: ${AUTHOR}
 tags: [cli-api]
 hide_table_of_contents: false
