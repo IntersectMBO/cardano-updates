@@ -1,6 +1,6 @@
 ---
 title: SECP bindings Security Issue Report
-slug: 2023-08-17-crypto
+slug: 2023-08-17-secp-issue
 authors: iquerejeta
 tags: [crypto]
 hide_table_of_contents: false
@@ -27,7 +27,7 @@ The issue was detected via specific End-to-End tests that had been commissioned.
 The Cardano Testnet was permanently halted, and new test environments were deployed (Preview and Pre-Prod).
 Fixes were applied to prevent the use of the primitives.
 A full security audit was carried out on the bindings.
-The rollout of the primitives was postponed to a new hard fork (Valentine)    
+The rollout of the primitives was postponed to a new hard fork (Valentine)
 
 #### Potential Effect
 The potential effect was that an adversary might be able to craft invalid Plutus transactions to crash any node, requiring execution of the Cardano disaster recovery plan to revert to a safe state and bypass the transaction.
@@ -47,7 +47,7 @@ Core team
 New Plutus **secp256k1** cryptographic primitives for Plutus v2 failed to apply the necessary validity checks on the input data, meaning that the primitives could theoretically be used in an unsafe environment.  The vulnerability was present in recent node versions (1.35.0 onwards), including ones deployed to Cardano Testnet.
 
 The problem was not in the deserialization functions of the underlying library (Bitcoin's library) but rather that the Haskell functions that implemented the Plutus builtins were not calling them correctly.  In particular, the library functions were designed to take structured data as input. However, the Haskell FFI implementation that was produced for the Plutus builtins allowed a caller to pass in (possibly) unstructured data. There were no checks that these data were structured in the correct way.  This issue was detected during End-to-End testing.
- 
+
 * [This](https://github.com/bitcoin-core/secp256k1/blob/master/include/secp256k1.h#L518) is the ECDSA signature verification algorithm that was used. It takes a SECP256k1_pubkey as input. That type is an opaque type with an [expected](https://github.com/bitcoin-core/secp256k1/blob/master/include/secp256k1.h#L61) structure: a parsed and valid public key.  It was not immediately obvious that structured data needed to be passed to allow the function to be used safely.
 * The same happened with the Schnorr [verification function](https://github.com/bitcoin-core/secp256k1/blob/master/include/secp256k1_schnorrsig.h#L170). It takes as input a SECP256k1_xonly_pubkey, which is again an [opaque structure](https://github.com/bitcoin-core/secp256k1/blob/master/include/secp256k1_extrakeys.h#L10) that holds a parsed and valid public key.
 
