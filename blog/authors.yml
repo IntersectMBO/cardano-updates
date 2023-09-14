@@ -1,131 +1,137 @@
-dnadales:
-  name: Damian Nadales
-  title: Consensus Team Lead
-  url: https://github.com/dnadales
-  image_url: https://github.com/dnadales.png
-
-ch1bo:
-  name: Sebastian Nagel
-  title: Hydra Team Lead
-  url: https://github.com/ch1bo
-  image_url: https://github.com/ch1bo.png
-
-coot:
-  name: Marcin Szamotulski
-  title: Network Team Lead
-  url: https://github.com/coot
-  image_url: https://github.com/coot.png
-
-lehins:
-  name: Alexey Kuleshevich
-  title: Ledger Team Software Engineer
-  url: https://github.com/lehins
-  image_url: https://github.com/lehins.png
-
-JaredCorduan:
-  name: Jared Corduan
-  title: Ledger Team Lead
-  url: https://github.com/JaredCorduan
-  image_url: https://github.com/JaredCorduan.png
-
-kderme:
-  name: Kostas Dermentzis
-  title: Cardano DB-Sync Software Engineer
-  url: https://github.com/kderme
-  image_url: https://github.com/kderme.png
-
-Jimbo4350:
-  name: Jordan Millar
-  title: Node Team Lead
-  url: https://github.com/Jimbo4350
-  image_url: https://github.com/Jimbo4350.png
-
-iquerejeta:
-  name: Iñigo Querejeta Azurmendi
-  title: Cardano Lead Cryptography Engineer
-  url: https://github.com/iquerejeta
-  image_url: https://github.com/iquerejeta.png
-
-manveru:
-  name: Michael Fellinger
-  title: SRE Team Lead
-  url: https://github.com/manveru
-  image_url: https://github.com/manveru.png
-
-deepfire:
-  name: Serge Kosyrev
-  title: Performance and Tracing Team Lead
-  url: https://github.com/deepfire
-  image_url: https://github.com/deepfire.png
-
-dorin100:
-  name: Dorin Solomon
-  title: System Test Team Lead
-  url: https://github.com/dorin100
-  image_url: https://github.com/dorin100.png
-
-disassembler:
-  name: Samuel Leathers
-  title: Service Reliability Manager
-  url: https://github.com/disassembler
-  image_url: https://github.com/disassembler.png
-
-mgmeier:
-  name: Michael Karg
-  title: Performance and Tracing Team Lead
-  url: https://github.com/mgmeier
-  image_url: https://github.com/mgmeier.png
-
-jpraynaud:
-  name: Jean-Philippe Raynaud
-  title: Mithril Tech Lead
-  url: https://github.com/jpraynaud
-  image_url: https://github.com/jpraynaud.png
-
-jmchapman:
-  name: James Chapman
-  title: Head of Formal Methods
-  url: https://github.com/jmchapman
-  image_url: https://github.com/jmchapman.png
-
-ffakenz:
-  name: Franco Testagrossa
-  title: Hydra Software Engineer
-  url: https://github.com/ffakenz
-  image_url: https://github.com/ffakenz.png
-
-mkoura:
-  name: Martin Kourim
-  title: System Test Engineer
-  url: https://github.com/mkoura
-  image_url: https://github.com/mkoura.png
-
-kevinhammond:
-  name: Kevin Hammond
-  title: Head of Software Engineering, Cardano Core
-  url: https://github.com/kevinhammond
-  image_url: https://github.com/kevinhammond.png
-
-johnalotoski:
-  name: John Lotoski
-  title: Service Reliability Engineer
-  url: https://github.com/johnalotoski
-  image_url: https://github.com/johnalotoski.png
-
 angerman:
+  image_url: https://github.com/angerman.png
   name: Moritz Angermann
   title: Head of Developer Experience
   url: https://github.com/angerman
-  image_url: https://github.com/angerman.png
+
+carlos:
+  image_url: https://github.com/CarlosLopezDeLara.png
+  name: Carlos LopezDeLara
+  title: Node Product Owner
+  url: https://github.com/CarlosLopezDeLara
+
+ch1bo:
+  image_url: https://github.com/ch1bo.png
+  name: Sebastian Nagel
+  title: Hydra Team Lead
+  url: https://github.com/ch1bo
+
+coot:
+  image_url: https://github.com/coot.png
+  name: Marcin Szamotulski
+  title: Network Team Lead
+  url: https://github.com/coot
+
+deepfire:
+  image_url: https://github.com/deepfire.png
+  name: Serge Kosyrev
+  title: Performance and Tracing Team Lead
+  url: https://github.com/deepfire
+
+disassembler:
+  image_url: https://github.com/disassembler.png
+  name: Samuel Leathers
+  title: Service Reliability Manager
+  url: https://github.com/disassembler
+
+dnadales:
+  image_url: https://github.com/dnadales.png
+  name: Damian Nadales
+  title: Consensus Team Lead
+  url: https://github.com/dnadales
+
+dorin100:
+  image_url: https://github.com/dorin100.png
+  name: Dorin Solomon
+  title: System Test Team Lead
+  url: https://github.com/dorin100
+
+ffakenz:
+  image_url: https://github.com/ffakenz.png
+  name: Franco Testagrossa
+  title: Hydra Software Engineer
+  url: https://github.com/ffakenz
+
+iquerejeta:
+  image_url: https://github.com/iquerejeta.png
+  name: Iñigo Querejeta Azurmendi
+  title: Cardano Lead Cryptography Engineer
+  url: https://github.com/iquerejeta
+
+JaredCorduan:
+  image_url: https://github.com/JaredCorduan.png
+  name: Jared Corduan
+  title: Ledger Team Lead
+  url: https://github.com/JaredCorduan
+
+Jimbo4350:
+  image_url: https://github.com/Jimbo4350.png
+  name: Jordan Millar
+  title: Node Team Lead
+  url: https://github.com/Jimbo4350
+
+jmchapman:
+  image_url: https://github.com/jmchapman.png
+  name: James Chapman
+  title: Head of Formal Methods
+  url: https://github.com/jmchapman
+
+johnalotoski:
+  image_url: https://github.com/johnalotoski.png
+  name: John Lotoski
+  title: Service Reliability Engineer
+  url: https://github.com/johnalotoski
+
+jpraynaud:
+  image_url: https://github.com/jpraynaud.png
+  name: Jean-Philippe Raynaud
+  title: Mithril Tech Lead
+  url: https://github.com/jpraynaud
+
+kderme:
+  image_url: https://github.com/kderme.png
+  name: Kostas Dermentzis
+  title: Cardano DB-Sync Software Engineer
+  url: https://github.com/kderme
+
+kevinhammond:
+  image_url: https://github.com/kevinhammond.png
+  name: Kevin Hammond
+  title: Head of Software Engineering, Cardano Core
+  url: https://github.com/kevinhammond
+
+lehins:
+  image_url: https://github.com/lehins.png
+  name: Alexey Kuleshevich
+  title: Ledger Team Software Engineer
+  url: https://github.com/lehins
+
+manveru:
+  image_url: https://github.com/manveru.png
+  name: Michael Fellinger
+  title: SRE Team Lead
+  url: https://github.com/manveru
+
+mgmeier:
+  image_url: https://github.com/mgmeier.png
+  name: Michael Karg
+  title: Performance and Tracing Team Lead
+  url: https://github.com/mgmeier
+
+mkoura:
+  image_url: https://github.com/mkoura.png
+  name: Martin Kourim
+  title: System Test Engineer
+  url: https://github.com/mkoura
 
 pgrange:
+  image_url: https://github.com/pgrange.png
   name: Pascal Grange
   title: Hydra Software Engineer
   url: https://github.com/pgrange
-  image_url: https://github.com/pgrange.png
 
 v0d1ch:
+  image_url: https://github.com/v0d1ch.png
   name: Sasha Bogicevic
   title: Hydra Software Engineer
   url: https://github.com/v0d1ch
-  image_url: https://github.com/v0d1ch.png

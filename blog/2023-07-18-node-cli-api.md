@@ -1,7 +1,7 @@
 ---
 title: Node API & CLI Team Update
 slug: 2023-07-18-node-cli-api
-authors: Carlos
+authors: carlos
 tags: [cli-api]
 hide_table_of_contents: false
 ---
