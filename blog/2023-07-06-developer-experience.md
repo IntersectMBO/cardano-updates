@@ -22,7 +22,7 @@ Compatibility with 9.6 has been continued and most of our lirbariesa are not 9.6
 
 
 ### Hydra Tools
-Our repository, [input-output-hk/actions](https://github.com/input-output-hk/hydra-tools), has seen quite some improvements to facility thet hydra <-> github integration.
+Our repository, [input-output-hk/actions](https://github.com/input-output-hk/hydra-tools), has seen quite some improvements to facility the hydra <-> github integration.
 
 
 ### haskell.nix
