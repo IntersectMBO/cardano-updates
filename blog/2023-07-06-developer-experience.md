@@ -18,7 +18,7 @@ The DevX team has helped troubleshoot a few CI issues, and focused on helping to
 
 ### compiler upgrades
 
-Compatibility with 9.6 has been continued and most of our lirbariesa are not 9.6 compatible. Only a few are not, we hope to have this done by the end of the month. We've also started preliminarily adding GHC 9.8 to our infrastructure for early compiler regression tests.
+Compatibility with 9.6 has been continued and most of our libraries are not 9.6 compatible. Only a few are not, we hope to have this done by the end of the month. We've also started preliminarily adding GHC 9.8 to our infrastructure for early compiler regression tests.
 
 
 ### Hydra Tools
