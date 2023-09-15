@@ -20,6 +20,8 @@ We are moving the `drep delegation-certificate` to the stake-address command so 
 `stake-address delegation-certificate` (delagating to a stake pool) to `stake-address stake-delegation-certificate` to distinguish between stake delegation to a pool and votes delegation to a drep. On top
 of that, there is a new type of delegation certificate to delegate (stake) to a stake pool and (votes) to a drep simultaneosuly `stake-address stake-and-vote-delegation-certificate`. Note that change is not included on  8.3 but will come on 8.4
 
+Removing `--conway-era` flag from all the `transaction` sub-commands.
+
 Update description fields in delegation certificates from `Stake Address Delegation Certificate` to respectively (Conway onwards):
   - `Stake Delegation Certificate`
   - `Vote Delegation Certificate`
