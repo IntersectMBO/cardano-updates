@@ -14,9 +14,13 @@ The Consensus release engineer finished his rotation: version `8.3.0-pre` of `ca
 
 ## UTxO-HD
 
-- We ran the first successful system-level benchmarks for UTxO-HD (see [#203](https://github.com/input-output-hk/ouroboros-consensus/issues/203)). We observed a factor 12 regression in the forging performance, which we will have to address.
-
+- We ran the first successful system-level benchmarks for UTxO-HD (see [#203](https://github.com/input-output-hk/ouroboros-consensus/issues/203)) using the *in-memory* backend.
+    - We observed a factor 12 regression in the forging performance, which we will have to address. There are strong indications that the regression is due to the backing store accesses that take place when taking a mempool snapshot.
+    - After the mempool regression is fixed the benchmarks need to be ran again.
+    - System-level UTxO-HD benchmarks with the LMDB are still pending.
+- UTxO-HD will eventually be necessary due to the growth of the UTxO set and other ledger state structures that live in memory at the moment. However, we are trying a strategy by which we could preserve the baseline performance of the node, in case SPOs and other node users are not ready to migrate yet (see [#344](https://github.com/input-output-hk/ouroboros-consensus/issues/344)).
 - We implemented a new way of processing queries at the hard-fork block level, which resolves the performance regression observed in `GetUTxOByAddress` (see [this comment](https://github.com/input-output-hk/ouroboros-consensus/issues/205#issuecomment-1706878418)). Preliminary results are promising.
+- Regarding the roll out plan, UTxO-HD requires a significant change in the Consensus codebase. Even though we might be able to hide any potential performance impact in the node by keeping all data in memory ([#344](https://github.com/input-output-hk/ouroboros-consensus/issues/344)), the Consensus component was significantly changed, so we might have to postpone releasing this feature to mitigate any risks of conflicting with the implementation of CIP-1694 and release of Conway.
 
 ## Tech debt
 
