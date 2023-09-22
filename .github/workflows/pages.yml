@@ -32,3 +32,4 @@ jobs:
           publish_dir: ./build
           user_name: 'Arnaud Bailly'
           user_email: arnaud.bailly@iohk.io
+          force_orphan: true
