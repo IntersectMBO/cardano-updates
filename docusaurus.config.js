@@ -98,6 +98,7 @@ const config = {
               { to: 'quarterly/tags/cli-api-quarterly', label: 'Node CLI & API Quarterly' },
               { to: 'tags/crypto', label: 'Crypto' },
               { to: 'tags/goedel', label: 'Goedel' },
+              { to: 'tags/mithril', label: 'Mithril' },
             ],
           },
           { to: 'archive', label: 'Archive', position: 'right' },
