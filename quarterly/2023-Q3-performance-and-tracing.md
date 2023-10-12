@@ -6,7 +6,7 @@ tags: [performance-tracing]
 hide_table_of_contents: false
 ---
 
-## 2023-07 2023-09
+## 2023-07 - 2023-09
 
 ### Main achievements
 
