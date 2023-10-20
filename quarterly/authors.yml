@@ -58,6 +58,12 @@ deepfire:
   url: https://github.com/deepfire
   image_url: https://github.com/deepfire.png
 
+mgmeier:
+  image_url: https://github.com/mgmeier.png
+  name: Michael Karg
+  title: Performance and Tracing Team Lead
+  url: https://github.com/mgmeier
+
 dorin100:
   name: Dorin Solomon
   title: System Test Team Lead
