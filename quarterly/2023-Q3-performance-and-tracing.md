@@ -58,5 +58,37 @@ gathering evidence of the effect of aforementioned changes allowing for performa
 
 ### Next steps
 
-_TBD._
+#### Benchmarking:
 
+In Q4, the focus will be on:
+* facilitating the next mainnet release
+* benchmarking runs in the Conway era
+* developing benchmarks / workloads for Conway-exclusive actions
+* implementing a specialized benchmark setup for the UTxO-HD on-disk variant
+* developing new Plutus benchmarks to safeguard Plutus V3
+* benchmarks regarding the rollout of P2P
+
+#### Performance
+
+For certain blocking performance issues we've located the cause, or even found a solution in a cross-team effort. In Q4 we'll advance that work to ensure the ongoing
+release cycle for mainnet, as well as make GHC9 become a viable release platform.
+
+#### New tracing system
+
+For the new tracing system, we'll finalize optimization - current results are already on par with the legacy system. Furthermore, we will finish up comprehensive documentation, as well as description of a recommended setup, for which we can provide initial support.
+
+#### UTxO-HD monitoring
+
+We'll augment our analysis pipeline so it can process monitoring data from UTxO-HD nodes connected to mainnet in a meaningful way.
+
+#### Nomad backend
+
+From Q4 on, this backend will be in production use. We plan on adding various UX and flexibility improvements, and further fine-tuning some profiles for nomad.
+
+#### Workbench
+
+We will prepare for a future move of our performance workbench into a separate project. This entails restructuring, refactoring and reimplementation of certain few components that currently assume to always be in sync with `cardano-node`.
+
+#### Consensus component QTAs (co-development)
+
+In Q4 there will be ongoing work with and support for the existing prototype. We plan to identify a fixed set of input data that yields results of high informative value, and to formalize the process to a point that enables future automation.
