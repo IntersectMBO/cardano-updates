@@ -16,6 +16,6 @@ Therefore, during the coming months we will focus our efforts on the redesign of
 
 On the Genesis front, we reviewed the [peer simulator](https://github.com/input-output-hk/ouroboros-consensus/pull/434) for Genesis tests, which was implemented by Tweag and was signed-off by the Consensus team.
 
-We also continued our work on improving the handling of blocks from the future. We presented a principled approach to handling blocks from the future in the Chief Scientist Meeting at IOG, which was very well-received. The discussion with the IOG scientists touched upon the relationship of this approach to Ouroboros Chronos.
+We also continued our work on improving the handling of blocks from the future. We presented possible approaches to handling blocks from the future in the Chief Scientist Meeting at IOG, which was very well-received. The discussion with the IOG scientists touched upon the relationship of this approach to Ouroboros Chronos.
 
 [Javier Sagredo](https://github.com/jasagredo) continues is cycle as release engineer, and he is working on version 8.7 of Cardano node.
