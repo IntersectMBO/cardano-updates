@@ -10,7 +10,7 @@ hide_table_of_contents: false
 
 Over the last two weeks, we managed to run a UTxO-HD capable node in _legacy mode_, which maintains the baseline memory usage while keeping all the ledger state in memory (as the current node does).
 This _legacy mode_ could provide an alternative for releasing a UTxO-HD capable node where people can choose whether to store the large part of the UTxO set on disk or not.
-However, legacy mode involves code duplication, requires several weeks of work before it is production ready (more integration and testing). Moreover, we will not release UTxO-HD before Conway to avoid risks of delaying the latter.
+However, legacy mode involves code duplication, requires several weeks of work before it is production ready (more integration and testing). Moreover, we will not release UTxO-HD before Conway to avoid the risk of delaying the latter.
 On the other hand, to integrate the LSM-tree backend for UTxO-HD we need to redesign the Consensus storage layer, and this new design might enable us to implement an alternative in-memory backing store that will have a very similar performance and resource requirements as the current Cardano node.
 Therefore, during the coming months we will focus our efforts on the redesign of the storage layer and the LSM-tree backend.
 
