@@ -13,3 +13,4 @@ It is under review, and we expect it can be released in the next Cardano node ve
 On the UTxO-HD front, we [finished](https://github.com/input-output-hk/ouroboros-consensus/issues/510) prototyping the `LedgerDB` and `BackingStore` redesign, which is required for the LSM-tree integration and might help us implement a more resource efficient in-memory backend.
 With this prototype finished we can start integrating the rest of the code.
 We [investigated](https://github.com/input-output-hk/ouroboros-consensus/pull/513) the unexpected performance degradation observed when acquiring the block context.
+We also [released Cardano node 8.7.0](https://github.com/input-output-hk/cardano-node/releases/tag/8.7.0-pre) and [moved](https://github.com/input-output-hk/cardano-ledger/pull/3893) `tree-diff` outside `cardano-ledger` libraries.
