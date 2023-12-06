@@ -31,6 +31,17 @@ const config = {
         editUrl
       },
     ],
+    [
+      'content-blog',
+      /** @type {import('@docusaurus/plugin-content-blog').Options} */
+      {
+        id: 'reports',
+        routeBasePath: 'reports',
+        path: 'reports',
+        authorsMapPath: 'authors.yml',
+        editUrl
+      },
+    ],
   ],
 
   scripts: [
@@ -82,6 +93,7 @@ const config = {
         items: [
           { to: '/', label: 'Home', position: 'right' },
           { to: '/quarterly', label: 'Quarterly', position: 'right' },
+          { to: '/reports', label: 'Reports', position: 'right' },
           {
             type: 'dropdown',
             to: 'tags',
@@ -99,6 +111,9 @@ const config = {
               { to: 'tags/crypto', label: 'Crypto' },
               { to: 'tags/goedel', label: 'Goedel' },
               { to: 'tags/mithril', label: 'Mithril' },
+              { to: 'tags/performance-tracing', label: 'Performance & Tracing' },
+              { to: 'reports/tags/benchmarking-reports', label: 'Benchmarking Reports' },          
+              
             ],
           },
           { to: 'archive', label: 'Archive', position: 'right' },
