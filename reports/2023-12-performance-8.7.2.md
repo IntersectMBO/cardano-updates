@@ -1,6 +1,6 @@
 ---
-title: Benchmarking -- Node 8.7.1
-slug: 2023-12-performance-8.7.1
+title: Benchmarking -- Node 8.7.2
+slug: 2023-12-performance-8.7.2
 authors: mgmeier
 tags: [benchmarking-reports]
 hide_table_of_contents: false
