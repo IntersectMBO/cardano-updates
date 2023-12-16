@@ -29,8 +29,8 @@ Since the last update (2023-03-26) we did more improvements on our Test Framewor
 - Add tests to governance SPO poll commands
 
 ### Node:
-- tested the [1.35.7](https://input-output-hk.github.io/cardano-node-tests/test_results/node/tag_1_35_7.html) release
-- tested the [8.0.0](https://input-output-hk.github.io/cardano-node-tests/test_results/node/tag_8_0_0.html) release
+- tested the [1.35.7](https://tests.cardano.intersectmbo.org/test_results/node/tag_1_35_7.html) release
+- tested the [8.0.0](https://tests.cardano.intersectmbo.org/test_results/node/tag_8_0_0.html) release
 
 ### DB-Sync:
 - improvements in db-sync sync tests

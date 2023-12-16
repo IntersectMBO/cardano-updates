@@ -3,7 +3,7 @@
 This repository will host updates from the
 [cardano](https://github.com/input-output-hk/cardano-node) development teams.
 The generated website containing the updates can be found
-[here](https://input-output-hk.github.io/cardano-updates/).
+[here](https://updates.cardano.intersectmbo.org/).
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern
 static website generator.
@@ -118,4 +118,4 @@ Not using SSH:
 $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
-[cardano-updates]: https://input-output-hk.github.io/cardano-updates
+[cardano-updates]: https://updates.cardano.intersectmbo.org

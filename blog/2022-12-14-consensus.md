@@ -93,7 +93,7 @@ enlightening!
 
 We merged the [pull request][pull-4197] that adds an overview of consensus to
 the [top level
-documentation](https://input-output-hk.github.io/ouroboros-network/) of
+documentation](https://ouroboros-network.cardano.intersectmbo.org/) of
 ouroboros-network. This overview describes the consensus components and adds a
 hyperlinked map to the modules documentation.
 
