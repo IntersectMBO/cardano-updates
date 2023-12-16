@@ -15,8 +15,8 @@ We also update the Node & DB-Sync sync tets to build with Nix as the prebuilt fi
 ## Workstreams
 
 ### Framework improvements:
-- extended the _cardano-node-tests_ with the ability for anybody to fork the repo and [run all our System Tests on GitHub Actions](https://input-output-hk.github.io/cardano-node-tests/readme.html)
-- added 2 new nightly pipelines - nightly-mixed and nightly-p2p - [details here](https://input-output-hk.github.io/cardano-node-tests/test_results/nightly_system_tests.html)
+- extended the _cardano-node-tests_ with the ability for anybody to fork the repo and [run all our System Tests on GitHub Actions](https://tests.cardano.intersectmbo.org/readme.html)
+- added 2 new nightly pipelines - nightly-mixed and nightly-p2p - [details here](https://tests.cardano.intersectmbo.org/test_results/nightly_system_tests.html)
 - some optimizations on how our regression tests are scheduled on pytest workers and how cluster instances are assigned to the tests;
 
 `  === 743 passed, 67 skipped, 24 xfailed in 9166.64s (2:32:46) ===

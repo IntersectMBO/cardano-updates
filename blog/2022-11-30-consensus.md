@@ -76,7 +76,7 @@ We cleared up our understanding of the error dynamics of forecasting
 ([#4146][pull-4146] and [#4174][pull-4174]).
 
 We submitted a pull request that adds an overview of consensus to the [top level
-documentation](https://input-output-hk.github.io/ouroboros-network/) of
+documentation](https://ouroboros-network.cardano.intersectmbo.org/) of
 ouroboros-network ([#4197][pull-4197]). This overview describes the consensus components and adds a
 hyperlinked map to the modules documentation.
 

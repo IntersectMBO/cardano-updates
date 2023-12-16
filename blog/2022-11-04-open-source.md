@@ -57,5 +57,5 @@ You can expect we will improve in these metrics in the coming weeks.
 [publish-on-hackage]: https://github.com/orgs/input-output-hk/projects/60/views/3
 [io-sim]: https://github.com/input-output-hk/io-sim
 [ceh]: https://input-output-hk.github.io/cardano-engineering-handbook/
-[cardano-updates]: https://input-output-hk.github.io/cardano-updates
+[cardano-updates]: https://updates.cardano.intersectmbo.org
 [docusaurus]: https://docusaurus.io

@@ -54,7 +54,7 @@ cases.
   ledgers. This should be a valuable resource to people looking to roll their
   own custom blockchain (either for commercial or research purposes).
 - We added an overview of consensus to the [top level
-  documentation](https://input-output-hk.github.io/ouroboros-network/) of
+  documentation](https://ouroboros-network.cardano.intersectmbo.org/) of
   ouroboros-network. This overview describes the consensus components and adds a
   hyperlinked map to the modules documentation.
 

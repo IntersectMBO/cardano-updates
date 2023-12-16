@@ -3,20 +3,20 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const editUrl = 'https://github.com/input-output-hk/cardano-updates/tree/main/';
+const editUrl = 'https://github.com/intersectmbo/cardano-updates/tree/main/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Cardano Development Updates',
   tagline: 'Regular updates from Cardano Development Teams',
-  url: 'https://input-output-hk.github.io/',
-  baseUrl: '/cardano-updates',
+  url: 'https://updates.cardano.intersectmbo.org',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
-  organizationName: 'input-output-hk', // Usually your GitHub org/user name.
+  organizationName: 'intersectmbo', // Usually your GitHub org/user name.
   projectName: 'cardano-updates', // Usually your repo name.
 
   plugins: [
@@ -48,7 +48,7 @@ const config = {
     {
       src: 'https://plausible.io/js/script.js',
       defer: true,
-      'data-domain': 'input-output-hk.github.io/cardano-updates'
+      'data-domain': 'updates.cardano.intersectmbo.org'
     }
   ],
 
@@ -112,13 +112,13 @@ const config = {
               { to: 'tags/goedel', label: 'Goedel' },
               { to: 'tags/mithril', label: 'Mithril' },
               { to: 'tags/performance-tracing', label: 'Performance & Tracing' },
-              { to: 'reports/tags/benchmarking-reports', label: 'Benchmarking Reports' },          
-              
+              { to: 'reports/tags/benchmarking-reports', label: 'Benchmarking Reports' },
+
             ],
           },
           { to: 'archive', label: 'Archive', position: 'right' },
           {
-            href: 'https://github.com/input-output-hk/cardano-updates',
+            href: 'https://updates.cardano.intersectmbo.org',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
@@ -154,7 +154,7 @@ const config = {
           },
           ],
         },],
-        copyright: `Copyright © ${new Date().getFullYear()} Input Output Global, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Intersect, Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

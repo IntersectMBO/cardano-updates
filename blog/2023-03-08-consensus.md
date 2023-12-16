@@ -101,4 +101,4 @@ thereby reducing the time CI jobs take.
 [pull-8]: https://github.com/input-output-hk/ouroboros-consensus/pull/8
 [pull-4412]: https://github.com/input-output-hk/ouroboros-network/pull/4412
 [pull-4421]: https://github.com/input-output-hk/ouroboros-network/pull/4421
-[oc-web-page]: https://input-output-hk.github.io/ouroboros-consensus/
+[oc-web-page]: https://ouroboros-consensus.cardano.intersectmbo.org/

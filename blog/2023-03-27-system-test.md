@@ -23,8 +23,8 @@ Since the last update (2023-1-13) we did more improvements on our Test Framework
 
 ### Node:
 - ran tests on node branch with the UTxO-HD functionality
-- tested the [1.35.5](https://input-output-hk.github.io/cardano-node-tests/test_results/node/tag_1_35_5.html) release
-- tested the [1.35.6](https://input-output-hk.github.io/cardano-node-tests/test_results/node/tag_1_35_6.html) release
+- tested the [1.35.5](https://tests.cardano.intersectmbo.org/test_results/node/tag_1_35_5.html) release
+- tested the [1.35.6](https://tests.cardano.intersectmbo.org/test_results/node/tag_1_35_6.html) release
 
 ### DB-Sync:
 - improvements in db-sync sync tests
