@@ -11,7 +11,7 @@ hide_table_of_contents: false
 * Benchmarking: Release benchmarking for node `8.7.2`, as well as P2P benchmarks - the latter being a premiere for the Nomad cluster.
 * Development: Work on automating the submission of Conway transactions for registration of and stake delegation to `DRep`s is ongoing.
 * Infrastructure: We're preparing to safely retire our current benchmarking cluster.
-* Tracing: The documentation for the new tracing system is being reworked. Additionally, we've added a feature to `cardnao-tracer` to capture performance over a long runtime. 
+* Tracing: The documentation for the new tracing system is being reworked. Additionally, we've added a feature to `cardano-tracer` to capture performance over a long runtime.
 * Nomad cluster: The Nomad backend has been successfully equipped with support for up-to-date P2P topology, as well as deployment for Plutus script data.
 
 
