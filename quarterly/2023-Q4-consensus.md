@@ -23,9 +23,14 @@ hide_table_of_contents: false
 
 ### Implement legacy mode for UTxO-HD to keep baseline performance
 
-- We managed to run a UTxO-HD capable node in legacy mode, which maintains the baseline memory usage while keeping all the ledger state in memory.
-- Legacy mode is not production ready: it requires further integration and testing.
-- TOOD: mention work on redesign of the backing store API and integration, and relevance for an in-memory mode that keeps baseline performance.
+- ✅ We managed to run a UTxO-HD capable node in legacy mode, maintaining the baseline memory usage while keeping all the ledger state in memory.
+    - While the legacy mode is not production-ready (it requires further integration and testing), it remains as a plan B should the need arise to release UTxO-HD if our stakeholders so demand it.
+- ✅ We pivoted to redesigning the Ledger DB API because:
+    - This is needed for integrating the LSM-tree backend.
+	- The redesign opened the possibility of implementing an in-memory backend that would keep the same performance and resource requirements as the baseline version (which needs to be confirmed by benchmarks).
+- ✅ We created a more general Ledger DB API.
+- 🚧 We are integrating (into the feature branch) the existing Ledger DB implementations with the new API.
+- 🚧 We are implementing the new in-memory backend.
 
 ### Assist mainnet node release with initial Conway capabilities
 
@@ -46,7 +51,10 @@ hide_table_of_contents: false
 ### Support vendors to deliver contracts
 
 - TODO: highlight collaboration between Tweag, Nick and Alex
-- TODO: highlight collaboration between Javier and Joris.
+- 💾 LSM-tree implementation. Well Typed:
+  - ✅ Finished the design of the public facing API.
+  - ✅ Defined the LSM-tree database file-type formats.
+  - ✅ Implemented property and model-based tests.
 
 ### Operation serenity Q4 2023
 
