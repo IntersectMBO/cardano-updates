@@ -29,8 +29,8 @@ hide_table_of_contents: false
     - This is needed for integrating the LSM-tree backend.
 	- The redesign opened the possibility of implementing an in-memory backend that would keep the same performance and resource requirements as the baseline version (which needs to be confirmed by benchmarks).
 - ✅ We created a more general Ledger DB API.
-- 🚧 We are integrating (into the feature branch) the existing Ledger DB implementations with the new API.
-- 🚧 We are implementing the new in-memory backend.
+- 🛠️ We are integrating (into the feature branch) the existing Ledger DB implementations with the new API.
+- 🛠️ We are implementing the new in-memory backend.
 
 ### Assist mainnet node release with initial Conway capabilities
 
