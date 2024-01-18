@@ -32,25 +32,24 @@ hide_table_of_contents: false
 - 🛠️ We are integrating (into the feature branch) the existing Ledger DB implementations with the new API.
 - 🛠️ We are implementing the new in-memory backend.
 
-### Assist mainnet node release with initial Conway capabilities
+### Assist mainnet node release with initial Conway capabilities, test, benchmark, and improvements to CIP 1694
 
-- High-level highlight 1
-- ...
-
-### Assist with test, benchmark, and improvements to CIP 1694
-
-(We could merge this section with the one above)
-
-- High-level highlight 1
-- ...
+- ✅  We recognized that Conway introduces a new challenge in the versioning of NTC queries, and we resolved it (see [864][864] and [4770][4770]).
 
 ### Assist with P2P IOG relay network shut down
 
+- ✅ We created a prototype for the pre-Genesis State Machine for bootstrap peers, which is currently under test (see [this PR][808]).
+
 ### Assist with repo transfer to Intersect
+
+- ✅ We transferred the `ouroboros-consensus` repository to the Intersect GitHub organization.
 
 ### Support vendors to deliver contracts
 
-- TODO: highlight collaboration between Tweag, Nick and Alex
+- Genesis
+  - ✅ Interacted with the Consensus team and addressed resulting feedback on past deliverables.
+  - ✅ Finished implementation of the testing infrastructure of Genesis
+  - ✅ Started to refine the Proof of Concept demo into an actual implementation of the core components of the Genesis design.
 - 💾 LSM-tree implementation. Well Typed:
   - ✅ Finished the design of the public facing API.
   - ✅ Defined the LSM-tree database file-type formats.
@@ -58,9 +57,9 @@ hide_table_of_contents: false
 
 ### Operation serenity Q4 2023
 
-- ...
-- We added a test to check Consensus emits valid CBOR, which prevents the generation of invalid binary encoding.
-- We established and implemented an interface between Consensus tooling and P&T tooling, which constitutes a step towards incorporating component level benchmarks in our development process.
+- 🎉 We welcomed our newest team member @RenateEilers and assisted with her (ongoing) onboarding.
+- ✅ We added tests to check Consensus emits valid CBOR, which prevents the generation of invalid binary encoding.
+- ✅ We established and implemented an interface between Consensus tooling and P&T tooling, which constitutes a step towards incorporating component level benchmarks in our development process.
 
 [429]: https://github.com/IntersectMBO/ouroboros-consensus/issues/429
 [423]: https://github.com/IntersectMBO/ouroboros-consensus/issues/423
@@ -69,3 +68,6 @@ hide_table_of_contents: false
 [425]: https://github.com/IntersectMBO/ouroboros-consensus/issues/425
 [427]: https://github.com/IntersectMBO/ouroboros-consensus/issues/427
 [415]: https://github.com/IntersectMBO/ouroboros-consensus/issues/415
+[864]: https://github.com/IntersectMBO/ouroboros-consensus/issues/864
+[4770]: https://github.com/IntersectMBO/ouroboros-network/issues/4770
+[808]: https://github.com/IntersectMBO/ouroboros-consensus/pull/808
