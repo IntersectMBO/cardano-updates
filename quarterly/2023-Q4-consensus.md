@@ -58,6 +58,7 @@ hide_table_of_contents: false
 ### Operation serenity Q4 2023
 
 - 🎉 We welcomed our newest team member @RenateEilers and assisted with her (ongoing) onboarding.
+- ✅ We implemented a simplification in the ChainSync mini-protocol that is also a step towards Ouroboros Chronos.
 - ✅ We added tests to check Consensus emits valid CBOR, which prevents the generation of invalid binary encoding.
 - ✅ We established and implemented an interface between Consensus tooling and P&T tooling, which constitutes a step towards incorporating component level benchmarks in our development process.
 
