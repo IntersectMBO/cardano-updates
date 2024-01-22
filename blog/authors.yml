@@ -124,14 +124,14 @@ mkoura:
   title: System Test Engineer
   url: https://github.com/mkoura
 
-pgrange:
-  image_url: https://github.com/pgrange.png
-  name: Pascal Grange
-  title: Hydra Software Engineer
-  url: https://github.com/pgrange
-
 v0d1ch:
   image_url: https://github.com/v0d1ch.png
   name: Sasha Bogicevic
   title: Hydra Software Engineer
   url: https://github.com/v0d1ch
+
+abailly:
+  image_url: https://github.com/abailly.png
+  name: Arnaud Bailly
+  title: Head of Architecture, Cardano Scaling
+  url: https://github.com/abailly
