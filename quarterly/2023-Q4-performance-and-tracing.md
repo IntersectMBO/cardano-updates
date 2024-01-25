@@ -56,14 +56,10 @@ Additionally, we’ve shut down the legacy `cardano-ops` benchmarking cluster, a
 #### Consensus component QTAs
 
 We’ve developed the existing prototype into an automatable, self-contained benchmark called `beacon`, as well as systematized workloads and run structure for it.
-Moreover, we’ve demonstrated usefulness of the metrics, their reproducability, and identified domains viable for QTAs with system level benchmarks.
+Moreover, we’ve demonstrated usefulness of the metrics, their reproducibility, and identified domains viable for QTAs with system-level benchmarks.
 
 #### New team member
 
 We're happy to welcome a new joiner to our team! We've successfully onboarded him in Q4; he has taken
 over the `cardano-tracer` service - the node-external component of the new tracing system - and has already
 landed several valuable contributions.
-
-### Next steps
-
-_TBD._
