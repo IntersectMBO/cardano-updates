@@ -141,3 +141,9 @@ abailly:
   name: Arnaud Bailly
   title: Head of Architecture, Cardano Scaling
   url: https://github.com/abailly
+
+locallycompact:
+  image_url: https://github.com/locallycompact.png
+  name: Daniel Firth
+  title: Hydra Software Engineer
+  url: https://github.com/locallycompact
