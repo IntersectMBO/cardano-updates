@@ -9,7 +9,7 @@ hide_table_of_contents: false
 ## High level summary
 
 * Benchmarking: GHC 9.6.3 benchmarks for node `8.7.2` have been performed.
-* Development: Additional features for our reporting pipeline, while simultaneously reducing dependency footpring.
+* Development: Additional features for our reporting pipeline, while simultaneously reducing dependency footprint.
 * Tracing: Implementation for `cardano-tracer` to work on handles instead of files; work on New Tracing Quickstart document has begun.
 * Nomad cluster: We're preparing an upgrade to the latest Nomad version.
 
@@ -19,7 +19,7 @@ hide_table_of_contents: false
 ### Benchmarking
 
 We've performed a full set of GHC 9.6.3 benchmarks for node `8.7.2`. For recommending GHC9.6 as a default build platform for `cardano-node` - from a performance perspective - we observe only one residual issue. As a way to
-address this, we've decided to create a reproduction benchmark targetet to the affected component.
+address this, we've decided to create a reproduction benchmark targeting the affected component.
 
 ### Development
 
