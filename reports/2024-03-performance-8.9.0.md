@@ -54,7 +54,7 @@ This metric encompasses block diffusion and adoption across specific percentages
 End-to-end propagation times on `8.9.0` exhibit a small improvement by 2% across all centiles for full blocks, whereas they remain largely unchanged for small blocks.
 
 
-### Conlusion
+### Conclusion
 
 * The performance changes observed between `8.9.0` and `8.7.2` are only minor - with `8.9.0` slightly improving on `8.7.2`. Therefore, we'd expect `8.9.0` Mainnet performance to be akin to `8.7.2`.
 * We have demonstrated no performance regression has been introduced in `8.9.0`.
