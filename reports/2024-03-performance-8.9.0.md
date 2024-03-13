@@ -29,26 +29,30 @@ The observations stated refer to the direct comparison between the `8.7.2` and `
 
 ### Resource Usage
 
-...
+1. Overall CPU usage exhibits a small to moderate (5% - 8%) increase.
+2. Memory usage is very slightly decreased by 1%.
 
 Caveat: Individual metrics can't be evaluated in isolate; the resource usage profile as a whole provides insight into the system's performance and responsiveness.
 
 
 ### Forging Loop
 
-...
+1. For full blocks, Mempool Snapshotting improves by 4% (or 3ms).
+2. For small blocks, Self Adoption times improve by 8% (or 4ms).
+3. All other forger metrics do not exhibit significant change.
 
-The metric _'Slot start to announced'_ (see in attachements) is cumulative, and demonstrates how far into a slot the block producing node first announces the new header.
+The metric _'Slot start to announced'_ (see in attachments) is cumulative, and demonstrates how far into a slot the block producing node first announces the new header.
 
 ### Peer propagation
 
-...
+1. For full blocks, Block Fetch duration shows a notable improvement by 10ms (or 3%).
 
 ### End-to-end propagation
 
-This metric encompasses block diffusion and adoption across specific percentages of the benchmarking cluster, with 0.80 adoption meaning adoption on 80% of all cluster nodes.
+This metric encompasses block diffusion and adoption across specific percentages of the benchmarking cluster, with 0.80 adoption meaning adoption on 80% of all cluster nodes.  
 
-...
+End-to-end propagation times on `8.9.0` exhibit a small improvement by 2% across all centiles for full blocks, whereas they remain largely unchanged for small blocks.
+
 
 ### Conlusion
 
@@ -67,4 +71,4 @@ Full report for _value-only workload_, PDF downloadable [here](../static/pdf/ben
 
 Full report for _Plutus workload_, PDF downloadable [here](../static/pdf/benchmarking/release-8.9.0.plutus.pdf).
 
-Mainnet release `8.7.3` did not include any performance-related changes; measurements taken on `8.7.2` remain valid.
+NB. Mainnet release `8.7.3` did not include any performance-related changes; measurements taken on `8.7.2` remain valid.
