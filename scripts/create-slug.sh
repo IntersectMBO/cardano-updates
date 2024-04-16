@@ -48,14 +48,14 @@ hide_table_of_contents: false
 ### CI & project maintenance
 EOF
 
-source scripts/download-prs.sh input-output-hk/cardano-node $DATE
-source scripts/download-prs.sh input-output-hk/cardano-cli $DATE
-source scripts/download-prs.sh input-output-hk/cardano-api $DATE
+source scripts/download-prs.sh IntersectMBO/cardano-node $DATE
+source scripts/download-prs.sh IntersectMBO/cardano-cli $DATE
+source scripts/download-prs.sh IntersectMBO/cardano-api $DATE
 
-source scripts/distribute-merged-prs.sh input-output-hk/cardano-node current $DATE $END_DATE
-source scripts/distribute-merged-prs.sh input-output-hk/cardano-cli current $DATE $END_DATE
-source scripts/distribute-merged-prs.sh input-output-hk/cardano-api current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh IntersectMBO/cardano-node current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh IntersectMBO/cardano-cli current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh IntersectMBO/cardano-api current $DATE $END_DATE
 
-source scripts/summarise-merged-prs.sh input-output-hk/cardano-node current
-source scripts/summarise-merged-prs.sh input-output-hk/cardano-cli current
-source scripts/summarise-merged-prs.sh input-output-hk/cardano-api current
+source scripts/summarise-merged-prs.sh IntersectMBO/cardano-node current
+source scripts/summarise-merged-prs.sh IntersectMBO/cardano-cli current
+source scripts/summarise-merged-prs.sh IntersectMBO/cardano-api current
