@@ -19,7 +19,7 @@ hide_table_of_contents: false
 
 ### Benchmarking
 
-We've performed a full set of release benchmarks for node `8.7.2`. From a performance perspective, it has been greenlit for mainnet release. Starting with this version, our team will publish observations alongside the original comparative analysis of benchmarks, providing insight into key metrics and resource usage. Hence, for the post on version `8.7.2`, see [here](../reports/2023-12-performance-8.7.2).
+We've performed a full set of release benchmarks for node `8.7.2`. From a performance perspective, it has been greenlit for mainnet release. Starting with this version, our team will publish observations alongside the original comparative analysis of benchmarks, providing insight into key metrics and resource usage. Hence, for the post on version `8.7.2`, see [here](/reports/2023-12-performance-8.7.2).
 
 Additionally, we're running P2P versus no-P2P benchmarks on the same version. We intend to establish future baseline runs using P2P topology as the default setting. All our cluster nodes being block producers, it is crucial to establish the P2P stack does not exhibit any regression regarding block forging. Furthermore, the evidence gathered from those benchmarks forms the base for a recommended setting for P2P on mainnet block producers.  
 
