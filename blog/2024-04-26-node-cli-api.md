@@ -17,7 +17,6 @@ The team continues focused on implementing tests for the Conway era on the carda
 CI pipelines on cardano-cli. 
 
 - Cardano-cli: implemented `build-estimate` to facilitate automatic transaction balancing without access to a live node; and added  `minFeeRefScriptCostPerByte` as an option to `create-protocol-parameters-update` command. 
-- Cardano-api: Released version 8.45.1.0 
 
 ### cardano-node 
 
