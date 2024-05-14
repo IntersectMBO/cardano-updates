@@ -113,6 +113,7 @@ const config = {
               { to: 'tags/mithril', label: 'Mithril' },
               { to: 'tags/performance-tracing', label: 'Performance & Tracing' },
               { to: 'reports/tags/benchmarking-reports', label: 'Benchmarking Reports' },
+              { to: 'tags/incident', label: 'Incident Reports' },
 
             ],
           },

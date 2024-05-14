@@ -2,7 +2,7 @@
 title: SECP bindings Security Issue Report
 slug: 2023-08-17-secp-issue
 authors: iquerejeta
-tags: [crypto]
+tags: [crypto, incident]
 hide_table_of_contents: false
 ---
 
