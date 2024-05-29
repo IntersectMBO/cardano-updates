@@ -8,7 +8,7 @@ The generated website containing the updates can be found
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern
 static website generator.
 
-## Usage
+## Usage 
 
 To add an update create a file under `blog` directory which name is:
 `yyyy-mm-dd-TEAM.md`. Commit and push.  The site will be built and deployed by a
