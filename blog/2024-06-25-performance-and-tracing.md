@@ -27,7 +27,7 @@ impact is observable in this instance, we can still see that the number of DReps
 
 ### Development
 
-We have contributed and merged a performance fix on `8.11` which adresses a regressing metric in the forging loop. The regression was only observable under specific conditions, with configurations for very detailed log output. Benchmarks on `8.12`
+We have contributed and merged a performance fix on `8.11` which adresses a regressing metric in the forging loop. The regression was only observable under specific conditions. Benchmarks on `8.12`
 have already confirmed the fix to be successful.  
  
 We've kicked off governance action workloads for benchmarking. This will be an entirely new workload type for Conway era, targeting performance measurements of its decentralized decision making process. The workload will feature
@@ -45,13 +45,15 @@ Furthermore, we've updated to the latest PlutusV3 costmodel in our benchmarks - 
 The work on aligning of metrics naming and semantics of new and legacy tracing is ongoing. Additionally, we're adding a handful of metrics to the new tracing system which currently exist in legacy tracing only.
 
 Factoring out the RTView ("real-time view") component of `cardano-tracer` in the new tracing system has finished. This includes a considerable refactoring of `cardano-tracer`'s codebase, so that we're currently running test on the new codebase. Isolating
-RTView is due to its being in prototype stage for too long, and the design decisions taken. In the short term, this will now make several package dependencies optional, which have become troublesome for CI, as well as making `cardano-tracer` more lightweight.
+RTView is due to its being in prototype stage for too long, and the design decisions taken. In the short term, this will make several package dependencies optional, which have become troublesome for CI, as well as making `cardano-tracer` more lightweight.
 RTView remains as an opt-in.  
 
 ### IOI Tech Meetup
 
-Our entire team traveled to Zurich, Switzerland to attend ZuriHac'24 and the IOI Tech Meetup. It was fantastic to meet everyone in person, and we all had an amazing time. A big Thank You to everyone involved making that happen, and making it a success.  
+Our entire team traveled to Zurich, Switzerland to attend ZuriHac'24 and the IOI Tech Meetup. It was fantastic to meet everyone in person, and we all had an amazing and very productive time. A big Thank You to everyone involved in making that happen, and making it a success.  
 
 We contributed two presentations for the meetup: a thourough introduction of the new tracing system aimed at developers - as it's not tailored exclusively to `cardano-node`, but can be used in other (Haskell) services as well. And secondly, 
 an overview over the benchmarking framework based on Quantitative Timeliness Agreements which we're building - as well as a show-and-tell of our prototype, implementing part of said framework. We're grateful for the great interest and feedback from all
-the participants.
+the participants.  
+
+Last not least, we worked on creating a community report of the UTxO scaling benchmarks performed during March and April - to be released soon.
