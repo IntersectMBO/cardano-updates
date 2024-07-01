@@ -29,8 +29,9 @@
             config.treefmt.build.devShell
           ];
           nativeBuildInputs = [
-            pkgs.nodejs
             pkgs.just
+            pkgs.nodejs
+            pkgs.yq-go
           ];
         };
       };
