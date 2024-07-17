@@ -147,3 +147,10 @@ locallycompact:
   name: Daniel Firth
   title: Hydra Software Engineer
   url: https://github.com/locallycompact
+
+noonio:
+  image_url: https://github.com/noonio.png
+  name: Noon van der Silk
+  title: Software Engineering Lead
+  url: https://github.com/noonio
+
