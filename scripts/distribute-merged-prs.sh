@@ -9,7 +9,7 @@ set -euo pipefail
 
 if [ "$#" -ne 4 ]; then
   echo "Usage: $0 repository sub_dir start_date end_date" >&2
-  echo "Example: $0 input-output-hk/cardano-node v8.0.0 2023-02-22 '2023-02-22 +14 days'" >&2
+  echo "Example: $0 IntersectMBO/cardano-node v8.0.0 2023-02-22 '2023-02-22 +14 days'" >&2
   exit 1
 fi
 

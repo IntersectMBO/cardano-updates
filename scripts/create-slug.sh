@@ -48,14 +48,14 @@ hide_table_of_contents: false
 ### CI & project maintenance
 EOF
 
-source scripts/download-prs.sh IntersectMBO/cardano-node $DATE
-source scripts/download-prs.sh IntersectMBO/cardano-cli $DATE
-source scripts/download-prs.sh IntersectMBO/cardano-api $DATE
+source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-node.git $DATE
+source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-cli.git $DATE
+source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-api.git $DATE
 
-source scripts/distribute-merged-prs.sh IntersectMBO/cardano-node current $DATE $END_DATE
-source scripts/distribute-merged-prs.sh IntersectMBO/cardano-cli current $DATE $END_DATE
-source scripts/distribute-merged-prs.sh IntersectMBO/cardano-api current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh https://github.com/IntersectMBO/cardano-node.git current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh https://github.com/IntersectMBO/cardano-cli.git  current $DATE $END_DATE
+source scripts/distribute-merged-prs.sh https://github.com/IntersectMBO/cardano-api.git  current $DATE $END_DATE
 
-source scripts/summarise-merged-prs.sh IntersectMBO/cardano-node current
-source scripts/summarise-merged-prs.sh IntersectMBO/cardano-cli current
-source scripts/summarise-merged-prs.sh IntersectMBO/cardano-api current
+source scripts/summarise-merged-prs.sh https://github.com/IntersectMBO/cardano-node.git current
+source scripts/summarise-merged-prs.sh https://github.com/IntersectMBO/cardano-cli.git current
+source scripts/summarise-merged-prs.sh https://github.com/IntersectMBO/cardano-api.git current

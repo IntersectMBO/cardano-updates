@@ -9,7 +9,7 @@ set -euo pipefail
 
 if [ "$#" -ne 2 ]; then
   echo "Usage: $0 repository output_subdir" >&2
-  echo "Example: $0 input-output-hk/cardano-node v8.0.0" >&2
+  echo "Example: $0 IntersectMBO/cardano-node v8.0.0" >&2
   exit 1
 fi
 
