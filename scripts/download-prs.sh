@@ -9,7 +9,7 @@ set -euo pipefail
 
 if [ "$#" -ne 2 ]; then
   echo "Usage: $0 repository" >&2
-  echo "Example: $0 input-output-hk/cardano-node" >&2
+  echo "Example: $0 IntersectMBO/cardano-node" >&2
   exit 1
 fi
 
@@ -31,6 +31,9 @@ temp_json_file="$(mktemp).json"
 # Find a reasonable number for -L
 max_pr_number="$(gh pr list --repo "$repository" --state all --search "created:>=$date" -L 1000 --json number | jq length)"
 
+
+echo "Repository: $repository"
+echo "Date: $date"
 echo "Downloading up to $max_pr_number PRs"
 
 gh pr list --repo "$repository" \
