@@ -28,7 +28,7 @@ the new baseline arrives - at scale - at the same performance observations and p
 
 Forwarding traces and metrics in the new system exhibited a tiny space leak. Under conventional operation, this leak would only become noticeable after running uninterrupted for days or even weeks. It took very hard pressure on the
 system, and additional profiling, to make it visible. It could be fixed by avoiding unnecessary allocations of continuations: The buffer of objects to forward inherently carries the position of the next object to process, such that a fully
-evaluated closure can trivially be reused to handle any subsequent forwarding request. This has led to new versions of packages `trace-foward-2.2.7` and `ekg-forward-2.4`. Huge thanks to John Lotoski and Javier Sagredo, whose
+evaluated closure can trivially be reused to handle any subsequent forwarding request. This has led to new versions of packages `trace-foward-2.2.7` and `ekg-forward-0.6`. Huge thanks to John Lotoski and Javier Sagredo, whose
 meticulous information helped to swiftly address the issue.  
 
 On the benchmarking cluster, we've observed `cardano-tracer`'s log rotation to occasionally misbehave: under certain circumstances, the service leaks handles by not redirecting output to the latest log file in the rotation. We've located the
