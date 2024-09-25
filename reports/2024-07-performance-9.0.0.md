@@ -72,5 +72,3 @@ We are still looking to gather questions, both general and specific, so that we 
 Full report for _value-only workload_, PDF downloadable [here](../static/pdf/benchmarking/release-9.0.0.value-only.pdf).
 
 Full report for _Plutus workload_, PDF downloadable [here](../static/pdf/benchmarking/release-9.0.0.plutus.pdf).
-
-NB. The release benchmarks for `8.12.1` were performed on tag `8.12.0-pre`. The patch version bump did not include changes relevant to performance; thus, measurements taken on `8.12.0-pre` remain valid.
