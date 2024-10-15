@@ -28,16 +28,16 @@ The following scripts are included in this repository:
 
 To use these scripts, follow the instructions below:
 
-1. Run the `download-prs.sh` script providing a "repository" and a "start-date" (YYYY-MM-DD) as arguments. The script will download all PRs created after the start date. For example:
+1. Run the `download-prs.sh` script providing a "repository", "start-date" (YYYY-MM-DD) and "end-date" (YYYY-DD-DD) as arguments. The script will download all PRs merged in the date range. For example:
 
 ```bash
-./scripts/download-prs.sh input-output-hk/cardano-node 2023-06-30
+./scripts/download-prs.sh https://github.com/IntersectMBO/cardano-node.git  2023-06-30 2023-07-30
 ```
 
 2. Execute the `distribute-merged-prs.sh` script using the following command:
 
 ```bash
-./scripts/distribute-merged-prs.sh input-output-hk/cardano-node $dir 2022-06-25 2023-04-18
+./scripts/distribute-merged-prs.sh input-output-hk/cardano-node $dir 2023-06-30 2023-07-30
 ```
 
 This script will distribute the downloaded PRs based on the files they have touched in the the directory $dir.
