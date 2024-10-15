@@ -19,12 +19,17 @@ else
   date_cmd=date
 fi
 
-repository="$1"
+repository_url="$1"
 subdir="$2"
 start_date="$("$date_cmd" -u -d "$3" +"%Y-%m-%dT%H:%M:%SZ")"
 end_date="$("$date_cmd" -u -d "$4" +"%Y-%m-%dT%H:%M:%SZ")"
+repository_name="$(basename "$repository_url" ".git")"
 
-work_dir="gen/$repository"
+echo "Start date: $start_date"
+echo "End date: $end_date"
+
+
+work_dir="gen/$repository_name"
 work_subdir="$work_dir/$subdir"
 download_file="$work_dir/download.yaml"
 filtered_file="$work_subdir/filtered.yaml"

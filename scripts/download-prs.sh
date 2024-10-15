@@ -16,13 +16,14 @@ fi
 if [[ "$(uname -s)" == "Darwin" ]]; then
   date_cmd=gdate
 else
-  date_cmd=start_date
+  date_cmd=date
 fi
 
 repository_url="$1"
 repository_name="$(basename "$repository_url" ".git")"
-start_date="$2"
-end_date="$3"
+
+start_date="$("$date_cmd" -u -d "$2" +"%Y-%m-%dT%H:%M:%SZ")"
+end_date="$("$date_cmd" -u -d "$3" +"%Y-%m-%dT%H:%M:%SZ")"
 
 out_dir="gen/$repository_name"
 
@@ -37,7 +38,7 @@ gh pr list --repo "$repository_url" --state merged --search "merged:$start_date.
 
 
 echo "Repository: $repository_url"
-echo "Date: $start_date"
+echo "Start Date: $start_date"
 echo "End Date: $end_date"
 echo "Downloading up to $max_pr_number PRs"
 
