@@ -48,9 +48,9 @@ hide_table_of_contents: false
 ### CI & project maintenance
 EOF
 
-source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-node.git $DATE
-source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-cli.git $DATE
-source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-api.git $DATE
+source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-node.git $DATE $END_DATE
+source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-cli.git $DATE $END_DATE
+source scripts/download-prs.sh https://github.com/IntersectMBO/cardano-api.git $DATE $END_DATE
 
 source scripts/distribute-merged-prs.sh https://github.com/IntersectMBO/cardano-node.git current $DATE $END_DATE
 source scripts/distribute-merged-prs.sh https://github.com/IntersectMBO/cardano-cli.git  current $DATE $END_DATE

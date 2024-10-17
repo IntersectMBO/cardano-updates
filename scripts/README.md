@@ -26,18 +26,22 @@ The following scripts are included in this repository:
 
 ### PR Summary Scripts
 
+NB: When specifying date ranges be sure the end date is the _start date of the following sprint_. If not you risk losing work done on the last day of a sprint. 
+
+NB: Dates are converted to UTC time and are automatically zeroed: YYYY-MM-DD:00:00:00Z
+
 To use these scripts, follow the instructions below:
 
-1. Run the `download-prs.sh` script providing a "repository" and a "start-date" (YYYY-MM-DD) as arguments. The script will download all PRs created after the start date. For example:
+1. Run the `download-prs.sh` script providing a "repository", "start-date" (YYYY-MM-DD) and "end-date" (YYYY-DD-DD) as arguments. The script will download all PRs merged in the date range. For example:
 
 ```bash
-./scripts/download-prs.sh input-output-hk/cardano-node 2023-06-30
+./scripts/download-prs.sh https://github.com/IntersectMBO/cardano-node.git  2023-06-30 2023-07-30
 ```
 
 2. Execute the `distribute-merged-prs.sh` script using the following command:
 
 ```bash
-./scripts/distribute-merged-prs.sh input-output-hk/cardano-node $dir 2022-06-25 2023-04-18
+./scripts/distribute-merged-prs.sh input-output-hk/cardano-node $dir 2023-06-30 2023-07-30
 ```
 
 This script will distribute the downloaded PRs based on the files they have touched in the the directory $dir.
@@ -57,7 +61,7 @@ Execute the create-slug.sh script with the following command:
 ```bash
 ./create-slug.sh <author> <date> <end_date>
 ```
-This script will create a markdown file named blog/<date>-node-cli-api.md, authored by "<author>", with sections for updates from "<date>" to "<end_date>". It automatically runs the PR summary scripts as defined above so you can cherry pick the PRs as necessary.
+This script will create a markdown file named blog/<date>-node-cli-api.md, authored by "<author>", with sections for updates from "<date>" to "<end_date>". It automatically runs the PR summary scripts as defined above so you can cherry pick the PRs as necessary. 
 
 
 ## Additional Information

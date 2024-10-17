@@ -8,15 +8,16 @@ set -euo pipefail
 }
 
 if [ "$#" -ne 2 ]; then
-  echo "Usage: $0 repository output_subdir" >&2
+  echo "Usage: $0 repository_url output_subdir" >&2
   echo "Example: $0 IntersectMBO/cardano-node v8.0.0" >&2
   exit 1
 fi
 
-repository="$1"
+repository_url="$1"
+repository_name="$(basename "$repository_url" ".git")"
 subdir="$2"
 
-work_dir="gen/$repository"
+work_dir="gen/$repository_name"
 work_subdir="$work_dir/$subdir"
 detail_dir="$work_subdir/detail"
 summary_dir="$work_subdir/summary"
