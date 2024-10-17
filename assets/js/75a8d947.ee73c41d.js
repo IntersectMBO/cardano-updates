@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[48e3],{7966:e=>{e.exports=JSON.parse('{"permalink":"/tags/goedel","page":1,"postsPerPage":5,"totalPages":5,"totalCount":23,"nextPage":"/tags/goedel/page/2","blogDescription":"Regular updates from Cardano Development Teams","blogTitle":"Cardano Development Updates"}')}}]);
