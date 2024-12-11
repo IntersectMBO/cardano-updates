@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 ## High level summary
 
-- Well-Typed held a new milestone presentation, where they showed the progress in two important features:
+- Well-Typed held a new `lsm-trees` milestone presentation, where they showed the progress in two important features:
     - Snapshots (for persisting ledger snapshots)
     - Table union (for storing more parts of the ledger state on disk)
 - Finished the UTXO-HD code review work. Since this feature could have a performance impact, we need to run a new set of system-level benchmarks before we can merge it. The next steps are detailed [in this comment](https://github.com/IntersectMBO/cardano-node/issues/5918#issuecomment-2531556742).
