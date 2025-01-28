@@ -63,8 +63,8 @@ of configuration errors.
 Our team will host a new channel _#tracing-monitoring_ on *IOG's Technical Community* discord server. The migration to the new tracing system might affect existing automations built by the community, or how
 existing configuration need adjusting to achieve the intended outcome. In the channel, we'll offer support for the community in all those regards, as well as answer more general questions regarding the Node's tracing systems.
 
-Additionally, we're currently releasing our documentation improvements to the excellent [Cardano Developer Portal](https://developers.cardano.org), linked below (links on the website may not have been updated yet).
+Additionally, we're currently releasing our documentation improvements to the excellent [Cardano Developer Portal](https://developers.cardano.org), linked below.
 
-* [Discord channel #tracing-monitoring](https://hmpg.net) <-- will be updated with correct link once the channel is set up and running
+* [Discord channel #tracing-monitoring](https://discord.com/channels/826816523368005654/1332375957528514590)
 * [Developer Portal: New Tracing quickstart](https://developers.cardano.org/docs/get-started/cardano-node/new-tracing-system/new-tracing-system)
 * [Developer Portal: `cardano-tracer`](https://developers.cardano.org/docs/get-started/cardano-node/new-tracing-system/cardano-tracer)
