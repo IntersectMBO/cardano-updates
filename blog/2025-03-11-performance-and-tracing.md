@@ -20,7 +20,7 @@ hide_table_of_contents: false
 
 For keeping a history of comparable benchmarks, it's essential to have an accurate timeline of mainnet protocol parameter updates by epoch. They represent the environment in which specific measurements took place, and are thus tied
 inherently to the observation process. Additionally, to reproduce specific benchmarking metrics from the past, our performance workbench has the capability to "roll back" those updates, and perform a benchmark given the protocol parameters of any given epoch.
-Instead of maintaining this epoch timeline by hand, we've now created an automated way to extract all key epochs applying parameter updates using `db-sync`. This 
+Instead of maintaining this epoch timeline by hand, we've now created an automated way to extract all key epochs applying parameter updates using `db-sync`. This approach will prove both more robust, and having lower maintenance overhead.
 
 
 Furthermore, the new DB storage backend for raw benchmarking data in `locli` is now set to be the default for the performance workbench. Apart from cutting down analysis time for a benchmarking run and reducing
@@ -29,7 +29,7 @@ the required on-disk size for archiving, this enables the new (still under devel
 ### Infrastructure
 
 When creating the Plutus memory scaling benchmarks, we developed so-called 'playground' profiles for the workbench. These allow for easier dynamic change of individual profile parameters, building a resulting benchmark setup including
-Plutus script calibration, and observing the effect in a short local cluster run. Applying these changes to established profiles is stricly forbidden, as this puts comparability with past benchmarks at risk. So by
+Plutus script calibration, and observing the effect in a short local cluster run. Applying these changes to established profiles is strictly forbidden, as it would put comparability with past benchmarks at risk. So by
 introducing this separation, we keep that safety guarantee, while still lifting it somewhat for the development cycle only.
 
 ### Tracing
