@@ -32,7 +32,7 @@ When creating the Plutus memory scaling benchmarks, we developed so-called 'play
 Plutus script calibration, and observing the effect in a short local cluster run. Applying these changes to established profiles is strictly forbidden, as it would put comparability with past benchmarks at risk. So by
 introducing this separation, we keep that safety guarantee, while still lifting it somewhat for the development cycle only.
 
-### Tracing
+### New Tracing
 
 We've been extremely busy implementing new features and optimizations for the new tracing system, motivated by the feedback we received from the SPO community. This includes:
 * A brand new backend that allows for Prometheus exposition of metrics directly from the application - without running `cardano-tracer` and forwarding to it.
@@ -46,7 +46,7 @@ Currently, the `cardano-tracer` service still depends on the Node for a few data
 to be built independently of the Node - simplifying a setup where other processes and applications can forward observables to `cardano-tracer` and benefit from its features.
 
 
-## Community
+### Community
 
 We had the opportunity to talk about benchmarking and performance impact of UTxO-HD on the very first episode of the [Cardano Dev Pulse Podcast] (YouTube). Thank you Sam and Carlos for having us!
 
