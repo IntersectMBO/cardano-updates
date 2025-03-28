@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[6795],{4758:a=>{a.exports=JSON.parse('{"label":"open-source","permalink":"/quarterly/tags/open-source","allTagsPath":"/quarterly/tags","count":1}')}}]);
