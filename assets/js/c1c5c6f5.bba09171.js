@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[95569],{9564:a=>{a.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"quarterly"}')}}]);
