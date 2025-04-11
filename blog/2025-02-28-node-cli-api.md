@@ -29,7 +29,7 @@ hide_table_of_contents: false
   - Standardized on fourmolu for code formatting
   - Updated CHaP index and flake inputs
 
-- **cardano-node/testnet updates**
+- **cardano-testnet updates**
   - Fixed testnet test configuration
   - Optimized testnet code by removing unused indirections
   - Removed unused custom node configuration file option
