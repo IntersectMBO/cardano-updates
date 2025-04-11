@@ -13,6 +13,16 @@ This repository contains scripts to generate a merged PR summary and create a sp
 | 8  | Nov 6, 2024 | Nov 20, 2024| Dec 4, 2024 | Dec 18, 2025| Jan 1, 2025 | Jan 15, 2025            | May 6, 2025  |
 
 
+### Update markdown document creation script
+
+Execute the create-slug.sh script with the following command:
+
+```bash
+./create-slug.sh <author> <date> <end_date>
+```
+This script will create a markdown file named blog/<date>-node-cli-api.md, authored by "<author>", with sections for updates from "<date>" to "<end_date>". It automatically runs the PR summary scripts defined below and places the relevant PRs in the correct sections. Be sure to check for duplicates!
+
+
 ## Scripts
 
 The following scripts are included in this repository:
@@ -53,15 +63,6 @@ This script will distribute the downloaded PRs based on the files they have touc
 ```
 
 This script will create summaries that can be directly pasted into change logs.
-
-### Update creation script
-
-Execute the create-slug.sh script with the following command:
-
-```bash
-./create-slug.sh <author> <date> <end_date>
-```
-This script will create a markdown file named blog/<date>-node-cli-api.md, authored by "<author>", with sections for updates from "<date>" to "<end_date>". It automatically runs the PR summary scripts as defined above so you can cherry pick the PRs as necessary. 
 
 
 ## Additional Information
