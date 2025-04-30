@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 ## High level summary
 
-We made significant improves to Plinth (formerly Plutus Tx) in the past few weeks:
+We made significant improvements to Plinth (formerly Plutus Tx) in the past few weeks:
 
 - Plinth compiler improvements
   - Added compiler flag `inline-callsite-growth`, for setting the inlining threshold for callsites.
@@ -34,7 +34,7 @@ This includes
 - reviewing the CIP on builtin `Value`
 - investigating approaches for enabling casing on builtin types
 
-Regarding certified compilation, we worked on adding more tests to the certifier and resolving the issues it uncovered
+Regarding certified compilation, we worked on adding more tests to the certifier and resolving the issues it uncovered.
 
 ## Low level summary
 
