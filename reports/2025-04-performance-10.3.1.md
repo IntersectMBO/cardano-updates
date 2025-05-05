@@ -8,7 +8,7 @@ hide_table_of_contents: false
 
 ## Setup
 
-As part of the release benchmarking cycle, we're comparing benchmarking runs for 2 different versions of `cardano-node`:
+As part of the release benchmarking cycle, we're comparing benchmarking runs for 3 different versions of `cardano-node`:
 * `10.2` - baseline from the previous release (bulit with GHC8.10.7)
 * `10.3.0-ghc8107` - the current release built with GHC8.10.7
 * `10.3.0-ghc965` - the current release built with GHC9.6.5
@@ -69,8 +69,6 @@ This metric encompasses block diffusion and adoption across specific percentages
 4. With GHC9, however, there's a small 2% _improvement_ in all but the 100th centile.
 
 ### Conclusion
-
-_Conclusion_
 
 1. For `10.3.1` we could not detect any performance risks or regressions.
 2. Improving resource usage was a stated goal for the `10.3` release; this could be confirmed via measurements for CPU and RAM usage as well as CPU spikes.
