@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[89351],{82621:a=>{a.exports=JSON.parse('{"label":"embedding-quality","permalink":"/tags/embedding-quality","allTagsPath":"/tags","count":1}')}}]);
