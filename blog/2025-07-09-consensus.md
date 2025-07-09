@@ -6,7 +6,7 @@ tags: [consensus]
 hide_table_of_contents: false
 ---
 
-## High level summary
+## High-level summary
 
 - Introduced a mempool optimization ([#1565](https://github.com/IntersectMBO/ouroboros-consensus/pull/1565)).
 - Fixed a bug in the Byron deserialization of Ledger Tables ([#1577](https://github.com/IntersectMBO/ouroboros-consensus/pull/1577)).
