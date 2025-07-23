@@ -1,6 +1,6 @@
 ---
 title: Plutus Core Team Update
-slug: 2025-07-09-plutus-core
+slug: 2025-07-23-plutus-core
 authors: zliu41
 tags: [plutus-core]
 hide_table_of_contents: false
