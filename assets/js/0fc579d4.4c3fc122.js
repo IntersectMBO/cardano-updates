@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[76442],{68216:e=>{e.exports=JSON.parse('{"permalink":"/tags/db-sync","page":1,"postsPerPage":5,"totalPages":4,"totalCount":18,"nextPage":"/tags/db-sync/page/2","blogDescription":"Regular updates from Cardano Development Teams","blogTitle":"Cardano Development Updates"}')}}]);
