@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[27174],{61817:e=>{e.exports=JSON.parse('{"permalink":"/page/132","page":132,"postsPerPage":5,"totalPages":132,"totalCount":660,"previousPage":"/page/131","blogDescription":"Regular updates from Cardano Development Teams","blogTitle":"Cardano Development Updates"}')}}]);
