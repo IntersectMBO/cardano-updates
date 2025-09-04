@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[85123],{43934:a=>{a.exports=JSON.parse('{"label":"cli-api","permalink":"/tags/cli-api","allTagsPath":"/tags","count":60}')}}]);
