@@ -22,6 +22,12 @@ coot:
   title: Network Team Lead
   url: https://github.com/coot
 
+crocodile-dentist:
+  image_url: https://github.com/crocodile-dentist.png
+  name: Marcin Wójtowicz
+  title: Network Engineer
+  url: https://github.com/crocodile-dentist
+
 deepfire:
   image_url: https://github.com/deepfire.png
   name: Serge Kosyrev
