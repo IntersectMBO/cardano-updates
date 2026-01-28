@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[88065],{31107:a=>{a.exports=JSON.parse('{"permalink":"/tags/hydra/page/23","page":23,"postsPerPage":5,"totalPages":23,"totalCount":115,"previousPage":"/tags/hydra/page/22","blogDescription":"Regular updates from Cardano Development Teams","blogTitle":"Cardano Development Updates"}')}}]);
