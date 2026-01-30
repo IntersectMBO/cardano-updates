@@ -25,14 +25,14 @@ one loeses the ability to efficiently localize underlying causes of performance 
 Last month's cluster benchmark of LSM-trees pointed towards a space leak in the integration. To be certain, we successfully aimed to locally recreate network behaviour that was observed in the cluster. With this at hand, Consensus engineers
 managed to localize it and create a potential fix - validation on the cluster still outstanding.  
 
-In the meantime, the benchmarking profile targeting on-disk LSM-trees have been solidified, merged to `master` and eternalized in our encyclopedia of benchmarking profiles `cardano-profile`. 
+In the meantime, the benchmarking profiles targeting on-disk LSM-trees have been solidified, merged to `master` and eternalized in our encyclopedia of benchmarking profiles `cardano-profile`. 
 
 ### Developemnt
 
 The trace consumer and processor service `cardano-tracer` is currently being upgraded with optionally HTTPS enabled connections. For scraping or browsing Node metrics, in case the connection crosses public networks, it's highly recommended to encrypt traffic. So far
 this has to be achieved by placing `cardano-tracer` behind a webserver proxy which speaks HTTPS; with the planned change `cardano-tracer` can be configured to do this directly when provided with the relevant certificates.  
 
-The on aggregating timeseries of Node metrics and evaluating `PromQL`-like queries is almost complete. Currently, it's a standalone application; we're planning to integrate it into `cardano-tracer` as a next step. We've had SRE review
+The work on aggregating timeseries of Node metrics and evaluating `PromQL`-like queries over them is almost complete. Currently, it's a standalone application; we're planning to integrate it into `cardano-tracer` as a next step. We've had SRE review
 the up to now unnamed query language for conciseness and utility - a sort of UAT if you will. This building block forms the foundation for alerts or monitoring dashboard data queries, which in the future can be handled directly by `cardano-tracer`, if so desired.
 
 ### Infrastructure
@@ -51,9 +51,9 @@ The PR also cleaned up the workbench's `nix` API, leading to more straightforwar
 ### Tracing
 
 Establishing `trace-dipatcher` (the Node's new tracing system) as the default for `dmq-node` is nearly complete. We're currently performing a large refactoring with the goal to share code defining trace rendering between `cardano-node` and `dmq-node`;
-they do use the same `ouroboros-network` components ater all. This will avoid redundant implementation, and ensure they the same traces are emitted the same way by either application.
+they do use the same `ouroboros-network` components after all. This will avoid redundant implementation, and ensure the same traces are emitted the same way by either application.
 
-A separate package in the Node project, `cardano-submit-api`, has been ported to use `trace-dispatcher` for logging and metrics - with nearly no changes to messages and metrics at the surface: [cardano-node PR#6326]. This removes the legacy tracing dependency
+We've ported a separate package in the Node project, `cardano-submit-api`, to use `trace-dispatcher` for logging and metrics - with nearly no changes to messages and metrics at the surface: [cardano-node PR#6326]. This removes the legacy tracing dependency
 from the Submit API - a requirement to eventually retire the system from the Node as well. However, as legacy tracing is no longer supported, users are advised to adjust their configs accordingly starting with `cardano-submit-api-10.2`.  
 
 We've also merged a small PR ([cardano-node PR#6409]) that contains improvements to the new tracing system for both users and implementors. Most prominently, we've adjusted default values and configs to prevent accidental misconfiguration
@@ -63,7 +63,7 @@ of the forwarding backend - which should make for a better user experience and a
 
 Additionally, we've been working on building a comprehensive formal schema definition of all the Node's existing trace messages. The Haskell Node being the current reference implementation, it is a logical starting point. The goal is
 to provide a fully compliant JSON schema so any tooling, or verification suite, can automatically derive parsers from it. Furthermore, it should be renderable into human-readable formal documentation. We believe this to be crucial
-to enable unified trace semanantics across diverse Node implementations; right now, we're still evaluating the most effective approach to maintain this over a long time, and guarantee consistency with the implementation.  
+to enable unified trace semantics across diverse Node implementations; right now, we're still evaluating the most effective approach to maintain this over a long time, and guarantee consistency with the implementation.  
 
 Last but not least, we're building a proof-of-concept of how to implement our forwarding mini-protocol in Rust. This would allow for all Rust-based projects to emit Cardano-style structured traces directly, and forward them to a running
 `cardano-tracer` for logging, processing and metrics exposition.
