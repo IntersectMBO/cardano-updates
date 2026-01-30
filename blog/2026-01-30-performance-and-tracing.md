@@ -44,7 +44,7 @@ builds both locally and in CI - and de-risk future `nixpkgs` bumps.
 We performed some necessary backports from `master` to re-enable the `release/10.5.x` branch for cluster benchmarking. As cluster maintenance has moved on and deviated over the months, we're now ready to swiftly benchmark a potential new `10.5` patch
 release, should it see the light of day ([cardano-node PR#6421]).  
 
-We also merged a large PR ([cardano-node PR#6326]) that brings many improvements to the performance workbench. We reworked the configuration of profiled builds (where the Haskell runtime itself profiles execution). There
+We also merged a large PR ([cardano-node PR#6380]) that brings many improvements to the performance workbench. We reworked the configuration of profiled builds (where the Haskell runtime itself profiles execution). There
 is now full support for info-table profiling, and much more flexibility in configuring the runtime to write out an eventlog. Our automation now grants a long enough grace period to write out all profile data before Node processes are terminated.
 The PR also cleaned up the workbench's `nix` API, leading to more straightforward dependency resolution, a cleaner separation of concerns, removal of dead code, and an improved hit/miss ratio for cached binaries.
 
@@ -71,6 +71,7 @@ Last but not least, we're building a proof-of-concept of how to implement our fo
 
 [cardano-node PR#6418]: https://github.com/IntersectMBO/cardano-node/pull/6418
 [cardano-node PR#6421]: https://github.com/IntersectMBO/cardano-node/pull/6421
+[cardano-node PR#6380]: https://github.com/IntersectMBO/cardano-node/pull/6380
 [cardano-node PR#6326]: https://github.com/IntersectMBO/cardano-node/pull/6326
 [cardano-node PR#6409]: https://github.com/IntersectMBO/cardano-node/pull/6409
 [Typst]: https://typst.app/docs
