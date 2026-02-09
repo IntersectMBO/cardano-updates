@@ -49,12 +49,12 @@ The metric _'Slot start to announced'_ (see in attachments) is cumulative, and d
 This metric encompasses block diffusion and adoption across specific percentages of the benchmarking cluster, with 0.80 adoption meaning adoption on 80% of all cluster nodes.  
 
 1. Cluster adoption metrics on `10.5.4` exhibit no significant change under high submission / large blocks workload.
-2. Under Plutus workload (low submission / small blocks), there's a minor _increase_ by 2% - 3% between the 80th and 98th centiles..
+2. Under Plutus workload (low submission / small blocks), there's a minor _increase_ by 2% - 3% between the 80th and 98th centiles.
 
 ### Conclusion
 
 1. The small up and down changes in Adoption times and Block fetch duration are well within margin of slack and do not pose any kind of performance risk.
-2. Transitiviely, this applies to observed E2E propagation metrics as well.
+2. Transitively, this applies to observed E2E propagation metrics as well.
 3. All in all, `10.5.4` is pretty closely aligned with the existing 10.5 performance baseline.
 4. From a performance perspective, we can determine it to be regression-free and attest a clean bill of health.
 
