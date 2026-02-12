@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[21860],{30878:e=>{e.exports=JSON.parse('{"permalink":"/reports/tags/benchmarking-reports/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":19,"previousPage":"/reports/tags/benchmarking-reports","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
