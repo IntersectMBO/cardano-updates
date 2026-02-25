@@ -9,7 +9,7 @@ hide_table_of_contents: false
 ## High level summary
 
 * **Benchmarking**: Updated `10.5` and `10.6` performance baselines; Local reproduction of LSM-trees benchmark isolating space leak; merged LSM-tree profiles.
-* **Developemnt**: HTTPS connections with `cardano-tracer`; `PromQL`-like query language and metrics timesieries for `cardano-tracer`.
+* **Development**: HTTPS connections with `cardano-tracer`; `PromQL`-like query language and metrics timesieries for `cardano-tracer`.
 * **Infrastructure**: Reporting pipeline switched to new typesetting tool; `10.5.x` backports to re-enable cluster benchmarks; extensive improvements to workbench's profiling capabilites and `nix` API.
 * **Tracing**: Shared traces between `cardano-node` and `dmq-node`; `cardano-submit-api` switched to new tracing; Small improvements to default configs.
 * **Node Diversity**: Comprehensive formal schema definition for trace messages; Proof-of-concept: Trace forwarding in native Rust.
@@ -27,7 +27,7 @@ managed to localize it and create a potential fix - validation on the cluster st
 
 In the meantime, the benchmarking profiles targeting on-disk LSM-trees have been solidified, merged to `master` and eternalized in our encyclopedia of benchmarking profiles `cardano-profile`. 
 
-### Developemnt
+### Development
 
 The trace consumer and processor service `cardano-tracer` is currently being upgraded with optionally HTTPS enabled connections. For scraping or browsing Node metrics, in case the connection crosses public networks, it's highly recommended to encrypt traffic. So far
 this has to be achieved by placing `cardano-tracer` behind a webserver proxy which speaks HTTPS; with the planned change `cardano-tracer` can be configured to do this directly when provided with the relevant certificates.  
