@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[64018],{18284:e=>{e.exports=JSON.parse('{"permalink":"/tags/mithril","page":1,"postsPerPage":5,"totalPages":27,"totalCount":135,"nextPage":"/tags/mithril/page/2","blogDescription":"Regular updates from Cardano Development Teams","blogTitle":"Cardano Development Updates"}')}}]);

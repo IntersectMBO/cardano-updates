@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[80089],{42682:e=>{e.exports=JSON.parse('{"permalink":"/tags/plutus-core","page":1,"postsPerPage":5,"totalPages":3,"totalCount":14,"nextPage":"/tags/plutus-core/page/2","blogDescription":"Regular updates from Cardano Development Teams","blogTitle":"Cardano Development Updates"}')}}]);

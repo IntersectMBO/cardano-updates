@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[2251],{65884:a=>{a.exports=JSON.parse('{"label":"cip1694","permalink":"/tags/cip-1694","allTagsPath":"/tags","count":1}')}}]);

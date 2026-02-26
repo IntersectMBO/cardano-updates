@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[91732],{52:a=>{a.exports=JSON.parse('{"label":"cli-api-quarterly","permalink":"/quarterly/tags/cli-api-quarterly","allTagsPath":"/quarterly/tags","count":1}')}}]);

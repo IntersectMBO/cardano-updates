@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[73928],{90826:a=>{a.exports=JSON.parse('{"label":"plutus-core","permalink":"/tags/plutus-core","allTagsPath":"/tags","count":14}')}}]);

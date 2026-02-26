@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[43308],{94022:a=>{a.exports=JSON.parse('{"label":"db-sync","permalink":"/tags/db-sync","allTagsPath":"/tags","count":18}')}}]);

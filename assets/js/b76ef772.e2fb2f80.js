@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[4498],{6196:a=>{a.exports=JSON.parse('{"label":"mithril","permalink":"/tags/mithril","allTagsPath":"/tags","count":135}')}}]);
