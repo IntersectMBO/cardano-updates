@@ -13,7 +13,10 @@ hide_table_of_contents: false
     - Integrated latest ledger changes ([#1762](https://github.com/IntersectMBO/ouroboros-consensus/pull/1762)).
     - Integrated `kes-agent-1.1` ([#1819](https://github.com/IntersectMBO/ouroboros-consensus/pull/1819)) (Treasury Funding Initiative 9: KES Agent).
 - Node improvements (Treasury Funding Initiative 17: Maintenance and Support):
-    - Enhanced observability by exposing the reason for chain switches in the ChainSel tracer ([#1826](https://github.com/IntersectMBO/ouroboros-consensus/pull/1826)).
+    - Improved mempool behavior for local clients:
+        - Downgraded hard timeouts to soft timeouts, improving user experience for wallets and other local client integrations ([#1856](https://github.com/IntersectMBO/ouroboros-consensus/pull/1856), [#1857](https://github.com/IntersectMBO/ouroboros-consensus/pull/1857), [#1858](https://github.com/IntersectMBO/ouroboros-consensus/pull/1858)).
+        - Made it easier for downstream tracers to scrutinize mempool rejection details ([#1847](https://github.com/IntersectMBO/ouroboros-consensus/pull/1847)).
+        - Enhanced observability by exposing the reason for chain switches in the ChainSel tracer ([#1826](https://github.com/IntersectMBO/ouroboros-consensus/pull/1826)).
     - Added support for the new `GetDRepDelegations` ledger state query in NodeToClientV_23 ([#1794](https://github.com/IntersectMBO/ouroboros-consensus/pull/1794)).
     - Fixed an exception due to a mix-up of resources in the V2 LedgerDB ([#1842](https://github.com/IntersectMBO/ouroboros-consensus/pull/1842)).
     - Minor: code cleanup ([#1854](https://github.com/IntersectMBO/ouroboros-consensus/pull/1854)).
