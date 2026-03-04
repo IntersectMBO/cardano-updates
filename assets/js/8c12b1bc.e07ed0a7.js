@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkcardano_updates=self.webpackChunkcardano_updates||[]).push([[60084],{78023:e=>{e.exports=JSON.parse('{"permalink":"/quarterly/tags/sre/page/2","page":2,"postsPerPage":10,"totalPages":2,"totalCount":11,"previousPage":"/quarterly/tags/sre","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
