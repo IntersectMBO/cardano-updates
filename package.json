@@ -44,5 +44,8 @@
   },
   "engines": {
     "node": ">=16.14"
+  },
+  "resolutions": {
+    "minimatch": "3.1.5"
   }
 }
