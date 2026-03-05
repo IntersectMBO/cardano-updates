@@ -7,12 +7,12 @@ fmt:
 
 # Run local server
 run:
-    npm start
+    yarn start
 
 # Build static site
 build:
-    npm run build
+    yarn build
 
 # setup first time
 setup:
-    npm install
+    yarn install

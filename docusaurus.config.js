@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes: prismThemes } = require('prism-react-renderer');
 const editUrl = 'https://github.com/intersectmbo/cardano-updates/tree/main/';
 
 /** @type {import('@docusaurus/types').Config} */
@@ -12,7 +11,6 @@ const config = {
   url: 'https://updates.cardano.intersectmbo.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
   // GitHub pages deployment config.
@@ -28,7 +26,8 @@ const config = {
         routeBasePath: 'quarterly',
         path: 'quarterly',
         authorsMapPath: 'authors.yml',
-        editUrl
+        editUrl,
+        onUntruncatedBlogPosts: 'ignore',
       },
     ],
     [
@@ -39,7 +38,8 @@ const config = {
         routeBasePath: 'reports',
         path: 'reports',
         authorsMapPath: 'authors.yml',
-        editUrl
+        editUrl,
+        onUntruncatedBlogPosts: 'ignore',
       },
     ],
   ],
@@ -57,6 +57,7 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        docs: false,
         blog: {
           id: 'updates',
           routeBasePath: '/',
@@ -67,6 +68,7 @@ const config = {
           postsPerPage: 5,
           blogSidebarTitle: 'Recent Posts',
           blogSidebarCount: 10,
+          onUntruncatedBlogPosts: 'ignore',
           feedOptions: {
             type: 'all',
             title: 'Cardano Updates Feed',
@@ -159,15 +161,19 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Intersect, Built with Docusaurus.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
         additionalLanguages: ['haskell'],
       },
     }),
   markdown: {
     mermaid: true,
+    format: 'detect',
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
-  themes: ['@docusaurus/theme-mermaid'], 
+  themes: ['@docusaurus/theme-mermaid'],
 };
 
 module.exports = config;
