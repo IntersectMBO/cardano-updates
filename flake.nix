@@ -30,7 +30,7 @@
           ];
           nativeBuildInputs = [
             pkgs.just
-            pkgs.nodejs
+            pkgs.nodejs_20
             pkgs.yq-go
           ];
         };
