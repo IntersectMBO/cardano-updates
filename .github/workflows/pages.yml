@@ -35,6 +35,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Build output to publish to the `gh-pages` branch:
           publish_dir: ./build
-          user_name: 'Arnaud Bailly'
-          user_email: arnaud.bailly@iohk.io
+          user_name: 'Damian Nadales'
+          user_email: damian.nadales@iohk.io
           force_orphan: true
