@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcardano_updates=globalThis.webpackChunkcardano_updates||[]).push([[63356],{63356(a,e,s){s.d(e,{createInfoServices:()=>c.v});var c=s(2963);s(808)}}]);
