@@ -7,6 +7,9 @@ on:
 jobs:
   build:
     name: Build
+    permissions:
+      # Required by actions/checkout to clone the repository
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
