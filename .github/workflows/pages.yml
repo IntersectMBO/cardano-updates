@@ -9,6 +9,9 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
+    permissions:
+      # Required by peaceiris/actions-gh-pages to push the build output to the gh-pages branch
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
