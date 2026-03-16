@@ -9,6 +9,9 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
+    permissions:
+      # Required by peaceiris/actions-gh-pages to push the build output to the gh-pages branch
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -32,6 +35,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Build output to publish to the `gh-pages` branch:
           publish_dir: ./build
-          user_name: 'Arnaud Bailly'
-          user_email: arnaud.bailly@iohk.io
+          user_name: 'Damian Nadales'
+          user_email: damian.nadales@iohk.io
           force_orphan: true
