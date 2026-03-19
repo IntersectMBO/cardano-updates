@@ -14,18 +14,23 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
+        with:
+          extra-conf: |
+            accept-flake-config = true
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - name: cache .yarn
+        uses: actions/cache@v5
         with:
-          node-version: 20
-          cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+          path: .yarn
+          key: ${{ runner.os }}-yarn-cache
+      - name: Install
+        run: nix develop -c yarn install
       - name: Build website
-        run: yarn build
+        run: nix develop -c yarn build
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus

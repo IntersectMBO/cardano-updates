@@ -12,13 +12,18 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@v21
         with:
-          node-version: 20
-          cache: yarn
-
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
+          extra-conf: |
+            accept-flake-config = true
+      - uses: actions/checkout@v4
+      - name: cache .yarn
+        uses: actions/cache@v5
+        with:
+          path: .yarn
+          key: ${{ runner.os }}-yarn-cache
+      - name: Install
+        run: nix develop -c yarn install
       - name: Build website
-        run: yarn build
+        run: nix develop -c yarn build
