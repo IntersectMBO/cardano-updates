@@ -31,7 +31,7 @@
           nativeBuildInputs = [
             pkgs.just
             pkgs.nodejs_20
-            pkgs.yarn
+            pkgs.yarn-berry_4
             pkgs.yq-go
           ];
         };
