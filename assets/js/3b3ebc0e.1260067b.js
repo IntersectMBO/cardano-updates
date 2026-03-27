@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcardano_updates=globalThis.webpackChunkcardano_updates||[]).push([[34876],{57467(e){e.exports=JSON.parse('{"authors":[{"name":"Michael Karg","title":"Performance and Tracing Team Lead","url":"https://github.com/mgmeier","imageURL":"https://github.com/mgmeier.png","key":"mgmeier","page":null,"count":20}]}')}}]);
