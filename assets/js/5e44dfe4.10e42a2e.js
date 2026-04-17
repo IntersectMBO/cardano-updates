@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcardano_updates=globalThis.webpackChunkcardano_updates||[]).push([[32692],{18574(a){a.exports=JSON.parse('{"name":"docusaurus-plugin-content-blog","id":"quarterly"}')}}]);
