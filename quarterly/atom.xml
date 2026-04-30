@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://updates.cardano.intersectmbo.org/quarterly</id>
+    <title>Cardano Development Updates Blog</title>
+    <updated>2026-02-10T19:20:14.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://updates.cardano.intersectmbo.org/quarterly"/>
+    <subtitle>Cardano Development Updates Blog</subtitle>
+    <icon>https://updates.cardano.intersectmbo.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[SRE Q4 2025 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2025-Q4-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q4-sre"/>
+        <updated>2026-02-10T19:20:14.000Z</updated>
+        <summary type="html"><![CDATA[2025-10 - 2025-12]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2025-10---2025-12">2025-10 - 2025-12<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q4-sre#2025-10---2025-12" class="hash-link" aria-label="Direct link to 2025-10 - 2025-12" title="Direct link to 2025-10 - 2025-12" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q4-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+some highlights of SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>All IOE cardano-parts supported node environments, including preview,
+preprod, and mainnet were upgraded to cardano-node release <code>10.5.2</code> and then
+<code>10.5.3</code> with various additional pre-release versions tested, such as
+<code>10.6.1</code>.</p>
+</li>
+<li class="">
+<p>Support for generating arm64 release binaries and OCI images was merged to
+master with the expectation that cardano-node version <code>10.6.2</code> and greater will
+have these artifacts available.  A cardano-tracer OCI container has also been
+added.</p>
+</li>
+<li class="">
+<p>The IOE SRE team helped support a successful rollout of the Glacier Drop and
+Scavenger hunt operational phases of Midnight.</p>
+</li>
+</ul>
+<p>Details for this and many other SRE work items can be found in the biweekly SRE
+reports.</p>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q3 2025 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2025-Q3-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q3-sre"/>
+        <updated>2025-12-08T12:29:14.000Z</updated>
+        <summary type="html"><![CDATA[2025-07 - 2025-09]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2025-07---2025-09">2025-07 - 2025-09<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q3-sre#2025-07---2025-09" class="hash-link" aria-label="Direct link to 2025-07 - 2025-09" title="Direct link to 2025-07 - 2025-09" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q3-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+some highlights of SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>All IOE cardano-parts supported node environments, including preview,
+preprod, and mainnet were upgraded to cardano-node release <code>10.5.1</code>
+with various additional pre-release candidate versions tested.</p>
+</li>
+<li class="">
+<p>Changes required for the new tracing system to become the default tracing
+system have been largely implemented in cardano-node, including various
+scripts, nixos services, and OCI container updates.  Similar changes supporting
+the new tracing system have been also implemented elsewhere, such as the
+<a href="https://github.com/input-output-hk/iohk-nix" target="_blank" rel="noopener noreferrer" class="">iohk-nix</a> configuration repo,
+<a href="https://github.com/cardano-foundation/blockperf" target="_blank" rel="noopener noreferrer" class="">blockperf</a> monitoring tool,
+and nixos based
+<a href="https://github.com/input-output-hk/cardano-parts" target="_blank" rel="noopener noreferrer" class="">cardano-parts</a> node cluster
+tooling stack, allowing for the upcoming cardano-node <code>10.6.x</code> release later
+this year to default to the new tracing system.</p>
+</li>
+<li class="">
+<p>With the exception of a few canary machine deployments, all IOE testnet and
+mainnet cardano-node infrastructure are now running using the new tracing
+system.</p>
+</li>
+<li class="">
+<p>Cardano-node release binaries have been cleaned up and OCI containers now
+include the snapshot-converter binary.</p>
+</li>
+<li class="">
+<p><a href="https://github.com/input-output-hk/adawallet" target="_blank" rel="noopener noreferrer" class="">Adawallet</a> and the
+<a href="https://github.com/IntersectMBO/cardano-airgap" target="_blank" rel="noopener noreferrer" class="">cardano-airgap</a> image were
+feature upgraded to be compatible with operations required for the Midnight
+Glacier Airdrop, including cardano-signer signing and native token UTxO
+handling.</p>
+</li>
+<li class="">
+<p>The devx-ci cluster has been expanded to include Oakhost Darwin build capacity.</p>
+</li>
+</ul>
+<p>Details for this and many other SRE work items can be found in the biweekly SRE
+reports.</p>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q2 2025 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2025-Q2-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q2-sre"/>
+        <updated>2025-08-05T14:02:57.000Z</updated>
+        <summary type="html"><![CDATA[2025-04 - 2025-06]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2025-04---2025-06">2025-04 - 2025-06<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q2-sre#2025-04---2025-06" class="hash-link" aria-label="Direct link to 2025-04 - 2025-06" title="Direct link to 2025-04 - 2025-06" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q2-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+some highlights of SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>All IOE cardano-parts supported node environments, including preview,
+preprod, and mainnet were upgraded through cardano-node releases
+including <code>10.3.1</code> and <code>10.4.1</code> with various additional pre-release versions
+tested.</p>
+</li>
+<li class="">
+<p>The cardano performance cluster used for benchmarking was upgraded to
+ephemeral instance configuration to additionally benchmark LMDB ledger backend.</p>
+</li>
+<li class="">
+<p>Peer snapshot files (and checkpoint file for mainnet) are now a regular part
+of the release binary artifacts in preparation for genesis mode.</p>
+</li>
+<li class="">
+<p>Genesis mode has been rolled out as the default consensus mode for preview
+and preprod testnets.</p>
+</li>
+<li class="">
+<p><a href="https://github.com/input-output-hk/adawallet" target="_blank" rel="noopener noreferrer" class="">Adawallet</a> and
+<a href="https://github.com/IntersectMBO/cardano-airgap" target="_blank" rel="noopener noreferrer" class="">Cardano-airgap</a> repos received
+significant updates to prepare for some complex but infrequent pool operations.</p>
+</li>
+<li class="">
+<p>Aarch64-linux resources were brought online in the Hydra build cluster.</p>
+</li>
+</ul>
+<p>Details for this and many other SRE work items can be found in the biweekly SRE
+reports.</p>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q1 2025 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2025-Q1-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q1-sre"/>
+        <updated>2025-04-15T22:28:12.000Z</updated>
+        <summary type="html"><![CDATA[2025-01 - 2025-03]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2025-01---2025-03">2025-01 - 2025-03<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q1-sre#2025-01---2025-03" class="hash-link" aria-label="Direct link to 2025-01 - 2025-03" title="Direct link to 2025-01 - 2025-03" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2025-Q1-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+some highlights of SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>All IOE cardano-parts supported node environments, including preview,
+preprod, sanchonet, mainnet were upgraded through cardano-node releases
+including <code>10.1.4</code> and <code>10.2.1</code> (for pre-release configured machines).</p>
+</li>
+<li class="">
+<p>Sanchonet was respun to test the hard fork mechanism to protocol version 11
+with community participation.</p>
+</li>
+<li class="">
+<p>A nixos buildkite agent module was ported to cardano-playground to support
+custom QA testing workflows.</p>
+</li>
+<li class="">
+<p>A nixos AWS ephemeral block device module was added to cardano-parts
+to support upcoming cardano-node UTXO-HD features which leverage fast NVMe block
+devices.</p>
+</li>
+<li class="">
+<p>The <code>sanchonet</code> cardano network was retired and handed over to community as
+it had fulfilled its purpose as an early testing network for Voltaire era
+governance features.</p>
+</li>
+<li class="">
+<p>Cardano node and submit-api container improvements were made to reduce prior
+inconsistencies, add a new useful mode of operation, add useful configuration
+references and improve documentation.</p>
+</li>
+<li class="">
+<p>The cardano-node flake closure was optimized and reduced in size 18 percent.</p>
+</li>
+<li class="">
+<p>The nix hydra machine used for cardano-node builds was migrated to upgraded
+hardware allowing for better evaluation concurrency and therefore an enhanced
+developer ci experience.</p>
+</li>
+</ul>
+<p>Details of this and other SRE work can be found in the biweekly SRE reports.</p>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q4 2024 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2024-Q4-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q4-sre"/>
+        <updated>2025-02-05T00:51:53.000Z</updated>
+        <summary type="html"><![CDATA[2024-10 - 2024-12]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2024-10---2024-12">2024-10 - 2024-12<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q4-sre#2024-10---2024-12" class="hash-link" aria-label="Direct link to 2024-10 - 2024-12" title="Direct link to 2024-10 - 2024-12" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q4-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+some highlights of SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>Cardano-parts started offering regular
+<a href="https://github.com/input-output-hk/cardano-parts/releases" target="_blank" rel="noopener noreferrer" class="">releases</a> to ease
+the process of upgrading rather than only PR merges with migration notes.</p>
+</li>
+<li class="">
+<p>All IOE cardano-parts supported node environments, including preview,
+preprod, sanchonet, mainnet were upgraded through various cardano-node releases
+including <code>10.0.0-pre</code>, <code>10.1.0-pre</code>, <code>10.1.1</code>, <code>10.1.2</code>, and finally into
+<code>10.1.3</code> by the end of December.</p>
+</li>
+<li class="">
+<p>All environments were migrated from deprecated grafana agent to grafana alloy.</p>
+</li>
+<li class="">
+<p>Sanchonet environment was re-spun twice; once for cardano-node
+<code>10.0.0-pre</code> and once for a community scheduled PV11 hardfork test.</p>
+</li>
+<li class="">
+<p>Preview and preprod networks were successfully forked into Conway era, Plomin
+protocol version <code>10.0</code>.</p>
+</li>
+<li class="">
+<p>Private and shelley-qa chains were retired after fulfilling their intended
+goal.</p>
+</li>
+<li class="">
+<p>Remaining cardano-world legacy resources were retired, replaced by
+cardano-playground.</p>
+</li>
+</ul>
+<p>Details of this and other SRE work can be found in the biweekly SRE reports.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q4-sre#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Switch to the new cardano-node tracing system as default and retire use of
+the legacy tracing system, including dashboards, alerts, cardano-tracer and
+cardano-node nixos service updates as well as container image required changes.</p>
+</li>
+<li class="">
+<p>Continue cardano-parts and operations improvements.</p>
+</li>
+</ul>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q3 2024 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2024-Q3-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q3-sre"/>
+        <updated>2024-10-09T14:24:58.000Z</updated>
+        <summary type="html"><![CDATA[2024-07 - 2024-09]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2024-07---2024-09">2024-07 - 2024-09<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q3-sre#2024-07---2024-09" class="hash-link" aria-label="Direct link to 2024-07 - 2024-09" title="Direct link to 2024-07 - 2024-09" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q3-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>All IOE cardano-parts supported node environments, including preview,
+preprod, sanchonet, mainnet and other clusters were upgraded through various
+cardano-node releases of <code>9.0.0</code>, <code>9.1.0</code>, <code>9.1.1</code>, <code>9.2.0</code>, and finally into
+<code>9.2.1</code> by the end of September.</p>
+</li>
+<li class="">
+<p>All IOE cardano-parts supported node environments had dual stack ipv4/ipv6
+capability added and configured, including supporting scripts and recipes,
+module updates, terraform/openTofu resource changes and software updates to
+make previously ipv6 incompatible software ipv6 compatible, example:
+cardano-faucet. Cardano-parts clusters can now seamlessly participate in ipv6
+cardano-node traffic and other ipv6 traffic.</p>
+</li>
+<li class="">
+<p>Preview, preprod and mainnet networks were hard forked to Conway.</p>
+</li>
+<li class="">
+<p>Legacy mainnet cluster shelley-era high-load relays were scaled down over the
+quarter and stopped now that p2p has removed the need for them.</p>
+</li>
+<li class="">
+<p>Legacy cardano <a href="https://explorer.cardano.org/" target="_blank" rel="noopener noreferrer" class="">explorer</a> was retired and
+Cardano Foundation is now providing the replacement landing page which links
+to several community explorers.</p>
+</li>
+<li class="">
+<p>Cardano-smash production load was retired from equinix metal hosting from the
+cardano-world repo and transferred to the new cardano-mainnet cluster.</p>
+</li>
+<li class="">
+<p>New cardano-mainnet cluster scaling capability was added for the bootstrap
+machines.  Block performance analysis was used to tune RTS parameters on the
+bootstraps and other mainnet pool machines.</p>
+</li>
+<li class="">
+<p>Sanchonet environment was re-spun for cardano-node <code>9.1.0</code> and greater compatibility.</p>
+</li>
+<li class="">
+<p>Private chain was stopped and re-spun with 2 hr epochs for testing.</p>
+</li>
+<li class="">
+<p>New nixosModules were added to cardano-parts and cardano-playground,
+including: <code>profile-blockperf</code>, <code>profile-tcpdump</code> (for saving node traffic
+pcaps to s3) and <code>ogmios</code>.</p>
+</li>
+<li class="">
+<p>Documentation for playground and mainnet cluster operations was improved,
+such as documents for: debugging of peer-to-peer connections; governance
+voting with the playground stakepools; faucet setup; faucet pool
+de-delegation and mainnet dbsync cardano-snapshot operations. See the
+<code>docs/explain</code> directory of both the
+<a href="https://github.com/input-output-hk/cardano-playground" target="_blank" rel="noopener noreferrer" class="">cardano-playground</a>
+and <a href="https://github.com/input-output-hk/cardano-mainnet" target="_blank" rel="noopener noreferrer" class="">cardano-mainnet</a>
+repos for details.</p>
+</li>
+<li class="">
+<p>The <a href="https://github.com/input-output-hk/cardano-monitoring" target="_blank" rel="noopener noreferrer" class="">cardano-monitoring</a>
+repository received a lot of documentation and improvements and now also
+serves as the home for <code>devx-ci</code> metrics after migration away from Grafana
+cloud hosting.</p>
+</li>
+<li class="">
+<p>An improved <a href="https://github.com/Intersectmbo/cardano-airgap" target="_blank" rel="noopener noreferrer" class="">cardano-airgap</a>
+image for secure signing operations was created and made available.</p>
+</li>
+<li class="">
+<p>Hydra CI performance was improved with changes to our custom Nix evaluator
+and optimized resource usage while waiting for IFDs.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q3-sre#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Add a production protocol-parameters cardano-api based server to facilitate
+community transaction creation without requiring a live node.</p>
+</li>
+<li class="">
+<p>Migrate from deprecated grafana agent to grafana alloy.</p>
+</li>
+<li class="">
+<p>Finalize support for the new cardano-node tracing system once the service is
+rewritten for general consumption.</p>
+</li>
+<li class="">
+<p>Extend govtool frontend and backend to a process-compose stack once govtool
+is publicly buildable again.</p>
+</li>
+<li class="">
+<p>Continue cardano-parts and operations improvements.</p>
+</li>
+</ul>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q2 2024 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2024-Q2-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q2-sre"/>
+        <updated>2024-07-09T18:08:56.000Z</updated>
+        <summary type="html"><![CDATA[2024-04 - 2024-06]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2024-04---2024-06">2024-04 - 2024-06<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q2-sre#2024-04---2024-06" class="hash-link" aria-label="Direct link to 2024-04 - 2024-06" title="Direct link to 2024-04 - 2024-06" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q2-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+main SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>All cardano release environments, including preview, preprod, mainnet legacy
+and mainnet new clusters were upgraded through various cardano-node releases of
+<code>8.9.2</code>, <code>8.9.3</code>, <code>8.9.4</code>, <code>8.12.1</code>, and finally into <code>8.12.2</code> by the end of
+June</p>
+</li>
+<li class="">
+<p>Cardano pre-release environments additionally iterated through pre-release
+upgrades of <code>8.11.0-pre</code>, <code>8.12.0-pre</code>, and finally into <code>8.12.2</code> by the end
+of June with the exception of sanchonet which remains pinned at <code>8.11.0-pre</code>
+until the next respin to support node version <code>9.0.0</code> or greater</p>
+</li>
+<li class="">
+<p>Sanchonet environment was re-spun two times for pre-release Conway testing of
+cardano-node versions <code>8.10.0-pre</code> and <code>8.11.0-pre</code> respectively</p>
+</li>
+<li class="">
+<p>Private chain environment was re-spun three times to support fast epoch
+Conway testing</p>
+</li>
+<li class="">
+<p>Cardano-playground and cardano-mainnet repos have added ten operations
+oriented documents for knowledge transfer</p>
+</li>
+<li class="">
+<p>Block producers which participate in mithril signing will now produce metrics
+and can have them scraped with the default metrics agent</p>
+</li>
+<li class="">
+<p>A cluster spin-up job to utilize the new cardano-cli <code>create-testnet-data</code>
+sub-command was created</p>
+</li>
+<li class="">
+<p>A nixosModule, dashboards and alerts were added supporting the new cardano
+tracing system</p>
+</li>
+<li class="">
+<p>Many new operations scripts and features were added, including a template
+diff and patch recipe to pull the latest cardano-parts improvements to
+consuming repositories more easily</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q2-sre#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Finalize support for the new cardano-node tracing system once the service is
+rewritten for general consumption</p>
+</li>
+<li class="">
+<p>Add IPv6 cardano-parts support</p>
+</li>
+<li class="">
+<p>Extend govtool frontend and backend to a process-compose stack once govtool
+is publicly buildable again</p>
+</li>
+<li class="">
+<p>Continue cardano-parts and operations improvements</p>
+</li>
+</ul>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q1 2024 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2024-Q1-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q1-sre"/>
+        <updated>2024-04-17T19:23:42.000Z</updated>
+        <summary type="html"><![CDATA[2024-01 - 2024-03]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2024-01---2024-03">2024-01 - 2024-03<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q1-sre#2024-01---2024-03" class="hash-link" aria-label="Direct link to 2024-01 - 2024-03" title="Direct link to 2024-01 - 2024-03" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q1-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+main SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>All cardano release environments, including preview, preprod, mainnet legacy
+and mainnet new clusters were upgraded through cardano-node releases of
+8.7.3, 8.9.0 and finally into 8.9.1 by the end of March</p>
+</li>
+<li class="">
+<p>All cardano pre-release environments, including sanchonet, private chain, and
+shelley-qa clusters were upgraded through cardano-node releases of 8.7.3,
+8.8.0-pre, 8.8.1-pre, 8.9.0 and finally into 8.9.1 by the end of March</p>
+</li>
+<li class="">
+<p>Sanchonet and private chain environments were both re-spun once each during
+this quarter to support new pre-release versions of cardano-node in the Conway era</p>
+</li>
+<li class="">
+<p>Cardano-parts added a cardano-db-sync process-compose stack for each
+environment</p>
+</li>
+<li class="">
+<p>Cardano-parts added a cardano-node process-compose stack for each environment</p>
+</li>
+<li class="">
+<p>Cardano-parts added enhancements for topology related nixos modules and
+functions to accomodate new bootstrapPeer functionality, new topology
+attributes and increased complexity network deployments.</p>
+</li>
+<li class="">
+<p>Cardano-parts added support for mithril signers integrated with block
+producers and a mithril-signer-verifier service for monitoring</p>
+</li>
+<li class="">
+<p>Sanchonet, preview, preprod and mainnet IOG block producers are now signing
+mithril certificates</p>
+</li>
+<li class="">
+<p>Cardano-parts added support for mithril clients in nixos cardano-node systemd
+service, process-compose job stacks and nix cardano-node entrypoint, all of
+which also require any mithril snapshot to be signed by a trusted IOG pool
+prior to use</p>
+</li>
+<li class="">
+<p>Cardano-parts added ip integration tooling, so that similar to other deployer
+tools like nixops, nixosConfigurations possess ip information which can be
+used in module configuration</p>
+</li>
+<li class="">
+<p>Cardano-db-sync snapshots server migration from legacy mainnet cluster to new
+mainnet cluster with a rewrite of the snapshot service was completed</p>
+</li>
+<li class="">
+<p>Cardano metadata server migration to Cardano Foundation was completed</p>
+</li>
+<li class="">
+<p>BlockPerf, a cardano-node performance monitoring tool, was integrated into the
+new mainnet cluster relays</p>
+</li>
+<li class="">
+<p>Cardano-node bootstrapPeer functionality was added with node 8.9.x, requiring
+effort to align nixos service module code between cardano-node nixos
+services, iohk-nix topology generation, cardano-ops legacy code, and
+cardano-parts module compatibility as well as feature test under various edge
+cases</p>
+</li>
+<li class="">
+<p>Cardano-playground added govtool backend support for private chain voltaire
+testing team</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2024-Q1-sre#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Add support for the new cardano-node metrics system</p>
+</li>
+<li class="">
+<p>Add IPv6 cardano-parts support</p>
+</li>
+<li class="">
+<p>Extend govtool frontend and backend to a process-compose stack</p>
+</li>
+<li class="">
+<p>Adapt network spin-up tooling for the new create-testnet-data cardano-cli command</p>
+</li>
+<li class="">
+<p>Continue cardano-parts and operations improvements</p>
+</li>
+</ul>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Performance & Tracing Q4 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing"/>
+        <updated>2024-01-25T10:08:38.000Z</updated>
+        <summary type="html"><![CDATA[2023-10 - 2024-01]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-10---2024-01">2023-10 - 2024-01<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#2023-10---2024-01" class="hash-link" aria-label="Direct link to 2023-10 - 2024-01" title="Direct link to 2023-10 - 2024-01" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<ul>
+<li class="">Release benchmarking, leading up to next mainnet release</li>
+<li class="">Conway benchmarking of existing Babbage workloads</li>
+<li class="">P2P benchmarks, validating viability as default topology</li>
+<li class="">Added basic <code>PlutusV3</code> capability of our tooling</li>
+<li class="">Publication of benchmarking reports accompanying a mainnet release</li>
+<li class="">GHC9 performance investigation</li>
+<li class="">Finalized and validated all optimizations for the new tracing system</li>
+<li class="">New Nomad benchmarking cluster: production use</li>
+<li class="">Adjustment of our infrastructure to cover the migration to <em>IntersectMBO</em></li>
+<li class="">Conensus QTAs: prototype developed into alpha-stage benchmark</li>
+<li class="">Successful on-boarding of a new team member</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="release-benchmarking">Release benchmarking<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#release-benchmarking" class="hash-link" aria-label="Direct link to Release benchmarking" title="Direct link to Release benchmarking" translate="no">​</a></h4>
+<p>We've performed and analyzed benchmarks for node versions <code>8.6.x</code> to <code>8.7.3</code>, which is projected to be the next mainnet release, throughout Q4.
+Along that way, we have identified, located and handled all performance blockers.</p>
+<p>Additionally, we've started publishing benchmarking reports here on Cardano Updates. The format is meant to increase transparency and
+provide insight into those measurements that accompany mainnet releases - demonstrating the absence of performance regressions and development
+of specific metrics over time.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="conway-benchmarks">Conway benchmarks<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#conway-benchmarks" class="hash-link" aria-label="Direct link to Conway benchmarks" title="Direct link to Conway benchmarks" translate="no">​</a></h4>
+<p>Furthermore, we've done first ever benchmarking of the Conway ledger. To that end, we've ported our Babbage workloads to Conway for
+immediate comparability. Fortunately, we've have not found any performance regression in the Conway ledger.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="p2p-benchmarks">P2P benchmarks<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#p2p-benchmarks" class="hash-link" aria-label="Direct link to P2P benchmarks" title="Direct link to P2P benchmarks" translate="no">​</a></h4>
+<p>In Q4, we've validated P2P topology to be viable as default for both relay and block producer nodes. As a consequence, we've switched
+to P2P topology for benchmarking baselines ourselves.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ghc9-performance">GHC9 performance<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#ghc9-performance" class="hash-link" aria-label="Direct link to GHC9 performance" title="Direct link to GHC9 performance" translate="no">​</a></h4>
+<p>In Q4, evaluation of GHC9.2's and GHC9.6's optimizer in the context of the Cardano code base has been completed.
+Eventually, GHC9.6 has shown itself to be much more suitable from a performance perspective. We're convinced that
+with a few select annotations in the code, GHC9.6's optimizer can produce a result on par performance-wise with GHC8.10 -
+which just was a great release in that regard. With GHC9.2 unfortunately, the changes would have to be more invasive - and thus more time-consuming.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-nomad-cluster">New nomad cluster<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#new-nomad-cluster" class="hash-link" aria-label="Direct link to New nomad cluster" title="Direct link to New nomad cluster" translate="no">​</a></h4>
+<p>We’ve moved the new Nomad cluster into production use and established new baselines for each workload on it.
+Additionally, we’ve shut down the legacy <code>cardano-ops</code> benchmarking cluster, and archived all raw data from it.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="consensus-component-qtas">Consensus component QTAs<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#consensus-component-qtas" class="hash-link" aria-label="Direct link to Consensus component QTAs" title="Direct link to Consensus component QTAs" translate="no">​</a></h4>
+<p>We’ve developed the existing prototype into an automatable, self-contained benchmark called <code>beacon</code>, as well as systematized workloads and run structure for it.
+Moreover, we’ve demonstrated usefulness of the metrics, their reproducibility, and identified domains viable for QTAs with system-level benchmarks.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-team-member">New team member<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-performance-and-tracing#new-team-member" class="hash-link" aria-label="Direct link to New team member" title="Direct link to New team member" translate="no">​</a></h4>
+<p>We're happy to welcome a new joiner to our team! We've successfully onboarded him in Q4; he has taken
+over the <code>cardano-tracer</code> service - the node-external component of the new tracing system - and has already
+landed several valuable contributions.</p>]]></content>
+        <author>
+            <name>Michael Karg</name>
+            <uri>https://github.com/mgmeier</uri>
+        </author>
+        <category label="performance-tracing" term="performance-tracing"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consensus Q4 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus"/>
+        <updated>2024-01-23T10:58:30.000Z</updated>
+        <summary type="html"><![CDATA[Areas of focus]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="areas-of-focus">Areas of focus<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#areas-of-focus" class="hash-link" aria-label="Direct link to Areas of focus" title="Direct link to Areas of focus" translate="no">​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Issue</th><th>Status</th></tr></thead><tbody><tr><td><a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/429" target="_blank" rel="noopener noreferrer" class="">Implement legacy mode for UTxO-HD to keep baseline performance</a></td><td>✅ Done</td></tr><tr><td><a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/423" target="_blank" rel="noopener noreferrer" class="">Assist mainnet node release with initial Conway capabilities</a></td><td>✅ Done</td></tr><tr><td><a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/424" target="_blank" rel="noopener noreferrer" class="">Assist with test, benchmark, and improvements to CIP 1694</a></td><td>✅ Done</td></tr><tr><td><a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/414" target="_blank" rel="noopener noreferrer" class="">Assist with P2P IOG relay network shut down</a></td><td>✅ Done</td></tr><tr><td><a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/425" target="_blank" rel="noopener noreferrer" class="">Assist with repo transfer to Intersect</a></td><td>✅ Done</td></tr><tr><td><a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/427" target="_blank" rel="noopener noreferrer" class="">Support vendors to deliver contracts</a></td><td>✅ Done</td></tr><tr><td><a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/415" target="_blank" rel="noopener noreferrer" class="">Operation serenity Q4 2023</a></td><td>✅ Done</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="highlights">Highlights<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#highlights" class="hash-link" aria-label="Direct link to Highlights" title="Direct link to Highlights" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="implement-legacy-mode-for-utxo-hd-to-keep-baseline-performance">Implement legacy mode for UTxO-HD to keep baseline performance<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#implement-legacy-mode-for-utxo-hd-to-keep-baseline-performance" class="hash-link" aria-label="Direct link to Implement legacy mode for UTxO-HD to keep baseline performance" title="Direct link to Implement legacy mode for UTxO-HD to keep baseline performance" translate="no">​</a></h3>
+<ul>
+<li class="">✅ We managed to run a UTxO-HD capable node in legacy mode, maintaining the baseline memory usage while keeping all the ledger state in memory.
+<ul>
+<li class="">While the legacy mode is not production-ready (it requires further integration and testing), it remains as a plan B should the need arise to release UTxO-HD if our stakeholders so demand it.</li>
+</ul>
+</li>
+<li class="">✅ We pivoted to redesigning the Ledger DB API because:
+<ul>
+<li class="">This is needed for integrating the LSM-tree backend.</li>
+<li class="">The redesign opened the possibility of implementing an in-memory backend that would keep the same performance and resource requirements as the baseline version (which needs to be confirmed by benchmarks).</li>
+</ul>
+</li>
+<li class="">✅ We created a more general Ledger DB API.</li>
+<li class="">🛠️ We are integrating (into the feature branch) the existing Ledger DB implementations with the new API.</li>
+<li class="">🛠️ We are implementing the new in-memory backend.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assist-mainnet-node-release-with-initial-conway-capabilities-test-benchmark-and-improvements-to-cip-1694">Assist mainnet node release with initial Conway capabilities, test, benchmark, and improvements to CIP 1694<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#assist-mainnet-node-release-with-initial-conway-capabilities-test-benchmark-and-improvements-to-cip-1694" class="hash-link" aria-label="Direct link to Assist mainnet node release with initial Conway capabilities, test, benchmark, and improvements to CIP 1694" title="Direct link to Assist mainnet node release with initial Conway capabilities, test, benchmark, and improvements to CIP 1694" translate="no">​</a></h3>
+<ul>
+<li class="">✅  We recognized that Conway introduces a new challenge in the versioning of NTC queries, and we resolved it (see <a href="https://github.com/IntersectMBO/ouroboros-consensus/issues/864" target="_blank" rel="noopener noreferrer" class="">864</a> and <a href="https://github.com/IntersectMBO/ouroboros-network/issues/4770" target="_blank" rel="noopener noreferrer" class="">4770</a>).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assist-with-p2p-iog-relay-network-shut-down">Assist with P2P IOG relay network shut down<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#assist-with-p2p-iog-relay-network-shut-down" class="hash-link" aria-label="Direct link to Assist with P2P IOG relay network shut down" title="Direct link to Assist with P2P IOG relay network shut down" translate="no">​</a></h3>
+<ul>
+<li class="">✅ We created a prototype for the pre-Genesis State Machine for bootstrap peers, which is currently under test (see <a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/808" target="_blank" rel="noopener noreferrer" class="">this PR</a>).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="assist-with-repo-transfer-to-intersect">Assist with repo transfer to Intersect<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#assist-with-repo-transfer-to-intersect" class="hash-link" aria-label="Direct link to Assist with repo transfer to Intersect" title="Direct link to Assist with repo transfer to Intersect" translate="no">​</a></h3>
+<ul>
+<li class="">✅ We transferred the <code>ouroboros-consensus</code> repository to the Intersect GitHub organization.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="support-vendors-to-deliver-contracts">Support vendors to deliver contracts<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#support-vendors-to-deliver-contracts" class="hash-link" aria-label="Direct link to Support vendors to deliver contracts" title="Direct link to Support vendors to deliver contracts" translate="no">​</a></h3>
+<ul>
+<li class="">Genesis
+<ul>
+<li class="">✅ Interacted with the Consensus team and addressed resulting feedback on past deliverables.</li>
+<li class="">✅ Finished implementation of the testing infrastructure of Genesis</li>
+<li class="">✅ Started to refine the Proof of Concept demo into an actual implementation of the core components of the Genesis design.</li>
+</ul>
+</li>
+<li class="">💾 LSM-tree implementation. Well Typed:
+<ul>
+<li class="">✅ Finished the design of the public facing API.</li>
+<li class="">✅ Defined the LSM-tree database file-type formats.</li>
+<li class="">✅ Implemented property and model-based tests.</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="operation-serenity-q4-2023">Operation serenity Q4 2023<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-consensus#operation-serenity-q4-2023" class="hash-link" aria-label="Direct link to Operation serenity Q4 2023" title="Direct link to Operation serenity Q4 2023" translate="no">​</a></h3>
+<ul>
+<li class="">🎉 We welcomed our newest team member @RenateEilers and assisted with her (ongoing) onboarding.</li>
+<li class="">✅ We implemented a simplification in the ChainSync mini-protocol that is also a step towards Ouroboros Chronos.</li>
+<li class="">✅ We added tests to check Consensus emits valid CBOR, which prevents the generation of invalid binary encoding.</li>
+<li class="">✅ We established and implemented an interface between Consensus tooling and P&amp;T tooling, which constitutes a step towards incorporating component level benchmarks in our development process.</li>
+</ul>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q4 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-sre"/>
+        <updated>2024-01-10T01:52:35.000Z</updated>
+        <summary type="html"><![CDATA[2023-10 - 2023-12]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-10---2023-12">2023-10 - 2023-12<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-sre#2023-10---2023-12" class="hash-link" aria-label="Direct link to 2023-10 - 2023-12" title="Direct link to 2023-10 - 2023-12" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments,
+main SRE achievements for this quarter include:</p>
+<ul>
+<li class="">
+<p>Cardano-parts support was added for cardano-db-sync, cardano-smash,
+cardano-faucet, cardano-metadata, grafana monitoring along with a number of
+other features</p>
+</li>
+<li class="">
+<p>Completed migration of testnets from cardano-world to the cardano-playground cluster</p>
+</li>
+<li class="">
+<p>Completed migration of the cardano book from cardano-world to the cardano-playground
+cluster</p>
+</li>
+<li class="">
+<p>Completed migration of pools from cardano-ops to the cardano-mainnet cluster</p>
+</li>
+<li class="">
+<p>Creation of a mainnet p2p bootstrap cluster</p>
+</li>
+<li class="">
+<p>Cardano sanchonet environment respins during the quarter for testing new
+cardano-node pre-release Conway era functionality</p>
+</li>
+<li class="">
+<p>All environments were upgraded to cardano-node 8.7.2 or 8.7.3 by the end of
+the quarter</p>
+</li>
+<li class="">
+<p>Completion of a govtool backend deployment for Voltaire chain testing</p>
+</li>
+<li class="">
+<p>Creation of a cardano-monitoring repository,
+<a href="https://github.com/input-output-hk/cardano-monitoring" target="_blank" rel="noopener noreferrer" class="">cardano-monitoring</a>:</p>
+<ul>
+<li class="">A new repository enabling agile deployment of EC2 monitoring servers,
+compatible with OpenTofu grafana and mimir providers</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q4-sre#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">
+<p>Scale down the mainnet non-p2p legacy cluster</p>
+</li>
+<li class="">
+<p>Add deployment support for new network services, such as Mithril</p>
+</li>
+<li class="">
+<p>Continue cardano-parts and operations improvements</p>
+</li>
+</ul>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Performance & Tracing Q3 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing"/>
+        <updated>2023-10-20T19:16:59.000Z</updated>
+        <summary type="html"><![CDATA[2023-07 - 2023-09]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-07---2023-09">2023-07 - 2023-09<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#2023-07---2023-09" class="hash-link" aria-label="Direct link to 2023-07 - 2023-09" title="Direct link to 2023-07 - 2023-09" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<ul>
+<li class="">Release benchmarking</li>
+<li class="">Developing and running UTxO-HD benchmarks - in-memory flavour</li>
+<li class="">P2P benchmarks, facilitating rollout</li>
+<li class="">Production-readiness of the new Nomad cluster has been reached</li>
+<li class="">Optimization of and introspection capability for the new tracing system</li>
+<li class="">GHC9 performance investigation (and possible remedy)</li>
+<li class="">Conensus QTAs: first real-world application of prototype</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="release-benchmarking">Release benchmarking<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#release-benchmarking" class="hash-link" aria-label="Direct link to Release benchmarking" title="Direct link to Release benchmarking" translate="no">​</a></h4>
+<p>Ongoing release benchmarking is a crucial safeguard to <code>cardano-node</code>'s release cycle from a performance perspective. We've performed and analyzed benchmarks for node versions <code>8.2.x</code> to <code>8.5</code> throughout Q3.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd-benchmarks">UTxO-HD benchmarks<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#utxo-hd-benchmarks" class="hash-link" aria-label="Direct link to UTxO-HD benchmarks" title="Direct link to UTxO-HD benchmarks" translate="no">​</a></h4>
+<p>Targeting a specific new feature in benchmarks requires development effort and fine-tuning the machinery. In Q3, we achieved that for the in-memory flavour of UTxO-HD, enabling benchmark delivery.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="p2p-benchmarks">P2P benchmarks<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#p2p-benchmarks" class="hash-link" aria-label="Direct link to P2P benchmarks" title="Direct link to P2P benchmarks" translate="no">​</a></h4>
+<p>In Q3, we performed additional P2P benchmarks to facilitate the comprehensive rollout of that feature.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-nomad-cluster">New nomad cluster<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#new-nomad-cluster" class="hash-link" aria-label="Direct link to New nomad cluster" title="Direct link to New nomad cluster" translate="no">​</a></h4>
+<p>The new hardware cluster for benchmarks, which is controlled through the new nomad backend, has received
+various rounds of validation and adjustments in Q3 - in addition to finalizing integration with the rest
+of our pipeline. The confidence in metrics gathered on the cluster is now sufficient for us to consider it
+ready for production use.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-tracing-system">New tracing system<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#new-tracing-system" class="hash-link" aria-label="Direct link to New tracing system" title="Direct link to New tracing system" translate="no">​</a></h4>
+<p>Our new tracing system has received various rounds of optimization in Q3. We could verify in our benchmarks that
+it is roughly on par with the legacy system while offering a richer feature set and greater flexibility.</p>
+<p>Additionally, in Q3 we equipped the system with an introspection capability. This is now used for generating
+end user documentation that stays in-sync with definitions in code, and for automated consistency checking of the entire system.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ghc9-performance">GHC9 performance<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#ghc9-performance" class="hash-link" aria-label="Direct link to GHC9 performance" title="Direct link to GHC9 performance" translate="no">​</a></h4>
+<p>In Q3, a joint investigation with DevX into GHC9's behaviour revealed where and how GHC9 misses opportunities for
+optimization of generated code. This led to an approach to annotate our codebase accordingly to re-enable
+those optimizations - which is still being validated.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="consensus-qtas">Consensus QTAs<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#consensus-qtas" class="hash-link" aria-label="Direct link to Consensus QTAs" title="Direct link to Consensus QTAs" translate="no">​</a></h4>
+<p>In collaboration with Consensus and DevX, we advanced the Consensus QTAs prototype capturing ledger operations'
+performance characteristics. It's now applicable, and being applied, to a real-world task - namely
+gathering evidence of the effect of aforementioned changes allowing for performant GHC9 builds.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="benchmarking">Benchmarking:<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#benchmarking" class="hash-link" aria-label="Direct link to Benchmarking:" title="Direct link to Benchmarking:" translate="no">​</a></h4>
+<p>In Q4, the focus will be on:</p>
+<ul>
+<li class="">facilitating the next mainnet release</li>
+<li class="">benchmarking runs in the Conway era</li>
+<li class="">developing benchmarks / workloads for Conway-exclusive actions</li>
+<li class="">implementing a specialized benchmark setup for the UTxO-HD on-disk variant</li>
+<li class="">developing new Plutus benchmarks to safeguard Plutus V3</li>
+<li class="">benchmarks regarding the rollout of P2P</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="performance">Performance<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#performance" class="hash-link" aria-label="Direct link to Performance" title="Direct link to Performance" translate="no">​</a></h4>
+<p>For certain blocking performance issues we've located the cause, or even found a solution in a cross-team effort. In Q4 we'll advance that work to ensure the ongoing
+release cycle for mainnet, as well as make GHC9 become a viable release platform.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-tracing-system-1">New tracing system<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#new-tracing-system-1" class="hash-link" aria-label="Direct link to New tracing system" title="Direct link to New tracing system" translate="no">​</a></h4>
+<p>For the new tracing system, we'll finalize optimization - current results are already on par with the legacy system. Furthermore, we will finish up comprehensive documentation, as well as description of a recommended setup, for which we can provide initial support.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd-monitoring">UTxO-HD monitoring<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#utxo-hd-monitoring" class="hash-link" aria-label="Direct link to UTxO-HD monitoring" title="Direct link to UTxO-HD monitoring" translate="no">​</a></h4>
+<p>We'll augment our analysis pipeline so it can process monitoring data from UTxO-HD nodes connected to mainnet in a meaningful way.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="nomad-backend">Nomad backend<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#nomad-backend" class="hash-link" aria-label="Direct link to Nomad backend" title="Direct link to Nomad backend" translate="no">​</a></h4>
+<p>From Q4 on, this backend will be in production use. We plan on adding various UX and flexibility improvements, and further fine-tuning some profiles for nomad.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="workbench">Workbench<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#workbench" class="hash-link" aria-label="Direct link to Workbench" title="Direct link to Workbench" translate="no">​</a></h4>
+<p>We will prepare for a future move of our performance workbench into a separate project. This entails restructuring, refactoring and reimplementation of certain few components that currently assume to always be in sync with <code>cardano-node</code>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="consensus-component-qtas-co-development">Consensus component QTAs (co-development)<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-performance-and-tracing#consensus-component-qtas-co-development" class="hash-link" aria-label="Direct link to Consensus component QTAs (co-development)" title="Direct link to Consensus component QTAs (co-development)" translate="no">​</a></h4>
+<p>In Q4 there will be ongoing work with and support for the existing prototype. We plan to identify a fixed set of input data that yields results of high informative value, and to formalize the process to a point that enables future automation.</p>]]></content>
+        <author>
+            <name>Michael Karg</name>
+            <uri>https://github.com/mgmeier</uri>
+        </author>
+        <category label="performance-tracing" term="performance-tracing"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q3 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-sre"/>
+        <updated>2023-10-19T23:39:19.000Z</updated>
+        <summary type="html"><![CDATA[2023-07 - 2023-09]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-07---2023-09">2023-07 - 2023-09<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-sre#2023-07---2023-09" class="hash-link" aria-label="Direct link to 2023-07 - 2023-09" title="Direct link to 2023-07 - 2023-09" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments, main SRE achievements for this quarter include:</p>
+<ul>
+<li class="">Completion of mainnet relay networking conversion to p2p topology</li>
+<li class="">Cardano sanchonet environment respins for testing new cardano-node pre-release Conway era functionality</li>
+<li class="">Stabilization of cardano-explorer in cardano-world using high IOPS bare metal machines</li>
+<li class="">Creation of a nix content addressed packages repository, <a href="https://github.com/input-output-hk/capkgs" target="_blank" rel="noopener noreferrer" class="">capkgs</a>:
+<ul>
+<li class="">To provide lightweight release binaries thereby avoiding sluggish nix flakes and devShells</li>
+</ul>
+</li>
+<li class="">Creation of a cardano performance benchmarking cluster, <a href="https://github.com/input-output-hk/cardano-perf" target="_blank" rel="noopener noreferrer" class="">cardano-perf</a>:
+<ul>
+<li class="">To replace legacy cluster benchmark tooling</li>
+</ul>
+</li>
+<li class="">Creation of a cardano cluster composition repository, <a href="https://github.com/input-output-hk/cardano-parts" target="_blank" rel="noopener noreferrer" class="">cardano-parts</a>:
+<ul>
+<li class="">For enabling multi-cluster, multi-role cardano network deployments</li>
+</ul>
+</li>
+<li class="">Creation of a cardano testnets repository, <a href="https://github.com/input-output-hk/cardano-playground" target="_blank" rel="noopener noreferrer" class="">cardano-playground</a>:
+<ul>
+<li class="">Utilizing cardano-parts for testnet deployments</li>
+</ul>
+</li>
+<li class="">Creation of a sanchonet demo repository, <a href="https://github.com/input-output-hk/sanchonet-demo" target="_blank" rel="noopener noreferrer" class="">sanchonet-demo</a>:
+<ul>
+<li class="">Utilizing cardano-parts for fast sanchonet test environment and demo purposes</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q3-sre#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">Continue with migration of cardano-world testnets to cardano-playground</li>
+<li class="">Proceed with spinup of mainnet p2p bootstrap cluster</li>
+<li class="">Scale down mainnet non-p2p legacy cluster at the appropriate time</li>
+</ul>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[SRE Q2 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-sre</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-sre"/>
+        <updated>2023-07-22T17:16:08.000Z</updated>
+        <summary type="html"><![CDATA[2023-04 - 2023-06]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-04---2023-06">2023-04 - 2023-06<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-sre#2023-04---2023-06" class="hash-link" aria-label="Direct link to 2023-04 - 2023-06" title="Direct link to 2023-04 - 2023-06" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-sre#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<p>In addition to ongoing general maintenance and support of cardano environments, main SRE achievements for this quarter include:</p>
+<ul>
+<li class="">Expanding the darwin CI cluster and adding aarch64 builder support</li>
+<li class="">Adding bare metal capability to bitte clusters</li>
+<li class="">Creating a devx-ci cluster containing a Hydra build server and Linux build farm which is intended to replace Cicero functionality</li>
+<li class="">Creation of pool performance analysis queries and scripting</li>
+<li class="">Migration of testnet metadata server to cardano-world</li>
+<li class="">Cardano shelley qa migration to cardano-world</li>
+<li class="">Cardano sanchonet environment spin up to test Conway era functionality</li>
+<li class="">Mainnet relay conversion to p2p topology usage is progressing with 50% of mainnet relays now using p2p topology and networking feature</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-sre#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">Continue with the conversion of mainnet to using p2p topology</li>
+</ul>]]></content>
+        <author>
+            <name>John Lotoski</name>
+            <uri>https://github.com/johnalotoski</uri>
+        </author>
+        <category label="sre" term="sre"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Network Q2 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network"/>
+        <updated>2023-07-16T17:49:37.000Z</updated>
+        <summary type="html"><![CDATA[2023-04 - 2023-06]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-04---2023-06">2023-04 - 2023-06<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#2023-04---2023-06" class="hash-link" aria-label="Direct link to 2023-04 - 2023-06" title="Direct link to 2023-04 - 2023-06" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="eclipse-evasion">Eclipse Evasion<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#eclipse-evasion" class="hash-link" aria-label="Direct link to Eclipse Evasion" title="Direct link to Eclipse Evasion" translate="no">​</a></h4>
+<p>We finalised the design of eclipse evasion and implemented its mechanism which
+relays on connectivity to <em>big ledger peers</em>.  <em>Big ledger peers</em> are the
+largest ledger peers which accumulate 90% of stake (currently there are less
+than 1000 of them).  The outbound governor has new targets for <em>known</em>,
+<em>established</em> and <em>active</em> big ledger peers which work in a similar way that
+such targets work for ledger peers.  The <a href="https://github.com/input-output-hk/ouroboros-network/pull/4662" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4662</a> PR is
+currently in review.</p>
+<p>As part of this work we also identified a bug which would prevent a node to
+connect to itself.  Such connections are not easily detectable and are expected
+to be dropped by the churn mechanism, nonetheless they should not be buggy.
+The failure was discovered thanks to our e2e simulation of diffusion using
+<code>io-sim</code> &amp; property based testing.</p>
+<p>The PR also refactors the heart of the <code>ouroboros-network</code> interface reducing
+technical debt that would otherwise accumulate.</p>
+<p>We also identified a possible improvement in the churn mechanism, which will be
+implemented in Q3.  Churn needs to await for peers to terminate, we can
+improve the synchronisation. [ouroboros-network#4617]</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ecosystem-p2p-deployment-progress">Ecosystem P2P Deployment Progress<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#ecosystem-p2p-deployment-progress" class="hash-link" aria-label="Direct link to Ecosystem P2P Deployment Progress" title="Direct link to Ecosystem P2P Deployment Progress" translate="no">​</a></h4>
+<p>We reached <strong>50% of stake in hands of SPOs who run at least on P2P relay</strong>.  Now
+also Emurgo and CF are running some P2P relays. Also 20% of IOG relays are
+running in P2P mode.</p>
+<p><img decoding="async" loading="lazy" alt="P2P Progress" src="https://updates.cardano.intersectmbo.org/assets/images/2023-07-06-p2p-progress-194a909569eebb016b1f24fb8941e2cc.png" width="1024" height="768" class="img_ev3q"></p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="peer-sharing">Peer Sharing<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#peer-sharing" class="hash-link" aria-label="Direct link to Peer Sharing" title="Direct link to Peer Sharing" translate="no">​</a></h4>
+<p>We implemented <em>bootstrapping for peer sharing</em> (also known as light peer
+sharing).  New downstream (inbound) peers are now added to the <em>known peers</em> of
+the <em>outbound governor</em>.  Together with peer sharing this allows for non
+registered relays to propagate through the network. <a href="https://github.com/input-output-hk/ouroboros-network/issues/3596" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#3596</a></p>
+<p><em>Please note that peer sharing is disabled by default and is not considered safe
+until Bootstrap Peers (see below) or Genesis is implemented.</em></p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="diffusion-p2p">Diffusion (P2P)<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#diffusion-p2p" class="hash-link" aria-label="Direct link to Diffusion (P2P)" title="Direct link to Diffusion (P2P)" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p>We designed a feature which will reduce the load on IOG relays (in future
+also run by CF &amp; Emurgo).  The feature consists of two parts.  A new source
+of peers called <em>bootstrap peers</em> (obtained from via an https request), the
+ability to switch from bootstrap peers to ledger peers if the node is synced
+(we are collaborating with the consensus team on the interface <a href="https://github.com/input-output-hk/ouroboros-consensus/blob/fbb8c8ee97517809dec0d0c8ae3fae9b8d272caf/docs/website/docs/bootstrap-peers-IER.md" target="_blank" rel="noopener noreferrer" class="">Bootstrap
+Peers IER</a>).   This feature will be completed in Q3.
+<a href="https://github.com/input-output-hk/ouroboros-network/issues/4530" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4530</a></p>
+</li>
+<li class="">
+<p>We published a blog post about <a href="https://engineering.iog.io/2023-06-28-p2p" target="_blank" rel="noopener noreferrer" class="">P2P design &amp; implementation</a>.</p>
+</li>
+<li class="">
+<p>Karl Knutsson (CF) fixed an issue observed on a relay with a lot of outbound connections:
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/4559" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4559</a>.</p>
+</li>
+<li class="">
+<p>We merged changes which allow the consensus layer to start / stop block
+forging thread.  This will allow to deploy P2P block producing nodes which
+serve as a live backup node. <a href="https://github.com/input-output-hk/ouroboros-consensus/pull/140" target="_blank" rel="noopener noreferrer" class="">ouroboros-consensus#140</a></p>
+</li>
+<li class="">
+<p>We fixed a few bugs in local root peers DNS resolution service:
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/4583" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4583</a>, <a href="https://github.com/input-output-hk/ouroboros-network/pull/4571" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4571</a>.</p>
+</li>
+<li class="">
+<p>We limited concurrency of DNS name resolutions: <a href="https://github.com/input-output-hk/ouroboros-network/pull/4596" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4596</a>.</p>
+</li>
+<li class="">
+<p>Galois Inc implemented query option for Handshake: <a href="https://github.com/input-output-hk/ouroboros-network/pull/4256" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4256</a>.</p>
+</li>
+<li class="">
+<p>We fixed handshake query timeout: <a href="https://github.com/input-output-hk/ouroboros-network/pull/4608" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4608</a>.</p>
+</li>
+<li class="">
+<p>We implemented warm valency for local root peers.  This can help when using
+DNS names in local root peers which resolve to many IP addresses. <a href="https://github.com/input-output-hk/ouroboros-network/pull/4575" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4575</a></p>
+</li>
+<li class="">
+<p>We merged handshake changes which allow query protocol versions.  Thanks to
+James Parker from Galois Inc.: <a href="https://github.com/input-output-hk/ouroboros-network/pull/4256" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4256</a>, <a href="https://github.com/input-output-hk/cardano-cli/pull/30/" target="_blank" rel="noopener noreferrer" class="">cardano-cli#30</a>.</p>
+</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="other-improvements--developments">Other Improvements &amp; Developments<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#other-improvements--developments" class="hash-link" aria-label="Direct link to Other Improvements &amp; Developments" title="Direct link to Other Improvements &amp; Developments" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cddl">CDDL<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#cddl" class="hash-link" aria-label="Direct link to CDDL" title="Direct link to CDDL" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p>We added <code>node-to-node</code> and <code>node-to-client</code> CDDL specs / tests for encoding
+of <code>NodeToNodeVersionData</code> and <code>NodeToClientVersionData</code>.</p>
+</li>
+<li class="">
+<p>We clarified an inconsistency between CDDL spec and implementation which is
+highly polymorphic.  We designed and implemented a fix for <code>tx-submission</code>
+and <code>local-tx-submission</code> mini-protocols.  Specs for other mini-protocols will
+be improved at a later stage. <a href="https://github.com/input-output-hk/ouroboros-network/pull/4580" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4580</a></p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cardano-ping"><a href="https://github.com/input-output-hk/ouroboros-network/blob/master/cardano-ping" target="_blank" rel="noopener noreferrer" class="">Cardano Ping</a><a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#cardano-ping" class="hash-link" aria-label="Direct link to cardano-ping" title="Direct link to cardano-ping" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p><code>cardano-ping</code> command was deprecated in favour of <code>cardano-cli ping</code> (the
+transition was done by the <code>node</code> team).</p>
+</li>
+<li class="">
+<p>Support for <code>node-to-client</code> protocol using Unix sockets.
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/4601" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4601</a></p>
+</li>
+<li class="">
+<p>Support for <code>NodeToNodeV_11</code> and <code>NodeToClientV_16</code>, <a href="https://github.com/input-output-hk/ouroboros-network/pull/4587" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4587</a></p>
+</li>
+<li class="">
+<p><code>cardano-cli ping</code> is now using <em>ISO8601</em> format for timestamps.  Formatting of
+messages was improved. <a href="https://github.com/input-output-hk/ouroboros-network/pull/4593" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4593</a></p>
+</li>
+<li class="">
+<p><code>cardano-cli ping</code> has a new <code>--query-versions</code> flag which allows to query
+supported versions by the remote node.  This is supported by
+<code>cardano-node-8.1.0</code>. <a href="https://github.com/input-output-hk/ouroboros-network/pull/4589" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4589</a>, <a href="https://github.com/input-output-hk/cardano-node/pull/5313" target="_blank" rel="noopener noreferrer" class="">cardano-node#5313</a>, <a href="https://github.com/input-output-hk/cardano-cli/pull/30/" target="_blank" rel="noopener noreferrer" class="">cardano-cli#30</a></p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="iosim"><a href="https://github.com/input-output-hk/io-sim" target="_blank" rel="noopener noreferrer" class="">IOSim</a><a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#iosim" class="hash-link" aria-label="Direct link to iosim" title="Direct link to iosim" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p>We fixed timeouts &amp; delays in <code>io-classes</code> in a series of PRs: <a href="https://github.com/input-output-hk/io-sim/pull/81" target="_blank" rel="noopener noreferrer" class="">io-sim#81</a>,
+<a href="https://github.com/input-output-hk/io-sim/pull/82" target="_blank" rel="noopener noreferrer" class="">io-sim#82</a>, <a href="https://github.com/input-output-hk/io-sim/pull/86" target="_blank" rel="noopener noreferrer" class="">io-sim#86</a>, <a href="https://github.com/input-output-hk/io-sim/pull/87" target="_blank" rel="noopener noreferrer" class="">io-sim#87</a>.</p>
+</li>
+<li class="">
+<p>We released <code>strict-stm-1.1.0.1</code> on Hackage which fixed a bug in package
+description file: <a href="https://github.com/input-output-hk/io-sim/pull/101" target="_blank" rel="noopener noreferrer" class="">io-sim#101</a>.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="typed-protocols"><a href="https://github.com/input-output-hk/typed-protocols" target="_blank" rel="noopener noreferrer" class="">Typed Protocols</a><a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#typed-protocols" class="hash-link" aria-label="Direct link to typed-protocols" title="Direct link to typed-protocols" translate="no">​</a></h4>
+<ul>
+<li class="">We published haddocks of <code>typed-protocols</code> at
+<a href="https://input-output-hk.github.io/typed-protocols" target="_blank" rel="noopener noreferrer" class="">https://input-output-hk.github.io/typed-protocols</a></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cardano-client"><a href="https://github.com/input-output-hk/ouroboros-network/blob/master/cardano-client" target="_blank" rel="noopener noreferrer" class="">Cardano Client</a><a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#cardano-client" class="hash-link" aria-label="Direct link to cardano-client" title="Direct link to cardano-client" translate="no">​</a></h4>
+<ul>
+<li class="">We fixed a bug in <code>cardano-client-0.1.0.2</code> release which results in clients
+(e.g. <code>db-sync</code>) negotiate an experimental protocol version.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-debt">Technical debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#technical-debt" class="hash-link" aria-label="Direct link to Technical debt" title="Direct link to Technical debt" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p>After the split between consensus &amp; network, we made <code>cardano-client</code>
+independent of <code>ouroboros-consensus-diffusion</code>: <a href="https://github.com/input-output-hk/ouroboros-network/pull/4526" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4526</a>.</p>
+</li>
+<li class="">
+<p>We wrap all exceptions in <code>DiffusionError</code>: <a href="https://github.com/input-output-hk/ouroboros-network/issues/4537" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4537</a>, <a href="https://github.com/input-output-hk/cardano-node/pull/5356" target="_blank" rel="noopener noreferrer" class="">cardano-node#5356</a>.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ci-improvements">CI improvements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#ci-improvements" class="hash-link" aria-label="Direct link to CI improvements" title="Direct link to CI improvements" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p>We switched to use GitHub merge queues in <code>ouroboros-network</code>, <code>io-sim</code> and
+<code>typed-protocols</code> repositories; <a href="https://github.com/input-output-hk/typed-protocols/pull/30" target="_blank" rel="noopener noreferrer" class="">typed-protocols#30</a>, <a href="https://github.com/input-output-hk/ouroboros-network/pull/4546" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4546</a>.</p>
+</li>
+<li class="">
+<p>We cleaned &amp; updated scripts which run on CI.</p>
+</li>
+<li class="">
+<p>We implemented a script to verify &amp; release packages on CHaP; <a href="https://github.com/input-output-hk/ouroboros-network/issues/4542" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4542</a>, <a href="https://github.com/input-output-hk/ouroboros-network/pull/4573" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4573</a>.</p>
+</li>
+<li class="">
+<p>We implemented a new CI script and cleaned existing ones:
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/4572" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4572</a>.</p>
+</li>
+<li class="">
+<p>We don't install cryptographic libraries on CI anymore as none of our
+packages requires them; <a href="https://github.com/input-output-hk/ouroboros-network/issues/4539" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4539</a>.</p>
+</li>
+<li class="">
+<p>Improved caching of dependencies: <a href="https://github.com/input-output-hk/ouroboros-network/issues/4553" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4553</a>.</p>
+</li>
+<li class="">
+<p>We made it possible to trigger building haddock manually:
+<a href="https://github.com/input-output-hk/ouroboros-network/issues/4549" target="_blank" rel="noopener noreferrer" class="">ouroboros-network#4549</a>.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="ghc-94--96">GHC 9.4 &amp; 9.6<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#ghc-94--96" class="hash-link" aria-label="Direct link to GHC 9.4 &amp; 9.6" title="Direct link to GHC 9.4 &amp; 9.6" translate="no">​</a></h4>
+<p>We made all repositories under our control compile with <code>ghc-9.4</code> and <code>ghc-9.6</code>
+which includes <code>ouroboros-network</code>, <code>io-sim</code>, <code>typed-protocols</code> and
+<code>Win32-network</code>.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-network#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<p>We will continue towards our <a href="https://github.com/orgs/input-output-hk/projects/39/views/30" target="_blank" rel="noopener noreferrer" class="">aspirational roadmap</a>.</p>
+<ul>
+<li class="">We will continue reviewing eclipse evasion.</li>
+<li class="">As <a href="https://github.com/input-output-hk/ouroboros-consensus/pull/140" target="_blank" rel="noopener noreferrer" class="">ouroboros-consensus#140</a> was merged, we are making progress towards
+releasing P2P on block production nodes.  We hope to analyse performance
+regression on such nodes observed on the benchmarking cluster. <a href="https://github.com/orgs/input-output-hk/projects/39/views/30?pane=issue&amp;itemId=6875505" target="_blank" rel="noopener noreferrer" class="">roadmap-3887</a></li>
+<li class="">We are also focused on <a href="https://github.com/orgs/input-output-hk/projects/39/views/30?pane=issue&amp;itemId=8920085" target="_blank" rel="noopener noreferrer" class="">roadmap-3969</a>. Note that it was expanded in Q2.</li>
+</ul>]]></content>
+        <author>
+            <name>Marcin Szamotulski</name>
+            <uri>https://github.com/coot</uri>
+        </author>
+        <category label="network" term="network"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consensus Q2 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus"/>
+        <updated>2023-07-16T17:45:45.000Z</updated>
+        <summary type="html"><![CDATA[2023-04 -- 2023-06]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-04----2023-06">2023-04 -- 2023-06<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#2023-04----2023-06" class="hash-link" aria-label="Direct link to 2023-04 -- 2023-06" title="Direct link to 2023-04 -- 2023-06" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd">UTxO HD<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#utxo-hd" class="hash-link" aria-label="Direct link to UTxO HD" title="Direct link to UTxO HD" translate="no">​</a></h4>
+<ul>
+<li class="">We finished a major prototype refactoring, which includes:
+<ul>
+<li class="">A better and finer grained DB lock mechanism.</li>
+<li class="">Elimination of race conditions.</li>
+<li class="">Support for configuring batch query size and flushing rate. This is crucial to allow node users to tweak performance.</li>
+<li class="">Architectural simplifications and performance improvements.</li>
+</ul>
+</li>
+<li class="">We implemented a new package to support db-sync integration with UTxO-HD.</li>
+<li class="">We ran another set of ad-hoc benchmarks:
+<ul>
+<li class="">We uncovered a performance regression on the Network component when using <code>GHC-9.2/9.4</code>.</li>
+<li class="">The synchronization and replay speed are as expected.</li>
+<li class="">However, we uncovered memory consumption issues (see figure below).
+<ul>
+<li class="">The in-memory backend is consuming more memory than the baseline.</li>
+<li class="">The LMDB backend shows an unexpected memory usage peak.</li>
+<li class="">Investigation on these issues is ongoing.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="">We integrated the latest changes in <code>main</code> branch.
+<ul>
+<li class="">This required a re-design of the mempool to include the mempool fairness
+improvement.</li>
+</ul>
+</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://updates.cardano.intersectmbo.org/assets/images/2023-Q2-utxo-hd-sync-ad-hoc-benchmarks-74f9d76c2602f09652f584cc4d6a0962.png" width="2500" height="1700" class="img_ev3q"></p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="genesis">Genesis<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#genesis" class="hash-link" aria-label="Direct link to Genesis" title="Direct link to Genesis" translate="no">​</a></h4>
+<ul>
+<li class="">The Genesis work for this PI focused on an high-priority issue from the IOG Researchers' feedback on the proposal.
+<ul>
+<li class="">This particular question was not anticipated when the Q2 PI was planned.</li>
+<li class="">As a result, the chain generators work, the ChainSync Jumping performance work, and the Genesis node prototype work were deprioritized.</li>
+<li class="">That work has accordingly been rolled over into the Statement of Work for the first Genesis vendor work package.</li>
+</ul>
+</li>
+<li class="">The IOG Researchers' feedback on the design was very valuable. It had two primary effects.</li>
+<li class="">Outcome 1: We re-introduced distinct behaviors when the node is "syncing" versus when it is "caught up".
+<ul>
+<li class="">This eliminated a DoS vector introduced by the proposal, instead of having to argue that it was well-mitigated.</li>
+<li class="">The additional design complexity is relatively small.</li>
+</ul>
+</li>
+<li class="">Outcome 2: The issue that was unanticipated is whether the Cardano chain is consistently dense enough to rely on Genesis without any checkpointing.
+<ul>
+<li class="">The determination so far is that---assuming the adversary never controls more than four of the seven genesis keys---the most vulnerable segment is in the pure Praos era.</li>
+<li class="">All the preceding windows are significantly more robust, including the entire Byron and Transitional Praos eras.</li>
+<li class="">Thus checkpointing is not necessary for the initial Genesis release, though it still may be a reasonable addition later.</li>
+<li class="">The primary invention was a model for bounding how much benefit the adversary's long-range attack could possibly gain from Praos's natural short forks.</li>
+</ul>
+</li>
+<li class="">Relevant questions that the IOG Researchers are still assessing.
+<ul>
+<li class="">These do not block the Genesis implementation, but do affect the ultimate values of specific parameters.</li>
+<li class="">Question 1: what is the upper bound on the duration of an eclipse that a healthy Praos node will survive?</li>
+<li class="">Question 2: what is the upper bound on how much grinding can improve the adversary's leader schedule within some Genesis window?</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="support">Support<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#support" class="hash-link" aria-label="Direct link to Support" title="Direct link to Support" translate="no">​</a></h4>
+<ul>
+<li class="">We performed an analysis on number of file descriptors used by Consensus, this
+information can be used by the node operators to check if the number of file
+descriptors they want to support are enough, thus improving the user (eg node
+operator) experience.</li>
+<li class="">We implemented a mempool fairness improvement, by which transactions are
+guaranteed to be processed irrespective of their size.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-debt">Technical debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#technical-debt" class="hash-link" aria-label="Direct link to Technical debt" title="Direct link to Technical debt" translate="no">​</a></h4>
+<ul>
+<li class="">We fixed a bug in followers logic, which was discovered by our <code>QuickCheck</code>
+property tests.</li>
+<li class="">We created an <a href="https://github.com/input-output-hk/ouroboros-consensus/pull/68" target="_blank" rel="noopener noreferrer" class="">immutable DB
+server</a>. This tool allows to serve blocks from the immutable DB to a node that connects to it. This has a remarkable value for testing and benchmarking purposes. For instance, by using this component, we can benchmark the performance of different aspects of Consensus, such as syncing from scratch, without adding Network interference in the performance results.</li>
+<li class="">We created a <a href="https://github.com/input-output-hk/ouroboros-consensus/pull/70" target="_blank" rel="noopener noreferrer" class=""><code>db-truncater</code></a> tool, which can be used in disaster recovery and benchmarking scenarios.</li>
+<li class="">We created a <a href="https://github.com/input-output-hk/ouroboros-consensus/pull/161" target="_blank" rel="noopener noreferrer" class="">benchmarks comparison tool</a> that we plan on using for comparing the performance of two Consensus releases. This will allow us to catch performance regressions early on in the process, before they make it to the node (and show in the system level benchmark tests), thus greatly saving development costs. As an example, the graph below shows the performance <em>improvements</em> introduced by the Ledger team in version <code>0.6.0.0</code> of Consensus wrt version <code>0.5.0.0</code>.</li>
+</ul>
+<p><img decoding="async" loading="lazy" src="https://updates.cardano.intersectmbo.org/assets/images/2023-Q2-beacon-graph-ded65e814bfe6d927faa1c5c66bbbfad.png" width="1840" height="1372" class="img_ev3q"></p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fostering-collaboration">Fostering collaboration<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#fostering-collaboration" class="hash-link" aria-label="Direct link to Fostering collaboration" title="Direct link to Fostering collaboration" translate="no">​</a></h4>
+<ul>
+<li class="">We released <code>fs-sim</code> as open-source repository. This lowers the barrier to entry for external contributors, which will indirectly benefit the Cardano project.</li>
+<li class="">We migrated the consensus code to a <a href="https://github.com/input-output-hk/ouroboros-consensus" target="_blank" rel="noopener noreferrer" class="">new repository</a>, splitting
+it from the <code>ouroboros-network</code> repository. This will save development effort for both the Network and the Consensus teams, since there will be less interference (for instance when making releases).</li>
+<li class="">We made several improvements to our release processes, which will translate in time savings. As an example, we went from 16 to 4 packages, which makes the release process simpler and smother. Our release process now makes it easier to align versions and make releases (both for us and for our downstream users).</li>
+<li class="">We added an explanation of the hardfork-combinator forecast horizon, that will benefit not only our team, but future external contributors.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd-1">UTxO HD<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#utxo-hd-1" class="hash-link" aria-label="Direct link to UTxO HD" title="Direct link to UTxO HD" translate="no">​</a></h4>
+<ul>
+<li class="">We will <a href="https://github.com/input-output-hk/ouroboros-consensus/issues/28" target="_blank" rel="noopener noreferrer" class="">get UTxO-HD ready for handover</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="genesis-1">Genesis<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-Q2-consensus#genesis-1" class="hash-link" aria-label="Direct link to Genesis" title="Direct link to Genesis" translate="no">​</a></h4>
+<ul>
+<li class="">We will regularly liaise with the vendor(s) satisfying the Genesis Statement(s) of Work.</li>
+</ul>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consensus Quarterly Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus"/>
+        <updated>2023-04-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Consensus Quarterly Update]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consensus-quarterly-update">Consensus Quarterly Update<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#consensus-quarterly-update" class="hash-link" aria-label="Direct link to Consensus Quarterly Update" title="Direct link to Consensus Quarterly Update" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-01---2023-03">2023-01 - 2023-03<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#2023-01---2023-03" class="hash-link" aria-label="Direct link to 2023-01 - 2023-03" title="Direct link to 2023-01 - 2023-03" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd">UTxO HD<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#utxo-hd" class="hash-link" aria-label="Direct link to UTxO HD" title="Direct link to UTxO HD" translate="no">​</a></h4>
+<ul>
+<li class="">We finished the testing activities for the prototype, which involved adding
+new tests, and fixing and enabling temporarily disabled tests.</li>
+<li class="">We spent a substantial amount of effort refactoring and cleaning the
+prototype.</li>
+<li class="">We audited the UTxO HD prototype to make sure it can accommodate the migration
+of other tables (eg stake-keys registration) from memory to disk. The result
+of the audit was positive.</li>
+<li class="">We ran ad-hoc benchmarks for reading keys and flushing values to disk. No
+unexpected costs found.</li>
+<li class="">We ran the first system level benchmarks. The performance regressions reported
+were due to an unrealistic snapshotting rate. We need to re-run them again
+after we design a more fine grained locking mechanism.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="genesis">Genesis<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#genesis" class="hash-link" aria-label="Direct link to Genesis" title="Direct link to Genesis" translate="no">​</a></h4>
+<ul>
+<li class="">We elaborated a roadmap of the remaining work for Genesis.</li>
+<li class="">We presented the design to the IOG Researchers and PNSol on February 20. The
+design was well received. We updated the Genesis design with the researcher's
+feedback.
+<ul>
+<li class="">We plugged the new DoS vector identified during the aforementioned
+presentation.</li>
+</ul>
+</li>
+<li class="">We developed a generator for adversarial leader schedules that satisfy key
+Ouroboros properties, which will be used to test the Genesis design.
+<ul>
+<li class="">The generator enables use of smaller Ouroboros parameters, which makes
+extrema more likely and counterxamples easier interpret.</li>
+</ul>
+</li>
+<li class="">We wrote up the latest design iteration.</li>
+<li class="">We continued benchmarking the Chain Sync Jumping prototype. In particular:
+<ul>
+<li class="">We debugged the prototype's performance regression, and unmasked the
+actual cause by patching our initial theory (bad queuing behavior)</li>
+<li class="">We identified and validated the actual cause (a pathological case in
+BlockFetch tiebreaker).</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="support">Support<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#support" class="hash-link" aria-label="Direct link to Support" title="Direct link to Support" translate="no">​</a></h4>
+<ul>
+<li class="">We created two new tools. One for dumping CBOR encoded blocks to JSON. Ahother
+to serve a local immutable DB.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="conway-era">Conway era<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#conway-era" class="hash-link" aria-label="Direct link to Conway era" title="Direct link to Conway era" translate="no">​</a></h4>
+<ul>
+<li class="">We integrated the Conway era into consensus.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-debt">Technical debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#technical-debt" class="hash-link" aria-label="Direct link to Technical debt" title="Direct link to Technical debt" translate="no">​</a></h4>
+<ul>
+<li class="">We fixed a bug with followers, which was discovered by property tests.</li>
+<li class="">We developed a DSL for specifying and running ChainDB test cases.</li>
+<li class="">We fixed failing tests with iterators.</li>
+<li class="">We created micro-benchmarks for adding transactions to the mempool.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fostering-collaboration">Fostering collaboration<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#fostering-collaboration" class="hash-link" aria-label="Direct link to Fostering collaboration" title="Direct link to Fostering collaboration" translate="no">​</a></h4>
+<ul>
+<li class="">We released a new technical documentation site for consensus.</li>
+<li class="">We factored out several packages to external repositories. Some of this work
+originated in the UTxO HD workstream.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd-1">UTxO HD<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#utxo-hd-1" class="hash-link" aria-label="Direct link to UTxO HD" title="Direct link to UTxO HD" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://github.com/input-output-hk/ouroboros-consensus/issues/28" target="_blank" rel="noopener noreferrer" class="">https://github.com/input-output-hk/ouroboros-consensus/issues/28</a></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="genesis-1">Genesis<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#genesis-1" class="hash-link" aria-label="Direct link to Genesis" title="Direct link to Genesis" translate="no">​</a></h4>
+<ul>
+<li class=""><a href="https://github.com/input-output-hk/ouroboros-consensus/issues/33" target="_blank" rel="noopener noreferrer" class="">https://github.com/input-output-hk/ouroboros-consensus/issues/33</a></li>
+<li class=""><a href="https://github.com/input-output-hk/ouroboros-consensus/issues/32" target="_blank" rel="noopener noreferrer" class="">https://github.com/input-output-hk/ouroboros-consensus/issues/32</a></li>
+<li class=""><a href="https://github.com/input-output-hk/ouroboros-consensus/issues/31" target="_blank" rel="noopener noreferrer" class="">https://github.com/input-output-hk/ouroboros-consensus/issues/31</a></li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="support-1">Support<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#support-1" class="hash-link" aria-label="Direct link to Support" title="Direct link to Support" translate="no">​</a></h4>
+<ul>
+<li class="">Design Consensus side of hardfork-enactment in the Voltaire phase
+(<a href="https://github.com/input-output-hk/ouroboros-network/issues/4180" target="_blank" rel="noopener noreferrer" class="">#4180</a>).</li>
+<li class="">Estimate the number of file descriptors Consensus needs
+<a href="https://github.com/input-output-hk/ouroboros-consensus/issues/20" target="_blank" rel="noopener noreferrer" class="">#20</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tech-debt">Tech debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#tech-debt" class="hash-link" aria-label="Direct link to Tech debt" title="Direct link to Tech debt" translate="no">​</a></h4>
+<ul>
+<li class="">Identify Quantitative Timeliness Agreements (QTAs) metrics that we can define
+for consensus. Pick one and implement benchmarks for it.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fostering-collaboration-1">Fostering collaboration<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-25-consensus#fostering-collaboration-1" class="hash-link" aria-label="Direct link to Fostering collaboration" title="Direct link to Fostering collaboration" translate="no">​</a></h4>
+<ul>
+<li class="">Onboard a new team member.</li>
+</ul>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Network Q1 2023 Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network"/>
+        <updated>2023-04-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[2023-01 - 2023-03]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-01---2023-03">2023-01 - 2023-03<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#2023-01---2023-03" class="hash-link" aria-label="Direct link to 2023-01 - 2023-03" title="Direct link to 2023-01 - 2023-03" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="gradual-dynamic-p2p-release-on-mainnet">Gradual dynamic P2P release on mainnet<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#gradual-dynamic-p2p-release-on-mainnet" class="hash-link" aria-label="Direct link to Gradual dynamic P2P release on mainnet" title="Direct link to Gradual dynamic P2P release on mainnet" translate="no">​</a></h4>
+<p>We released two version of <code>cardano-node</code> with dynamic P2P capabilities:</p>
+<ul>
+<li class=""><a href="https://github.com/input-output-hk/cardano-node/releases/tag/1.35.6" target="_blank" rel="noopener noreferrer" class=""><code>1.35.6</code></a>
+<ul>
+<li class="">we found and fixed a bug in exception handling in <code>peer-state-actions</code>
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/4357" target="_blank" rel="noopener noreferrer" class="">pull-4357</a></li>
+<li class="">we found and fixed a busy loop when demoting a peer from hot to warm <a href="https://github.com/input-output-hk/ouroboros-network/pull/4385" target="_blank" rel="noopener noreferrer" class="">pull-4385</a></li>
+</ul>
+</li>
+<li class=""><a href="https://github.com/input-output-hk/cardano-node/releases/tag/1.35.7" target="_blank" rel="noopener noreferrer" class=""><code>1.35.7</code></a>
+<ul>
+<li class="">includes interoperability in the legacy non-p2p network stack <a href="https://github.com/input-output-hk/outoboros-network/pull/4467" target="_blank" rel="noopener noreferrer" class="">pull-4467</a></li>
+</ul>
+</li>
+<li class="">we fixed a busy loop of demotion &amp; promotions: <code>warm -&gt; hot -&gt; warm</code>
+[pull-4485] /it will be included in <code>cardano-node-8.0.0</code> release/.</li>
+</ul>
+<p>Currently there are more than 200 P2P relays on mainnet.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="peer-sharing">Peer Sharing<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#peer-sharing" class="hash-link" aria-label="Direct link to Peer Sharing" title="Direct link to Peer Sharing" translate="no">​</a></h4>
+<p>We implemented /peer sharing/ <a href="https://github.com/input-output-hk/ouroboros-network/pull/4019" target="_blank" rel="noopener noreferrer" class="">pull-4019</a> which will be available as an
+experimental feature in one of the future <code>cardano-node</code> releases.</p>
+<p>We implemented /light peer sharing/, e.g. adding inbound connections to the set
+of known peers of the outbound governor, which allows to bootstrap relays not
+registered on chain.  This complements peer sharing.  The <a href="https://github.com/input-output-hk/ouroboros-network/pull/4277" target="_blank" rel="noopener noreferrer" class="">pull-4277</a> is in
+late review stages.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="eclipse-evasion">Eclipse Evasion<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#eclipse-evasion" class="hash-link" aria-label="Direct link to Eclipse Evasion" title="Direct link to Eclipse Evasion" translate="no">​</a></h4>
+<p>We finalised design of eclipse evasion and we started implementing it.  We
+have an initial implementation (not merged). We are in the process of extending
+our test suite to cover new implementation details: <a href="https://github.com/input-output-hk/ouroboros-network/issues/3886" target="_blank" rel="noopener noreferrer" class="">issue-3886</a>, <a href="https://github.com/input-output-hk/outoboros-network/pull/4462" target="_blank" rel="noopener noreferrer" class="">pull-4462</a>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cardano-network-service-assurance">Cardano Network Service Assurance<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#cardano-network-service-assurance" class="hash-link" aria-label="Direct link to Cardano Network Service Assurance" title="Direct link to Cardano Network Service Assurance" translate="no">​</a></h4>
+<p>Galois has been making progress on <em>Cardano Network Service Assurance</em> project.</p>
+<ul>
+<li class="">
+<p>In cardano-node, they have developed a <code>datapoint</code> abstraction that creates
+a queue of (existing) log events, they now have two such <code>datapoint</code>s (of log
+events) implemented.</p>
+</li>
+<li class="">
+<p>They have developed a <code>datapoint</code> client executable that can connect to a node
+which serves the "new tracing".</p>
+</li>
+<li class="">
+<p>They have been exploring approaches for the consolidation and analysis of
+<code>datapoint</code> data to extract actionable network health status.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cardano-node">Cardano-Node<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#cardano-node" class="hash-link" aria-label="Direct link to Cardano-Node" title="Direct link to Cardano-Node" translate="no">​</a></h4>
+<ul>
+<li class="">We made it possible to configure accepted connections limit <a href="https://github.com/input-output-hk/cardano-node/pull/4902" target="_blank" rel="noopener noreferrer" class="">pull-4902</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing-improvements">Testing improvements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#testing-improvements" class="hash-link" aria-label="Direct link to Testing improvements" title="Direct link to Testing improvements" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p>We fixed a bug in network simulation implementation of TCP simultaneous open <a href="https://github.com/input-output-hk/ouroboros-network/pull/4265" target="_blank" rel="noopener noreferrer" class="">pull-4265</a>.</p>
+</li>
+<li class="">
+<p>We introduced header-body split in the diffusion simulation <a href="https://github.com/input-output-hk/outoboros-network/pull/4419" target="_blank" rel="noopener noreferrer" class="">pull-4419</a> (in review).</p>
+</li>
+<li class="">
+<p>We introduced initiator only nodes in the diffusion simulation <a href="https://github.com/input-output-hk/ouroboros-network/pull/4280" target="_blank" rel="noopener noreferrer" class="">pull-4280</a>.</p>
+</li>
+<li class="">
+<p>We fixed a connection-manager test failure <a href="https://github.com/input-output-hk/ouroboros-network/issues/4370" target="_blank" rel="noopener noreferrer" class="">issue-4370</a>.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-debt">Technical Debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#technical-debt" class="hash-link" aria-label="Direct link to Technical Debt" title="Direct link to Technical Debt" translate="no">​</a></h4>
+<ul>
+<li class="">
+<p>We refactored <code>Snocket</code> interface decoupling it from the multiplexer
+<a href="https://github.com/input-output-hk/ouroboros-network/pull/4260" target="_blank" rel="noopener noreferrer" class="">pull-4260</a>. This simplified some aspects of the KES agent implementation.</p>
+</li>
+<li class="">
+<p>We introduces a record for CBOR codecs which are used for various data
+structures by mini-protocol codecs <a href="https://github.com/input-output-hk/outoboros-network/pull/4430" target="_blank" rel="noopener noreferrer" class="">pull-4430</a>.</p>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="documentation">Documentation<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#documentation" class="hash-link" aria-label="Direct link to Documentation" title="Direct link to Documentation" translate="no">​</a></h4>
+<ul>
+<li class="">We explained some limitations of CDDL in our technical report <a href="https://github.com/input-output-hk/ouroboros-network/pull/4351" target="_blank" rel="noopener noreferrer" class="">pull-4351</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="io-sim">IO-Sim<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#io-sim" class="hash-link" aria-label="Direct link to IO-Sim" title="Direct link to IO-Sim" translate="no">​</a></h4>
+<ul>
+<li class="">We fixed implementation of <code>MVar</code>'s <a href="https://github.com/input-output-hk/io-sim/pull/70" target="_blank" rel="noopener noreferrer" class="">pull-70</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="nothunks">NoThunks<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#nothunks" class="hash-link" aria-label="Direct link to NoThunks" title="Direct link to NoThunks" translate="no">​</a></h4>
+<ul>
+<li class="">We published a new version of <a href="https://hackage.haskell.org/package/nothunks" target="_blank" rel="noopener noreferrer" class=""><code>nothunks</code></a> library to Hackage.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-04-network#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class="">Finish implementation &amp; testing of eclipse evasion <a href="https://github.com/input-output-hk/ouroboros-network/issues/3886" target="_blank" rel="noopener noreferrer" class="">issue-3886</a>.</li>
+<li class="">Optimise connectivity to peers behind firewall <a href="https://github.com/input-output-hk/ouroboros-network/issues/4381" target="_blank" rel="noopener noreferrer" class="">issue-4381</a>.</li>
+<li class="">Finish the work on enabling block production dynamically to allow using P2P
+on block producers <a href="https://github.com/input-output-hk/ouroboros-network/issues/3159" target="_blank" rel="noopener noreferrer" class="">issue-3159</a>.</li>
+<li class="">If time permits we would like also to reserve some time for finishing
+publication of <code>io-sim</code> to Hackage.</li>
+</ul>]]></content>
+        <author>
+            <name>Marcin Szamotulski</name>
+            <uri>https://github.com/coot</uri>
+        </author>
+        <category label="network" term="network"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ledger Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger"/>
+        <updated>2023-04-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Ledger Quarterly Update]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ledger-quarterly-update">Ledger Quarterly Update<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#ledger-quarterly-update" class="hash-link" aria-label="Direct link to Ledger Quarterly Update" title="Direct link to Ledger Quarterly Update" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2023-01---2023-03">2023-01 - 2023-03<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#2023-01---2023-03" class="hash-link" aria-label="Direct link to 2023-01 - 2023-03" title="Direct link to 2023-01 - 2023-03" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="cips">CIPs<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#cips" class="hash-link" aria-label="Direct link to CIPs" title="Direct link to CIPs" translate="no">​</a></h4>
+<ul>
+<li class=""><strong>Entering the Voltaire phase</strong> -
+CIP-1694 received a major update after participation in the design has expanded to
+more and more people, including those who attended the Colorado workshop.
+See <a href="https://github.com/cardano-foundation/CIPs/pull/380" target="_blank" rel="noopener noreferrer" class="">CIP-1694</a>.</li>
+<li class=""><strong>Ledger CIP category</strong> -
+The ledger team continues to embrace the CIP process, and has begun the process of
+registering the ledger as an official CIP category.
+See <a href="https://github.com/cardano-foundation/CIPs/pull/456" target="_blank" rel="noopener noreferrer" class="">CIP-84</a>.</li>
+<li class=""><strong>Ledger serialization</strong> -
+A CIP for the ledger serialization deprecation cycle has been accepted.
+See <a href="https://github.com/cardano-foundation/CIPs/tree/master/CIP-0080" target="_blank" rel="noopener noreferrer" class="">CIP-80</a>.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="formal-ledger-model">Formal ledger model<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#formal-ledger-model" class="hash-link" aria-label="Direct link to Formal ledger model" title="Direct link to Formal ledger model" translate="no">​</a></h4>
+<p>Our new formal specifications backed by Agda have seen a lot of progress.
+The majority of the ideas in CIP-1694 are now present, and we have made enough progress
+that we can now safely say that the PDF produced by the Agda model will be the
+official ledger specification for the Conway ledger era.
+See <a href="https://github.com/input-output-hk/formal-ledger-specifications" target="_blank" rel="noopener noreferrer" class="">the repository</a>.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="conway-ledger-era">Conway ledger era<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#conway-ledger-era" class="hash-link" aria-label="Direct link to Conway ledger era" title="Direct link to Conway ledger era" translate="no">​</a></h4>
+<p>Progress on the Haskell implementation of CIP-1694 has gone hand in hand with the formal model.
+The major component still missing is the DRep stake distribution, which still presents some
+technical challenges.</p>
+<p>[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3176" target="_blank" rel="noopener noreferrer" class="">pull-3176</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3216" target="_blank" rel="noopener noreferrer" class="">pull-3216</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3226" target="_blank" rel="noopener noreferrer" class="">pull-3226</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3291" target="_blank" rel="noopener noreferrer" class="">pull-3291</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3326" target="_blank" rel="noopener noreferrer" class="">pull-3326</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3330" target="_blank" rel="noopener noreferrer" class="">pull-3330</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3339" target="_blank" rel="noopener noreferrer" class="">pull-3339</a>]</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="drep-stake-distribution-computation">DRep stake distribution computation<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#drep-stake-distribution-computation" class="hash-link" aria-label="Direct link to DRep stake distribution computation" title="Direct link to DRep stake distribution computation" translate="no">​</a></h4>
+<p>Adding another large stake distribution to the ledger state must proceed with caution.
+We do not want the memory used by the node to increase too much,
+and performance problems can lead to reduced block production.
+We have prototyped, tested, and benchmarked several approaches that could give us
+the current DRep stake distribution at each epoch boundary.
+This has very important implications, since we want every ADA holder to be able to at any
+time (such as during a contentious vote) register themselves as a DRep and still have time
+to vote themselves on the issue.</p>
+<p>[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3344" target="_blank" rel="noopener noreferrer" class="">pull-3344</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3353" target="_blank" rel="noopener noreferrer" class="">pull-3353</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3364" target="_blank" rel="noopener noreferrer" class="">pull-3364</a>]</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="integration-work">Integration work<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#integration-work" class="hash-link" aria-label="Direct link to Integration work" title="Direct link to Integration work" translate="no">​</a></h4>
+<p>The ledger has made some wonderful improvements over the past six months,
+but which entail a significant amount of integration efforts:</p>
+<ul>
+<li class="">Our new versioned CBOR schemes</li>
+<li class="">Individual deposit tracking</li>
+<li class="">An improved cross-era interface utilizing lenses</li>
+<li class="">A new ledger API</li>
+<li class="">Re-arranging the ledger stake in preparation for CIP-1694</li>
+<li class="">Versioning our Haskell packages
+using <a href="https://github.com/input-output-hk/cardano-haskell-packages" target="_blank" rel="noopener noreferrer" class="">CHaPs</a>.</li>
+<li class="">Consistent conventions for variable names</li>
+</ul>
+<p>[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3279" target="_blank" rel="noopener noreferrer" class="">pull-3279</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3282" target="_blank" rel="noopener noreferrer" class="">pull-3282</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3288" target="_blank" rel="noopener noreferrer" class="">pull-3288</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3289" target="_blank" rel="noopener noreferrer" class="">pull-3289</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3292" target="_blank" rel="noopener noreferrer" class="">pull-3292</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3297" target="_blank" rel="noopener noreferrer" class="">pull-3297</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3298" target="_blank" rel="noopener noreferrer" class="">pull-3298</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3299" target="_blank" rel="noopener noreferrer" class="">pull-3299</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3300" target="_blank" rel="noopener noreferrer" class="">pull-3300</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3302" target="_blank" rel="noopener noreferrer" class="">pull-3302</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3303" target="_blank" rel="noopener noreferrer" class="">pull-3303</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3308" target="_blank" rel="noopener noreferrer" class="">pull-3308</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3342" target="_blank" rel="noopener noreferrer" class="">pull-3342</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3345" target="_blank" rel="noopener noreferrer" class="">pull-3345</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3356" target="_blank" rel="noopener noreferrer" class="">pull-3356</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3357" target="_blank" rel="noopener noreferrer" class="">pull-3357</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3360" target="_blank" rel="noopener noreferrer" class="">pull-3360</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3361" target="_blank" rel="noopener noreferrer" class="">pull-3361</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3363" target="_blank" rel="noopener noreferrer" class="">pull-3363</a>]
+[<a href="https://github.com/input-output-hk/ouroboros-network/pull/4349" target="_blank" rel="noopener noreferrer" class="">pull-4349</a>]
+[<a href="https://github.com/input-output-hk/cardano-base/pull/378" target="_blank" rel="noopener noreferrer" class="">pull-378</a>]
+[<a href="https://github.com/input-output-hk/cardano-base/pull/376" target="_blank" rel="noopener noreferrer" class="">pull-376</a>]
+[<a href="https://github.com/input-output-hk/cardano-base/pull/373" target="_blank" rel="noopener noreferrer" class="">pull-373</a>]
+[<a href="https://github.com/input-output-hk/cardano-base/pull/370" target="_blank" rel="noopener noreferrer" class="">pull-370</a>]
+[<a href="https://github.com/input-output-hk/cardano-base/pull/361" target="_blank" rel="noopener noreferrer" class="">pull-361</a>]
+[<a href="https://github.com/input-output-hk/cardano-node/pull/4976" target="_blank" rel="noopener noreferrer" class="">pull-4976</a>]
+[<a href="https://github.com/input-output-hk/cardano-node/pull/5013" target="_blank" rel="noopener noreferrer" class="">pull-5013</a>]</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="deposit-tracking">Deposit tracking<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#deposit-tracking" class="hash-link" aria-label="Direct link to Deposit tracking" title="Direct link to Deposit tracking" translate="no">​</a></h4>
+<p>Individual deposits (for stake credential and stake pool registrations) were not tracked by the ledger.
+Deposits were returned according to the current protocol parameters.
+When the values of these two protocol parameters change, the deposit pot
+is adjusted by adding to, or removing from, the reserves.</p>
+<p>This has several problems:</p>
+<ul>
+<li class="">Most people expect a deposit to be paid back exactly.</li>
+<li class="">We cannot increase the deposit amount once the reserves hits zero.</li>
+<li class="">If it becomes known that the deposit amount is going to be increased, free Lovelace can be earned by registering credentials.</li>
+<li class="">Because of the problems above, it is going to be incredibly hard to ever change the values.</li>
+<li class="">There is a serious issue involving hard forks.
+The consensus layer makes the decision about whether or not to enact a hard fork based on
+the protocol parameter update state two stability windows before the end of the epoch.
+However, the ledger will reject a protocol parameter update on the epoch boundary
+if the deposit pot adjustments cannot be reconciled with the reseve pot.
+This means that if quorum is met regarding changing the major protocol version,
+but the update is rejected on the epoch boundary, consensus will change the era but the
+ledger will not change the major protocol version, leaving the ledger in a split-brain state.</li>
+</ul>
+<p>Because we never actually changed the values of the two deposits amounts in the protocol parameters
+on mainnet, we were able to retroactively change the behavior.
+We made the following changes:</p>
+<ul>
+<li class="">Individual deposits are tracked in the <code>DState</code>.</li>
+<li class="">The amount deposited is always returned.</li>
+</ul>
+<p>[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3195" target="_blank" rel="noopener noreferrer" class="">pull-3195</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3202" target="_blank" rel="noopener noreferrer" class="">pull-3202</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3217" target="_blank" rel="noopener noreferrer" class="">pull-3217</a>]</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="new-ledger-api">New ledger API<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#new-ledger-api" class="hash-link" aria-label="Direct link to New ledger API" title="Direct link to New ledger API" translate="no">​</a></h4>
+<p>We have significantly built up the ledger API.
+We will eventually replace much of the <code>cardano-api</code> in the node repository with this ledger API.</p>
+<p>[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3242" target="_blank" rel="noopener noreferrer" class="">pull-3242</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3248" target="_blank" rel="noopener noreferrer" class="">pull-3248</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3328" target="_blank" rel="noopener noreferrer" class="">pull-3328</a>]</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="constraint-based-generators">Constraint-based generators<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#constraint-based-generators" class="hash-link" aria-label="Direct link to Constraint-based generators" title="Direct link to Constraint-based generators" translate="no">​</a></h4>
+<p>Our largest scale property tests generate an initial ledger state and a long sequence of valid blocks
+which span several epochs, mimicking a real network.
+These tests are, in theory, excellent for checking properties.
+They are, however, very difficult to maintain and are not as random as we would like
+(a lot of bias has to be introduced to keep the ledger state in enough order to keep generating blocks).</p>
+<p>We have a new declaritive infrastructure for building constraint-based generators,
+which instead generate a random ledger state representative of not just an initial state,
+but also those representative of the end result of a long sequence of valid blocks.
+Moreover, these generators are very fast and are much more random than our old generators.
+Before we can start using them for our existing property tests, however, we still need to
+expand them to generate a valid block for a given ledger state.</p>
+<p>[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3219" target="_blank" rel="noopener noreferrer" class="">pull-3219</a>]</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-debt">Technical debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#technical-debt" class="hash-link" aria-label="Direct link to Technical debt" title="Direct link to Technical debt" translate="no">​</a></h4>
+<p>We continued to address technical debt as much as we can.</p>
+<p>[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3167" target="_blank" rel="noopener noreferrer" class="">pull-3167</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3170" target="_blank" rel="noopener noreferrer" class="">pull-3170</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3172" target="_blank" rel="noopener noreferrer" class="">pull-3172</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3175" target="_blank" rel="noopener noreferrer" class="">pull-3175</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3184" target="_blank" rel="noopener noreferrer" class="">pull-3184</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3205" target="_blank" rel="noopener noreferrer" class="">pull-3205</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3208" target="_blank" rel="noopener noreferrer" class="">pull-3208</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3210" target="_blank" rel="noopener noreferrer" class="">pull-3210</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3212" target="_blank" rel="noopener noreferrer" class="">pull-3212</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3218" target="_blank" rel="noopener noreferrer" class="">pull-3218</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3222" target="_blank" rel="noopener noreferrer" class="">pull-3222</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3223" target="_blank" rel="noopener noreferrer" class="">pull-3223</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3224" target="_blank" rel="noopener noreferrer" class="">pull-3224</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3225" target="_blank" rel="noopener noreferrer" class="">pull-3225</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3229" target="_blank" rel="noopener noreferrer" class="">pull-3229</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3239" target="_blank" rel="noopener noreferrer" class="">pull-3239</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3241" target="_blank" rel="noopener noreferrer" class="">pull-3241</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3244" target="_blank" rel="noopener noreferrer" class="">pull-3244</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3245" target="_blank" rel="noopener noreferrer" class="">pull-3245</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3249" target="_blank" rel="noopener noreferrer" class="">pull-3249</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3260" target="_blank" rel="noopener noreferrer" class="">pull-3260</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3263" target="_blank" rel="noopener noreferrer" class="">pull-3263</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3264" target="_blank" rel="noopener noreferrer" class="">pull-3264</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3268" target="_blank" rel="noopener noreferrer" class="">pull-3268</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3269" target="_blank" rel="noopener noreferrer" class="">pull-3269</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3270" target="_blank" rel="noopener noreferrer" class="">pull-3270</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3274" target="_blank" rel="noopener noreferrer" class="">pull-3274</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3276" target="_blank" rel="noopener noreferrer" class="">pull-3276</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3277" target="_blank" rel="noopener noreferrer" class="">pull-3277</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3286" target="_blank" rel="noopener noreferrer" class="">pull-3286</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3290" target="_blank" rel="noopener noreferrer" class="">pull-3290</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3295" target="_blank" rel="noopener noreferrer" class="">pull-3295</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3296" target="_blank" rel="noopener noreferrer" class="">pull-3296</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3306" target="_blank" rel="noopener noreferrer" class="">pull-3306</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3307" target="_blank" rel="noopener noreferrer" class="">pull-3307</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3310" target="_blank" rel="noopener noreferrer" class="">pull-3310</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3311" target="_blank" rel="noopener noreferrer" class="">pull-3311</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3316" target="_blank" rel="noopener noreferrer" class="">pull-3316</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3320" target="_blank" rel="noopener noreferrer" class="">pull-3320</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3323" target="_blank" rel="noopener noreferrer" class="">pull-3323</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3327" target="_blank" rel="noopener noreferrer" class="">pull-3327</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3331" target="_blank" rel="noopener noreferrer" class="">pull-3331</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3332" target="_blank" rel="noopener noreferrer" class="">pull-3332</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3333" target="_blank" rel="noopener noreferrer" class="">pull-3333</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3338" target="_blank" rel="noopener noreferrer" class="">pull-3338</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3341" target="_blank" rel="noopener noreferrer" class="">pull-3341</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3347" target="_blank" rel="noopener noreferrer" class="">pull-3347</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3350" target="_blank" rel="noopener noreferrer" class="">pull-3350</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3351" target="_blank" rel="noopener noreferrer" class="">pull-3351</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3352" target="_blank" rel="noopener noreferrer" class="">pull-3352</a>]
+[<a href="https://github.com/input-output-hk/cardano-ledger/pull/3354" target="_blank" rel="noopener noreferrer" class="">pull-3354</a>]</p>
+<h5 class="anchor anchorTargetStickyNavbar_Vzrq" id="critical-fixes">Critical fixes<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#critical-fixes" class="hash-link" aria-label="Direct link to Critical fixes" title="Direct link to Critical fixes" translate="no">​</a></h5>
+<p>We fixed two critical issues:</p>
+<ul>
+<li class="">Growing block production delay on the epoch boundary: [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3209" target="_blank" rel="noopener noreferrer" class="">pull-3209</a>]</li>
+<li class="">Unexpected node shutdown from <code>balanceR</code>: [<a href="https://github.com/input-output-hk/cardano-ledger/pull/3343" target="_blank" rel="noopener noreferrer" class="">pull-3343</a>]</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<ul>
+<li class=""><strong>Conway spec</strong> -
+Complete the first version of the conway formal specification.</li>
+<li class=""><strong>DRep stake distribution</strong> -
+Have the ledger compute the DRep stake distribution with acceptible performance.</li>
+<li class=""><strong>Devnet ready</strong> -
+Have the Haskell implementation of the conway era in sync with the formal specification,
+and integrate the changes with consensus and node.
+All the details might not be finalized, but the wire specification and the API should
+be stable so that conway can be placed on a devnet for tool builders to start integrating with.</li>
+<li class=""><strong>Plutus V3</strong> -
+Integrate Plutus V3 into the ledger, including a new script context which supports DReps.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="more-details">More details<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-04-03-ledger#more-details" class="hash-link" aria-label="Direct link to More details" title="Direct link to More details" translate="no">​</a></h3>
+<p>This quarterly report was based off of the following fortnightly ones:</p>
+<ul>
+<li class=""><a class="" href="https://updates.cardano.intersectmbo.org/2023-01-05-ledger">2023-01-05</a></li>
+<li class=""><a class="" href="https://updates.cardano.intersectmbo.org/2023-01-19-ledger">2023-01-19</a></li>
+<li class=""><a class="" href="https://updates.cardano.intersectmbo.org/2023-02-02-ledger">2023-02-02</a></li>
+<li class=""><a class="" href="https://updates.cardano.intersectmbo.org/2023-02-17-ledger">2023-02-17</a></li>
+<li class=""><a class="" href="https://updates.cardano.intersectmbo.org/2023-03-03-ledger">2023-03-03</a></li>
+<li class=""><a class="" href="https://updates.cardano.intersectmbo.org/2023-03-17-ledger">2023-03-17</a></li>
+<li class=""><a class="" href="https://updates.cardano.intersectmbo.org/2023-03-31-ledger">2023-03-31</a></li>
+</ul>]]></content>
+        <author>
+            <name>Jared Corduan</name>
+            <uri>https://github.com/JaredCorduan</uri>
+        </author>
+        <category label="ledger" term="ledger"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consensus Quarterly Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus</id>
+        <link href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus"/>
+        <updated>2023-01-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Consensus Quarterly Update]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="consensus-quarterly-update">Consensus Quarterly Update<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#consensus-quarterly-update" class="hash-link" aria-label="Direct link to Consensus Quarterly Update" title="Direct link to Consensus Quarterly Update" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="2022-12---2023-01">2022-12 - 2023-01<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#2022-12---2023-01" class="hash-link" aria-label="Direct link to 2022-12 - 2023-01" title="Direct link to 2022-12 - 2023-01" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="main-achievements">Main achievements<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#main-achievements" class="hash-link" aria-label="Direct link to Main achievements" title="Direct link to Main achievements" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd">UTxO HD<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#utxo-hd" class="hash-link" aria-label="Direct link to UTxO HD" title="Direct link to UTxO HD" translate="no">​</a></h4>
+<p>The prototype is feature complete and thoroughly tested at the consensus level.
+In particular, we invested a lot of time in writing property-test for the
+mempool, and other crucial new parts of the prototype. Now we are ready to run
+integration tests and system-level benchmarks.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="genesis">Genesis<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#genesis" class="hash-link" aria-label="Direct link to Genesis" title="Direct link to Genesis" translate="no">​</a></h4>
+<p>We identified and fixed a slowdown in cross-era forecasting that was inhibiting
+our efforts to benchmark the ChainSync Jumping prototype. This resulted in a 7%
+speedup in full sync times in the baseline.</p>
+<p>We also started prototyping a self-contained implementation of the Genesis
+dynamics (in particular of the parts intentionally not part of the ChainSync
+Jumping prototype) that furthered our understanding of subtleties and edge
+cases.</p>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="support">Support<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#support" class="hash-link" aria-label="Direct link to Support" title="Direct link to Support" translate="no">​</a></h4>
+<ul>
+<li class="">We worked on designing integration of new VRF and KES crypto into consensus.
+<ul>
+<li class=""><code>Crypto</code> class was split into two parts: <code>Crypto</code> and <code>HeaderCrypto</code>.</li>
+<li class="">With the Ledger team's help, we refactored <code>cardano-ledger</code> to use a proxy
+type for VRF.</li>
+</ul>
+</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="conway-era">Conway era<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#conway-era" class="hash-link" aria-label="Direct link to Conway era" title="Direct link to Conway era" translate="no">​</a></h4>
+<ul>
+<li class="">PR went through its second review round. It is about to be merged, but it got
+delayed due to people's availability during Christmas break.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="technical-debt">Technical debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#technical-debt" class="hash-link" aria-label="Direct link to Technical debt" title="Direct link to Technical debt" translate="no">​</a></h4>
+<ul>
+<li class="">We improved the capabilities of our <code>io-sim</code> library, which is key for testing
+and simulating Cardano components.</li>
+<li class="">We removed thunks from epoch translations in the ledger, which is important
+for reducing memory consumption of the Cardano node.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fostering-collaboration">Fostering collaboration<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#fostering-collaboration" class="hash-link" aria-label="Direct link to Fostering collaboration" title="Direct link to Fostering collaboration" translate="no">​</a></h4>
+<ul>
+<li class="">We added a tutorial on how to instantiate the Consensus layer to run custom
+ledgers. This should be a valuable resource to people looking to roll their
+own custom blockchain (either for commercial or research purposes).</li>
+<li class="">We added an overview of consensus to the <a href="https://ouroboros-network.cardano.intersectmbo.org/" target="_blank" rel="noopener noreferrer" class="">top level
+documentation</a> of
+ouroboros-network. This overview describes the consensus components and adds a
+hyperlinked map to the modules documentation.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="next-steps">Next steps<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#next-steps" class="hash-link" aria-label="Direct link to Next steps" title="Direct link to Next steps" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd-1">UTxO HD<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#utxo-hd-1" class="hash-link" aria-label="Direct link to UTxO HD" title="Direct link to UTxO HD" translate="no">​</a></h4>
+<ul>
+<li class="">Evaluate the extensibility of the prototype. Moving the UTxO to disk is only
+the first step towards reducing the memory requirements of Cardano node, and
+ensuring its long term sustainability. In the future, we plan on moving other
+large maps, such as delegation maps. The prototype should be able to
+accommodate these changes without any major modifications.</li>
+<li class="">Start the integration with other downstream components, such as the wallet and
+db-sync. The idea is to identify and address any potential pain points that
+might arise during this integration.</li>
+<li class="">Run integration tests and system-level benchmarks.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="genesis-1">Genesis<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#genesis-1" class="hash-link" aria-label="Direct link to Genesis" title="Direct link to Genesis" translate="no">​</a></h4>
+<ul>
+<li class="">Finish benchmarking and tuning the fast-path ChainSync Jumping prototype</li>
+<li class="">Expand and optimize the self-contained implementation of the Disconnect Rule
+(including density comparisons and the LoE)</li>
+<li class="">Develop documentation and smoke tests for these components.</li>
+<li class="">Start modifying the ChainSync Client for the LoP and LoR.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="support-1">Support<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#support-1" class="hash-link" aria-label="Direct link to Support" title="Direct link to Support" translate="no">​</a></h4>
+<ul>
+<li class="">Help the Network team with diagnosing performance regression in block
+production.</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="tech-debt">Tech debt<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#tech-debt" class="hash-link" aria-label="Direct link to Tech debt" title="Direct link to Tech debt" translate="no">​</a></h4>
+<ul>
+<li class="">Fix property-test failures concerning iterators (<a href="https://github.com/input-output-hk/ouroboros-network/issues/3999" target="_blank" rel="noopener noreferrer" class="">#3999</a> and
+<a href="https://github.com/input-output-hk/ouroboros-network/issues/4183" target="_blank" rel="noopener noreferrer" class="">#4183</a>).</li>
+</ul>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="fostering-collaboration-1">Fostering collaboration<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#fostering-collaboration-1" class="hash-link" aria-label="Direct link to Fostering collaboration" title="Direct link to Fostering collaboration" translate="no">​</a></h4>
+<ul>
+<li class="">Finish <a href="https://github.com/input-output-hk/ouroboros-network/issues/4145" target="_blank" rel="noopener noreferrer" class="">mapping consensus</a>.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="risks">Risks<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#risks" class="hash-link" aria-label="Direct link to Risks" title="Direct link to Risks" translate="no">​</a></h3>
+<h4 class="anchor anchorTargetStickyNavbar_Vzrq" id="utxo-hd-2">UTxO HD<a href="https://updates.cardano.intersectmbo.org/quarterly/2023-01-18-consensus#utxo-hd-2" class="hash-link" aria-label="Direct link to UTxO HD" title="Direct link to UTxO HD" translate="no">​</a></h4>
+<ul>
+<li class="">Moving other parts of the ledger state to disk might require a major redesign
+of the prototype. For instance, if it turns out that the epoch change rules
+require access to the <em>full</em> ledger state. If this is the case, we might
+accept this risk and do the redesign after the initial release of UTxO-HD.</li>
+<li class="">Integration with downstream clients might require more work than we
+anticipate.</li>
+<li class="">Access to the benchmarking's team time and resources.</li>
+<li class="">Benchmarking results might show significant performance degradation, which
+will require additional work if such performance degradation is not accepted
+by other stakeholders.</li>
+<li class="">The prototype's performance might not be accepted by other stakeholders. Here
+we need to clearly communicate that this is necessary to ensure that as the
+blockchain size grows, the node can operate within reasonable memory
+constraints.</li>
+</ul>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+</feed>

@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcardano_updates=globalThis.webpackChunkcardano_updates||[]).push([[55021],{82611(a){a.exports=JSON.parse('{"tags":[{"label":"benchmarking-reports","permalink":"/reports/tags/benchmarking-reports","count":21}]}')}}]);

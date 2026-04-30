@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcardano_updates=globalThis.webpackChunkcardano_updates||[]).push([[18689],{6647(a){a.exports=JSON.parse('{"metadata":{"permalink":"/reports/page/2","page":2,"postsPerPage":10,"totalPages":3,"totalCount":21,"previousPage":"/reports","nextPage":"/reports/page/3","blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
