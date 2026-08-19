@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://updates.cardano.intersectmbo.org/</id>
+    <title>Cardano Updates Feed</title>
+    <updated>2026-08-19T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://updates.cardano.intersectmbo.org/"/>
+    <subtitle>Regular updates from Cardano Development Teams</subtitle>
+    <icon>https://updates.cardano.intersectmbo.org/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[ledger]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026/08/19/ledger</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026/08/19/ledger"/>
+        <updated>2026-08-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[---]]></summary>
+        <content type="html"><![CDATA[<hr>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="title-ledger-team-updateslug-2026-08-19-ledgerauthors-lehinstags-ledgerhide_table_of_contents-false">title: Ledger Team Update
+slug: 2026-08-19-ledger
+authors: lehins
+tags: [ledger]
+hide_table_of_contents: false<a href="https://updates.cardano.intersectmbo.org/2026/08/19/ledger#title-ledger-team-updateslug-2026-08-19-ledgerauthors-lehinstags-ledgerhide_table_of_contents-false" class="hash-link" aria-label="Direct link to title: Ledger Team Update
+slug: 2026-08-19-ledger
+authors: lehins
+tags: [ledger]
+hide_table_of_contents: false" title="Direct link to title: Ledger Team Update
+slug: 2026-08-19-ledger
+authors: lehins
+tags: [ledger]
+hide_table_of_contents: false" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026/08/19/ledger#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<p>Leios support continued: following the addition of a real <code>BlsKey</code> in the pool parameters, the pool distribution now carries the corresponding <code>LeiosKey</code> and a per-pool BLS-attributed stake, so that BLS-related pool information is available wherever the rest of the pool distribution is consumed.</p>
+<p>Groundwork was laid for a broader refactor of predicate failures toward standalone, reusable units that can be shared across rules and eras. The first such predicate failure landed as a template for the transition, with sub-transactions in Dijkstra as the initial target.
+<code>Ord</code> instances were also added uniformly across the predicate-failure hierarchy so that failures can be collected into sets, which fits the same push toward standalone, composable predicate failures.</p>
+<p>A number of CBOR decoders in the ledger were relaxed to accept indefinite-length encodings in addition to the definite-length ones they previously required. This makes the decoders tolerant of structurally equivalent CBOR variants.</p>
+<p>Test infrastructure received substantial attention. On the Imp side, sub-transaction fixup was implemented (Plutus scripts aside), directly addressing the sub-transaction testing gap flagged last cycle.
+On the conformance side, several test suites were re-enabled after fixes to the underlying constrained generators.
+Twiddling tests were also enabled in Dijkstra, providing more robust serialization tests.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-summary">Low level summary<a href="https://updates.cardano.intersectmbo.org/2026/08/19/ledger#low-level-summary" class="hash-link" aria-label="Direct link to Low level summary" title="Direct link to Low level summary" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026/08/19/ledger#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5988" target="_blank" rel="noopener noreferrer" class="">PR-5988</a> - Leios: add LeiosKey to PoolDistr</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5992" target="_blank" rel="noopener noreferrer" class="">PR-5992</a> - Add individualPoolStakeBls to PoolDistr</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5850" target="_blank" rel="noopener noreferrer" class="">PR-5850</a> - Add <code>Ord</code> instances for predicate failures</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5979" target="_blank" rel="noopener noreferrer" class="">PR-5979</a> - Make GenerateCBOR exit with nonzero when generation fails, retry failed attempts</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5772" target="_blank" rel="noopener noreferrer" class="">PR-5772</a> - Adding first standalone AccountAlreadyRegistered predicate failure</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5862" target="_blank" rel="noopener noreferrer" class="">PR-5862</a> - Enable Dijkstra Twiddling tests, relax some decoders in PV12</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing">Testing<a href="https://updates.cardano.intersectmbo.org/2026/08/19/ledger#testing" class="hash-link" aria-label="Direct link to Testing" title="Direct link to Testing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5964" target="_blank" rel="noopener noreferrer" class="">PR-5964</a> - Enable UTXOW/UTXO/UTXOS tests from all eras in conformance</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5990" target="_blank" rel="noopener noreferrer" class="">PR-5990</a> - Fix infinite loop in initialLedgerState test generator, re-enable UTXO/UTXOW/LEDGER/LEDGERS conformance tests</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5980" target="_blank" rel="noopener noreferrer" class="">PR-5980</a> - Implement subtransaction-fixup in Imp framework (except Plutus scripts)</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/6008" target="_blank" rel="noopener noreferrer" class="">PR-6008</a> - Enact state constrained generator fix</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="infrastructure-and-releasing">Infrastructure and releasing<a href="https://updates.cardano.intersectmbo.org/2026/08/19/ledger#infrastructure-and-releasing" class="hash-link" aria-label="Direct link to Infrastructure and releasing" title="Direct link to Infrastructure and releasing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/6000" target="_blank" rel="noopener noreferrer" class="">PR-6000</a> - Bump HLS to 2.14.0.0</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5838" target="_blank" rel="noopener noreferrer" class="">PR-5838</a> - Post test failures summary to a PR comment as well as to CI</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5998" target="_blank" rel="noopener noreferrer" class="">PR-5998</a> - CHaP flake optimization</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/6005" target="_blank" rel="noopener noreferrer" class="">PR-6005</a> - Bump actions/checkout from 6 to 7 in the actions group</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Plutus Core Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-08-12-plutus-core</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-08-12-plutus-core"/>
+        <updated>2026-08-12T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-08-12-plutus-core#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<p>The Plutus team has recently opened two CIPs and one CPS for review.
+We encourage everyone to read them and leave comments - we would like as much feedback as possible.</p>
+<ul>
+<li class=""><a href="https://github.com/cardano-foundation/CIPs/pull/1236" target="_blank" rel="noopener noreferrer" class="">CIP-0194</a> adds a <code>Match</code> node to UPLC for matching on builtin constants (primarily <code>Data</code>).
+This will make consuming script contexts in validators much cheaper than the status quo.</li>
+<li class=""><a href="https://github.com/cardano-foundation/CIPs/pull/1238" target="_blank" rel="noopener noreferrer" class="">CIP-0195</a> specifies the <code>Data</code> encoding of the Plutus V4 ledger types.</li>
+<li class=""><a href="https://github.com/cardano-foundation/CIPs/pull/1244" target="_blank" rel="noopener noreferrer" class="">A new CPS</a> aims to build community consensus on how to expose our property tests, and tests for older protocol and language versions, to alternative node and UPLC evaluator implementers with minimal integration effort.</li>
+</ul>
+<p>Other than these, we've merged the <code>CollapseCase</code> pass, which rewrites list casing into <code>dropList</code> whenever applicable; the <code>uplc</code> tool now deduces input and output formats from file extensions; and the Plutus V4 ledger API types have been released in 1.67.0.0.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-pull-requests-merged">Key Pull Requests Merged<a href="https://updates.cardano.intersectmbo.org/2026-08-12-plutus-core#key-pull-requests-merged" class="hash-link" aria-label="Direct link to Key Pull Requests Merged" title="Direct link to Key Pull Requests Merged" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7872" target="_blank" rel="noopener noreferrer" class="">Add CollapseCase pass, rewriting list casing into dropList</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7873" target="_blank" rel="noopener noreferrer" class="">Deduce <code>uplc</code> input type from file extension</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7876" target="_blank" rel="noopener noreferrer" class="">Add Plutus V4 Address type</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7871" target="_blank" rel="noopener noreferrer" class="">Remove the <code>deriving-aeson</code> dependency</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7880" target="_blank" rel="noopener noreferrer" class="">Fix Constr cost using wrong accessor in Agda metatheory</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7883" target="_blank" rel="noopener noreferrer" class="">Improve NEAT coverage</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7884" target="_blank" rel="noopener noreferrer" class="">Add missing off-diagonal data for EqualsString and EqualsByteString</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7800" target="_blank" rel="noopener noreferrer" class="">Add valueOf golden coverage in Spec.Data.Budget</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pull-requests-in-progress">Pull Requests In Progress<a href="https://updates.cardano.intersectmbo.org/2026-08-12-plutus-core#pull-requests-in-progress" class="hash-link" aria-label="Direct link to Pull Requests In Progress" title="Direct link to Pull Requests In Progress" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7852" target="_blank" rel="noopener noreferrer" class="">Builtin Pattern Matching (CIP-0194)</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7869" target="_blank" rel="noopener noreferrer" class="">Cost model for <code>multiIndexArray</code> (CIP-0156)</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7864" target="_blank" rel="noopener noreferrer" class="">Formalize integer division and CIntegers in the metatheory</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7863" target="_blank" rel="noopener noreferrer" class="">Compile BuiltinData transparently in the plugin</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7822" target="_blank" rel="noopener noreferrer" class="">Certifier: Add decision procedure for hoist-builtins pass</a></li>
+</ul>]]></content>
+        <author>
+            <name>Ziyang Liu</name>
+            <uri>https://github.com/zliu41</uri>
+        </author>
+        <category label="plutus-core" term="plutus-core"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hydra Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-08-06-hydra</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-08-06-hydra"/>
+        <updated>2026-08-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[What did the team achieve?]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-did-the-team-achieve">What did the team achieve?<a href="https://updates.cardano.intersectmbo.org/2026-08-06-hydra#what-did-the-team-achieve" class="hash-link" aria-label="Direct link to What did the team achieve?" title="Direct link to What did the team achieve?" translate="no">​</a></h3>
+<ul>
+<li class="">Released <strong>2.3.0</strong>, headlined by the <code>reapplyTx</code> snapshot-processing
+speedup, node configuration via YAML file, native <code>PaymentExtendedKey</code> (HD
+wallet) key support
+<a href="https://github.com/cardano-scaling/hydra/pull/2583" target="_blank" rel="noopener noreferrer" class="">#2583</a>, and the batch of
+rotation, Blockfrost and network-layer resilience fixes from the last two
+updates. Note that all the subsequently listed work has <em>not</em> yet been
+released</li>
+<li class="">Merged the performance stack
+<a href="https://github.com/cardano-scaling/hydra/pull/2776" target="_blank" rel="noopener noreferrer" class="">#2776</a>-<a href="https://github.com/cardano-scaling/hydra/pull/2780" target="_blank" rel="noopener noreferrer" class="">#2780</a>,
+in five reviewable pieces:
+<ul>
+<li class="">accumulator commitments are now computed through the <code>rust-accumulator</code>
+FFI (bit-identical, pinned by equivalence and golden tests) and updated
+incrementally from the previous confirmed snapshot, taking the 4k-UTxO
+commitment from 2.13s to 25ms
+<a href="https://github.com/cardano-scaling/hydra/pull/2780" target="_blank" rel="noopener noreferrer" class="">#2780</a></li>
+<li class=""><strong>BREAKING</strong>: broadcast messages are batched into a single etcd value, one
+Raft commit per batch over a reused gRPC connection. This bumps the network
+protocol version to 2, so all members of a head must upgrade together
+<a href="https://github.com/cardano-scaling/hydra/pull/2778" target="_blank" rel="noopener noreferrer" class="">#2778</a></li>
+<li class=""><code>maxTxsPerSnapshot</code> raised from 100 to 1000, leader-side only so no
+coordinated upgrade is needed
+<a href="https://github.com/cardano-scaling/hydra/pull/2777" target="_blank" rel="noopener noreferrer" class="">#2777</a></li>
+<li class="">SQLite event encoding moved onto the write-behind thread, keeping
+serialisation of large <code>SnapshotRequested</code> events off the node loop between
+processing a <code>ReqSn</code> and broadcasting the <code>AckSn</code>
+<a href="https://github.com/cardano-scaling/hydra/pull/2779" target="_blank" rel="noopener noreferrer" class="">#2779</a></li>
+<li class="">plus the measurement and benchmark infrastructure the whole stack was
+driven from <a href="https://github.com/cardano-scaling/hydra/pull/2776" target="_blank" rel="noopener noreferrer" class="">#2776</a></li>
+</ul>
+</li>
+<li class="">Implemented <strong>selective partial fanout</strong>: a new <code>PartialFanout</code> client input
+lets you distribute a chosen subset of the closed head's UTxO, with a
+<code>HeadPartiallyFannedOut</code> server output telling clients whether the node keeps
+draining or awaits the next selection, a <code>FanningOut</code> head status, and a
+matching TUI flow. Only the node that issued the command drives the step, so
+observers can't steamroll UTxO another party deliberately left behind
+<a href="https://github.com/cardano-scaling/hydra/pull/2750" target="_blank" rel="noopener noreferrer" class="">#2750</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2333" target="_blank" rel="noopener noreferrer" class="">#2333</a>, with a docs
+page to go with it
+<a href="https://github.com/cardano-scaling/hydra/pull/2794" target="_blank" rel="noopener noreferrer" class="">#2794</a></li>
+<li class=""><strong>BREAKING</strong>: <code>--deposit-period</code> is now embedded in the on-chain <code>OpenDatum</code>
+at <code>Init</code> time, so all nodes in a head must agree on it; a mismatch emits
+<code>IgnoredHeadInitializing</code> and the node ignores the head, the same way
+contestation period mismatches already worked
+<a href="https://github.com/cardano-scaling/hydra/pull/2734" target="_blank" rel="noopener noreferrer" class="">#2734</a></li>
+<li class="">Added <code>--deposit-activation</code> to decouple activation from the deadline
+calculation: it controls only the <code>Inactive -&gt; Active</code> transition while
+<code>--deposit-period</code> keeps its deadline and expiry role, giving three
+independent windows (maturity, active, recovery). The default of <code>3600s</code>
+reproduces the old behaviour exactly
+<a href="https://github.com/cardano-scaling/hydra/pull/2802" target="_blank" rel="noopener noreferrer" class="">#2802</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2744" target="_blank" rel="noopener noreferrer" class="">#2744</a></li>
+<li class=""><code>POST /commit</code> now rejects deposits that could never be claimed. A dry-run
+increment is checked against the L1 maximum transaction and serialized value
+sizes, returning a new <code>DepositTooLarge</code> error. Previously the deposit would
+land on-chain and the increment claiming it could never be submitted, wedging
+further incremental commits and locking the funds until recovery after the
+deadline <a href="https://github.com/cardano-scaling/hydra/pull/2807" target="_blank" rel="noopener noreferrer" class="">#2807</a></li>
+<li class="">Fixed long-running nodes rejecting every layer 2 Plutus transaction carrying
+a validity bound: the era history queried at startup has a forecast horizon
+(36 hours on mainnet), and once past it those transactions failed with
+<code>PastHorizon</code> until restart. The last era is now unbounded for L2 ledger time
+conversions <a href="https://github.com/cardano-scaling/hydra/pull/2803" target="_blank" rel="noopener noreferrer" class="">#2803</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2798" target="_blank" rel="noopener noreferrer" class="">#2798</a></li>
+<li class=""><strong>BREAKING</strong> (WebSocket API): removed the <code>SyncedStatusReport</code> server output,
+which the node pushed on every block. Sync status is now edge-triggered via
+<code>NodeUnsynced</code>/<code>NodeSynced</code> and <code>Greetings.chainSyncedStatus</code>, and the
+continuous drift value became a <code>hydra_chain_drift_seconds</code> metric alongside
+a new <code>hydra_chain_last_block_timestamp_seconds</code> so a stalled chain backend
+is detectable even while drift is frozen
+<a href="https://github.com/cardano-scaling/hydra/pull/2769" target="_blank" rel="noopener noreferrer" class="">#2769</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2749" target="_blank" rel="noopener noreferrer" class="">#2749</a></li>
+<li class="">Made <code>hydra-chain-observer</code> version-aware: it detects which protocol version
+an observed transaction belongs to by matching head and deposit script
+hashes against a registry in <code>networks.json</code> covering 0.13.0 through 2.2.0,
+removing the compile-time coupling to a single version and the <code>hydra-plutus</code>
+dependency altogether
+<a href="https://github.com/cardano-scaling/hydra/pull/2740" target="_blank" rel="noopener noreferrer" class="">#2740</a></li>
+<li class="">Fixed pasting into <code>hydra-tui</code> text fields (bracketed paste mode, so a paste
+arrives as one event and typing <code>c</code> into an address no longer cancels the
+dialog) and stopped it submitting stale form values when the entered address
+or amount was invalid
+<a href="https://github.com/cardano-scaling/hydra/pull/2770" target="_blank" rel="noopener noreferrer" class="">#2770</a></li>
+<li class="">Made the mac release binaries runnable without nix: they were hard-linking
+libraries out of <code>/nix/store</code> and simply wouldn't launch on a plain machine
+<a href="https://github.com/cardano-scaling/hydra/pull/2795" target="_blank" rel="noopener noreferrer" class="">#2795</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2461" target="_blank" rel="noopener noreferrer" class="">#2461</a></li>
+<li class="">Bumped Mithril to 2630.0 and switched to the v2 database backend, since the
+aggregator no longer certifies v1
+<a href="https://github.com/cardano-scaling/hydra/pull/2808" target="_blank" rel="noopener noreferrer" class="">#2808</a></li>
+<li class="">Docs fixes: the <code>transaction-cost</code> benchmark page is now generated by the
+docs build instead of being dropped in as raw markdown afterwards, so it
+renders with the current theme and stops listing removed transactions
+<a href="https://github.com/cardano-scaling/hydra/pull/2799" target="_blank" rel="noopener noreferrer" class="">#2799</a>, and the fanout
+cost table now sweeps party counts
+<a href="https://github.com/cardano-scaling/hydra/pull/2796" target="_blank" rel="noopener noreferrer" class="">#2796</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next">What's next?<a href="https://updates.cardano.intersectmbo.org/2026-08-06-hydra#whats-next" class="hash-link" aria-label="Direct link to What's next?" title="Direct link to What's next?" translate="no">​</a></h3>
+<ul>
+<li class="">Complete the typst + Agda specification work, split into a reviewable stack: a
+protocol fix forbidding a commit and a decommit in flight simultaneously
+<a href="https://github.com/cardano-scaling/hydra/pull/2784" target="_blank" rel="noopener noreferrer" class="">#2784</a>, the prose
+migration from LaTeX to Typst
+<a href="https://github.com/cardano-scaling/hydra/pull/2785" target="_blank" rel="noopener noreferrer" class="">#2785</a>, the Agda
+formalisation itself
+<a href="https://github.com/cardano-scaling/hydra/pull/2786" target="_blank" rel="noopener noreferrer" class="">#2786</a>, a <code>hydra-agda</code>
+package extracted via MAlonzo with a CI gate
+<a href="https://github.com/cardano-scaling/hydra/pull/2787" target="_blank" rel="noopener noreferrer" class="">#2787</a>, and differential
+tests checking the node and validator against that reference
+<a href="https://github.com/cardano-scaling/hydra/pull/2788" target="_blank" rel="noopener noreferrer" class="">#2788</a></li>
+<li class="">Switch the event store to CBOR
+<a href="https://github.com/cardano-scaling/hydra/pull/2767" target="_blank" rel="noopener noreferrer" class="">#2767</a> and offer an
+opt-in binary encoding on the client API
+<a href="https://github.com/cardano-scaling/hydra/pull/2762" target="_blank" rel="noopener noreferrer" class="">#2762</a></li>
+<li class="">Iterate on ADR 34, covering the separation of <code>hydra-chain-observer</code> into a
+service shared by several nodes
+<a href="https://github.com/cardano-scaling/hydra/pull/2771" target="_blank" rel="noopener noreferrer" class="">#2771</a></li>
+<li class="">Make <code>rejectLowDeposits</code> a single pass rather than quadratic
+<a href="https://github.com/cardano-scaling/hydra/pull/2805" target="_blank" rel="noopener noreferrer" class="">#2805</a></li>
+<li class="">Get a release out with the performance stack and selective partial fanout</li>
+</ul>]]></content>
+        <author>
+            <name>Noon van der Silk</name>
+            <uri>https://github.com/noonio</uri>
+        </author>
+        <category label="hydra" term="hydra"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ledger Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-08-05-ledger</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-08-05-ledger"/>
+        <updated>2026-08-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-08-05-ledger#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<p>Leios support in the ledger took another step forward this cycle: pool parameters now carry an actual BlsKey, replacing the placeholder types introduced previously.
+On the testing side, block-header serialization - Praos and Leios alike - is now covered by a dedicated round-trip test suite, giving early guard-rails on the wire format as the Leios header evolves.</p>
+<p>Work on nested transactions in Dijkstra advanced as well: the withdrawal mechanism for sub-transactions was implemented.
+Predicate failures around this area were reworked to be more useful and consistent, moved into the layer the specification prescribes and given clearer names.
+We settled how UTxO state updates should behave under nested transactions and the AdaPots obligations invariant guard-rail was adapted accordingly.
+A field for the initial account balance was also added to the top-level transaction body.</p>
+<p>On the Plutus side, a per-block script cache was introduced so that scripts decoded once for a transaction can be reused by later transactions within the same block.
+A related optimization now memoizes the computation of the script hashes a transaction needs.</p>
+<p>Two CIPs advanced this cycle. CIP-50 (pledge-leverage-based staking rewards) was implemented, and groundwork for CIP-23 began with the addition of the minPoolMargin protocol parameter to the Dijkstra era.</p>
+<p>Test coverage was expanded: the Conway conformance suite was enabled in Dijkstra, and new tests were added around stake calculations and sub-transactions - as far as the current test framework allows.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-summary">Low level summary<a href="https://updates.cardano.intersectmbo.org/2026-08-05-ledger#low-level-summary" class="hash-link" aria-label="Direct link to Low level summary" title="Direct link to Low level summary" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-08-05-ledger#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5945" target="_blank" rel="noopener noreferrer" class="">PR-5945</a> - Fix JSON roundtrip for InjectionData</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5946" target="_blank" rel="noopener noreferrer" class="">PR-5946</a> - Make <code>AlonzoTx</code> mempool decoder backwards compatible</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5942" target="_blank" rel="noopener noreferrer" class="">PR-5942</a> - Optimize plutus script preparation</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5953" target="_blank" rel="noopener noreferrer" class="">PR-5953</a> - Reuse script cache for script validation</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5952" target="_blank" rel="noopener noreferrer" class="">PR-5952</a> - Add startingAccountBalanceInterval to TopTx body</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5930" target="_blank" rel="noopener noreferrer" class="">PR-5930</a> - Fix deposits in AdaPots calculations</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5941" target="_blank" rel="noopener noreferrer" class="">PR-5941</a> - Fix updating of <code>UTxOState</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5947" target="_blank" rel="noopener noreferrer" class="">PR-5947</a> - Add canonical ledger state CDDL spec and validation tests</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5938" target="_blank" rel="noopener noreferrer" class="">PR-5938</a> - Rename isValid to isPhase2Valid</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5967" target="_blank" rel="noopener noreferrer" class="">PR-5967</a> - Move network checks of deposits and withdrawals  to (SUB)ENTITIES</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5961" target="_blank" rel="noopener noreferrer" class="">PR-5961</a> - Remove unnecessary setup of the <code>DRepPulser</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5960" target="_blank" rel="noopener noreferrer" class="">PR-5960</a> - Memoize getScriptsHashesNeeded in StanTx</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5969" target="_blank" rel="noopener noreferrer" class="">PR-5969</a> - Withdrawals rework in SubEntities</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5943" target="_blank" rel="noopener noreferrer" class="">PR-5943</a> - CIP-50 Pledge Leverage-Based Staking Rewards</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5891" target="_blank" rel="noopener noreferrer" class="">PR-5891</a> - Add <code>BlsKey</code> in <code>StakePoolParams</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5854" target="_blank" rel="noopener noreferrer" class="">PR-5854</a> - Add ToJSON/FromJSON instances for EraTxWits</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5949" target="_blank" rel="noopener noreferrer" class="">PR-5949</a> - CIP-23 - Add <code>minPoolMargin</code> protocol parameter to Dijkstra era</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5950" target="_blank" rel="noopener noreferrer" class="">PR-5950</a> - Drop <code>EncCBORGroup BlockBody</code> in Dijkstra</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5909" target="_blank" rel="noopener noreferrer" class="">PR-5909</a> - Stable type for querySetSnapshotStakePoolDistr</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing">Testing<a href="https://updates.cardano.intersectmbo.org/2026-08-05-ledger#testing" class="hash-link" aria-label="Direct link to Testing" title="Direct link to Testing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5939" target="_blank" rel="noopener noreferrer" class="">PR-5939</a> - Enable Conway conformance tests in Dijkstra</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5959" target="_blank" rel="noopener noreferrer" class="">PR-5959</a> - Test collateral inputs are in utxo</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5971" target="_blank" rel="noopener noreferrer" class="">PR-5971</a> - Add Imp test to test that DReps unregistered and reregistered in the same tx lose vote delegated stake</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5948" target="_blank" rel="noopener noreferrer" class="">PR-5948</a> - Add serialization tests for block headers</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5975" target="_blank" rel="noopener noreferrer" class="">PR-5975</a> - Add stake calculation tests for conway</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="infrastructure-and-releasing">Infrastructure and releasing<a href="https://updates.cardano.intersectmbo.org/2026-08-05-ledger#infrastructure-and-releasing" class="hash-link" aria-label="Direct link to Infrastructure and releasing" title="Direct link to Infrastructure and releasing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5874" target="_blank" rel="noopener noreferrer" class="">PR-5874</a> - Update <code>cardano-binary</code> to <code>1.9.1.0</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5968" target="_blank" rel="noopener noreferrer" class="">PR-5968</a> - Restore &lt;2.6 bound for cardano-crypto-class</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5970" target="_blank" rel="noopener noreferrer" class="">PR-5970</a> - Bump cardano-data version for release</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5976" target="_blank" rel="noopener noreferrer" class="">PR-5976</a> - Correct a bad changlog entry</li>
+</ul>]]></content>
+        <author>
+            <name>Alexey Kuleshevich</name>
+            <uri>https://github.com/lehins</uri>
+        </author>
+        <category label="ledger" term="ledger"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mithril Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-08-05-mithril</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-08-05-mithril"/>
+        <updated>2026-08-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level overview]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-overview">High level overview<a href="https://updates.cardano.intersectmbo.org/2026-08-05-mithril#high-level-overview" class="hash-link" aria-label="Direct link to High level overview" title="Direct link to High level overview" translate="no">​</a></h2>
+<p>This week, the Mithril team released the <code>2630</code> distribution. This version promotes the DMQ node <code>0.7.0.0</code> as beta on the <code>release-mainnet</code> and <code>release-preprod</code> networks, activates the testing phase of the Cardano blocks and transactions certification on the <code>pre-release-preview</code> and <code>release-preprod</code> networks, removes the support for the <code>CardanoImmutableFilesFull</code> certificate type in the Mithril signer and aggregator, and includes various bug fixes and improvements.</p>
+<p>The team also completed the assessment of the catchup from the genesis certificate for a SNARK follower aggregator and the encoding of the aggregate signature of the certificate message as bytes, and stopped forcing the <code>rustls</code> TLS backend in the <code>future_snark</code> feature of the STM library. They continued combining the dual MSM and accumulator pairing checks in the IVC proof verification, and reusing the cached unsafe SRS in the SNARK test setups.</p>
+<p>They also completed the creation of a local IPFS network for a proof-of-concept of decentralized delivery of Cardano database artifacts, and continued implementing the aggregator CLI commands and the new chain adapter for on-chain configuration parameters, as well as the runbook documenting them.</p>
+<p>Finally, the team upgraded the documentation website to Docusaurus <code>3.10.2</code> and <code>tailwind</code> <code>v4</code>, completed shipping the Mithril signer node binary in the Cardano node bundle, and continued upgrading to Cardano node <code>v.11.1</code> and fixing the flakiness of the end-to-end tests in the CI.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-08-05-mithril#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-08-05-mithril#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Assess catchup from genesis certificate for SNARK follower aggregator</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3389" target="_blank" rel="noopener noreferrer" class="">#3389</a></li>
+<li class="">Completed the issue <strong>Stop forcing rustls in the <code>future_snark</code> feature of STM</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3423" target="_blank" rel="noopener noreferrer" class="">#3423</a></li>
+<li class="">Completed the issue <strong>Use bytes encoding for aggregate signature in certificate message</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3379" target="_blank" rel="noopener noreferrer" class="">#3379</a></li>
+<li class="">Completed the issue <strong>Create a local IPFS network</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3434" target="_blank" rel="noopener noreferrer" class="">#3434</a></li>
+<li class="">Worked on the issue <strong>Implement aggregator CLI commands for configuration parameters</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3392" target="_blank" rel="noopener noreferrer" class="">#3392</a></li>
+<li class="">Worked on the issue <strong>Create new chain adapter to read on-chain configuration parameters</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3393" target="_blank" rel="noopener noreferrer" class="">#3393</a></li>
+<li class="">Worked on the issue <strong>Combine the dual MSM and accumulator pairing checks in IVC proof verification</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3420" target="_blank" rel="noopener noreferrer" class="">#3420</a></li>
+<li class="">Worked on the issue <strong>Reuse the cached unsafe SRS in the SNARK test setups</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3433" target="_blank" rel="noopener noreferrer" class="">#3433</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="protocol-maintenance">Protocol maintenance<a href="https://updates.cardano.intersectmbo.org/2026-08-05-mithril#protocol-maintenance" class="hash-link" aria-label="Direct link to Protocol maintenance" title="Direct link to Protocol maintenance" translate="no">​</a></h3>
+<ul>
+<li class="">Released the new distribution <a href="https://github.com/IntersectMBO/mithril/releases/tag/2630.0" target="_blank" rel="noopener noreferrer" class=""><code>2630.0</code></a></li>
+<li class="">Published a dev blog post <a href="https://mithril.network/doc/dev-blog/2026/08/03/distribution-2630" target="_blank" rel="noopener noreferrer" class="">Distribution <code>2630</code> is now available</a></li>
+<li class="">Published a dev blog post <a href="https://mithril.network/doc/dev-blog/2026/08/04/dmq-beta-release" target="_blank" rel="noopener noreferrer" class="">DMQ node beta on the release networks</a></li>
+<li class="">Completed the issue <strong>Release <code>2630</code> distribution</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3271" target="_blank" rel="noopener noreferrer" class="">#3271</a></li>
+<li class="">Completed the issue <strong>Update DMQ node to <code>0.7.0.0</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3358" target="_blank" rel="noopener noreferrer" class="">#3358</a></li>
+<li class="">Completed the issue <strong>Update documentation website to <code>docusaurus</code> stable version <code>3.10.2</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3413" target="_blank" rel="noopener noreferrer" class="">#3413</a></li>
+<li class="">Completed the issue <strong>Update documentation website to <code>tailwind</code> <code>v4</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3414" target="_blank" rel="noopener noreferrer" class="">#3414</a></li>
+<li class="">Completed the issue <strong>Remove plausible from documentation website</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3447" target="_blank" rel="noopener noreferrer" class="">#3447</a></li>
+<li class="">Completed the issue <strong>Admonitions are broken in blog posts</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3455" target="_blank" rel="noopener noreferrer" class="">#3455</a></li>
+<li class="">Completed the issue <strong>Ship Mithril signer node binary in Cardano node bundle in GitHub</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3011" target="_blank" rel="noopener noreferrer" class="">#3011</a></li>
+<li class="">Worked on the issue <strong>Upgrade to Cardano <code>11.1</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3346" target="_blank" rel="noopener noreferrer" class="">#3346</a></li>
+<li class="">Worked on the issue <strong>Create runbook for on-chain configuration parameters</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3399" target="_blank" rel="noopener noreferrer" class="">#3399</a></li>
+<li class="">Worked on the issue <strong>Fix flakiness of e2e tests in the CI</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3452" target="_blank" rel="noopener noreferrer" class="">#3452</a></li>
+</ul>]]></content>
+        <author>
+            <name>Jean-Philippe Raynaud</name>
+            <uri>https://github.com/jpraynaud</uri>
+        </author>
+        <category label="mithril" term="mithril"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Performance & Tracing Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing"/>
+        <updated>2026-07-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Benchmarking</strong>: Van Rossem HF: Created and performed benchmarks for new Plutus execution budgets and internals; PlutusV3 baseline shift.</li>
+<li class=""><strong>Development</strong>: Hermod package restructre completed; <code>cardano-config</code> support in <code>trace-dispatcher</code>.</li>
+<li class=""><strong>Infrastructure</strong>: Genesis cache overhaul / Protocol Version 11 overlay have landed.</li>
+<li class=""><strong>Tracing</strong>: Alert manager feature for <code>cardano-tracer</code> in design phase; native support for spans in Hermod.</li>
+<li class=""><strong>Leios</strong>: Major new <code>beacon</code> feature to impose memory limits; on-disk LedgerDB tx validation times benchmark in the works.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="benchmarking">Benchmarking<a href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing#benchmarking" class="hash-link" aria-label="Direct link to Benchmarking" title="Direct link to Benchmarking" translate="no">​</a></h3>
+<p>The P&amp;T team has been safeguarding the now enacted Van Rossem hard fork, which brings Protocol Version 11 with new Plutus internals and a bump to the execution budgets to mainnet. Our benchmarking automation framework, the performance workbench, gained new chain-fragment-creation profiles as well as new <code>plutuscall-*</code> profiles, targeting those new Plutus features specifically (<a href="https://github.com/IntersectMBO/cardano-node/pull/6627" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6627</a> and <a href="https://github.com/IntersectMBO/cardano-node/pull/6440" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6440</a>). The former PR also adds a <code>wb chain-fragment export</code> op, which packages a profile run's node database, genesis files and a path-patched node config into a chain fragment consumable by <code>beacon</code> tool — the tooling behind the on-disk benchmarks described under Leios below.</p>
+<p>The benchmarks performed using those new profiles have shown that the execution budget raise leads to a reasonable, predictable and expected increase in Block Adoption times. For the new PlutusV3 internals, they've also shown that they're consistently priced relative to the existing internals, and that, even when executed up to full budget exhaustion, there were no performance regressions in their implementation.</p>
+<p>To enable those benchmarks, work has been well underway on extending <code>plutus-scripts-bench</code> with PlutusV3 variants of the existing scripts, and adding two new PV11 scripts targeting the new execution internals: <code>MultiScalarMulG1</code> (BLS12-381 multi-scalar multiplication based on <a href="https://cips.cardano.org/cip/CIP-0133" target="_blank" rel="noopener noreferrer" class="">CIP-0133</a>), and <code>ExpModInteger</code>, exercising the new <code>expModInteger</code> builtin (<a href="https://github.com/IntersectMBO/cardano-node/pull/6440" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6440</a>). The PR wires these through to <code>tx-generator</code>, and gives our analysis tool <code>locli</code> a new <code>PlutusBudgetSummary</code> module to output Plutus workload calibration data as part of comparison reports. The PR is currently under review.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="development">Development<a href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing#development" class="hash-link" aria-label="Direct link to Development" title="Direct link to Development" translate="no">​</a></h3>
+<p>The long-planned restructuring of <code>trace-dispatcher</code> into separate Hermod packages, which we reported as underway last month, is now complete (<a href="https://github.com/IntersectMBO/hermod-tracing/pull/16" target="_blank" rel="noopener noreferrer" class="">hermod-tracing PR#16</a>). The stable API surface — trace types, <code>LogFormatting</code>/<code>MetaTrace</code> instances, and the structural/annotation combinators — now lives in a lightweight <code>hermod-tracing-api</code> package, itself split into an <code>internal</code> and a <code>public</code> sublibrary, so that packages which only need to instrument their own code no longer pull in EKG, Prometheus, CBOR forwarding or the YAML config parser as dependencies. The full backend stack remains in <code>hermod-tracing-core</code>, while the Prometheus TCP server has been carved out into its own optional <code>hermod-tracing-prometheus</code> package. All modules and identifiers were renamed from <code>Cardano.Logging.*</code>/<code>TraceDispatcherMessage</code> and friends to their <code>Hermod.Tracing.*</code> equivalents, and <code>trace-dispatcher</code> itself has been kept around as a backward-compatible mirror so existing pinned consumers keep building unchanged until they migrate.</p>
+<p>Last but not least, we've added compatibility with the <code>cardano-config</code> library to <code>trace-dispatcher</code> (<a href="https://github.com/IntersectMBO/hermod-tracing/pull/18" target="_blank" rel="noopener noreferrer" class="">hermod-tracing PR#18</a>).</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="infrastructure">Infrastructure<a href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing#infrastructure" class="hash-link" aria-label="Direct link to Infrastructure" title="Direct link to Infrastructure" translate="no">​</a></h3>
+<p>The genesis cache overhaul and full Protocol Version 11 overlay for our performance workbench, close to merging as of last month, have now landed (<a href="https://github.com/IntersectMBO/cardano-node/pull/6544" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6544</a>). Beyond the split-cache "ripper" backend and the restoration of non-default Plutus cost models via the Alonzo genesis <code>extraConfig</code> field reported previously, the merged PR also standardises genesis creation on <code>cardano-cli</code>'s <code>create-testnet-data</code> (retiring the old <code>create-staked</code> path and the separate byron genesis step), makes the era an explicit, validated input to <code>wb start</code> and <code>wb run allocate</code> via a new <code>--era-name</code> flag, and simplifies the workbench CLI to named flags only. A handful of breaking changes ship alongside: <code>WB_BACKEND</code> is renamed to <code>WB_BACKEND_NAME</code>, <code>--relays</code> and the genesis "spec" sub-command are removed, and non-default Plutus cost models must now be supplied through <code>extraConfig</code>. Analysis of older runs is unaffected, as <code>wb analyse</code> falls back to the previous genesis layout when the new one is absent.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tracing">Tracing<a href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing#tracing" class="hash-link" aria-label="Direct link to Tracing" title="Direct link to Tracing" translate="no">​</a></h3>
+<p>We've begun designing a central alarm system for <code>cardano-tracer</code> (<a href="https://github.com/IntersectMBO/cardano-node/blob/jutaro/alarm/cardano-tracer/docs/alarm-system-concept.md" target="_blank" rel="noopener noreferrer" class="">alarm system concept</a>). Today, operators typically rely on third-party tooling for this — something built on top of Grafana, the Prometheus Alertmanager, or Loki log analysis — but there's no solution native to the tracing and metrics stack, and none that takes a unified approach across trace messages and metrics. The idea is to instead give <code>cardano-tracer</code> a single place that collects alarms from multiple sources — our <code>hermod-recon</code> verifier flagging a violated property, a rule evaluated against the metrics <code>cardano-tracer</code> already stores, or simply a trace message severe enough to warrant attention — and forward them to wherever operators want to be notified — typically a paging service's webhook API, but custom webhooks, email, and plain logging are supported too — while keeping a queryable history of past alarms. It deliberately stays a one-shot notification layer rather than a full incident tracker: there's no acknowledgement or resolution workflow, that's left to whatever tooling operators already use for that. This is still an early design and not yet reflected in any implementation work.</p>
+<p>On the Hermod side, we're also exploring native support for nested spans, in the spirit of tracing systems like OpenTelemetry. A span represents a bounded unit of work — say, processing a single transaction or forging a block — and the point is to let automated log analysis reconstruct not just individual events, but how long an operation took and how it decomposes into sub-operations, by pairing up an opening and a closing trace message that share a unique identifier. The tricky part is Haskell's laziness: without care, an expression's evaluation, and the trace events it triggers, can end up happening after its enclosing span has already been closed, so a fair amount of the design work goes into guaranteeing that no trace event ever escapes the span it logically belongs to. There's no branch to point to yet — this is still exploratory work.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="leios">Leios<a href="https://updates.cardano.intersectmbo.org/2026-07-31-performance-and-tracing#leios" class="hash-link" aria-label="Direct link to Leios" title="Direct link to Leios" translate="no">​</a></h3>
+<p>Building on the chain-fragment export tooling introduced above, <code>beacon</code> — the ledger ops benchmarking tool in <code>ouroboros-consensus-tools</code> — gained a memory-limiting feature aimed squarely at tx validation times using an on-disk LedgerDB backend and forcing disk I/O at the same time (<a href="https://github.com/input-output-hk/ouroboros-consensus-tools/pull/12" target="_blank" rel="noopener noreferrer" class="">beacon PR#12</a>, currently under review).</p>
+<p>A new flag forces the LSM (on-disk) backend to genuinely exercise disk I/O, rather than being served invisibly out of the OS page cache; <code>--mem-limit</code>/<code>--heap-limit</code> cgroup caps serve as a fallback for past <code>db-analyser</code> builds without support for that new flag. Every run now records peak RSS and block I/O counts. A representative "sweet spot" using those new mechanisms has been determined empirically for the chain fragments used in this year's April measurements. This finally gives us concrete on-disk LedgerDB metrics by determining the overhead of I/O-backed validation times vs. pure ones, closing a gap in our Leios throughput benchmarking. A new <code>beacon/docs/METHODOLOGY.md</code> documents the overall approach; benchmarks are currently being performed on our benchmarking cluster, to obtain measurements on the same hardware as we did in April for the in-memory backend — but now with LSM backend forced to perform disk I/O.</p>]]></content>
+        <author>
+            <name>Michael Karg</name>
+            <uri>https://github.com/mgmeier</uri>
+        </author>
+        <category label="performance-tracing" term="performance-tracing"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mithril Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-29-mithril</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-29-mithril"/>
+        <updated>2026-07-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level overview]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-overview">High level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-29-mithril#high-level-overview" class="hash-link" aria-label="Direct link to High level overview" title="Direct link to High level overview" translate="no">​</a></h2>
+<p>This week, the Mithril team completed benchmarks for the IVC SNARK recursive circuit and analyzed and optimized the testing strategy for the STM SNARK modules. They also worked on encoding the aggregate signature of the certificate message as bytes, which significantly reduces the size of the certificates.</p>
+<p>The team also continued implementing the aggregator CLI commands and the runbook for on-chain configuration parameters, and began creating a local IPFS network for a proof-of-concept distribution of Cardano database artifacts.</p>
+<p>Finally, they completed the repository transfer to the IntersectMBO organization. They also continued working on shipping the Mithril signer node binary in the Cardano node bundle, preparing the <code>2630</code> distribution release, upgrading to Cardano node v.11.1, updating the DMQ node to <code>0.7.0.0</code>, and upgrading the documentation website to Docusaurus <code>3.10.2</code> and <code>tailwind</code> <code>v4</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-29-mithril#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-07-29-mithril#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Add benchmarks for the IVC SNARK recursive circuit</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3412" target="_blank" rel="noopener noreferrer" class="">#3412</a></li>
+<li class="">Completed the issue <strong>Analyze and optimize the testing strategy of the STM SNARK modules</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3405" target="_blank" rel="noopener noreferrer" class="">#3405</a></li>
+<li class="">Worked on the issue <strong>Use bytes encoding for aggregate signature in certificate message</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3379" target="_blank" rel="noopener noreferrer" class="">#3379</a></li>
+<li class="">Worked on the issue <strong>Implement aggregator CLI commands for configuration parameters</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3392" target="_blank" rel="noopener noreferrer" class="">#3392</a></li>
+<li class="">Worked on the issue <strong>Create a local IPFS network</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3434" target="_blank" rel="noopener noreferrer" class="">#3434</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="protocol-maintenance">Protocol maintenance<a href="https://updates.cardano.intersectmbo.org/2026-07-29-mithril#protocol-maintenance" class="hash-link" aria-label="Direct link to Protocol maintenance" title="Direct link to Protocol maintenance" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Transfer repository to <code>IntersectMBO</code> organization</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3276" target="_blank" rel="noopener noreferrer" class="">#3276</a></li>
+<li class="">Worked on the issue <strong>Ship Mithril signer node binary in Cardano node bundle in GitHub</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3011" target="_blank" rel="noopener noreferrer" class="">#3011</a></li>
+<li class="">Worked on the issue <strong>Release <code>2630</code> distribution</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3271" target="_blank" rel="noopener noreferrer" class="">#3271</a></li>
+<li class="">Worked on the issue <strong>Upgrade to Cardano <code>11.1</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3346" target="_blank" rel="noopener noreferrer" class="">#3346</a></li>
+<li class="">Worked on the issue <strong>Update DMQ node to <code>0.7.0.0</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3358" target="_blank" rel="noopener noreferrer" class="">#3358</a></li>
+<li class="">Worked on the issue <strong>Create runbook for on-chain configuration parameters</strong> <a href="https://github.com/IntersectMBO/mithril/issues/3399" target="_blank" rel="noopener noreferrer" class="">#3399</a></li>
+<li class="">Worked on the issue <strong>Update documentation website to <code>docusaurus</code> stable version <code>3.10.2</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3413" target="_blank" rel="noopener noreferrer" class="">#3413</a></li>
+<li class="">Worked on the issue <strong>Update documentation website to <code>tailwind</code> <code>v4</code></strong> <a href="https://github.com/IntersectMBO/mithril/issues/3414" target="_blank" rel="noopener noreferrer" class="">#3414</a></li>
+</ul>]]></content>
+        <author>
+            <name>Jean-Philippe Raynaud</name>
+            <uri>https://github.com/jpraynaud</uri>
+        </author>
+        <category label="mithril" term="mithril"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Plutus Core Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-29-plutus-core</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-29-plutus-core"/>
+        <updated>2026-07-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-29-plutus-core#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<p>In the past weeks the Plutus team has added new built-in functions, improved <code>Value</code> support in the ledger API, broadened the conformance test suite, and continued working on Plutus V4 script context and Plutus V4 language features like casing on <code>Data</code>.</p>
+<p>Two built-ins from recent CIPs have landed: <code>multiIndexArray</code> (CIP-0156), which reads several elements of an array in one call, and <code>policies</code> (CIP-0168), which returns the currency symbols in a <code>Value</code>.
+Both are gated behind a future protocol version and not yet costed, so they cannot be used on-chain until Dijkstra.</p>
+<p>The conformance test suite now ships <code>.flat</code> files alongside the textual test cases, making it much easier to consume for implementations that do not parse the textual format.
+The <code>asData</code> pattern synonyms now use built-in list casing.
+The <code>Value</code> built-in type has been added to the metatheory as postulates, along with a fix to <code>decEq</code> that removed a normalization blowup consuming over 128GB of memory when checking certificates.</p>
+<p>We've merged the Plutus V4 script context definition (though it is subject to change), and recently discussed its <code>Data</code> encoding during a Plutus Working Group meeting.
+You can find the meeting notes <a href="https://github.com/IntersectMBO/plutus/issues/7342#issuecomment-5039899895" target="_blank" rel="noopener noreferrer" class="">here</a>.
+Implementers of alternative node clients, UPLC interpreters, and compilers targeting UPLC are encouraged to review the notes and contribute to the discussion.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-pull-requests-merged">Key Pull Requests Merged<a href="https://updates.cardano.intersectmbo.org/2026-07-29-plutus-core#key-pull-requests-merged" class="hash-link" aria-label="Direct link to Key Pull Requests Merged" title="Direct link to Key Pull Requests Merged" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7844" target="_blank" rel="noopener noreferrer" class="">Add multiIndexArray builtin (CIP-0156)</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7845" target="_blank" rel="noopener noreferrer" class="">Expose multiIndexArray to Plinth (CIP-0156)</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7858" target="_blank" rel="noopener noreferrer" class="">Add <code>policies</code> builtin (CIP-0168)</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7838" target="_blank" rel="noopener noreferrer" class="">Add <code>unsafeLovelaceValueOf</code>: a positional lovelace accessor for ledger <code>Value</code>s</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7839" target="_blank" rel="noopener noreferrer" class="">Re-export the full <code>Value</code> API from V2/V3 and the <code>Data.*</code> modules</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7851" target="_blank" rel="noopener noreferrer" class="">Fix Integer narrowing in the PlutusTx.Builtins.Internal wrappers</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7854" target="_blank" rel="noopener noreferrer" class="">Range-check shift/rotate amounts in the bytestring wrappers</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7866" target="_blank" rel="noopener noreferrer" class="">Use list casing in asData pattern synonyms</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7859" target="_blank" rel="noopener noreferrer" class="">Remove BuiltinCasing option for the datatypes flag</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7846" target="_blank" rel="noopener noreferrer" class="">Plutus V4 ledger api types</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7853" target="_blank" rel="noopener noreferrer" class="">Add flat files to conformance tests</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7837" target="_blank" rel="noopener noreferrer" class="">Refactor BLS12_381 conformance tests to remove literal curve points</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7830" target="_blank" rel="noopener noreferrer" class="">Initial improvements to UPLC executable</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7856" target="_blank" rel="noopener noreferrer" class="">Optimize Flat integer decoding</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7832" target="_blank" rel="noopener noreferrer" class="">Metatheory: add Value built-in type with postulated functions</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7840" target="_blank" rel="noopener noreferrer" class="">Fix termination and performance issues with DecEq</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7855" target="_blank" rel="noopener noreferrer" class="">Agda conformance: re-enable valueData/unValueData tests</a></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="notable-pull-requests-in-progress">Notable Pull Requests In Progress<a href="https://updates.cardano.intersectmbo.org/2026-07-29-plutus-core#notable-pull-requests-in-progress" class="hash-link" aria-label="Direct link to Notable Pull Requests In Progress" title="Direct link to Notable Pull Requests In Progress" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7869" target="_blank" rel="noopener noreferrer" class="">Cost model for <code>multiIndexArray</code> (CIP-0156)</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7872" target="_blank" rel="noopener noreferrer" class="">Add CollapseCase pass, rewriting list casing into dropList</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7863" target="_blank" rel="noopener noreferrer" class="">Compile BuiltinData transparently in the plugin</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7864" target="_blank" rel="noopener noreferrer" class="">Formalize integer division and CIntegers in the metatheory</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7873" target="_blank" rel="noopener noreferrer" class="">Deduce <code>uplc</code> input type from file extension</a></li>
+</ul>]]></content>
+        <author>
+            <name>Ziyang Liu</name>
+            <uri>https://github.com/zliu41</uri>
+        </author>
+        <category label="plutus-core" term="plutus-core"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consensus Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-28-consensus</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-28-consensus"/>
+        <updated>2026-07-28T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-28-consensus#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<ul>
+<li class="">Leios prototype and testnet (Treasury Funding Initiative 4: Ouroboros Leios Implementation):
+<ul>
+<li class="">Cut a new prototype release, <code>prototype-2026w29</code>, carrying this fortnight's work across the node and the Leios repository (<a href="https://github.com/IntersectMBO/cardano-node/pull/6621" target="_blank" rel="noopener noreferrer" class="">#6621</a>, <a href="https://github.com/input-output-hk/ouroboros-leios/pull/996" target="_blank" rel="noopener noreferrer" class="">#996</a>).</li>
+<li class="">Landed the change that lets the node certify and announce endorser blocks inside the forging loop, so it no longer misses chances to certify. This is expected to raise the certification rate and throughput (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2105" target="_blank" rel="noopener noreferrer" class="">#2105</a>).</li>
+<li class="">Added CallTrace instrumentation to the Forge thread, making it easier to trace and profile block production in the prototype (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2126" target="_blank" rel="noopener noreferrer" class="">#2126</a>).</li>
+<li class="">Taught the LeiosNotify mini protocol to accept but ignore the proper <code>MsgLeiosBlockAnnouncement</code> message, a step towards the full block-announcement flow (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2142" target="_blank" rel="noopener noreferrer" class="">#2142</a>, integrated into the node in <a href="https://github.com/IntersectMBO/cardano-node/pull/6624" target="_blank" rel="noopener noreferrer" class="">#6624</a>).</li>
+<li class="">Enriched <code>typed-protocols</code> to give more precise back pressure for pipelined mini protocols, motivated by the new LeiosNotify protocol (<a href="https://github.com/IntersectMBO/typed-protocols/pull/93" target="_blank" rel="noopener noreferrer" class="">#93</a>).</li>
+<li class="">Improved testnet stability by stopping the node from mangling some Dijkstra blocks, a quick workaround while a ledger issue is fixed (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2140" target="_blank" rel="noopener noreferrer" class="">#2140</a>, for <a href="https://github.com/IntersectMBO/cardano-ledger/issues/5937" target="_blank" rel="noopener noreferrer" class="">cardano-ledger#5937</a>).</li>
+<li class="">Updated the prototype dashboards and added a graph of recent endorser-block events, making the testnet easier to observe (<a href="https://github.com/input-output-hk/ouroboros-leios/pull/990" target="_blank" rel="noopener noreferrer" class="">#990</a>, <a href="https://github.com/input-output-hk/ouroboros-leios/pull/992" target="_blank" rel="noopener noreferrer" class="">#992</a>).</li>
+</ul>
+</li>
+<li class="">Mempool design for Leios (Treasury Funding Initiative 4: Ouroboros Leios Implementation):
+<ul>
+<li class="">Wrote up Mempool design considerations for Leios (<a href="https://github.com/input-output-hk/ouroboros-leios/pull/997" target="_blank" rel="noopener noreferrer" class="">#997</a>).</li>
+<li class="">Took part in discussions on how the Mempool should work: its current requirements, a "high-throughput mempool", and a "tiered-pricing mempool" in which transactions that pay more can queue ahead of normal-paying ones when they do not conflict.</li>
+</ul>
+</li>
+<li class="">Storage and snapshots (Treasury Funding Initiative 10: LSM including UTXO-HD):
+<ul>
+<li class="">Set the node's default snapshot policy to match Mithril's snapshot policy, so the two stay aligned (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2149" target="_blank" rel="noopener noreferrer" class="">#2149</a>).</li>
+<li class="">Added a new <code>LSMExportPath</code> configuration option, letting operators control where LSM data is exported (<a href="https://github.com/IntersectMBO/cardano-node/pull/6629" target="_blank" rel="noopener noreferrer" class="">#6629</a>).</li>
+</ul>
+</li>
+</ul>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ledger Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-22-ledger</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-22-ledger"/>
+        <updated>2026-07-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-22-ledger#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<p>Leios support in the ledger continued to take shape this cycle. Building on the block body work from the previous updates, a <code>Leios.BlockHeader</code> was added along with an <code>EraBlockHeader</code> instance for Praos that consensus needs for its 11.1 integration, which together move the block header behind a common era-parametric abstraction. On the <code>leios-prototype</code> branch we also backported the addition of a <code>LeiosKey</code> (a BLS12381 public key together with a possession proof) to <code>StakePoolParams</code> and <code>StakePoolState</code>, with the Dijkstra CDDL updated to carry the Leios key as an optional field in the pool registration certificate.</p>
+<p>A good deal of governance and rules work landed as well. Following the introduction of the <code>ENTITIES</code> rule in the previous cycle, we implemented CIP-181 by removing the DRep-delegation requirement for reward withdrawals, which dropped the corresponding predicate failures from the entities and sub-entities rules. On the Plutus cost model side we followed up on the earlier argument-ordering bug fix with a more permanent safeguard: a new <code>CostModelsUpdate</code> newtype now wraps the update argument so the old and new cost models can no longer be swapped by accident, and the symmetric <code>Semigroup</code>/<code>Monoid</code> instances for <code>CostModels</code> that made that mistake possible were removed. We also adjusted the <code>consumed</code>/<code>produced</code> interface and fixed <code>getProducedValue</code> for the Dijkstra era, added an <code>AccountBalanceExact</code> constructor to <code>AccountBalanceInterval</code>, and switched the minor protocol version to <code>Word32</code>. We also fixed <code>NoThunks</code> instances in the Alonzo and Conway genesis types.</p>
+<p>Several changes continued the ongoing push toward more era-parametric, abstract interfaces. <code>SnapShots</code> was made era parametric, and <code>ToJSON</code>/<code>FromJSON</code> instances were added for <code>EraTxAuxData</code>, extending the JSON serialisation coverage started last cycle for scripts. On the Canonical Ledger State front, export and import modules were introduced for handling canonical state, giving a first pass at reading and writing it through the CLS interface. On the testing side the Conway conformance tests were updated to protocol version 11 and tests were added for the newly introduced top-level guard requirement.</p>
+<p>On the tooling and infrastructure side, the hackage index-state was bumped to pick up the latest <code>cuddle</code> release, which now validates that CBOR maps contain no duplicate keys per RFC 8949 and required a couple of generators to be adjusted accordingly, and the usual GitHub Actions bumps were applied.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-summary">Low level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-22-ledger#low-level-summary" class="hash-link" aria-label="Direct link to Low level summary" title="Direct link to Low level summary" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-07-22-ledger#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5905" target="_blank" rel="noopener noreferrer" class="">PR-5905</a> - Introduce <code>CostModelsUpdate</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5853" target="_blank" rel="noopener noreferrer" class="">PR-5853</a> - Add ToJSON/FromJSON instances for EraTxAuxData</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5869" target="_blank" rel="noopener noreferrer" class="">PR-5869</a> - Add export/import modules for canonical ledger state</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5915" target="_blank" rel="noopener noreferrer" class="">PR-5915</a> - Add EraBlockHeader instance for Praos</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5918" target="_blank" rel="noopener noreferrer" class="">PR-5918</a> - Fix <code>getProducedValue</code> for Dijkstra</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5916" target="_blank" rel="noopener noreferrer" class="">PR-5916</a> - Remove DRep requirement for reward withdrawals</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5919" target="_blank" rel="noopener noreferrer" class="">PR-5919</a> - Adjust <code>consumed</code> and <code>produced</code> interface</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5935" target="_blank" rel="noopener noreferrer" class="">PR-5935</a> - Switch minor protocol version to <code>Word32</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5940" target="_blank" rel="noopener noreferrer" class="">PR-5940</a> - [Backport] Add LeiosKey to StakePoolParams in leios-prototype branch</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5927" target="_blank" rel="noopener noreferrer" class="">PR-5927</a> - Add <code>Leios.BlockHeader</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5933" target="_blank" rel="noopener noreferrer" class="">PR-5933</a> - Add <code>AccountBalanceExact</code> constructor to <code>AccountBalanceInterval</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5944" target="_blank" rel="noopener noreferrer" class="">PR-5944</a> - Make <code>SnapShots</code> era parametric</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5926" target="_blank" rel="noopener noreferrer" class="">PR-5926</a> - Fix/allow thunks in Alonzo/Conway geneses</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing">Testing<a href="https://updates.cardano.intersectmbo.org/2026-07-22-ledger#testing" class="hash-link" aria-label="Direct link to Testing" title="Direct link to Testing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5900" target="_blank" rel="noopener noreferrer" class="">PR-5900</a> - Update Conway conformance tests to PV 11</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5914" target="_blank" rel="noopener noreferrer" class="">PR-5914</a> - Add tests for RequiredTopLevelGuards</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="infrastructure-and-releasing">Infrastructure and releasing<a href="https://updates.cardano.intersectmbo.org/2026-07-22-ledger#infrastructure-and-releasing" class="hash-link" aria-label="Direct link to Infrastructure and releasing" title="Direct link to Infrastructure and releasing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5917" target="_blank" rel="noopener noreferrer" class="">PR-5917</a> - Bump slackapi/slack-github-action from 3.0.3 to 3.0.4 in the actions group</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5928" target="_blank" rel="noopener noreferrer" class="">PR-5928</a> - Update hackage index-state version to get latest cuddle release</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5934" target="_blank" rel="noopener noreferrer" class="">PR-5934</a> - Bump slackapi/slack-github-action from 3.0.4 to 4.0.0 in the actions group</li>
+</ul>]]></content>
+        <author>
+            <name>Alexey Kuleshevich</name>
+            <uri>https://github.com/lehins</uri>
+        </author>
+        <category label="ledger" term="ledger"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mithril Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-22-mithril</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-22-mithril"/>
+        <updated>2026-07-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level overview]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-overview">High level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-22-mithril#high-level-overview" class="hash-link" aria-label="Direct link to High level overview" title="Direct link to High level overview" translate="no">​</a></h2>
+<p>This week, the Mithril team completed the refactoring of the non-recursive SNARK proof to remove the circuit verification key, upgraded the <code>midnight-zk</code> library to <code>2.3.3</code>, enabled the Plutus-friendly hash for IVC proving, and refactored the error handling in the Midnight library. They also continued analyzing and optimizing the testing strategy for the STM SNARK modules.</p>
+<p>The team also continued implementing aggregator CLI commands for configuration parameters and creating a runbook for on-chain configuration parameters. They completed the simplification of the <code>SignersRegistrationRetriever</code> trait and continued work on shipping the Mithril signer node binary in the Cardano node bundle, the <code>2628</code> distribution release, the upgrade to Cardano node v.11.1, and the update of the DMQ node to <code>0.7.0.0</code>.</p>
+<p>Finally, the team completed the repository transfer to the Intersect MBO organization and continued preparing the documentation website for Docusaurus v4.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-22-mithril#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-07-22-mithril#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Refactor the non-recursive SNARK proof to not carry the circuit verification key</strong> <a href="https://github.com/input-output-hk/mithril/issues/3380" target="_blank" rel="noopener noreferrer" class="">#3380</a></li>
+<li class="">Completed the issue <strong>Upgrade midnight-zk to <code>2.3.3</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3375" target="_blank" rel="noopener noreferrer" class="">#3375</a></li>
+<li class="">Completed the issue <strong>Enable plutus friendly hash for IVC proving</strong> <a href="https://github.com/input-output-hk/mithril/issues/3307" target="_blank" rel="noopener noreferrer" class="">#3307</a></li>
+<li class="">Completed the issue <strong>Refactor error handling from Midnight library</strong> <a href="https://github.com/input-output-hk/mithril/issues/3382" target="_blank" rel="noopener noreferrer" class="">#3382</a></li>
+<li class="">Worked on the issue <strong>Implement aggregator CLI commands for configuration parameters</strong> <a href="https://github.com/input-output-hk/mithril/issues/3392" target="_blank" rel="noopener noreferrer" class="">#3392</a></li>
+<li class="">Worked on the issue <strong>Analyze and optimize the testing strategy of the STM SNARK modules</strong> <a href="https://github.com/input-output-hk/mithril/issues/3405" target="_blank" rel="noopener noreferrer" class="">#3405</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="protocol-maintenance">Protocol maintenance<a href="https://updates.cardano.intersectmbo.org/2026-07-22-mithril#protocol-maintenance" class="hash-link" aria-label="Direct link to Protocol maintenance" title="Direct link to Protocol maintenance" translate="no">​</a></h3>
+<ul>
+<li class="">Worked on the issue <strong>Transfer repository to <code>IntersectMBO</code> organization</strong> <a href="https://github.com/input-output-hk/mithril/issues/3276" target="_blank" rel="noopener noreferrer" class="">#3276</a></li>
+<li class="">Completed the issue <strong>Simplify the <code>SignersRegistrationRetriever</code> trait</strong> <a href="https://github.com/input-output-hk/mithril/issues/3410" target="_blank" rel="noopener noreferrer" class="">#3410</a></li>
+<li class="">Completed the issue <strong>Prepare documentation website to <code>docusaurus</code> <code>v4</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3411" target="_blank" rel="noopener noreferrer" class="">#3411</a></li>
+<li class="">Worked on the issue <strong>Ship Mithril signer node binary in Cardano node bundle in GitHub</strong> <a href="https://github.com/input-output-hk/mithril/issues/3011" target="_blank" rel="noopener noreferrer" class="">#3011</a></li>
+<li class="">Worked on the issue <strong>Release <code>2628</code> distribution</strong> <a href="https://github.com/input-output-hk/mithril/issues/3271" target="_blank" rel="noopener noreferrer" class="">#3271</a></li>
+<li class="">Worked on the issue <strong>Upgrade to Cardano <code>11.1</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3346" target="_blank" rel="noopener noreferrer" class="">#3346</a></li>
+<li class="">Worked on the issue <strong>Update DMQ node to <code>0.7.0.0</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3358" target="_blank" rel="noopener noreferrer" class="">#3358</a></li>
+<li class="">Worked on the issue <strong>Create runbook for on-chain configuration parameters</strong> <a href="https://github.com/input-output-hk/mithril/issues/3399" target="_blank" rel="noopener noreferrer" class="">#3399</a></li>
+<li class="">Worked on the issue <strong>Update documentation website to <code>docusaurus</code> stable version <code>3.10.2</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3413" target="_blank" rel="noopener noreferrer" class="">#3413</a></li>
+<li class="">Worked on the issue <strong>Update documentation website to <code>tailwind</code> <code>v4</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3414" target="_blank" rel="noopener noreferrer" class="">#3414</a></li>
+</ul>]]></content>
+        <author>
+            <name>Jean-Philippe Raynaud</name>
+            <uri>https://github.com/jpraynaud</uri>
+        </author>
+        <category label="mithril" term="mithril"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mithril Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-15-mithril</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-15-mithril"/>
+        <updated>2026-07-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level overview]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-overview">High level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-15-mithril#high-level-overview" class="hash-link" aria-label="Direct link to High level overview" title="Direct link to High level overview" translate="no">​</a></h2>
+<p>This week, the Mithril team completed the modularity enhancement of the SNARK recursive circuit with gadgets. They continued work on refactoring the non-recursive SNARK proof to avoid carrying the circuit verification key, analyzing and optimizing the testing strategy for the STM SNARK modules, and upgrading the <code>midnight-zk</code> library to <code>2.3.3</code>.</p>
+<p>The team also enhanced the aggregator state machine to support the <code>Blocked</code> state and continued implementing the aggregator CLI commands for decentralized configuration parameters. Additionally, they continued shipping the Mithril signer node binary in the Cardano node bundle, working on the release of the <code>2628</code> distribution, upgrading to Cardano <code>11.1</code>, and updating the DMQ node to <code>0.7.0.0</code>.</p>
+<p>Finally, the team completed the Rust upgrade to version <code>1.97</code>, fixed the Mithril install script failing on the <code>unstable</code> version, and captured the end-to-end execution logs as artifacts.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-15-mithril#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-07-15-mithril#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Refactor SNARK recursive circuit - Modularity enhancement with gadgets</strong> <a href="https://github.com/input-output-hk/mithril/issues/3131" target="_blank" rel="noopener noreferrer" class="">#3131</a></li>
+<li class="">Worked on the issue <strong>Refactor the non-recursive SNARK proof to not carry the circuit verification key</strong> <a href="https://github.com/input-output-hk/mithril/issues/3380" target="_blank" rel="noopener noreferrer" class="">#3380</a></li>
+<li class="">Worked on the issue <strong>Implement aggregator CLI commands for configuration parameters</strong> <a href="https://github.com/input-output-hk/mithril/issues/3392" target="_blank" rel="noopener noreferrer" class="">#3392</a></li>
+<li class="">Worked on the issue <strong>Analyze and optimize the testing strategy of the STM SNARK modules</strong> <a href="https://github.com/input-output-hk/mithril/issues/3405" target="_blank" rel="noopener noreferrer" class="">#3405</a></li>
+<li class="">Worked on the issue <strong>Upgrade midnight-zk to <code>2.3.3</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3375" target="_blank" rel="noopener noreferrer" class="">#3375</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="protocol-maintenance">Protocol maintenance<a href="https://updates.cardano.intersectmbo.org/2026-07-15-mithril#protocol-maintenance" class="hash-link" aria-label="Direct link to Protocol maintenance" title="Direct link to Protocol maintenance" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Upgrade Rust to version <code>1.97</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3387" target="_blank" rel="noopener noreferrer" class="">#3387</a></li>
+<li class="">Completed the issue <strong>Enhance aggregator state machine to support <code>Blocked</code> state</strong> <a href="https://github.com/input-output-hk/mithril/issues/3333" target="_blank" rel="noopener noreferrer" class="">#3333</a></li>
+<li class="">Completed the issue <strong>Mithril install script fails for <code>unstable</code> version</strong> <a href="https://github.com/input-output-hk/mithril/issues/3386" target="_blank" rel="noopener noreferrer" class="">#3386</a></li>
+<li class="">Completed the issue <strong>Capture e2e execution logs in artifacts</strong> <a href="https://github.com/input-output-hk/mithril/issues/3362" target="_blank" rel="noopener noreferrer" class="">#3362</a></li>
+<li class="">Completed the issue <strong>Remove <code>docker-build:</code> in make files</strong> <a href="https://github.com/input-output-hk/mithril/issues/3406" target="_blank" rel="noopener noreferrer" class="">#3406</a></li>
+<li class="">Worked on the issue <strong>Ship Mithril signer node binary in Cardano node bundle in GitHub</strong> <a href="https://github.com/input-output-hk/mithril/issues/3011" target="_blank" rel="noopener noreferrer" class="">#3011</a></li>
+<li class="">Worked on the issue <strong>Release <code>2628</code> distribution</strong> <a href="https://github.com/input-output-hk/mithril/issues/3271" target="_blank" rel="noopener noreferrer" class="">#3271</a></li>
+<li class="">Worked on the issue <strong>Upgrade to Cardano <code>11.1</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3346" target="_blank" rel="noopener noreferrer" class="">#3346</a></li>
+<li class="">Worked on the issue <strong>Update DMQ node to <code>0.7.0.0</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3358" target="_blank" rel="noopener noreferrer" class="">#3358</a></li>
+</ul>]]></content>
+        <author>
+            <name>Jean-Philippe Raynaud</name>
+            <uri>https://github.com/jpraynaud</uri>
+        </author>
+        <category label="mithril" term="mithril"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consensus Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-14-consensus</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-14-consensus"/>
+        <updated>2026-07-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-14-consensus#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<ul>
+<li class="">Leios prototype and design (Treasury Funding Initiative 4: Ouroboros Leios Implementation):
+<ul>
+<li class="">Continued to harden the Leios testnet with a round of prototype fixes across consensus and the node (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2113" target="_blank" rel="noopener noreferrer" class="">#2113</a>, <a href="https://github.com/IntersectMBO/cardano-node/pull/6614" target="_blank" rel="noopener noreferrer" class="">#6614</a>), and cut two prototype releases carrying this work, <code>prototype-2026w27a</code> (<a href="https://github.com/input-output-hk/ouroboros-leios/pull/978" target="_blank" rel="noopener noreferrer" class="">#978</a>) and <code>prototype-2026w28</code> (<a href="https://github.com/input-output-hk/ouroboros-leios/pull/986" target="_blank" rel="noopener noreferrer" class="">#986</a>).</li>
+<li class="">Fixed two bugs found while running the testnet. The node no longer applies uncertified endorser blocks from the immutable database on startup, and the LeiosNotify pipelining depth was increased (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2114" target="_blank" rel="noopener noreferrer" class="">#2114</a>). A startup crash caused by a race condition on a node's first run was also resolved (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2115" target="_blank" rel="noopener noreferrer" class="">#2115</a>, fixing <a href="https://github.com/input-output-hk/ouroboros-leios/issues/983" target="_blank" rel="noopener noreferrer" class="">ouroboros-leios#983</a>).</li>
+<li class="">Added a voting dashboard to make Leios easier to observe, showing how endorser blocks are voted on and certified (<a href="https://github.com/input-output-hk/ouroboros-leios/pull/985" target="_blank" rel="noopener noreferrer" class="">ouroboros-leios#985</a>).</li>
+<li class="">Reviewed a change to how the node certifies and applies endorser blocks that is expected to roughly double the certification rate and raise throughput (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2105" target="_blank" rel="noopener noreferrer" class="">#2105</a>).</li>
+<li class="">Drafted prose for the Leios high-level design document, describing how the pieces of the protocol fit together (<a href="https://github.com/input-output-hk/ouroboros-leios/commit/13e3908ab13fd79b44c2e048b8ccb8c59536289a" target="_blank" rel="noopener noreferrer" class="">commit 13e3908</a>), and started negotiating the interface between Consensus and Ledger for Leios with the Ledger team (<a href="https://github.com/input-output-hk/ouroboros-leios/pull/977" target="_blank" rel="noopener noreferrer" class="">ouroboros-leios#977</a>).</li>
+</ul>
+</li>
+<li class="">Node diversity and conformance (Treasury Funding Initiative 17: Maintenance and Support):
+<ul>
+<li class="">Took part in node diversity meetings on conformance testing with the Amaru team and others, including working through a conformance hurdle specific to the <code>preview</code> network.</li>
+<li class="">Discussed how to specify the mempool and transaction submission precisely enough that other node implementations can follow the same rules.</li>
+</ul>
+</li>
+<li class="">UTXO-HD snapshot tooling (Treasury Funding Initiative 10: LSM including UTXO-HD):
+<ul>
+<li class="">Improved the <code>snapshot-converter</code> tool's <code>--help</code> and <code>--version</code> output, making it clearer how to convert ledger snapshots between the in-memory and on-disk (LSM) formats (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2098" target="_blank" rel="noopener noreferrer" class="">#2098</a>).</li>
+<li class="">Added a temporary workaround so <code>snapshot-converter</code> reads the bloom-filter salt directly from exported files, until a proper fix lands on the LSM-trees side (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2097" target="_blank" rel="noopener noreferrer" class="">#2097</a>, pending <a href="https://github.com/IntersectMBO/lsm-tree/pull/855" target="_blank" rel="noopener noreferrer" class="">lsm-tree#855</a>).</li>
+</ul>
+</li>
+<li class="">Documentation (Treasury Funding Initiative 17: Maintenance and Support):
+<ul>
+<li class="">Added a reference document describing the metrics and tracing available for observing Ouroboros Genesis (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2103" target="_blank" rel="noopener noreferrer" class="">#2103</a>).</li>
+</ul>
+</li>
+</ul>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hydra Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-08-hydra</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-08-hydra"/>
+        <updated>2026-07-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High-level Summary]]></summary>
+        <content type="html"><![CDATA[<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High-level Summary<a href="https://updates.cardano.intersectmbo.org/2026-07-08-hydra#high-level-summary" class="hash-link" aria-label="Direct link to High-level Summary" title="Direct link to High-level Summary" translate="no">​</a></h3>
+<p>The <strong>user-friendly <code>hydra-node</code> configuration file</strong> has been merged, letting
+operators run a head from a single YAML file and diff configs against peers at
+a glance. The rest of the period was mostly hardening: deposit and recovery
+chain observations are now scoped to the head that produced them (closing a
+long-standing cross-head contamination issue), the Blockfrost backend retries
+on HTTP errors instead of crashing and no longer chokes on some inline
+datums, and the event store's rotation logic got two fixes - a race between
+<code>VACUUM</code> and streaming client history, and a deadlock in the network layer's
+outbound message queue that could silently halt broadcasting.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-did-the-team-achieve">What did the team achieve?<a href="https://updates.cardano.intersectmbo.org/2026-07-08-hydra#what-did-the-team-achieve" class="hash-link" aria-label="Direct link to What did the team achieve?" title="Direct link to What did the team achieve?" translate="no">​</a></h3>
+<ul>
+<li class="">Merged the <strong>user-friendly <code>hydra-node</code> configuration file</strong>: nodes can now
+be configured via YAML, making it easy to spot differences between peers'
+setups
+<a href="https://github.com/cardano-scaling/hydra/pull/2581" target="_blank" rel="noopener noreferrer" class="">#2581</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2296" target="_blank" rel="noopener noreferrer" class="">#2296</a></li>
+<li class="">Scoped deposit and recover chain observations to the current head:
+<code>Open</code>/<code>Closed</code> states only record <code>OnDepositTx</code> events for their own
+<code>headId</code> and <code>Idle</code> silently drops the rest, while recovery of a deposit
+from a <em>previous</em> head keeps working in every state, including mid-fanout
+and while a new head is running
+<a href="https://github.com/cardano-scaling/hydra/pull/2743" target="_blank" rel="noopener noreferrer" class="">#2743</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2606" target="_blank" rel="noopener noreferrer" class="">#2606</a></li>
+<li class="">Made the Blockfrost chain backend more resilient: HTTP errors are now
+retried instead of crashing the node
+<a href="https://github.com/cardano-scaling/hydra/pull/2729" target="_blank" rel="noopener noreferrer" class="">#2729</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2477" target="_blank" rel="noopener noreferrer" class="">#2477</a>, and a
+follow-up fixed inline datum decoding that could throw on some UTxOs
+<a href="https://github.com/cardano-scaling/hydra/pull/2754" target="_blank" rel="noopener noreferrer" class="">#2754</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2751" target="_blank" rel="noopener noreferrer" class="">#2751</a></li>
+<li class="">Fixed a race between the event log's <code>VACUUM</code>-based rotation and the API
+server streaming client history over the same SQLite connection, which
+could take a node down on reconnect
+<a href="https://github.com/cardano-scaling/hydra/pull/2755" target="_blank" rel="noopener noreferrer" class="">#2755</a></li>
+<li class="">Fixed a deadlock in the network layer's <code>PersistentQueue</code>: a false <code>Eq</code>
+result in <code>popPersistentQueue</code> could leave the broadcast queue stuck at
+capacity with no log output; it now pops unconditionally by index and
+emits <code>PersistentQueueFull</code> / <code>PersistentQueueLoadFailed</code> for visibility,
+and a failed file delete no longer crashes the network component
+<a href="https://github.com/cardano-scaling/hydra/pull/2742" target="_blank" rel="noopener noreferrer" class="">#2742</a></li>
+<li class="">Event log rotation now archives the outgoing database to a numbered
+<code>old-state/hydra-&lt;logId&gt;.db</code> file instead of deleting it, restoring the old
+file-based persistence's pre-rotation backup behaviour
+<a href="https://github.com/cardano-scaling/hydra/pull/2748" target="_blank" rel="noopener noreferrer" class="">#2748</a>,
+<a href="https://github.com/cardano-scaling/hydra/issues/2747" target="_blank" rel="noopener noreferrer" class="">#2747</a></li>
+<li class="">Added a fuel verification key option to <code>hydra-tui</code> so the funds tab can
+show both the head's ada and a separate fuel UTxO
+<a href="https://github.com/cardano-scaling/hydra/pull/2731" target="_blank" rel="noopener noreferrer" class="">#2731</a></li>
+<li class="">Moved the spec back into the <code>hydra</code> repo, dropping the
+separate flake input
+<a href="https://github.com/cardano-scaling/hydra/pull/2733" target="_blank" rel="noopener noreferrer" class="">#2733</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="whats-next">What's next?<a href="https://updates.cardano.intersectmbo.org/2026-07-08-hydra#whats-next" class="hash-link" aria-label="Direct link to What's next?" title="Direct link to What's next?" translate="no">​</a></h3>
+<ul>
+<li class="">Merge some in-progress performance work: computing accumulator commitments
+via the <code>rust-accumulator</code> FFI instead of off-chain PlutusTx,
+batching etcd broadcasts onto shared connections, and raising the
+per-snapshot transaction cap - early results show sustained throughput
+roughly doubling on a 1k-UTxO head
+<a href="https://github.com/cardano-scaling/hydra/pull/2752" target="_blank" rel="noopener noreferrer" class="">#2752</a></li>
+<li class="">Make <code>hydra-chain-observer</code> version-aware by detecting script hashes, so a
+single process can watch heads from any historical Hydra version instead
+of running one per version
+<a href="https://github.com/cardano-scaling/hydra/pull/2740" target="_blank" rel="noopener noreferrer" class="">#2740</a></li>
+<li class="">Enforce <code>--deposit-period</code> consistency across head nodes by embedding it
+in the on-chain <code>OpenDatum</code>
+<a href="https://github.com/cardano-scaling/hydra/pull/2734" target="_blank" rel="noopener noreferrer" class="">#2734</a></li>
+<li class="">Accept <code>PaymentExtendedKey</code> (HD wallet keys)
+<a href="https://github.com/cardano-scaling/hydra/pull/2583" target="_blank" rel="noopener noreferrer" class="">#2583</a></li>
+<li class="">Work on the updated version of the spec (typst+Agda)</li>
+</ul>]]></content>
+        <author>
+            <name>Noon van der Silk</name>
+            <uri>https://github.com/noonio</uri>
+        </author>
+        <category label="hydra" term="hydra"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Ledger Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-08-ledger</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-08-ledger"/>
+        <updated>2026-07-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-08-ledger#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<p>This update covers a longer stretch than usual because there was no report since 2026-05-27: the whole Ledger team was first at the ZuriHac conference and then had an in-person team meetup, so the last several weeks were lighter on routine reporting but no less productive. A good chunk of the work below is the continuation of storylines from earlier updates, alongside a few new fronts.</p>
+<p>On the performance side the state-annotated transaction (<code>StAnnTx</code>) work reached back to the older eras. Integration of the memoized values held in <code>StAnnTx</code> had previously been done for Babbage onward, and this cycle it was extended to Alonzo, which needed special handling, along with a small follow-up removing an unnecessary <code>EncCBOR</code> instance for <code>AlonzoStAnnTx</code>. We also finished the long-running effort to remove the legacy <code>Coders</code> machinery: the final piece for protocol version 12 and up (dropping the <code>Summands</code> usage) landed, <code>Coders</code> was removed from the testlibs and tests, and <code>StakePoolParams</code> was switched from <code>CBORGroup</code>-derived encoding to manual <code>EncCBOR</code>/<code>DecCBOR</code> instances in preparation for dynamic CBOR list lengths.</p>
+<p>A notable new front is Leios support beginning to land in the ledger. The <code>LeiosCert</code> type, defined in the new <code>cardano-crypto-leios</code> package on the cardano-base repository, was added as an optional field to <code>DijkstraBlockBody</code>, and the Dijkstra CDDL for <code>header_body</code> was updated to reflect what the Leios prototype should be producing. We also introduced a new <code>cardano-protocol</code> package to house protocol-level code. On the ledger rules themselves there was a round of structural cleanup: a new <code>ENTITIES</code> rule (with an equivalent subrule) was introduced between <code>LEDGER</code> and <code>CERTS</code> to handle withdrawals and direct deposits, the era prefix was dropped from rule names, and the <code>Rewarding</code> script purpose was renamed to the more accurate <code>Withdrawing</code>.</p>
+<p>The Dijkstra era work continued on several smaller fronts, including requiring top-level guards in the top-level transaction body, adjusting the Conway <code>transaction_witness_set</code> CDDL rule to use non-empty lists for the relevant fields. Conformance testing for Dijkstra advanced to its third installment, this time adding <code>SpecTranslate</code> instances for Dijkstra types and <code>ExecSpecRule</code> instances for the <code>LEDGER</code> and <code>NEWEPOCH</code> rules. Two user-visible bugs were fixed: injected <code>extraConfig</code> cost models were being ignored for PlutusV1/V3 because of an argument-ordering issue in <code>overrideCostModels</code>, and <code>TxInfo</code> translation could fail spuriously in <code>LegacyMode</code>. We also added <code>ToJSON</code>/<code>FromJSON</code> instances for <code>EraScript</code> and native scripts.</p>
+<p>On the tooling and infrastructure side the <code>generate-cbor</code> CLI tool added last cycle was moved into <code>cardano-ledger-api</code>, refactor of the singleton-key namespaces (committee and constitution) for Canonical Ledger State, new Conway UTxO and Script generators were added, and CI was updated to allow automated agents to invoke the <code>/update-changelogs</code> skill. The dependency stack was moved forward with updates to <code>cardano-crypto-class-2.5</code>, the haskellNix flake input, and the usual GitHub Actions bumps.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-summary">Low level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-08-ledger#low-level-summary" class="hash-link" aria-label="Direct link to Low level summary" title="Direct link to Low level summary" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-07-08-ledger#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5837" target="_blank" rel="noopener noreferrer" class="">PR-5837</a> - Remove unnecessary re-exports from Shelley <code>Rules</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5859" target="_blank" rel="noopener noreferrer" class="">PR-5859</a> - Remove era prefix from rule names</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5748" target="_blank" rel="noopener noreferrer" class="">PR-5748</a> - Refactor namespaces with singleton keys</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5867" target="_blank" rel="noopener noreferrer" class="">PR-5867</a> - Prevent <code>TxInfo</code> translation failure for <code>LegacyMode</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5866" target="_blank" rel="noopener noreferrer" class="">PR-5866</a> - Rename <code>Rewarding</code> to <code>Withdrawing</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5845" target="_blank" rel="noopener noreferrer" class="">PR-5845</a> - Add ToJSON/FromJSON instances for EraScript</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5860" target="_blank" rel="noopener noreferrer" class="">PR-5860</a> - Stop using Summands from Coders for PV12+</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5857" target="_blank" rel="noopener noreferrer" class="">PR-5857</a> - Further <code>StAnnTx</code> integration</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5872" target="_blank" rel="noopener noreferrer" class="">PR-5872</a> - Add LeiosCert to DijkstraBlockBody</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5897" target="_blank" rel="noopener noreferrer" class="">PR-5897</a> - Remove unnecessary <code>EncCBOR</code> instance for <code>AlonzoStAnnTx</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5899" target="_blank" rel="noopener noreferrer" class="">PR-5899</a> - Fix injected extraConfig cost models being ignored for PlutusV1/V3</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5878" target="_blank" rel="noopener noreferrer" class="">PR-5878</a> - Entities and Subentities Rules</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5889" target="_blank" rel="noopener noreferrer" class="">PR-5889</a> - Fix Dijkstra CDDL for Leios changes to header_body</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5887" target="_blank" rel="noopener noreferrer" class="">PR-5887</a> - Create <code>cardano-protocol</code> package</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5903" target="_blank" rel="noopener noreferrer" class="">PR-5903</a> - Require top-level guards in top-level transaction body</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5908" target="_blank" rel="noopener noreferrer" class="">PR-5908</a> - Use non-empty list for fields without duplicate enforcement in Conway transaction_witness_set cddl rule</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5890" target="_blank" rel="noopener noreferrer" class="">PR-5890</a> - Replace <code>CBORGroup</code>-derived <code>EncCBOR/DecCBOR</code> for StakePoolParams with manual instances</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="testing">Testing<a href="https://updates.cardano.intersectmbo.org/2026-07-08-ledger#testing" class="hash-link" aria-label="Direct link to Testing" title="Direct link to Testing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5844" target="_blank" rel="noopener noreferrer" class="">PR-5844</a> - Prepare conformance for Dijkstra 3</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5868" target="_blank" rel="noopener noreferrer" class="">PR-5868</a> - Add Test.Cardano.Ledger.Conway.Gen.{UTxO,Script} modules.</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5883" target="_blank" rel="noopener noreferrer" class="">PR-5883</a> - Add isPotentialFutureMember ImpTest</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="infrastructure-and-releasing">Infrastructure and releasing<a href="https://updates.cardano.intersectmbo.org/2026-07-08-ledger#infrastructure-and-releasing" class="hash-link" aria-label="Direct link to Infrastructure and releasing" title="Direct link to Infrastructure and releasing" translate="no">​</a></h3>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5864" target="_blank" rel="noopener noreferrer" class="">PR-5864</a> - Move <code>generate-cbor</code> to <code>cardano-ledger-api</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5870" target="_blank" rel="noopener noreferrer" class="">PR-5870</a> - Update to <code>cardano-crypto-class-2.5</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5876" target="_blank" rel="noopener noreferrer" class="">PR-5876</a> - Bump actions/checkout from 6 to 7 in the actions group</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5877" target="_blank" rel="noopener noreferrer" class="">PR-5877</a> - Allow agents to invoke <code>/update-changelogs</code></li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5865" target="_blank" rel="noopener noreferrer" class="">PR-5865</a> - Remove Coders from testlibs and tests</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5884" target="_blank" rel="noopener noreferrer" class="">PR-5884</a> - Bump actions/cache from 5 to 6 in the actions group</li>
+<li class=""><a href="https://github.com/IntersectMBO/cardano-ledger/pull/5894" target="_blank" rel="noopener noreferrer" class="">PR-5894</a> - Update haskellNix flake input</li>
+</ul>]]></content>
+        <author>
+            <name>Alexey Kuleshevich</name>
+            <uri>https://github.com/lehins</uri>
+        </author>
+        <category label="ledger" term="ledger"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mithril Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-08-mithril</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-08-mithril"/>
+        <updated>2026-07-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level overview]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-overview">High level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-08-mithril#high-level-overview" class="hash-link" aria-label="Direct link to High level overview" title="Direct link to High level overview" translate="no">​</a></h2>
+<p>This week, the Mithril team refactored the unsafe SNARK setup, prepared the prover input for the recursive SNARK aggregation primitives, decoupled the Midnight library in the SNARK recursive circuit, and tested that the degree of the SNARK circuits remains unchanged. They continued improving the modularity of the SNARK recursive circuit using gadgets.</p>
+<p>The team also worked on enhancing the aggregator state machine to support the <code>Blocked</code> state and on capturing end-to-end execution logs in artifacts.</p>
+<p>Finally, they continued work on shipping the Mithril signer node binary in the Cardano node bundle, releasing the <code>2628</code> distribution, upgrading the Cardano node to <code>11.1</code>, updating the DMQ node to <code>0.7.0.0</code>, and upgrading the <code>midnight-zk</code> library to <code>2.3.3</code>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-08-mithril#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-07-08-mithril#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Refactor unsafe SNARK setup</strong> <a href="https://github.com/input-output-hk/mithril/issues/3300" target="_blank" rel="noopener noreferrer" class="">#3300</a></li>
+<li class="">Completed the issue <strong>Recursive SNARK aggregation primitives: Refactor preparation of prover input</strong> <a href="https://github.com/input-output-hk/mithril/issues/3319" target="_blank" rel="noopener noreferrer" class="">#3319</a></li>
+<li class="">Completed the issue <strong>Refactor SNARK recursive circuit - Midnight library decoupling</strong> <a href="https://github.com/input-output-hk/mithril/issues/3129" target="_blank" rel="noopener noreferrer" class="">#3129</a></li>
+<li class="">Completed the issue <strong>Test that SNARK circuits degree are unchanged</strong> <a href="https://github.com/input-output-hk/mithril/issues/3330" target="_blank" rel="noopener noreferrer" class="">#3330</a></li>
+<li class="">Worked on the issue <strong>Refactor SNARK recursive circuit - Modularity enhancement with gadgets</strong> <a href="https://github.com/input-output-hk/mithril/issues/3131" target="_blank" rel="noopener noreferrer" class="">#3131</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="protocol-maintenance">Protocol maintenance<a href="https://updates.cardano.intersectmbo.org/2026-07-08-mithril#protocol-maintenance" class="hash-link" aria-label="Direct link to Protocol maintenance" title="Direct link to Protocol maintenance" translate="no">​</a></h3>
+<ul>
+<li class="">Worked on the issue <strong>Ship Mithril signer node binary in Cardano node bundle in GitHub</strong> <a href="https://github.com/input-output-hk/mithril/issues/3011" target="_blank" rel="noopener noreferrer" class="">#3011</a></li>
+<li class="">Worked on the issue <strong>Release <code>2628</code> distribution</strong> <a href="https://github.com/input-output-hk/mithril/issues/3271" target="_blank" rel="noopener noreferrer" class="">#3271</a></li>
+<li class="">Worked on the issue <strong>Enhance aggregator state machine to support <code>Blocked</code> state</strong> <a href="https://github.com/input-output-hk/mithril/issues/3333" target="_blank" rel="noopener noreferrer" class="">#3333</a></li>
+<li class="">Worked on the issue <strong>Upgrade to Cardano <code>11.1</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3346" target="_blank" rel="noopener noreferrer" class="">#3346</a></li>
+<li class="">Worked on the issue <strong>Update DMQ node to <code>0.7.0.0</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3358" target="_blank" rel="noopener noreferrer" class="">#3358</a></li>
+<li class="">Worked on the issue <strong>Capture e2e execution logs in artifacts</strong> <a href="https://github.com/input-output-hk/mithril/issues/3362" target="_blank" rel="noopener noreferrer" class="">#3362</a></li>
+<li class="">Worked on the issue <strong>Upgrade midnight-zk to <code>2.3.3</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3375" target="_blank" rel="noopener noreferrer" class="">#3375</a></li>
+</ul>]]></content>
+        <author>
+            <name>Jean-Philippe Raynaud</name>
+            <uri>https://github.com/jpraynaud</uri>
+        </author>
+        <category label="mithril" term="mithril"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Plutus Core Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-08-plutus-core</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-08-plutus-core"/>
+        <updated>2026-07-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-07-08-plutus-core#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<p>In the past weeks, the Plutus team has continued to make improvements across performance, tooling, and assurance.</p>
+<p><strong>Performance and compiler improvements</strong>.
+We improved several parts of the Plutus optimization pipeline and ledger API implementation.
+This includes making common Value operations more efficient, adding a new compiler optimization for certain recursive functions, and fixing an optimization pass so that it preserves program behavior correctly.</p>
+<p><strong>Better benchmarking and tooling</strong>.
+We added lightweight benchmarking support to the uplc executable, making it easier to sanity-check execution-time measurements for UPLC scripts and compare results against existing benchmark infrastructure.</p>
+<p><strong>Specs and formal methods</strong>.
+We continued strengthening the foundations of Plutus by updating the UPLC specification for the built-in value type and related functions, and by improving the metatheory and certification infrastructure used to reason about compiler transformations. These changes make the formal-assurance workflow easier to maintain, debug, and scale to larger programs.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="key-pull-requests-merged">Key Pull Requests Merged<a href="https://updates.cardano.intersectmbo.org/2026-07-08-plutus-core#key-pull-requests-merged" class="hash-link" aria-label="Direct link to Key Pull Requests Merged" title="Direct link to Key Pull Requests Merged" translate="no">​</a></h2>
+<ul>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7810" target="_blank" rel="noopener noreferrer" class="">Specification of the built-in value type and functions</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7829" target="_blank" rel="noopener noreferrer" class="">Rename UPLC scope variable in the metatheory</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7688" target="_blank" rel="noopener noreferrer" class="">Mutually recursive PIR function inlining</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7824" target="_blank" rel="noopener noreferrer" class="">Lightweight benchmarking in the <code>uplc</code> executable</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7799" target="_blank" rel="noopener noreferrer" class="">Fuse unionWith and checkBinRel in PlutusLedgerApi.V1.Data.Value</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7814" target="_blank" rel="noopener noreferrer" class="">Certifier: Generate one Proof .agda file per certified pass</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7797" target="_blank" rel="noopener noreferrer" class="">Optimal non-builtin valueOf in plutus-ledger-api Data.Value</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7802" target="_blank" rel="noopener noreferrer" class="">Metatheory: define semantic versions of value and purity</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7788" target="_blank" rel="noopener noreferrer" class="">Certifier: deduplicate ASTs in agda certificate</a></li>
+<li class=""><a href="https://github.com/IntersectMBO/plutus/pull/7789" target="_blank" rel="noopener noreferrer" class="">Fix the FloatDelay compiler optimization pass</a></li>
+</ul>]]></content>
+        <author>
+            <name>Ziyang Liu</name>
+            <uri>https://github.com/zliu41</uri>
+        </author>
+        <category label="plutus-core" term="plutus-core"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Mithril Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-07-01-mithril</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-07-01-mithril"/>
+        <updated>2026-07-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level overview]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-overview">High level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-01-mithril#high-level-overview" class="hash-link" aria-label="Direct link to High level overview" title="Direct link to High level overview" translate="no">​</a></h2>
+<p>This week, the Mithril team completed the wiring of the recursive SNARK proof in the aggregate signature, and its integration in the end-to-end tests and its deployment in a test network. They continued work on refactoring the unsafe SNARK setup and refactoring the preparation of the prover input for the recursive SNARK aggregation primitives.</p>
+<p>The team also completed the implementation of the monitoring for Cardano blocks and transactions in the protocol dashboard, the integration tests for the unknown signed entity type in the signer and aggregator, and the enhancements of the aggregator state machine to support the <code>Blocked</code> state. They continued work on the release of the <code>2626</code> distribution, the upgrade to Cardano <code>11.1</code>, and the update of the DMQ node to <code>0.7.0.0</code>.</p>
+<p>Finally, the team fixed some flakiness in the Hydra CI, enhanced the versions bump script and implemented a GitHub workflow to automate the marking of stale issues and pull requests.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-07-01-mithril#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="features">Features<a href="https://updates.cardano.intersectmbo.org/2026-07-01-mithril#features" class="hash-link" aria-label="Direct link to Features" title="Direct link to Features" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Recursive SNARK aggregation primitives: Wire SNARK proof in aggregate signature</strong> <a href="https://github.com/input-output-hk/mithril/issues/3141" target="_blank" rel="noopener noreferrer" class="">#3141</a></li>
+<li class="">Completed the issue <strong>Implement recursive SNARK proof generation and verification in end-to-end tests</strong> <a href="https://github.com/input-output-hk/mithril/issues/3142" target="_blank" rel="noopener noreferrer" class="">#3142</a></li>
+<li class="">Worked on the issue <strong>Refactor unsafe SNARK setup</strong> <a href="https://github.com/input-output-hk/mithril/issues/3300" target="_blank" rel="noopener noreferrer" class="">#3300</a></li>
+<li class="">Worked on the issue <strong>Recursive SNARK aggregation primitives: Refactor preparation of prover input</strong> <a href="https://github.com/input-output-hk/mithril/issues/3319" target="_blank" rel="noopener noreferrer" class="">#3319</a></li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="protocol-maintenance">Protocol maintenance<a href="https://updates.cardano.intersectmbo.org/2026-07-01-mithril#protocol-maintenance" class="hash-link" aria-label="Direct link to Protocol maintenance" title="Direct link to Protocol maintenance" translate="no">​</a></h3>
+<ul>
+<li class="">Completed the issue <strong>Implement monitoring for Cardano Blocks and Transactions in Protocol dashboard</strong> <a href="https://github.com/input-output-hk/mithril/issues/3157" target="_blank" rel="noopener noreferrer" class="">#3157</a></li>
+<li class="">Completed the issue <strong>Activate <code>CardanoBlocksTransactions</code> in Mithril networks</strong> <a href="https://github.com/input-output-hk/mithril/issues/3160" target="_blank" rel="noopener noreferrer" class="">#3160</a></li>
+<li class="">Completed the issue <strong>Add integration tests for unknown signed entity type in signer and aggregator</strong> <a href="https://github.com/input-output-hk/mithril/issues/3296" target="_blank" rel="noopener noreferrer" class="">#3296</a></li>
+<li class="">Completed the issue <strong>Flaky CI on hydra run of <code>ci/hydra-build:x86_64-linux.mithril-common</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3329" target="_blank" rel="noopener noreferrer" class="">#3329</a></li>
+<li class="">Completed the issue <strong>Enhance versions bump script</strong> <a href="https://github.com/input-output-hk/mithril/issues/3334" target="_blank" rel="noopener noreferrer" class="">#3334</a></li>
+<li class="">Completed the issue <strong>Mark stale issues and PRs with GitHub workflow</strong> <a href="https://github.com/input-output-hk/mithril/issues/3339" target="_blank" rel="noopener noreferrer" class="">#3339</a></li>
+<li class="">Completed the issue <strong>Certification stopped on <code>ivc-snark-preview</code> network</strong> <a href="https://github.com/input-output-hk/mithril/issues/3351" target="_blank" rel="noopener noreferrer" class="">#3351</a></li>
+<li class="">Worked on the issue <strong>Ship Mithril signer node binary in Cardano node bundle in GitHub</strong> <a href="https://github.com/input-output-hk/mithril/issues/3011" target="_blank" rel="noopener noreferrer" class="">#3011</a></li>
+<li class="">Worked on the issue <strong>Release <code>2626</code> distribution</strong> <a href="https://github.com/input-output-hk/mithril/issues/3271" target="_blank" rel="noopener noreferrer" class="">#3271</a></li>
+<li class="">Worked on the issue <strong>Enhance aggregator state machine to support <code>Blocked</code> state</strong> <a href="https://github.com/input-output-hk/mithril/issues/3333" target="_blank" rel="noopener noreferrer" class="">#3333</a></li>
+<li class="">Worked on the issue <strong>How to reduce the IVC tests duration</strong> <a href="https://github.com/input-output-hk/mithril/issues/3343" target="_blank" rel="noopener noreferrer" class="">#3343</a></li>
+<li class="">Worked on the issue <strong>Upgrade to Cardano <code>11.1</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3346" target="_blank" rel="noopener noreferrer" class="">#3346</a></li>
+<li class="">Worked on the issue <strong>Update DMQ node to <code>0.7.0.0</code></strong> <a href="https://github.com/input-output-hk/mithril/issues/3358" target="_blank" rel="noopener noreferrer" class="">#3358</a></li>
+</ul>]]></content>
+        <author>
+            <name>Jean-Philippe Raynaud</name>
+            <uri>https://github.com/jpraynaud</uri>
+        </author>
+        <category label="mithril" term="mithril"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Consensus Team Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-06-30-consensus</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-06-30-consensus"/>
+        <updated>2026-06-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-06-30-consensus#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<ul>
+<li class="">Leios prototype development (Treasury Funding Initiative 4: Ouroboros Leios Implementation):
+<ul>
+<li class="">Chain selection and the volatile database now handle ranking blocks and Endorser Blocks that arrive out of order. A certifying ranking block that arrives before the Endorser Block it certifies is stored but held back from chain selection until the Endorser Block shows up. A new header bit also lets a syncing node fetch Endorser Blocks that were certified on the historical chain (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2076" target="_blank" rel="noopener noreferrer" class="">#2076</a>).</li>
+<li class="">Fixed a bug where the LeiosFetch budget leaked when a peer disconnected. Requests in flight at the time of the disconnect were never cleared, so their share of the budget was never returned, and a node could eventually stop fetching altogether. This is a plausible cause of the forks seen recently on the testnet (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2083" target="_blank" rel="noopener noreferrer" class="">#2083</a>).</li>
+<li class="">Corrected Endorser Block application to take the slot from the provided ledger state (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2085" target="_blank" rel="noopener noreferrer" class="">#2085</a>).</li>
+<li class="">Voting and certification now happen over the announcing ranking block hash (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2086" target="_blank" rel="noopener noreferrer" class="">#2086</a>).</li>
+<li class="">The <code>db-synthesizer</code> config parser now honors <code>ExperimentalHardForksEnabled</code>, so experimental hard forks can be enabled when generating synthetic chains (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2077" target="_blank" rel="noopener noreferrer" class="">#2077</a>).</li>
+<li class="">Made the proto-devnet demo start up more reliably by holding back the transaction generator until the nodes are ready, and reduced the tip-observation frequency for the secondary nodes (<a href="https://github.com/input-output-hk/ouroboros-leios/pull/942" target="_blank" rel="noopener noreferrer" class="">ouroboros-leios#942</a>, <a href="https://github.com/input-output-hk/ouroboros-leios/pull/943" target="_blank" rel="noopener noreferrer" class="">ouroboros-leios#943</a>).</li>
+</ul>
+</li>
+<li class="">LSM-trees and UTxO-HD (Treasury Funding Initiative 10: LSM including UTXO-HD):
+<ul>
+<li class="">Reworked the snapshot-converter into a command tree. It now offers a daemon mode that watches a node's snapshot directory and converts each exported LSM snapshot into the portable in-memory format as it is produced, a one-shot conversion in either direction, and commands to move snapshots in and out of an offline LSM database. This supports the Mithril workflow, where signers need snapshots in a single agreed format (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2064" target="_blank" rel="noopener noreferrer" class="">#2064</a>).</li>
+</ul>
+</li>
+<li class="">Documentation (Treasury Funding Initiative 17: Maintenance and Support):
+<ul>
+<li class="">Added configuration documentation to the consensus website (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/2065" target="_blank" rel="noopener noreferrer" class="">#2065</a>).</li>
+<li class="">Minor improvements to the Genesis documentation (<a href="https://github.com/IntersectMBO/ouroboros-consensus/pull/1916" target="_blank" rel="noopener noreferrer" class="">#1916</a>).</li>
+</ul>
+</li>
+</ul>]]></content>
+        <author>
+            <name>Damian Nadales</name>
+            <uri>https://github.com/dnadales</uri>
+        </author>
+        <category label="consensus" term="consensus"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Performance & Tracing Update]]></title>
+        <id>https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing</id>
+        <link href="https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing"/>
+        <updated>2026-06-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[High level summary]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="high-level-summary">High level summary<a href="https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing#high-level-summary" class="hash-link" aria-label="Direct link to High level summary" title="Direct link to High level summary" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Benchmarking</strong>: <code>-O2</code> build optimization benchmarks.</li>
+<li class=""><strong>Development</strong>: Legacy <code>iohk-monitoring</code> tracing backend removed from <code>cardano-node</code>; RTView removed from <code>cardano-tracer</code>; <code>trace-dispatcher</code> maintenance and ongoing restructuring into Hermod packages.</li>
+<li class=""><strong>Infrastructure</strong>: Genesis cache overhaul with full Protocol Version 11 overlay close to merging.</li>
+<li class=""><strong>Tracing</strong>: ReCon framework and <code>trace-resources</code> moved to Hermod project; <code>cardano-tracer</code> timeseries HTTP API and Grafana datasource merged; ASCII operator spellings for <code>cardano-recon-framework</code>.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="low-level-overview">Low level overview<a href="https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing#low-level-overview" class="hash-link" aria-label="Direct link to Low level overview" title="Direct link to Low level overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="benchmarking">Benchmarking<a href="https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing#benchmarking" class="hash-link" aria-label="Direct link to Benchmarking" title="Direct link to Benchmarking" translate="no">​</a></h3>
+<p>The P&amp;T team has performed benchmarks of a highly optimized build (<code>-O2</code>) vs. a build using standard optimization (<code>-O1</code>), the latter being the current default for our releases. The benchmarks demonstrated that under
+low to near-idle submission load, no significant gains in resource usage were achieved. Only under full saturation over extended periods of time was a ~17% reduction in Process CPU usage measured, whereas RAM usage was stable. However,
+in both cases, we observed small increases (3% - 6%) in block adoption times across the network. For the current Praos Node, we still recommend the default. When using another Consensus mode with a significantly higher
+idle baseline, it's worth noting there's a potential trade-off that can be made.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="development">Development<a href="https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing#development" class="hash-link" aria-label="Direct link to Development" title="Direct link to Development" translate="no">​</a></h3>
+<p>Last month we reported that the removal of the legacy <code>iohk-monitoring</code>-based tracing backend from <code>cardano-node</code> was complete but awaiting final verification. That PR has now been merged (<a href="https://github.com/IntersectMBO/cardano-node/pull/6580" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6580</a>). The change eliminates approximately 11,000 lines of dead code across 15 modules and removes 9 transitive build dependencies, leaving <code>trace-dispatcher</code> as the sole tracing backend. With this out of the way, the remaining components of the new tracing system can be moved into the self-contained <a href="https://github.com/IntersectMBO/hermod-tracing" target="_blank" rel="noopener noreferrer" class="">Hermod Tracing System</a> project repository without coupling their release cycle to <code>cardano-node</code>. Please refer to the PR description for a detailed breakdown of now obsolete Node config keys.</p>
+<p>Alongside that, RTView has been removed from <code>cardano-tracer</code> (<a href="https://github.com/IntersectMBO/cardano-node/pull/6607" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6607</a>). RTView was an experimental, opt-in browser dashboard hidden behind a build flag since version <code>0.2.4</code>. Its functionality is now fully covered by the Grafana datasource and the timeseries server built into <code>cardano-tracer</code>, making the component redundant. The removal cleans up 35 source files and several build dependencies.</p>
+<p>The P&amp;T team has also completed a focused maintenance pass over <code>trace-dispatcher</code> (<a href="https://github.com/IntersectMBO/hermod-tracing/pull/12" target="_blank" rel="noopener noreferrer" class="">hermod-tracing PR#12</a>). Additionally, work is underway to restructure <code>trace-dispatcher</code> into two distinct packages — <code>hermod-tracing-api</code>, carrying types and combinators, and <code>hermod-tracing-core</code>, carrying the full backend stack including EKG and <a href="https://prometheus.io/" target="_blank" rel="noopener noreferrer" class="">Prometheus</a> (<a href="https://github.com/IntersectMBO/hermod-tracing/pull/16" target="_blank" rel="noopener noreferrer" class="">hermod-tracing PR#16</a>). This split will allow downstream packages that only need to instrument their own code to avoid pulling in the full backend stack as a dependency.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="infrastructure">Infrastructure<a href="https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing#infrastructure" class="hash-link" aria-label="Direct link to Infrastructure" title="Direct link to Infrastructure" translate="no">​</a></h3>
+<p>The genesis cache overhaul for our performance workbench (the benchmarking automation framework) is completed and close to merging (<a href="https://github.com/IntersectMBO/cardano-node/pull/6544" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6544</a>). As reported last month, the new approach splits a genesis into two independently-cached halves — the heavy dataset (keys, UTxO entries, delegators, DReps) and the per-era protocol parameters — which are then reassembled on demand. This greatly widens the range of parameters a benchmarking profile can modify without causing a full cache miss. The PR additionally restores non-default Plutus cost models via the Alonzo genesis <code>extraConfig</code> field, and includes a full Protocol Version 11 overlay with the updated cost models and execution budgets that have been submitted as a governance action on mainnet.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tracing">Tracing<a href="https://updates.cardano.intersectmbo.org/2026-06-26-performance-and-tracing#tracing" class="hash-link" aria-label="Direct link to Tracing" title="Direct link to Tracing" translate="no">​</a></h3>
+<p>With the legacy tracing removal merged, the <code>cardano-recon-framework</code> and the <code>trace-resources</code> package have both been moved from <code>cardano-node</code> into the <a href="https://github.com/IntersectMBO/hermod-tracing" target="_blank" rel="noopener noreferrer" class="">Hermod Tracing System</a> project. The ReCon framework has been accommodated under <code>hermod-tracing</code> (<a href="https://github.com/IntersectMBO/cardano-node/pull/6598" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6598</a>, <a href="https://github.com/IntersectMBO/hermod-tracing/pull/11" target="_blank" rel="noopener noreferrer" class="">hermod-tracing PR#11</a>); <code>trace-resources</code> — which provides cross-platform OS-level resource sampling (CPU, memory, network I/O, filesystem I/O, thread count) — has been renamed <code>hermod-trace-resources</code> (<a href="https://github.com/IntersectMBO/hermod-tracing/pull/14" target="_blank" rel="noopener noreferrer" class="">hermod-tracing PR#14</a>), with its module namespace updated from <code>Cardano.Logging.Resources.*</code> to <code>Hermod.Tracing.Resources.*</code>. All logic, platform-specific C bindings, and tests are preserved unchanged.</p>
+<p>The <code>cardano-tracer</code> timeseries HTTP API and its accompanying Grafana datasource, which we reported as being in testing last month, have now been merged (<a href="https://github.com/IntersectMBO/cardano-node/pull/6562" target="_blank" rel="noopener noreferrer" class="">cardano-node PR#6562</a>). The API provides <a href="https://prometheus.io/docs/prometheus/latest/querying/basics/" target="_blank" rel="noopener noreferrer" class="">PromQL</a>-like queries over metrics timeseries stored by <code>cardano-tracer</code>, aligned closely with the Prometheus HTTP API schema so that existing Grafana integrations and community-built tooling can reuse familiar glue code. The Grafana datasource shipped alongside it replaces the now-removed RTView and includes a reference dashboard for operators to build from.</p>
+<p>The <code>cardano-recon-framework</code> formula parsers now accept ASCII alternatives to their Unicode operators (<a href="https://github.com/IntersectMBO/hermod-tracing/pull/15" target="_blank" rel="noopener noreferrer" class="">hermod-tracing PR#15</a>). Spellings such as <code>\globally</code>, <code>\finally</code>, <code>&amp;&amp;</code> and <code>=&gt;</code> are now valid alongside the original Unicode forms, as are numeric indices in parentheses (e.g. <code>\globallyN(2)</code>). This makes authoring <a href="https://en.wikipedia.org/wiki/Linear_temporal_logic" target="_blank" rel="noopener noreferrer" class="">LTL</a> properties more accessible in environments where Unicode input is inconvenient, and ships as part of <code>v1.4.0</code>.</p>]]></content>
+        <author>
+            <name>Michael Karg</name>
+            <uri>https://github.com/mgmeier</uri>
+        </author>
+        <category label="performance-tracing" term="performance-tracing"/>
+    </entry>
+</feed>
