@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcardano_updates=globalThis.webpackChunkcardano_updates||[]).push([[98644],{98644(a,e,c){c.d(e,{createArchitectureServices:()=>r.S});var r=c(85877);c(6902)}}]);
