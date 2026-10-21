@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkcardano_updates=globalThis.webpackChunkcardano_updates||[]).push([[28272],{50984(a){a.exports=JSON.parse('{"blogBasePath":"/quarterly","blogTitle":"Blog","authorsListPath":"/quarterly/authors"}')}}]);
