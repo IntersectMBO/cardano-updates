@@ -21,4 +21,4 @@ hide_table_of_contents: false
     - We fixed a memory spike in the LeiosNotify server ([#2500](https://github.com/IntersectMBO/ouroboros-consensus/pull/2500)).
 - Maintenance and support (Treasury Funding Initiative 17: Maintenance and Support):
     - Released `ouroboros-consensus` 5.4.0.0 with support for the new ledger release ([#2487](https://github.com/IntersectMBO/ouroboros-consensus/pull/2487)).
-    - The LSM backend no longer counts its wait time as IOWAIT, so node metrics show the real disk wait ([#2518](https://github.com/IntersectMBO/ouroboros-consensus/pull/2518), [#2519](https://github.com/IntersectMBO/ouroboros-consensus/pull/2519)).
+    - Released `ouroboros-consensus` 5.4.0.1. In this release, the LSM backend no longer counts its wait time as IOWAIT, so node metrics show the real disk wait ([#2518](https://github.com/IntersectMBO/ouroboros-consensus/pull/2518), [#2519](https://github.com/IntersectMBO/ouroboros-consensus/pull/2519)).
